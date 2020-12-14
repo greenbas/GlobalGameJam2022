@@ -142,7 +142,8 @@ static func filter(e, prop, value, multi, dict, err):
 			arr.append(row)
 	if err and Util.isnull(res):
 		var s = ""
-		if ENTITY_NAME[e].right(1) != "s": s = "s" # Just grammatical perfectionism... sorry
+		var n = ENTITY_NAME[e]
+		if n.right(len(n)-1) != "s": s = "s" # Just grammatical perfectionism... sorry
 		Game.reportError("Data", "No %s%s exist with property %s = %s" % [ENTITY_NAME[e], s, prop, value])
 	if (dict): return res.values()
 	else: return arr
@@ -180,6 +181,6 @@ static func update(e, fprop, fvalue, uprop, uvalue, err=true):
 							row[uprop[i]] = "0"
 		if err and updatedRows == 0:
 			var s = ""
-			if e.right(1) != "s": s = "s" # Just grammatical perfectionism... sorry
+			if e.right(len(e)-1) != "s": s = "s" # Just grammatical perfectionism... sorry
 			Game.reportError("Script", "No %s%s exist with property %s = %s" % [e, s, fprop, fvalue])
 

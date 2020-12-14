@@ -1,2 +1,3 @@
-"Character","Emotion","Image_Path","Image_Filename","Image_Extension"
-"DEFAULT","none","characters/",,".png"
+"ID","Character","Image_Path","Image_Filename","Image_Extension"
+"DEFAULT","DEFAULT","characters/",,".png"
+"none","lindsay",,"dlg_lindsay",

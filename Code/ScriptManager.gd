@@ -90,7 +90,8 @@ const MULTI = "~&~"    # Updating multiple records at once
 # Filter_Column = "ID~,~Scene_ID" Filter_Value = "lindsay~,~campfire~&~johnny~,~campfire"
 
 # Takes an array of commands and moves through them, executing
-func run(commands):
+func run(commands, actingObj=null): # We need the acting object in the somewhat rare
+	# situation where this is triggered by a group, but the specific item is being taken
 	Game.disableActions()
 	for cmd in commands:
 		var todo = true;
@@ -98,6 +99,7 @@ func run(commands):
 			var expr = cmd.If_Expression
 			todo = parseExpr(expr, adjustExpr(expr)) # May throw errors
 		if Game.allGood() and todo:
+			var refresh = false
 			if (!Util.isnull(cmd.Call_Script)):
 				Game.debugMessage("Script", "Running " + cmd.Call_Script)
 				var funcName = cmd.Call_Script
@@ -147,13 +149,34 @@ func run(commands):
 							fval[v] = cmd.Character_ID
 					Game.debugMessage("Script", "%s: Setting %s to %s where %s=%s" % [tab, col, val, fcol, fval])
 					Game.update(tab, fcol, fval, col, val)
-				
-				# And actually update the view for the user
+				# Refresh if necessary
 				if cmd.Refresh == "1":
 					if tab == Game.ENTITY_NAME[Game.ENTITY.SCENE] or tab == Game.ENTITY_NAME[Game.ENTITY.CHAR] or tab == Game.ENTITY_NAME[Game.ENTITY.OBJECTS]:
-						Game.sceneNode.refreshScene()
-				#if tab == Game.ENTITY_NAME[Game.ENTITY.SCRIPT]:
-				#	Game.sceneNode.attachScripts()
+						refresh = true
+				
+			# And some other housekeeping
+			if cmd.Remove_Target == "1" or cmd.Add_To_Inventory == "1":
+				# We need to identify the object being acted on
+				var type
+				var target
+				if !Util.isnull(cmd.Target_Object):
+					type = Game.ENTITY.OBJ
+					target = cmd.Target_Object
+				elif !Util.isnull(cmd.Target_ObjGroup):
+					type = Game.ENTITY.OBJ # It's the object that got clicked & will get removed
+					target = cmd.Target_ObjGroup # But the group that will get added to inventory
+				elif !Util.isnull(cmd.Target_Character):
+					type = Game.ENTITY.CHAR
+					target = cmd.Target_Object
+				# Now act on it
+				if cmd.Remove_Target == "1" and !Util.isnull(actingObj):
+					Game.debugMessage("Script", "Taking " + Game.ENTITY_NAME[type].rstrip("s") + " " + actingObj.ID)
+					Game.updateByID(type, ["ID"], [actingObj.ID], ["Visible"], ["0"])
+					refresh = true
+				if cmd.Add_To_Inventory == "1": # TODO Test on character
+					Game.debugMessage("Script", "Adding to inventory")
+					Game.inventory.addItem(cmd.Character_ID, target)
+			if refresh: Game.sceneNode.refreshScene()
 	Game.enableActions()
 
 func adjustExpr(e):

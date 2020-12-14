@@ -111,17 +111,8 @@ func triggerDestination():
 		var scriptID = actingChar.ID + "-" + actingAction.ID + "-" + actingObj.ID
 		state = STATES.BASE
 		Game.debugMessage("Script", "Resuming " + scriptID)
-		if actingAction.ID == "take":
-			# It should only be possible to "take" on objects (which have groups), but...
-			if actingObj.has("Group"):
-				if Util.isnull(actingObj.Group):
-					Game.inventory.addItem(actingChar.ID, actingObj.ID)
-				else:
-					Game.inventory.addItem(actingChar.ID, actingObj.Group)
-			Game.updateByID(Game.ENTITY.OBJ, ["ID"], [actingObj.ID], ["Visible"], ["0"])
-			Game.sceneNode.refreshScene()
 		if scene.scriptManager.hasScript(scriptID):
-			scene.scriptManager.run(scene.scriptManager.script_commands[scriptID])
+			scene.scriptManager.run(scene.scriptManager.script_commands[scriptID], actingObj)
 		Game.enableActions()
 		#foundObj.triggerAction(posn)
 		#else: self.triggerAction(posn)
@@ -144,6 +135,35 @@ class MenuData:
 		z_index = 2000
 	func drawMe():
 		pass
+class ActionMenu:
+	extends MenuData
+	func _init().("action_menu", {}):
+		z_index += 100
+	func updateMe(posn, c):
+		data.Actionable = "0"
+		position = posn
+		texture = Game.getTexture(c.Action_Wheel_Path, c.Action_Wheel_Filename, c.Action_Wheel_Extension)
+class ActionItem:
+	extends MenuData
+	func _init(d).(d.ID, d):
+		z_index += 101
+	func updateMe(wheel):
+		data.Actionable = "1"
+		texture = Game.getTexture(data.Action_Path, data.Action_Filename, data.Action_Extension)
+		# Display radially from the center of the ActionMenu
+		var dist = (wheel.texture.get_width() / 2) * int(data.Distance_From_Center) / 100
+		var angle = deg2rad(float(data.Radial_Position))
+		var offset = dist * Vector2(cos(angle), -sin(angle))
+		position = wheel.position + offset
+class ScreenMenu:
+	extends MenuData
+	func _init(d).(d.ID, d):
+		data.Actionable = "0"
+		z_index += 150
+	func updateMe(scene):
+		centered = true
+		position = Vector2(scene.WIDTH, scene.HEIGHT) / 2
+		texture = Game.getTexture(data.Menu_Path, data.Menu_Filename, data.Menu_Extension)
 class ScreenItem:
 	extends MenuData
 	enum TYPES { INV_BACK = 0, INV_MAIN }
@@ -168,32 +188,14 @@ class ScreenItem:
 			var start_x = scene.WIDTH * float(data.Slot_Start_X) / 100.0
 			var start_y = scene.HEIGHT * float(data.Slot_Start_Y) / 100.0
 			position = Vector2(start_x + texture.size.x * slot_i, start_y + texture.size.y * slot_j)
-class ScreenMenu:
-	extends MenuData
-	func _init(d).(d.ID, d):
-		data.Actionable = "0"
-		z_index += 150
-	func updateMe(scene):
-		centered = true
-		position = Vector2(scene.WIDTH, scene.HEIGHT) / 2
-		texture = Game.getTexture(data.Menu_Path, data.Menu_Filename, data.Menu_Extension)
-class ActionMenu:
-	extends MenuData
-	func _init().("action_menu", {}):
-		z_index += 100
-	func updateMe(posn, c):
-		data.Actionable = "0"
-		position = posn
-		texture = Game.getTexture(c.Action_Wheel_Path, c.Action_Wheel_Filename, c.Action_Wheel_Extension)
-class ActionItem:
-	extends MenuData
-	func _init(d).(d.ID, d):
-		z_index += 101
-	func updateMe(wheel):
-		data.Actionable = "1"
-		texture = Game.getTexture(data.Action_Path, data.Action_Filename, data.Action_Extension)
-		# Display radially from the center of the ActionMenu
-		var dist = (wheel.texture.get_width() / 2) * int(data.Distance_From_Center) / 100
-		var angle = deg2rad(float(data.Radial_Position))
-		var offset = dist * Vector2(cos(angle), -sin(angle))
-		position = wheel.position + offset
+#class DialogueMenu:
+#	extends MenuData
+#	func _init().("dialogue_menu", {}):
+#		z_index += 50
+#	func updateMe(scene):
+#		data.Actionable = "0"
+#		centered = true
+#		#var start_x = scene.WIDTH * float(data.Slot_Start_X) / 100.0
+#		#var start_y = scene.HEIGHT * float(data.Slot_Start_Y) / 100.0
+#		texture = Game.getTexture(data.Menu_Path, data.Menu_Filename, data.Menu_Extension)
+#		position = Vector2(scene.WIDTH / 2, scene.HEIGHT - (texture.size.y / 2))
