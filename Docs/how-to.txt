@@ -1,0 +1,62 @@
+Spreadsheet "game-data.ods" is the starting values for everything.
+
+Enter all of your information here.  Prior to running the game, do "File > Save As" to save the various tabs with file name equal to the tab name (but lowercase) and with extension "CSV", like this:
+
+* script.csv
+* variables.csv
+* actions.csv
+* characters.csv
+* etc
+
+All IDs must be unique not just within a tab, but between all sheets.  e.g. you cannot have a character with ID "penny" and also an object "penny".
+
+YOU MAY NOT USE DOUBLE QUOTES ANYWHERE
+
+=== Characters ======================================================================
+
+There can only be one current character.  If a directive is received to set Current to 1 on any row, the previous 1 will become 0.
+
+=== Scenes ==========================================================================
+
+Walkmap shows the places you can walk.
+
+Scene_ID = * for all scenes
+
+- White = walk (no trigger), Black = no walk; other colours may trigger something as defined in the script file
+
+When you start a game, these are copied into a Saves directory.  As the game progresses, pretty much any value in any of these files can and will change.
+
+=== Objects, Groups, and Inventory ==================================================
+
+Objects correspond to inventory items in such a way that there could be many sticks and when picked up they all just go into one pile in the inventory.
+
+=== Menus ===========================================================================
+
+At some point I should create a tab for signals.  In the meantime, "ui_game_select" goes back to the starting menu.
+
+=== Scripts =========================================================================
+
+When a CHARACTER does an ACTION on various things
+- Define at least one TARGET column; more than one means multiple ways to trigger
+- Alternately, define a WALK scene and colour which would be triggered when the character walks on to a section of a screen which is painted with that colour in its walkmap
+
+then you may trigger one of the following:
+- A character says a line of dialogue; Character, Dialogue, Emotion, Duration
+- Set a value in another file (e.g. [Actions -> Where "Action ID": "bump", "Character": "lindsay" Set "Allowed" : 1 would set all matching rows to that value - giving Lindsay a new action
+  - Changing the default at this point will not affect any other rows, so there's no point in doing it.  Similarly, changing a record to empty will not turn it to the default.
+- Add or remove items to the inventory file
+- Change active scene, move character to scene (the latter done just by Characters/ID/ new values
+- A "cutscene" is triggered, where a cutscene is a sequence of all types of actions, also defined in the script file but by a simpler ID - do this when more than one thing needs to happen
+
+Named scripts cannot have triggers other than Call_Script.
+
+When the Character_ID is DEFAULT, then any character can trigger the script.
+In this case, DEFAULT in other places (e.g. Dialogue_Speaker or Filter_Value) becomes the ID of the current character.
+
+You can also use Inventory.itemname and reference variable names in Set_Value or If_Expression
+
+=== Miscellaneous Notes =============================================================
+
+Screen position is done as a %, which will hopefully save you work if your screen resolution changes.
+
+If your game gets large enough (more than: 999 characters, scenes, or objects; 99 actions, emotions, animations; 999 variables) then you will need to go to "Insert > Names > Define" and alter the cell range used for drop-down boxes on the relevant tabs.

@@ -1,0 +1,1563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>The Lake of Reflection</title>
+  <script src="scripts/jquery-1.7.2.min.js" type="text/javascript"></script>
+  <script src="scripts/kinetic-v3.10.0.min.js" type="text/javascript"></script>
+  <script src="scripts/modernizr.js" type="text/javascript"></script>
+  <script src="scripts/canvas2image.js" type="text/javascript"></script>
+  <script src="interactions.js" type="text/javascript"></script>
+  <!-- Atari arcade library for optimization (possibly createjs) -->
+  <!-- Look into optimizing pngs too -->
+  <link rel="stylesheet" type="text/css" href="user_style.css" />
+  <style type="text/css">
+    #screen
+    {
+		//border: thin black dotted;
+		position: absolute;
+		left: 0; top: 0;
+	}
+	.err
+	{
+		border: thin red double;
+		width: 70%;
+		margin: 0 auto;
+		padding: 20px;
+		margin-top: 50px;
+	}
+  </style>
+</head>
+<!-- Swallow all mouse clicks, especially the right-click because the context menu
+	would be very annoying to the user.  Accept keystrokes and pass most on. -->
+<body oncontextmenu="return false;" onkeydown="return keyboard(event);"
+	onmousewheel="wheel(event); return false;">
+	<!-- The HTML -->
+	<div id="screen"></div>
+
+	<!-- Force my fonts to load -->
+	<div class=loadfont style="font-family: sarah">Loading</div>
+	<div class=loadfont style="font-family: johnny">.</div>
+	<div class=loadfont style="font-family: lindsay">.</div>
+	<div class=loadfont style="font-family: narrator">.</div>
+
+	<script type="text/javascript">
+
+	var errMsg = "";
+	if (!Modernizr.canvas) errMsg += "<li>the canvas element";
+	if (!Modernizr.localstorage) errMsg += "<li>local storage";
+	// Modernizr.webworkers
+
+	if (errMsg.length > 0)
+	{
+		$(".loadfont").each( function() { $(this).html(""); })
+		$("#screen").html("<div class=err>I'm sorry, but this game needs to be run on an HTML5-ready browser " +
+			"and requires Javascript to be enabled.  The browser you are running does not support " +
+			"the following necessary components for this game:<ul>" + errMsg + "</ul>" +
+			"I would suggest the most recent Firefox or Chrome browser.</div>");
+	}
+	else
+	{
+
+		// ----- Preparation -----
+		lastSlot = 0;
+		if (localStorage["lastSlot"] !== null) lastSlot = parseInt(localStorage["lastSlot"]);
+
+		// Background
+		var load = new Kinetic.Layer();
+		var main = new Kinetic.Layer();
+		var inv = new Kinetic.Layer();
+		var vc = new Kinetic.Layer();
+		var menu = new Kinetic.Layer();
+		var text = new Kinetic.Layer();
+		var areas = new Kinetic.Layer();
+
+		// Drawing
+		var jobs = 0; // The number of jobs scheduled and not complete
+		var scaling = 1; // All images should be scaled the same way
+		var path = "";
+		var stage = new Kinetic.Stage({
+			container: "screen",
+			width: 1000,
+			height: 675
+		});
+		// Z-Orders (higher goes further back, it seems)
+		var SIDEBAR_BG = 999; // Goes behind the backgrounds
+		var SCENE_BG = 900;   // Full-screen backgrounds
+		var SCENE_OBJ = 800;  // Moveable objects on a full-screen background
+		var PLAYER = 600;
+		var OBJECT = 600;
+		var SCENE_FG = 300;   // Things that the player can never get closer than
+		var WINDOW_BG = 200;  // Pop-up windows that are supposed to cover the screen
+		var WINDOW_OBJ = 100; // Parts of a pop-up window, like buttons
+
+		// Players
+		var dispText = Array();
+		var active = 0; // Default - may be changed in general_init
+		var dispQueue = { "speaker": Array(), "text" : Array(), "time" : Array() };
+
+		// Rooms
+		var currRoom = rName[0]; // Default - may be changed in general_init
+
+		// Animation
+		var animObj = Array();
+		var animX = Array();
+		var animY = Array();
+		var animSpeed = Array();
+		var animSkipped = Array();
+		// And variables that will let me toggle walking by keyboard
+		var keyGoalX = -1; var keyGoalY = -1;
+		var animating = false;	// During an animation, no further animations will begin.
+		var cutscene = true;	// During a cutscene, the player isn't allowed to click *anything*.
+		// It starts true and goes to false when everything is done loading.
+
+		// Inventory
+		var inv_top = 65;
+		var inv_left = 900;
+		var inv_spaces = 7;
+		var inv_size = 80;
+		var itemTaken = Array();	// Items that are in inventory & therefore no longer drawn on screen.
+		var bag = { 0 : Array(), 1 : Array(), 2 : Array() };
+		var bagCount = { 0 : Array(), 1 : Array(), 2 : Array() };
+		var activeItem = { 0: null, 1: null, 2: null };
+
+		// Objects
+		/*var itName = { 0 : "stick01" };
+		var itImg = { 0: "stick" };
+		var itX = { 0: 10
+		load_obj("stick01", "stick", 10, 500, false);*/
+
+		plzDo("general_init");
+
+
+		// ----- Drawing the screen -----
+
+		var bg = new Image();
+		bg.src = path + "images/screens/loading.png";
+		bg.onload = function() {
+			// Can''t use scheduleDraw, because we need to define scaling here
+			scaling = stage.getHeight() / bg.height;
+			var bgimg = new Kinetic.Image({
+				x: 0, y: 0, id: "bg_loading",
+				image: bg,
+				width: bg.width * scaling, height: stage.getHeight()
+			})
+			load.add(bgimg);
+			bgimg.setZIndex(SCENE_BG);
+			stage.add(load);
+
+			// We cannot do much of anything until the main stage is loaded,
+			// so everything else must be inside of this onload.
+
+			// Main menu
+			scheduleDraw(menu, 0, 0, "main_menu", path + "images/screens/main_menu.png", SCENE_BG + 1);
+			scheduleDraw(menu, 899, 0, "menu_side", path + "images/menus/sidebar.png", SIDEBAR_BG);
+			scheduleDraw(menu, 902, 0, "icon_play", path + "images/menus/icon_play.png", WINDOW_OBJ);
+			scheduleDraw(menu, 150, 350, "icon_save", path + "images/menus/icon_save.png", WINDOW_OBJ);
+			scheduleDraw(menu, 400, 350, "icon_load", path + "images/menus/icon_load.png", WINDOW_OBJ);
+			prep_savegames();
+			stage.add(menu);
+			menu.hide();
+
+			// Side bar
+			scheduleDraw(inv, 899, 0, "sidebar", path + "images/menus/sidebar.png", SIDEBAR_BG);
+			scheduleDraw(inv, inv_left, inv_top, "inv_active", path + "images/menus/inv_active.png", WINDOW_BG);
+			scheduleDraw(inv, 902, 0, "icon_back", path + "images/menus/icon_back.png", WINDOW_OBJ);
+			for (var ii = 0; ii < inv_spaces; ii++)
+			{
+				scheduleDraw(inv, inv_left, inv_top + ii * inv_size, "inv_slot_" + ii,
+					path + "images/menus/inv_space.png", WINDOW_BG);
+			}
+			$.each(invItems, function(k, ii) {
+				scheduleDraw(inv, inv_left, -999, ii, path + "images/objects/inv_" + ii + ".png", WINDOW_OBJ);
+			})
+			stage.add(inv);
+			inv.hide();
+
+			// Scenes
+			$.each(rName, function(k, r) {
+				scheduleDraw(main, 0, 0, "bg_" + r, path + "images/screens/" + rImg[k] + ".png", SCENE_BG);
+			})
+			//plzDo(rName[currRoom] + "_init");
+
+			// Players
+			var plW = 219; var plH = 350;
+			var animList = {};
+			animList = addAnimation(animList, "stand_F", plW, plH, 0, 0, 1);
+			animList = addAnimation(animList, "stand_L", plW, plH, 0, 1, 1);
+			animList = addAnimation(animList, "stand_B", plW, plH, 0, 2, 1);
+			animList = addAnimation(animList, "sit",     plW, plH, 0, 5, 1);
+			animList = addAnimation(animList, "walk_F",  plW, plH, 1, 0, 8);
+			animList = addAnimation(animList, "walk_B",  plW, plH, 2, 0, 8);
+			animList = addAnimation(animList, "walk_L",  plW, plH, 3, 0, 8);
+			$.each(plName, function(k, pl) {
+				scheduleSprite(main, 150 * (parseInt(k)+1), 220, pl, path + //_
+					"images/characters/" + parseCoreName(pl) + "/sprite.png", PLAYER, //_
+					animList, "stand_F", false)
+				scheduleDraw(vc, 0, 0, "coin_" + pl, path + //_
+					"images/menus/vc_" + parseCoreName(pl) + ".png", WINDOW_BG);
+			});
+			main.hide();
+			stage.add(main);
+
+			// Verb Coin
+			scheduleDraw(vc, 40, 40, "look", path + "images/menus/vc_look.png", WINDOW_OBJ);
+			scheduleDraw(vc, 110, 30, "handle", path + "images/menus/vc_handle.png", WINDOW_OBJ);
+			scheduleDraw(vc, 40, 110, "take", path + "images/menus/vc_take.png", WINDOW_OBJ);
+			scheduleDraw(vc, 110, 115, "talk", path + "images/menus/vc_talk.png", WINDOW_OBJ);
+			vc.hide();
+			stage.add(vc);
+
+
+		} // Background loaded
+	} // Modernizr check
+
+	// Once *everything* is loaded:
+	$(window).load(initScreens);
+
+	function initScreens()
+	{
+		// FIXME: Show Armor games / JIG logos
+		if (errMsg.length == 0)
+		{
+			setTimeout("checkLoaded()", 200); // FIXME: Show the load window for at least 2 seconds
+		}
+	}
+
+	function checkLoaded()
+	{
+		// Check if the critical items / last items are defined
+		if (jobs > 0 || player(active) === undefined || obj(vc, "talk") === undefined)
+		{
+			// Keep checking until this condition is met
+			setTimeout("checkLoaded()", 100);
+		}
+		else
+		{
+			// Text
+			$.each(plColour, function(k, c) {
+				dispText[parseInt(k)] = new Kinetic.Text({
+					x: 5, y: 610, width: 890, height: 40,
+					//align: "center",
+					text: "...", visible: false,
+					fontSize: plFSize[k],
+					//fontFamily: (k == NARRATOR ? "narrator" : parseCoreName(plName[k])),
+					textFill: plColour[k], textStroke: '#000', textStrokeWidth: 1
+				});
+				text.add(dispText[k]);
+			})
+			stage.add(text);
+
+			// Finish up some things that should now be loaded
+			obj(inv, "inv_active").hide();
+			fixColours();
+			showInventory();
+
+//			obj(main, "bg_loading" + r).hide();
+			$.each(rName, function(k, r) {
+				var bgid = obj(main, "bg_" + r);
+				if (parseInt(k) > 0)
+				{
+					bgid.moveDown();
+				}
+				else
+				{
+					var bgpath = bgid.attrs.image.src;
+					var bgimg = bgpath.substring(bgpath.lastIndexOf("/") + 1);
+					var wpath = "images/walk/" + bgimg;
+					//FIXME Put this back when walkables are working
+					//scheduleDraw(areas, 0, 0, "walkable", path + wpath, SCENE_BG);//,false, false);
+				}
+			});
+			stage.add(areas);
+			areas.moveToBottom();
+			stage.onFrame(doAnimations);
+			for (var i = 0; i < 9; i++)
+			{
+				obj(menu, "icon_ss_0" + i).hide();
+			}
+			menu.show();
+			//menu.draw();
+			//fixZIndexes(inv);
+			fixZIndexes(menu);
+			load.hide();
+
+			cutscene = false;
+		}
+	}
+
+
+	// ===== Functions ======================================================================================
+	// ----- Drawing ----------------------------------------------------------------------------------------
+	function doAnimations(frame)
+	{
+		var changed = false;
+		o = animObj.shift();
+		goalX = animX.shift();
+		goalY = animY.shift();
+		var speed = animSpeed.shift();
+		var distance = speed;
+		// If animSpeed is negative, then we are meant to skip some frames between each update
+		var skipping = false;
+		var skipped = animSkipped.shift();
+		if (distance < 0)
+		{
+			if (skipped != -distance)
+			{
+				skipped++;
+				skipping = true;
+				walkToXY(goalX, goalY, o, speed, skipped);
+			}
+			distance = 1;
+		}
+
+		if (o !== null)
+		{
+			if (goalX > 0 && goalY > 0)
+			{
+				if (!skipping)
+				{
+					var currPos = getPlayerPos(o);
+					diffX = (goalX - currPos[0]);
+					diffY = (goalY - currPos[1]);
+					dirX = (diffX > 0 ? 1 : -1);
+					dirY = (diffY > 0 ? 1 : -1);
+					diffX = Math.abs(diffX);
+					diffY = Math.abs(diffY);
+
+					if (diffX > 0 || diffY > 0)
+					{
+						// How far are we moving in each direction?
+						var percVert = Math.round(diffY * distance / (diffX + diffY), 0)
+						moveX = (distance - percVert);
+						moveY = percVert;
+
+						if (isPlayer(o.attrs.id))
+						{
+							// Determine what sort of animation to use
+							var walkType = "L"
+							if (percVert >= 4)		walkType = (dirY > 0 ? "F" : "B");
+							else					player(active).attrs.scale.x = -dirX;
+							o.setAnimation('walk_' + walkType);
+						}
+
+						// If we have less than that many pixels to go, then don''t go the whole way
+						if (diffX < moveX) moveX = diffX;
+						if (diffY < moveY) moveY = diffY;
+
+						var absX = currPos[0] + moveX * dirX;
+						var absY = currPos[1] + moveY * dirY;
+						//if (isPlayer(o.attrs.id))
+						//areas.moveToTop();areas.show();areas.draw();
+						/*if (getPixel(areas, absX, absY) < 225)
+						{
+							stopWalking();
+						} //FIXME: Strange things happen when this is in place.
+						else */setPlayerPos(o, absX, absY);
+						walkToXY(goalX, goalY, o, speed); // Keep going
+					}
+					else
+					{
+						stopWalking(o);
+					}
+				}
+			}
+		}
+		animating |= plzDo("extraAnimations");
+		if (animating) fixZIndexes();
+	}
+	function stopWalking(o)
+	{
+		animating = false;
+		if (isPlayer(o.attrs.id))
+		{
+			o.setAnimation('stand_F');
+			o.setIndex(0);
+		}
+		o.saveData();
+		// And remove from the queue
+		var tempQ = animObj;
+		$.each(tempQ, function(k, val)
+		{
+			compO = animObj.shift();
+			var aX = animX.shift();
+			var aY = animY.shift();
+			var aSp = animSpeed.shift();
+			var aSk = animSkipped.shift();
+			if (o != compO)
+			{
+				// Put them back
+				animObj.push(compO);
+				animX.push(aX);
+				animY.push(aY);
+				animSpeed.push(aSp);
+				animSkipped.push(aSk);
+			}
+		});
+	}
+	function getContext(s)
+	{
+		return document.getElementById(s).getContext("2d");
+	}
+	function clearCanvas(s)
+	{
+		var c = getElementById(s);
+		c.width = c.width;
+	}
+	function scheduleDraw(c, x, y, uid, src, z, vis, pix)
+	{
+		// The "just show if already loaded" is NOT foolproof.
+		// It will only work if the image in question is actually loaded (and not just scheduled).
+		//console.log("Drawing " + src);
+		if (obj(c, uid) === null)
+		{
+			jobs++;
+			vis = nvl(vis, true);
+			pix = nvl(pix, true);
+			var dT = (pix ? 'pixel' : 'path');
+			var img = new Image();
+			img.onload = function() {
+				var image = new Kinetic.Image({
+					x: x, y: y,
+					id: uid,
+					detectionType: 'pixel',
+					visible: vis,
+					image: img,
+					width: img.width * scaling, height: img.height * scaling
+				});
+				image.on("click", objClick);
+				image.on("mouseover", objHover);
+				c.add(image);
+				image.setZIndex(z);
+				if (pix) image.saveData();
+				c.draw();
+				jobs--;
+			}
+			img.src = src;
+		}
+		else
+		{
+			obj(c, uid).show();
+		}
+	}
+	function scheduleSprite(c, x, y, uid, src, z, animList, startFrame, vis)
+	{
+		if (obj(c, uid) === null)
+		{
+			jobs++;
+			vis = nvl(vis, true);
+			var img = new Image();
+			img.onload = function() {
+				var image = new Kinetic.Sprite({
+					x: x, y: y,
+					id: uid,
+					detectionType: 'pixel',
+					visible: vis,
+					image: img,
+					animation: startFrame, animations: animList, frameRate: 5
+				})
+				image.on("click", objClick);
+				image.on("mouseover", objHover);
+				c.add(image);
+				image.setZIndex(z);
+				image.saveData();
+				image.start()
+				c.draw()
+				jobs--;
+			}
+			img.src = src;
+		}
+		else
+		{
+			obj(c, uid).show();
+		}
+	}
+	function saveImg(c, uid)
+	{
+		obj(c, uid).saveData();
+	}
+	function addAnimation(animList, title, w, h, row, startcol, numcols)
+	{
+		var animFrames = Array();
+		for (var i = startcol; i < startcol + numcols; i++)
+		{
+			var currFrame = { x: i * w, y: row * h, width: w, height: h };
+			animFrames.push(currFrame);
+		}
+		animList[title] = animFrames;
+		return animList;
+	}
+	function fixZIndexes(canvas)
+	{
+		var c = nvl(canvas, main);
+		// Go through all objects and players and sort by their lowest point
+		var objArr = Array();
+		var posArr = Array();
+		var placed = 0;
+		$.each(c.children, function(k, o)
+		{
+			//if (!isBG(o.attrs.id))
+			{
+				var btmID = o.attrs.id;
+				var bottom = Math.round(getBaseZ(c, btmID) + getBottomForZ(c, btmID));
+				var arrLoc = 0;
+				$.each(posArr, function(k2, compVal)
+				{
+					if (bottom > compVal) arrLoc++
+					else
+					{
+						posArr[arrLoc] = bottom;
+						bottom = compVal;
+						var switchID = objArr[k2];
+						objArr[arrLoc] = btmID;
+						btmID = switchID;
+						arrLoc++
+					}
+				})
+				posArr[arrLoc] = bottom;
+				objArr[arrLoc] = btmID;
+				placed++;
+			}
+		});
+		$.each(objArr, function(k, objID)
+		{
+			obj(c, objID).setZIndex(k);
+		});
+		c.draw();
+	}
+	function getPixel(c, x, y)
+	{
+		var ctx = c.getContext("2d");
+		var pixelList = ctx.getImageData(x, y, 1, 1).data;
+		return pixelList[0];
+		//return new Color([pixelList[0], pixelList[1], pixelList[2]]);
+	}
+	function getW(obj)
+	{
+		if (obj.shapeType == "Image")	return obj.getWidth();
+		else // Sprite
+		{
+			var oa = obj.attrs;
+			return oa.scale.x * oa.animations[oa.animation][oa.index].width;
+		}
+	}
+	function getH(obj)
+	{
+		//if (isPlayer(obj.attrs.id))		return 350;
+		//else
+		//{
+		if (obj.shapeType == "Image")	return obj.getHeight();
+		else // Sprite
+		{
+			var oa = obj.attrs;
+			return oa.scale.y * oa.animations[oa.animation][oa.index].height;
+		}
+		//}
+	}
+	function getScreenW()
+	{
+		return obj(load, "bg_loading").getWidth();
+	}
+	function getScreenH()
+	{
+		return obj(load, "bg_loading").getHeight();
+	}
+	var displaying = false;
+	function Display(s, time)
+	{
+   		time = typeof time !== 'undefined' ? time : 4000;
+   		var len = dispQueue["speaker"].length;
+		dispQueue["speaker"][len] = active;
+		dispQueue["text"][len] = s;
+		dispQueue["time"][len] = time;
+		setTimeout(checkDisplay, 100);
+	}
+	function checkDisplay()
+	{
+		if (displaying) setTimeout(checkDisplay, 100);
+		else
+		{
+			clearText(); // No one is talking, but we might have mouse hover text.
+			var len = dispQueue["speaker"].length;
+			if (len > 0)
+			{
+				displaying = true;
+				var speaker = dispQueue["speaker"][0];
+				var s = dispQueue["text"][0];
+				var time = dispQueue["time"][0];
+				dispText[speaker].attrs.text = s;
+				dispText[speaker].attrs.visible = true;
+				text.draw();
+				var i = 0;
+				while (i < len)
+				{
+					dispQueue["speaker"][i] = dispQueue["speaker"][i+1];
+					dispQueue["text"][i] = dispQueue["text"][i+1];
+					dispQueue["time"][i] = dispQueue["time"][i+1];
+					i++;
+				}
+   				dispQueue["speaker"].length--; // Only the first is strictly necessary,
+   				dispQueue["text"].length--;    // but let''s keep it cleaner and less error-prone.
+   				dispQueue["time"].length--;
+				setTimeout(clearDisplay, time)
+			}
+		}
+	}
+	function clearText()
+	{
+		$.each(plColour, function(k, pl) {
+			dispText[k].attrs.visible = false;
+		})
+		text.draw();
+		//displaying = false;
+	}
+	function clearDisplay()
+	{
+		clearText();
+		displaying = false;
+	}
+	function Wait(n)
+	{
+		Display("", nvl(n, 1000));
+	}
+	function doAfterStuff(f)
+	{
+		//http://www.makemineatriple.com/2007/10/
+		//  passing-parameters-to-a-function-called-with-settimeout
+		if (isDisplaying() || animating)
+		{
+			setTimeout(function() { doAfterStuff(f); f = null; }, 100);
+		}
+		else
+		{
+			plzDo(f);
+		}
+	}
+	// Tells you if anyone is still talking
+	function isDisplaying()
+	{
+		return (displaying || dispQueue["text"].length > 0);
+	}
+	/*function interruptDisplay()
+	{
+		dispQueue["text"][i] = 0;
+	}*/
+	function SayAsID(pl, s, time)
+	{
+		var saved = active;
+		active = pl;
+		Display(s, nvl(time, 4000));
+		active = saved;
+	}
+	function SayAsName(pl, s, time)
+	{
+		var saved = setActiveAsName(pl);
+		Display(s, nvl(time, 4000));
+		active = saved;
+	}
+	function Narrate(s)
+	{
+		var saved = active;
+		active = NARRATOR;
+		Display(s);
+		active = saved;
+	}
+	function fixColours()
+	{
+		setTimeout(fixCursorColour, 10); // See explanation in function.
+		$.each(plName, function(k, c) {
+			currVC = obj(vc, "coin_" + c)
+			if (active == k) currVC.show(); else currVC.hide();
+		})
+		vc.draw()
+	}
+	function fixCursorColour()
+	{
+		// Has to be on timeout?  (see http://stackoverflow.com/a/5972594)  How odd.  But it works now.
+		var cpath = "images/menus/cursor_" + parseCoreName(plName[active]);
+		$("#screen").css("cursor", "url('" + path + cpath + ".png'), default");
+	}
+	// ----- Interaction ------------------------------------------------------------------------------------
+	function getCursor(e)
+	{
+		// Thanks to http://diveintohtml5.info/canvas.html
+		var x;
+		var y;
+		if (e.pageX != undefined && e.pageY != undefined) {
+			x = e.pageX;
+			y = e.pageY;
+		}
+		else {
+			x = e.clientX + document.body.scrollLeft +
+				document.documentElement.scrollLeft;
+			y = e.clientY + document.body.scrollTop +
+				document.documentElement.scrollTop;
+		}
+		x -= stage.attrs.container.offsetLeft;
+		y -= stage.attrs.container.offsetTop;
+		return [x, y];
+	}
+	function canDo(s)
+	{
+		return (typeof window[s] == 'function');
+	}
+	function plzDo(s)
+	{
+		if (canDo(s)) return window[s]();
+		else return null;
+	}
+	function nvl(o, v)
+	{
+		return typeof o !== 'undefined' ? o : v;
+	}
+	function player(n)
+	{
+		return main.get("#" + plName[n])[0];
+	}
+	function obj(c, s)
+	{
+		var o;
+		try
+		{
+			o = c.get("#" + s)[0];
+			if (typeof o === "undefined") o = null;
+		}
+		catch (err) { o = null; }
+		return o;
+	}
+	var prevCursor;
+	function startCutscene()
+	{
+		// FIXME: save the cursor and set to Waiting
+		cutscene = true;
+	}
+	function stopCutscene()
+	{
+		// But not while we are displaying cutscene dialogue
+		if (displaying || dispQueue["text"].length > 0) setTimeout(stopCutscene, 100);
+		else
+		{
+			// FIXME: restore the cursor
+			cutscene = false;
+		}
+	}
+	function objHover(e)
+	{
+		if (!cutscene && !displaying)
+		{
+			var target = e.shape;
+			var layer = target.parent;
+			var tID = target.attrs.id;
+			var showing = false;
+			var showText = plzDo(parseCoreName(tID) + "_describe");
+			if (showText !== null) showing = true;
+			else
+			{
+				if (isButton(tID)) showing = true;
+				if (layer == vc)
+				{
+					if (tID.indexOf("coin_") < 0)
+					{
+						showing = true;
+						var pre = "";
+						if (tID == "look") pre = "Look at ";
+						if (tID == "talk") pre = "Talk to ";
+						if (tID == "take") pre = "Take ";
+						if (tID == "handle") pre = "Interact with ";
+						showText = pre + describeObject(vcTarget);
+					}
+				}
+				if (layer == main)
+				{
+					if (!isBG(tID)) showing = true;
+					if (!isArrow(tID) && activeItem[active] != null)
+					{
+						showText = "Use " + upper(activeItem[active]) + " on " + //_
+							upper(parseCoreName(tID));
+					}
+				}
+				if (layer == inv)
+				{
+					showing = true;
+					if (isPartOfMenu(tID))
+					{
+						var slot = whichSlotClicked(tID);
+						if (slot < 0) showing = false;
+						else showText = upper(bag[active][slot]);
+					}
+				}
+				if (layer == menu)
+				{
+					if (isSaveSlot(tID))
+					{
+						showing = true;
+						var saveme = prefix;
+						prefix = "s" + tID.substring(8) + "_";
+						showText = loadVar("date_string");
+						prefix = saveme;
+					}
+				}
+			}
+			if (showing && showText == null) showText = upper(parseCoreName(tID));
+			dispText[active].attrs.text = showText;
+			dispText[active].attrs.visible = showing;
+			text.draw();
+		}
+	}
+	function objClick(e)
+	{
+		if (cutscene || displaying) clearDisplay(); // Click to skip text
+		else
+		{
+			//vc.hide(); vc.draw();
+			closeVerbcoin();
+			var target = e.shape;
+			if (e.which == 1)
+			{
+				var layer = target.parent;
+				var tID = target.attrs.id;
+				if (layer == menu)
+				{
+					if (isButton(tID)) clickButton(parseCoreName(tID));
+				}
+				if (layer == main)
+				{
+					if (isArrow(tID)) clickButton(tID);
+					else
+					{
+						// Are we clicking with an item, or just clicking?
+						if (activeItem[active] == null) openVerbcoin(e);
+						else
+						{
+							// Re-create plzDo in order to send a parameter
+							var func = "use_" + activeItem[active];
+							if (canDo(func)) window[func](tID);
+						}
+					}
+				}
+				if (layer == inv)
+				{
+					if (isPartOfMenu(tID))
+					{
+						var slot = whichSlotClicked(tID);
+						if (slot >= 0) clickInventoryItem(bag[active][slot]);
+					}
+					else if (isButton(tID))
+					{
+						clickButton(parseCoreName(tID));
+					}
+					else
+					{
+						clickInventoryItem(tID);
+					}
+				}
+			}
+			if (e.which == 2) switchPlayers();
+			if (e.which == 3) if (!animating) walkTo(e);
+		}
+	}
+	function wheel(e)
+	{
+		if (!cutscene)
+		{
+			var dir = (e.wheelDelta > 0 ? -1 : 1);
+			switchPlayers(dir);
+		}
+	}
+	function keyboard(e)
+	{
+		var swallowing = false;
+		var key = e.keyCode;
+		if (!cutscene)
+		{
+			if (e.ctrlKey)
+			{
+				// Ctrl-C to save to last file, or Ctrl-V to load from last file
+				if (key == 67) { saveGame(lastSlot); swallowing = true; }
+				if (key == 86) { loadGame(lastSlot); swallowing = true; }
+			}
+			else
+			{
+				// WASD, Toggles walking on or off rather than needing to be held down.
+				var plX = getPlayerPos(player(active))[0];
+				var plY = getPlayerPos(player(active))[1];
+				keyGoalX = plX; keyGoalY = plY;
+				if (key == 87)	keyGoalY = 25;
+				if (key == 83)	keyGoalY = 625;
+				if (key == 65)	keyGoalX = 75;
+				if (key == 68)	keyGoalX = 745;
+				if (keyGoalX == plX && keyGoalY == plY)
+				{
+					stopWalking(player(active));
+				}
+				else
+				{
+					walkToXY(keyGoalX, keyGoalY);
+				}
+				// E and Q switch players.
+				if (key == 81) switchPlayers(-1);
+				if (key == 69) switchPlayers(1);
+			}
+			//console.log(key + " -> " + e.ctrlKey + String.fromCharCode(e.keyCode));
+		}
+		// This one can happen during a cutscene:
+		if (key == 32) clearDisplay(); // Space to skip text
+		return (!swallowing);
+	}
+	var vcTarget = "";
+	function describeObject(tID)
+	{
+		var pre = (isPlayer(tID) ? "" : "the ");
+		var t = plzDo(parseCoreName(tID) + "_describe");
+		if (t === null) t = upper(parseCoreName(tID));
+		return pre + t;
+	}
+	function openVerbcoin(e)
+	{
+		var coinback = obj(vc, "coin_" + plName[active]);
+		var half = getW(coinback) / 2;
+		var clickX = getCursor(e)[0];
+		var clickY = getCursor(e)[1];
+		var newX = clickX - half;
+		var newY = clickY - half;
+		var tooFarR = clickX + half - stage.getWidth();
+		var tooFarL = half - clickX;
+		var tooFarU = clickY + half - stage.getHeight();
+		var tooFarD = half - clickY;
+		if (tooFarR > 0) newX -= tooFarR;
+		if (tooFarL > 0) newX += tooFarL;
+		if (tooFarU > 0) newY -= tooFarU;
+		if (tooFarD > 0) newY += tooFarD;
+		vc.setPosition(newX, newY);
+		coinback.show();
+		coinback.moveToBottom();
+
+		var target = e.shape.attrs.id;
+		vcTarget = target;
+		var foundany = false;
+		$.each(vcName, function(k, s) {
+			var funcName = target + "_" + s;
+			funcName = parseCoreName(funcName);
+			var button = obj(vc, s);
+			if (canDo(funcName))
+			{
+				button.show();
+				foundany = true;
+			}
+			else button.hide();
+			saveImg(vc, s); // Because they have just become visible, they wouldn''t otherwise be clickable.
+			button.off("click");
+			button.on("click", function() { plzDo(funcName); closeVerbcoin(); });
+		});
+		saveImg(vc, coinback.attrs.id); // This too - so that clicking twice can turn it off
+		if (foundany)
+		{
+			vc.show();
+			vc.draw();
+		}
+	}
+	function closeVerbcoin()
+	{
+		var coinback = obj(vc, "coin_" + plName[active]);
+		coinback.hide();
+		$.each(vcName, function(k, s) {
+			var button = obj(vc, s);
+			button.hide();
+			saveImg(vc, s); // Wouldn't want them clicking invisible objects.
+		})
+		saveImg(vc, coinback.attrs.id);
+		vc.draw();
+	}
+	function openMenu()
+	{
+		menu.moveToTop();
+	}
+	function walkTo(e, o)
+	{
+		walkToXY(getCursor(e)[0], getCursor(e)[1], nvl(o, player(active)));
+	}
+	function walkToXY(x, y, o, sp, sk)
+	{
+		animating = true;
+		animObj.push(nvl(o, player(active)));
+		animX.push(x);
+		animY.push(y);
+		animSpeed.push(nvl(sp, 5));
+		animSkipped.push(nvl(sk, 0));
+	}
+	function centerObj(o)
+	{
+		var w = getW(o);
+		o.setX((getScreenW() - w) / 2);
+	}
+	function scaleObj(o, scale_top, scale_bottom)
+	{
+		var scale_pos = (o.getY() + getH(o)) / getScreenH();
+		scaling = scale_top + (scale_bottom - scale_top) * scale_pos;
+		//console.log(scaling);
+		o.attrs.scale.x = scaling;
+		o.attrs.scale.y = scaling;
+	}
+	function switchPlayers(dir)
+	{
+		var st = (active + nvl(dir, 1)) % 3;
+		if (st < 0) st += 3;
+		switchPlayerTo(st);
+	}
+	function switchPlayerTo(n)
+	{
+		keyGoalX = -1; keyGoalY = -1;
+		clearDisplay();//dispText[active].attrs.visible = false;
+		active = n;
+		fixColours();
+		showInventory();
+		closeVerbcoin();
+		//FIXME: if (player.Room == 2) MultiChars.Trailing();
+	}
+	function setActiveAsName(pl)
+	{
+		var saved = active;
+		var failsafe = 0;
+		while (pl != plName[active] && failsafe < 20)
+		{
+			active = (active + 1) % 3;
+			failsafe++;
+		}
+		if (failsafe == 20) active = saved;
+		return saved;
+	}
+	function getPlayerPos(pl)
+	{
+		return [pl.getX() + getW(pl) / 2,
+			pl.getY() + getH(pl)];
+	}
+	function setPlayerPos(pl, x, y)
+	{
+		// Bottom centre
+		pl.setX(x - getW(pl) / 2);
+		pl.setY(y - getH(pl));
+		main.draw();
+	}
+	// ----- Screens & Inventory ----------------------------------------------------------------------------
+	function load_obj(o, img, x, y, nav)
+	{
+		// Is the object still in the room?  Check save state.
+		if (!isTaken(o))
+		{
+			// If object can be picked up, there will be an obj_take function.
+			// If it already exists, it will simply be made visible.
+			scheduleDraw(main, x, y, o, path + "images/objects/" + img + ".png", OBJECT);
+		}
+	}
+	function load_decoration(o, img, x, y)
+	{
+		// This function is for objects that will never be picked up, so we can
+		// save processing, save-space, etc by not worrying about their state.
+		// * One example of an object like this is a bookcase: you want the user to be able
+		//   to look at it, but they will never pick it up or move it.
+		// * Another example is a navigational object, like an arrow.  On an object like that,
+		//   you would provide a click and maybe describe event, but no verbcoin events.
+		scheduleDraw(main, x, y, o, path + "images/objects/" + img + ".png", OBJECT);
+	}
+	function clearOldRoom()
+	{
+		$.each(main.children, function(k, o)
+		{
+			var uid = o.attrs.id;
+			// FIXME: Something about this isn't totally doing its job
+			if (!isPlayer(uid))
+			{
+				o.hide();
+				o.saveData();
+			}
+			//if (!isPlayer(uid) && !isBG(uid)) o.hide();
+			//if (isBG(uid)) o.setZIndex(SCENE_BG);
+		});
+		main.draw();
+	}
+	function startRoomLoad(bID)
+	{
+		clearOldRoom();
+		loadBG(bID);
+	}
+	function finishRoomLoad(bID)
+	{
+		// All the images need to be loaded before I can do these things
+		if (jobs > 0)
+		{
+			setTimeout(function() { finishRoomLoad(bID); bID = null; }, 100);
+		}
+		else
+		{
+			plzDo(bID + "_loaded");
+			fixZIndexes();
+		}
+	}
+	function loadBG(s)
+	{
+		var bg = obj(main, s);
+		if (bg === null)
+		{
+			console.log("ERR: Background '" + s + "' does not exist or has not finished loading.");
+		}
+		else
+		{
+			//FIXME Put this back when walkables are working
+			//obj(areas, "walkable").src = bg.attrs.image.src.replace("screens/", "walk/");
+			bg.show();
+		}
+	}
+	// This is the function that is meant to be used:
+	function loadRoom(bID)
+	{
+		startRoomLoad("bg_" + bID);
+		plzDo(bID + "_init");
+		finishRoomLoad(bID);
+		currRoom = bID; // Last, just in case we want to check what the "previous" room was.
+	}
+	function markAsTaken(o)
+	{
+		itemTaken[itemTaken.length] = o;
+	}
+	function isTaken(o)
+	{
+		var found = false;
+		// Check if it matches any of the items in the "taken" list
+		$.each(itemTaken, function(k, oT)
+		{
+			found |= (o == oT);
+		})
+		return found;
+	}
+	function countInventory(o, pl)
+	{
+   		var saved = active;
+   		var switching = (typeof pl !== 'undefined')
+   		if (switching) active = pl;
+		var currBag = bag[active];
+		var found = false;
+		var c = 0;
+		$.each(currBag, function(k, oBag)
+		{
+			found |= (o == oBag);
+			if (o == oBag) c += bagCount[active][k];
+		});
+		if (switching) active = saved;
+		return c;
+	}
+	function addToInventory(o, pl)
+	{
+   		var saved = active;
+   		var switching = (typeof pl !== 'undefined')
+   		if (switching) active = pl;
+		var currBag = bag[active];
+		// If it''s already there, increment count instead of adding
+		var found = false;
+		$.each(currBag, function(k, oBag)
+		{
+			found |= (o == oBag);
+			if (o == oBag) // This is it
+			{
+				bagCount[active][k] += 1;
+			}
+		});
+		if (!found)
+		{
+			bagCount[active][currBag.length] = 1; // Must be before that length is increased, below...
+			currBag[currBag.length] = o;
+		}
+		if (switching) active = saved;
+		else showInventory();
+	}
+	function removeFromInventory(o, pl)
+	{
+   		var saved = active;
+   		var switching = (typeof pl !== 'undefined')
+   		if (switching) active = pl;
+		var currBag = bag[active];
+		var found = false;
+		var clearing = false;
+		$.each(currBag, function(k, oBag)
+		{
+			found |= (o == oBag);
+			// Decrease the number.  Clear out if necessary.
+			if (o == oBag) // This is it
+			{
+				bagCount[active][k] -= 1;
+				if (bagCount[active][k] <= 0) clearing = true;
+			}
+			// FIXME: This hasn''t been tested for more than 1 item.
+			if (clearing) currBag[k] = currBag[parseInt(k) + 1];
+		});
+		if (clearing)
+		{
+			currBag.length--;
+			bagCount[active].length--;
+		}
+		if (switching) active = saved;
+		else showInventory();
+	}
+	function clearOffMain(o)
+	{
+		obj(main, o).hide();
+		main.draw();
+	}
+	function whichSlotClicked(s)
+	{
+		if (isInvSlot(s))
+		{
+			return parseInt(s.substring(9));
+		}
+		else
+		{
+			if (s == "inv_active")
+			{
+				return invSlotFromID(activeItem[active]);
+			}
+			else return -1;
+		}
+	}
+	function isPartOfMenu(s)
+	{
+		return (s == "sidebar") || (s.indexOf("inv_") >= 0)
+	}
+	function isInvSlot(s)
+	{
+		return (s.indexOf("inv_slot_") >= 0);
+	}
+	function isSaveSlot(s)
+	{
+		return (s.indexOf("icon_ss_") >= 0);
+	}
+	function isArrow(s)
+	{
+		return (s.indexOf("go_") >= 0)
+	}
+	function isButton(s)
+	{
+		return (s.indexOf("icon_") >= 0)
+	}
+	function isBG(s)
+	{
+		return ((s == "main_menu") || s.indexOf("bg_") >= 0)
+	}
+	function isPlayer(s)
+	{
+		return (s.indexOf("pl_") >= 0)
+	}
+	function getBottomForZ(c, s)
+	{
+		if (isBG(s) || (s == "sidebar") || (s == "menu_side")) // or arrow?
+			return 0;
+		else
+			return obj(c, s).getY() + getH(obj(c, s));
+	}
+	function getBaseZ(c, s)
+	{
+		var base = 1;
+		if (s == "sidebar")			base = SCENE_BG;
+		else if (s == "menu_side")	base = SCENE_BG;
+		else if (s == "main_menu")	base = SCENE_BG;
+		else if (isBG(s))			base = SCENE_BG;
+		else if (isPlayer(s))		base = PLAYER;
+		else if (isArrow(s))		base = WINDOW_OBJ;
+		else if (isPartOfMenu(s))	base = WINDOW_BG;
+		else if (isButton(s))		base = WINDOW_OBJ;
+		else
+		{
+			if (c == inv)			base = WINDOW_OBJ;
+			else					base = OBJECT;
+		}
+		return (2000-base);
+	}
+	function parseCoreName(s)
+	{
+		var cut = 0;
+		if (isBG(s)) cut = 3;
+		if (isArrow(s)) cut = 3;
+		if (isPlayer(s)) cut = 3;
+		if (isButton(s)) cut = 5;
+		return s.substring(cut);
+	}
+	function upper(s)
+	{
+		var nextUpper = true;
+		var out = "";
+		for (i in s)
+		{
+			var letter = s[i];
+			out += (nextUpper ? letter.toUpperCase() : letter);
+			nextUpper = (letter == " ");
+		}
+		return out;
+	}
+	function showInventory()
+	{
+		$.each(inv.children, function(k, o)
+		{
+			var iID = o.attrs.id;
+			if (!isPartOfMenu(iID) && !isArrow(iID) && !isButton(iID)) o.hide();
+		});
+		$.each(bag[active], function (k, o)
+		{
+			var item = obj(inv, o);
+			item.setY(inv_top + inv_size * parseInt(k));
+			item.show();
+			item.saveData();
+		});
+		inv.draw();
+		inv.moveToTop();
+	}
+	function clickButton(tID)
+	{
+		plzDo(tID + "_click");
+	}
+	function clickInventoryItem(tID)
+	{
+		// Toggle whether this item is active or not
+		if (activeItem[active] != null)
+		{
+			var oldSlot = invSlotFromID(activeItem[active]);
+			obj(inv, "inv_slot_" + oldSlot).show();
+		}
+		if (activeItem[active] == tID)
+		{
+			activeItem[active] = null;
+			obj(inv, "inv_active").hide();
+		}
+		else
+		{
+			var newSlot = invSlotFromID(tID);
+			activeItem[active] = tID;
+			obj(inv, "inv_slot_" + newSlot).hide();
+			obj(inv, "inv_active").setY(inv_top + inv_size * newSlot);
+			obj(inv, "inv_active").show();
+		}
+		obj(inv, "inv_active").saveData();
+		inv.draw();
+	}
+	function invSlotFromID(uid)
+	{
+		var o = obj(inv, uid);
+		var slot = (o.getY() - inv_top) / inv_size;
+		return slot;
+	}
+	function play_click()
+	{
+		menu.hide();
+		main.show();
+		main.draw();
+		inv.show();
+		fixZIndexes(inv);
+		stage.start();
+		loadRoom(currRoom);
+		//fixZIndexes();
+		// And used as a cancel for save/load:
+		for (var i = 0; i < 9; i++)
+		{
+			obj(menu, "icon_ss_0" + i).hide();
+		}
+		obj(menu, "icon_load").show();
+		obj(menu, "icon_save").show();
+		saveload = "";
+	}
+	function back_click()
+	{
+		// FIXME: Don''t allow saving while "animating" or "displaying" (at least not "cutscene")
+		main.hide();
+		inv.hide();
+		inv.draw();
+		for (var i = 0; i < 9; i++)
+		{
+			obj(menu, "icon_ss_0" + i).hide();
+		}
+		menu.show();
+		menu.draw();
+		stage.stop();
+		fixZIndexes(menu);
+	}
+
+	// ----- Storage ----------------------------------------------------------------------------------------
+	var saveload = "";
+	function load_click()
+	{
+		saveload = "load";
+		show_savegames();
+	}
+	function save_click()
+	{
+		saveload = "save";
+		show_savegames();
+	}
+	function prep_savegames()
+	{
+		for (var i = 0; i < 9; i++)
+		{
+			prefix = "s0" + i + "_";
+			var ss = loadVar("screenshot");
+			ss = nvl(ss, path + "images/menus/inv_space.png");
+			var shift_x = 0;
+			var shift_y = 0;
+			if (ss.length > 100)
+			{
+				shift_x = 7;
+				shift_y = 11;
+			}
+			scheduleDraw(menu, 255 + (i % 3) * 130 + shift_x,
+				250 + Math.floor(i / 3) * 125 + shift_y,
+				"icon_ss_0" + i, ss, WINDOW_BG);
+		}
+	}
+	function show_savegames()
+	{
+		obj(menu, "icon_load").hide();
+		obj(menu, "icon_save").hide();
+		for (var i = 0; i < 9; i++)
+		{
+			var sg = obj(menu, "icon_ss_0" + i);
+			sg.setZIndex(WINDOW_BG);
+			sg.show();
+			sg.saveData();
+		}
+		// FIXME: Show OK or cancel
+		menu.draw();
+		fixZIndexes(menu);
+	}
+	function ss_00_click() { saveOrLoad(0); }
+	function ss_01_click() { saveOrLoad(1); }
+	function ss_02_click() { saveOrLoad(2); }
+	function ss_03_click() { saveOrLoad(3); }
+	function ss_04_click() { saveOrLoad(4); }
+	function ss_05_click() { saveOrLoad(5); }
+	function ss_06_click() { saveOrLoad(6); }
+	function ss_07_click() { saveOrLoad(7); }
+	function ss_08_click() { saveOrLoad(8); }
+	function ss_09_click() { saveOrLoad(9); }
+	function saveOrLoad(n)
+	{
+		if (saveload == "save")
+		{
+			play_click();
+			saveGame(n);
+		}
+		if (saveload == "load")
+		{
+			//play_click(); // FIXME: Put this back in temporarily in order to
+			// see why clearOldRoom isn't working.  Then you can remove it again.
+			loadGame(n);
+		}
+	}
+	var prefix;
+	function saveGame(n)
+	{
+		localStorage["lastSlot"] = n;
+		// FIXME: Don''t allow saving while "animating" or "displaying" (at least not "cutscene")
+		prefix = "s0" + n + "_";
+		// General
+		saveVar("date_string", grabDate());
+		saveVar("active", active);
+		saveVar("currRoom", currRoom);
+		//Items
+		saveArray("itemTaken", itemTaken);
+		$.each(plName, function(k, v)
+		{
+			saveArray("bag[" + k + "]", bag[k]);
+			saveArray("bagCount[" + k + "]", bagCount[k]);
+			saveVar("activeItem[" + k + "]", activeItem[k]);
+			saveVar("plX[" + k + "]", getPlayerPos(player(k))[0]);
+			saveVar("plY[" + k + "]", getPlayerPos(player(k))[1]);
+		});
+		saveVar("goalX", goalX);
+		saveVar("goalY", goalY);
+		// Game-specific saving, if necessary.
+		plzDo("extraSaving");
+		// And finally, a screenshot - because why not?
+		var ss = Canvas2Image.saveAsPNG(main.canvas, true, 110, 83);
+		var saveTo = obj(menu, "icon_ss_0" + n);
+		saveTo.attrs.image.src = ss.src;
+		saveTo.setPosition(saveTo.attrs.x + 7, saveTo.attrs.y + 11);
+		saveTo.saveData();
+		menu.draw();
+		saveVar("screenshot", ss.src);
+		Narrate("Saved to slot " + (n+1) + ".");
+	}
+
+	function loadGame(n)
+	{
+		localStorage["lastSlot"] = n;
+		prefix = "s0" + n + "_";
+		// General
+		active = loadInt("active");
+		currRoom = loadVar("currRoom");
+		// Items
+		var i;
+		itemTaken.length = loadInt("itemTaken.length");
+		for (i = 0; i < itemTaken.length; i++)
+		{
+			itemTaken[i] = loadVar("itemTaken[" + i + "]");
+		}
+		$.each(plName, function(k, v)
+		{
+			var pl = obj(main, v);
+			pl.attrs.visible = true;
+			pl.setAnimation('stand_F');
+			var invLen = loadInt("bag[" + k + "].length");
+			bag[k].length = invLen;
+			bagCount[k].length = invLen;
+			for (i = 0; i < invLen; i++)
+			{
+				bag[k][i] = loadVar("bag[" + k + "][" + i + "]");
+				bagCount[k][i] = loadInt("bagCount[" + k + "][" + i + "]");
+			}
+			activeItem[k] = loadVar("activeItem[" + k + "]");
+			setPlayerPos(player(k), loadInt("plX[" + k + "]"), loadInt("plY[" + k + "]"));
+		});
+		goalX = loadInt("goalX");
+		goalY = loadInt("goalY");
+		plzDo("extraLoading");
+
+		// Now is when the real work begins!
+		fixColours();
+		showInventory();
+
+		play_click();
+		Narrate("Loaded from slot " + (n+1) + ".");
+	}
+	// Arbitrary, human-readable format - this is used ONLY for describing save slots
+	function grabDate()
+	{
+		var now = new Date()
+		var h = now.getHours();
+		var mi = now.getMinutes();
+		return (now.toDateString() + ", " + (h == 0 ? "12" : h) + ":" + //_
+			(mi < 10 ? "0" : "") + mi + " " + (h < 12 ? "am" : "pm"));
+	}
+	function saveVar(vName, vVal)
+	{
+		localStorage[prefix + vName] = vVal;
+	}
+	function saveArray(aName, arr)
+	{
+		saveVar(aName + ".length", arr.length);
+		$.each(arr, function(k, v)
+		{
+			saveVar(aName + "[" + k + "]", v);
+		});
+	}
+	function loadVar(vName)
+	{
+		var v = localStorage[prefix + vName];
+		return (v == "null" ? null : v);
+	}
+	function loadInt(vName)
+	{
+		return parseInt(loadVar(vName));
+	}
+	function loadBool(vName)
+	{
+		return (loadVar(vName) == "true");
+	}
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,4 @@
+"ID","Signal","Menu_Path","Menu_Filename","Menu_Extension","Columns","Rows","Slot_Start_X","Slot_Start_Y","Slot_Path","Slot_Filename_Active","Slot_Filename_Inactive","Slot_Extension","Show_Labels","Font_Path","Font_Filename","Font_Extension","Font_Size"
+"DEFAULT",,"images/menu/",,".png",,,,,"images/menu/",,,".png",0,,,,
+"inventory","menu_inventory",,"inventory",,3,4,46.00%,24.00%,,"inv_active","inv_space",,,,,,
+"savegames","menu_savegames",,"inventory",,3,4,46.00%,24.00%,,"inv_active","inv_space",,,,,,

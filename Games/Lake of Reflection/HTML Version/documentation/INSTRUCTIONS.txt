@@ -1,0 +1,46 @@
+Instructions
+
+This game is designed to be re-usable.  At least, I have made an effort to separate the game from the engine.  I am hoping that a person could take my code and, without too much effort or confusion, make their own adventure game.
+
+1. The main file (index.htm)
+
+
+
+1. The main file (index.htm)
+...................................................................................................
+
+This file contains all the preparation code which loads images & other resources, sets up variables and arrays, and sets up the structure for the verbcoins and inventory.  It also contains all the functions which I consider to belong to the engine.  If you are not planning on customizing the interface *structure* in any way, then you should not need to touch any of these function.  There are a few functions that you will want to be familiar with, though.  I'll talk about those again later, in section (FIXME).
+
+What you will need to change is the arrays in the Preparation portion.  You'll see things like this:
+
+// Rooms
+var rName = { 0 : "clearing01", 1 : "clearing02" };
+var rImg = { 0 : "forest_clearing", 1 : "forest_clearing" };
+var currRoom = 0;
+
+I use these arrays for a variety of things, but in most cases (the exception being the player list) you will want to make sure there are the same number of each kind.  So within Rooms, if you have 8 rooms then there will be 8 values in rName and 8 values in rImg.  rName will be a unique identifier that will need to show up in other places in your code.  rImg is the name of your image.  I guess you may also need to find & change the file extension which shows up later.  Search for any time the word "path" shows up and you will find every resource you might consider changing.
+
+
+2. File structure
+...................................................................................................
+
+It doesn't matter what your base folder is called, but it should contain:
+
+fonts (if you have any)
+images
+index.htm
+interactions.js
+user_style.css (which may be empty)
+scripts
+
+3. Variables
+...................................................................................................
+
+There are several configuration variables which I have set but which you may want to change inside the general_init() function.  These include but are not limitted to:
+
+active - An integer which determines the active player.  Defaults to 0.  Changes throughout gameplay.
+
+currRoom - An integer which determines the current room.  Defaults to 0.  Changes throughout gamplay.
+
+inv_top, inv_left, inv_spaces, inv_size - Integers which describe the inventory spacing and sizing.  inv_top and inv_left together determine the (x, y) coordinates of the top-left corner, inv_spaces tells how many blank inventory spaces to draw, and inv_size tells how tall each space is.  There is currently way no way draw multiple columns of inventory without altering the engine.
+

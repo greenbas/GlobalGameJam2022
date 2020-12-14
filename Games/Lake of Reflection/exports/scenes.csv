@@ -1,0 +1,15 @@
+"ID","Name","Require_Actions","Background_Path","Background_Filename","Background_Extension","Foreground_Path","Foreground_Filename","Foreground_Extension","Walkmap_Path","Walkmap_Filename","Walkmap_Extension","Zoom","Centre_X","Centre_Y"
+"DEFAULT","Unknown",1,"images/scenes/","black",".png","images/scenes/","none",".png","images/walkmaps/","all",".png",1,50%,50%
+"campfire","Campfire",0,,"intro",,,,,,"campfire",,,,
+"forest-01","Forest",,,"forest_clearing",,,,,,"forest_clearing",,,,
+"forest-02","Forest",,,"forest_clearing",,,,,,"forest_clearing",,,,
+"forest-03","Forest",,,"forest_clearing",,,,,,"forest_clearing",,,,
+"forest-04","Forest",,,"forest_clearing",,,,,,"forest_clearing",,,,
+"forest-05","Forest",,,"forest_clearing",,,,,,"forest_clearing",,,,
+"forest-06","Forest",,,"forest_clearing",,,,,,"forest_clearing",,,,
+"forest-07","Forest",,,"forest_clearing",,,,,,"forest_clearing",,,,
+"house","Clearing",,,"forest_house",,,,,,"forest_house",,,,
+"hallway","Hallway",,,"hallway",,,,,,,,,,
+"bedroom","Bedroom",,,"bedroom",,,,,,,,,,
+"kitchen","Kitchen",,,"kitchen",,,,,,,,,,
+"basement","Basement",,,"basement",,,,,,,,,,
