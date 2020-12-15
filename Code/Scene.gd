@@ -18,54 +18,60 @@ func _ready():
 	if Game.allGood():
 		scriptManager = preload("ScriptManager.gd").new()
 		scriptManager.attachScripts()
-		refreshScene()
+		refreshScene(true)
 		Game.menu = Menu.new()
 		Game.menu.loadData(self)
+		refreshScene()
 	else: # FIXME: This won't work if the various _draw and _inputs don't check Game.allGood
 		  # So before release, test again by opening any of the csvs and making sure it quits.
 		Game.reportError("Setup", "Unrecoverable error.  Quitting.")
 		get_tree().quit()
 
-func refreshScene():
+# RefreshScene can cause scripts to run, which may need the Dialogue Menu.
+# But the dialogue menu needs the size of the screen, which requires the background loaded.
+# So there's a one-time call to this function to get the background loaded.
+func refreshScene(justBG=false):
 	# Determine the current scene based on where the current character is
 	currChar = getCurrentCharacter()
 	if Game.allGood():
 		currScene = getCurrentScene(currChar)
 		if Game.allGood():
-			loadScene(currScene)
+			loadScene(currScene, justBG)
 
 func getCurrentScene(character):
 	return Game.entityWhere(Game.ENTITY.SCENE, ["ID"], [character.Scene_ID])
 
-func loadScene(scene):
-	# Load the background and foreground
-	Game.setCursor(currChar.Cursor_Path, currChar.Cursor_Filename, currChar.Cursor_Extension)
-	walkmap = $Walkmap
-	walkmap.texture = Game.getTexture(scene.Walkmap_Path, scene.Walkmap_Filename, scene.Walkmap_Extension)
-	walkmap.lock() # So we can read the colours of the pixels
-	#walkmap.recalcNodes()
+func loadScene(scene, justBG=false):
 	$Background.texture = Game.getTexture(scene.Background_Path, scene.Background_Filename, scene.Background_Extension)
 	WIDTH = $Background.texture.get_width()
 	HEIGHT = $Background.texture.get_height()
-	$Foreground.texture = Game.getTexture(scene.Foreground_Path, scene.Foreground_Filename, scene.Foreground_Extension)
+	walkmap = $Walkmap
+	walkmap.texture = Game.getTexture(scene.Walkmap_Path, scene.Walkmap_Filename, scene.Walkmap_Extension)
+	walkmap.lock() # So we can read the colours of the pixels
 	
-	# Unload characters not currently in the scene
-	#var removeNodes = []
-	for i in range(0, $Characters.get_child_count()):
-		var node = $Characters.get_child(i)
-		node.visible = (all_chars[node.name].data.Scene_ID == scene.ID)
-	for i in range(0, $Objects.get_child_count()):
-		var node = $Objects.get_child(i)
-		node.visible = (all_objs[node.name].data.Scene_ID == scene.ID)
-	#	if currChar.Scene_ID != scene.ID: # Pro: Animations don't go forever.  Cons: ?
-	#		removeNodes.append(node)
-	#for node in removeNodes: # Do after so we're not changing the list we're iterating over
-	#	$Characters.remove_child(node)
-	
-	# Load or update all characters and objects in the scene
-	drawItems(scene.ID, Game.listOf(Game.ENTITY.CHAR).values(), all_chars, Game.ENTITY.CHAR)
-	drawItems(scene.ID, Game.listOf(Game.ENTITY.OBJ).values(), all_objs, Game.ENTITY.OBJ)
-	#emit_signal("draw")
+	if !justBG:
+		# Load the background and foreground
+		Game.setCursor(currChar.Cursor_Path, currChar.Cursor_Filename, currChar.Cursor_Extension)
+		#walkmap.recalcNodes()
+		$Foreground.texture = Game.getTexture(scene.Foreground_Path, scene.Foreground_Filename, scene.Foreground_Extension)
+		
+		# Unload characters not currently in the scene
+		#var removeNodes = []
+		for i in range(0, $Characters.get_child_count()):
+			var node = $Characters.get_child(i)
+			node.visible = (all_chars[node.name].data.Scene_ID == scene.ID)
+		for i in range(0, $Objects.get_child_count()):
+			var node = $Objects.get_child(i)
+			node.visible = (all_objs[node.name].data.Scene_ID == scene.ID)
+		#	if currChar.Scene_ID != scene.ID: # Pro: Animations don't go forever.  Cons: ?
+		#		removeNodes.append(node)
+		#for node in removeNodes: # Do after so we're not changing the list we're iterating over
+		#	$Characters.remove_child(node)
+		
+		# Load or update all characters and objects in the scene
+		drawItems(scene.ID, Game.listOf(Game.ENTITY.CHAR).values(), all_chars, Game.ENTITY.CHAR)
+		drawItems(scene.ID, Game.listOf(Game.ENTITY.OBJ).values(), all_objs, Game.ENTITY.OBJ)
+		#emit_signal("draw")
 
 func drawItems(sceneID, list, arr, oType):
 	for i in list:

@@ -37,8 +37,6 @@ static func clickSolid(sprite, posn):
 	d.lock()
 	var rect = getRect(sprite)
 	if rect.has_point(posn):
-		#var posTL = sprite.position + sprite.offset
-		#return (d.get_pixelv(posn - posTL).a > 0.2)
 		return (d.get_pixelv(posn - rect.position).a > 0.2)
 	return false
 

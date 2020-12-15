@@ -1,12 +1,12 @@
 "ID","Deactivate","Character_ID","Action_ID","Call_Script","If_Expression","Target_Character","Target_Scene","Target_ObjGroup","Target_Object","Walk_Scene","Walk_Colour","Hover_Text","Dialogue_Speaker","Dialogue_Emotion","Dialogue_Duration","Dialogue_Line","Set_Column","Set_Tab","Set_Value","Filter_Column","Filter_Value","Remove_Target","Add_To_Inventory","Refresh","Wait_Seconds"
 "DEFAULT",0,,,,,,,,,,,,"narrator","none",100%,,,,,"ID",,0,0,0,0
 "fire-campfire-#ff00ff",,"fire","walk","intro",,,,,,"campfire","#ff00ff",,,,,,,,,,,,,,
-"intro",,,,,,,,,,,,,"lindsay",,50%,"Ten years ago,",,,,,,,,,
-"intro",,,,,,,,,,,,,"lindsay",,66%,"on a night just like this one,",,,,,,,,,
-"intro",,,,,,,,,,,,,"lindsay",,,"there were three youths who went camping together...",,,,,,,,,
-"intro",,,,,,,,,,,,,"lindsay",,,"Little did they know",,,,,,,,,
-"intro",,,,,,,,,,,,,"lindsay",,,"that they were embarking on a journey",,,,,,,,,
-"intro",,,,,,,,,,,,,"lindsay",,,"that would change their world!",,,,,,,,,
+"intro",,,,,,,,,,,,,"fire",,50%,"Ten years ago,",,,,,,,,,
+"intro",,,,,,,,,,,,,"fire",,66%,"on a night just like this one,",,,,,,,,,
+"intro",,,,,,,,,,,,,"fire",,,"there were three youths who went camping together...",,,,,,,,,
+"intro",,,,,,,,,,,,,"fire",,50%,"Little did they know",,,,,,,,,
+"intro",,,,,,,,,,,,,"fire",,66%,"that they were embarking on a journey",,,,,,,,,
+"intro",,,,,,,,,,,,,"fire",,66%,"that would change their world!",,,,,,,,,
 "intro",,,,,,,,,,,,,,,,,"Visible","Characters",1,,"lindsay~&~johnny~&~sarah",,,1,
 "intro",,,,,,,,,,,,,"johnny",,33%,"<laughs>",,,,,,,,,
 "intro",,,,,,,,,,,,,"sarah",,,"Can you make it any more obvious that this is about us?",,,,,,,,,

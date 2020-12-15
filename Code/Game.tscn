@@ -50,20 +50,25 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Dialogue" type="Control" parent="Scene"]
+[node name="Dialogue" type="CanvasLayer" parent="Scene"]
+
+[node name="Text" type="Label" parent="Scene/Dialogue"]
+margin_left = 1.0
+margin_top = 662.0
+margin_right = 1026.0
+margin_bottom = 744.0
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DialogueX" type="Control" parent="Scene"]
 margin_right = 40.0
 margin_bottom = 40.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="Text" type="Label" parent="Scene/Dialogue"]
-margin_left = 46.0
-margin_top = 689.0
-margin_right = 979.0
-margin_bottom = 744.0
-align = 1
-autowrap = true
 
 [node name="Debugger" type="Control" parent="Scene"]
 margin_right = 40.0

@@ -6,7 +6,6 @@ var rgxInventory
 var rgxStrings
 var eval
 
-# Knowing the playables will help us deal with scripts using DEFAULT
 func attachScripts():
 	# General init since it's apparently not happening in _ready
 	rgxInventory = RegEx.new()
@@ -89,6 +88,7 @@ const MULTI = "~&~"    # Updating multiple records at once
 # Now if you wanted to do that for lindsay AND johnny:
 # Filter_Column = "ID~,~Scene_ID" Filter_Value = "lindsay~,~campfire~&~johnny~,~campfire"
 
+signal ui_dialogue()
 # Takes an array of commands and moves through them, executing
 func run(commands, actingObj=null): # We need the acting object in the somewhat rare
 	# situation where this is triggered by a group, but the specific item is being taken
@@ -114,17 +114,21 @@ func run(commands, actingObj=null): # We need the acting object in the somewhat 
 					characters[speaker] = Game.entityWhere(Game.ENTITY.CHAR, ["ID"], [speaker], false)
 				var label = Game.sceneNode.get_node("Dialogue/Text")
 				var s = characters[speaker]
+				Game.beginSpeaking(s, cmd.Dialogue_Emotion)
 				label.text = cmd.Dialogue_Line
 				var font = Game.getFont(s.Font_Path, s.Font_File, s.Font_Extension)
 				font.size = int(s.Font_Size)
 				label.set("custom_fonts/font", font)
 				label.set("custom_colors/font_color", s.Colour)
-				var seconds = float(cmd.Dialogue_Duration) / 100.0 # 2.0 * float
+				if s.Shadow != "":
+					label.set("custom_colors/font_color_shadow", s.Shadow)
+				var seconds = 2.5 * float(cmd.Dialogue_Duration) / 100.0
 				#FIXME Just for testing
-				if cmd.ID == "intro": seconds *= 0.1
+				#if cmd.ID == "intro": seconds *= 0.1
 				#Game.thread = 
 				yield(Game.wait(seconds), "timeout")
 				label.text = ""
+				Game.endSpeaking()
 				#yield(Game.wait(seconds), "diag_timer")
 			elif (!Util.isnull(cmd.Set_Column)):
 				var tab = cmd.Set_Tab.to_lower()

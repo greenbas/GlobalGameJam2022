@@ -55,6 +55,7 @@ static func loadGame(scene):
 	if allGood():
 		Game.playables = Game.listWhere(Game.ENTITY.CHAR, ["Playable"], ["1"])
 		Game.inventory = Inventory.new(Game.playables, entityByID(Game.ENTITY.INV))
+		Game.setEvents()
 
 #static func getScripts(): # Special.  And this is very long...
 #	return Game.entities[Game.ENTITY_NAME[Game.ENTITY.SCRIPT]].values()
@@ -184,3 +185,26 @@ static func update(e, fprop, fvalue, uprop, uvalue, err=true):
 			if e.right(len(e)-1) != "s": s = "s" # Just grammatical perfectionism... sorry
 			Game.reportError("Script", "No %s%s exist with property %s = %s" % [e, s, fprop, fvalue])
 
+# ===== Signals =========================================================
+
+#var ui_dialogue : InputEventAction
+var dialogueMenu
+var speaker
+var speakerEmotion
+func setEvents():
+	dialogueMenu = Game.entityWhere(Game.ENTITY.MENU, ["Type"], ["dialogue"])
+#	ui_dialogue = InputEventAction.new()
+#	ui_dialogue.action = "ui_dialogue"
+#	ui_dialogue.pressed = true
+func beginSpeaking(c, e):
+	speaker = c
+	speakerEmotion = Game.entityWhere(Game.ENTITY.EMOTIONS, ["Character", "ID"], [c.ID, e])
+	menu.openScreen(dialogueMenu)
+	#Input.parse_input_event(ui_dialogue)
+func endSpeaking():
+	#Input.parse_input_event(ui_dialogue)
+	menu.clearMenu(sceneNode)
+	
+
+func sendSignal(s):
+	emit_signal(s)
