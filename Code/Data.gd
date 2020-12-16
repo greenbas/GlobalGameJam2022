@@ -62,3 +62,19 @@ static func getFont(folder, file, ext):
 	var font = DynamicFont.new()
 	font.font_data = load(fname)
 	return font
+
+
+# http://godotengine.org/qa/5175/how-to-get-all-the-files-inside-a-folder
+func getGamesList():
+	var list = []
+	var dir = Directory.new()
+	dir.open("Games/")
+	dir.list_dir_begin()
+	while true:
+		var file = dir.get_next()
+		if file == "":
+			break
+		elif not file.begins_with(".") and not file.begins_with("_") and dir.current_is_dir():
+			list.append(file)
+	dir.list_dir_end()
+	return list

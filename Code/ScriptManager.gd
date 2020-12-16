@@ -116,7 +116,7 @@ func run(commands, actingObj=null): # We need the acting object in the somewhat 
 				var s = characters[speaker]
 				Game.beginSpeaking(s, cmd.Dialogue_Emotion)
 				label.text = cmd.Dialogue_Line
-				var font = Game.getFont(s.Font_Path, s.Font_Filename, s.Font_Extension)
+				var font = Game.getFont(s.Font_Path, s.Font_File, s.Font_Extension)
 				font.size = int(s.Font_Size)
 				label.set("custom_fonts/font", font)
 				label.set("custom_colors/font_color", s.Colour)

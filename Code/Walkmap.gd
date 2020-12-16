@@ -63,7 +63,7 @@ func findPath(orig : Vector2, dest : Vector2):
 	return path
 
 func _draw():
-	if Game.allGood():
+	if Game.allGood() and Game.ready():
 		recalcNodes()
 		update()
 

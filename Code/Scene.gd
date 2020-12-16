@@ -14,7 +14,9 @@ var currChar # Just the data, we can get_node & .new(data) from there
 var currScene # ditto
 
 func _ready():
-	Game.loadGame(self)
+	Game.sceneLoaded(self)
+	
+func prepScene():
 	if Game.allGood():
 		scriptManager = preload("ScriptManager.gd").new()
 		scriptManager.attachScripts()

@@ -2,7 +2,7 @@ extends Node
 var sceneNode : Node
 var menu : Menu
 var inventory : Inventory
-var allowActions = true
+var allowActions = false
 var debugger : Debugger
 
 # ===== Primary =========================================================
@@ -39,9 +39,20 @@ const ENTITY_NAME = { ENTITY.SCRIPT: "script", ENTITY.VAR: "variables", ENTITY.A
 var entities = {}
 var idlist = {}
 
-static func loadGame(scene):
-	Game.debugger = Debugger.new()
+# I'm sure there's a better way to do this... but this just waits for a check-in from both sides
+var gotScene = false
+var gotGame = false
+static func sceneLoaded(scene):
 	Game.sceneNode = scene
+	Game.gotScene = true
+	if Game.gotScene and Game.gotGame: loadGame()
+static func gamePicked(gameName):
+	Game.currgame = gameName
+	Game.gotGame = true
+	if Game.gotScene and Game.gotGame: loadGame()
+	
+static func loadGame():
+	Game.sceneNode.get_node("GameSelect").visible = false
 	var folder = Game.gamepath + Game.currgame + "/exports/"
 	for type in range(0, len(ENTITY)):
 		var dict = Game.loadDict(folder, ENTITY_NAME[type])
@@ -56,6 +67,8 @@ static func loadGame(scene):
 		Game.playables = Game.listWhere(Game.ENTITY.CHAR, ["Playable"], ["1"])
 		Game.inventory = Inventory.new(Game.playables, entityByID(Game.ENTITY.INV))
 		Game.setEvents()
+		Game.sceneNode.prepScene()
+		Game.enableActions()
 
 #static func getScripts(): # Special.  And this is very long...
 #	return Game.entities[Game.ENTITY_NAME[Game.ENTITY.SCRIPT]].values()
@@ -78,16 +91,16 @@ func enableActions():
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 func actionsAllowed():
 	return Game.allowActions
+	
+func ready():
+	return currgame != ""
 
 # ===== Setup ===========================================================
 
 var gamepath = "Games/"
 var savepath = "Saves/"
-var currgame = "Lake of Reflection"
+var currgame = ""
 var playables = {} # Playable characters, since there should be actions for each
-
-func _ready():
-	currgame = "Lake of Reflection"
 
 # ===== Errors / Debugging ==============================================
 

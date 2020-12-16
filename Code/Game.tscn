@@ -1,9 +1,24 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Code/Scene.gd" type="Script" id=1]
 [ext_resource path="res://dot.png" type="Texture" id=2]
 [ext_resource path="res://Code/Walkmap.gd" type="Script" id=3]
 [ext_resource path="res://Code/Debugger.gd" type="Script" id=4]
+[ext_resource path="res://icon.png" type="Texture" id=5]
+[ext_resource path="res://Assets/ArcaMajora3-Heavy.otf" type="DynamicFontData" id=6]
+[ext_resource path="res://Assets/mvboli.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://Code/GamesList.gd" type="Script" id=8]
+
+[sub_resource type="DynamicFont" id=1]
+size = 80
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 24
+font_data = ExtResource( 7 )
+
+[sub_resource type="StyleBoxLine" id=3]
+color = Color( 0.92549, 0.65098, 0, 1 )
 
 [node name="Node2D" type="Node2D"]
 
@@ -63,13 +78,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="DialogueX" type="Control" parent="Scene"]
-margin_right = 40.0
-margin_bottom = 40.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Debugger" type="Control" parent="Scene"]
 margin_right = 40.0
 margin_bottom = 40.0
@@ -77,3 +85,117 @@ script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="GameSelect" type="Control" parent="Scene"]
+margin_right = 524.0
+margin_bottom = 332.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="ColorRect" parent="Scene/GameSelect"]
+margin_right = 1022.0
+margin_bottom = 765.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="Scene/GameSelect/Background"]
+margin_right = 40.0
+margin_bottom = 256.0
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Scene/GameSelect/Background/MarginContainer"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 1004.0
+margin_bottom = 463.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Header" type="HBoxContainer" parent="Scene/GameSelect/Background/MarginContainer/VBoxContainer"]
+margin_right = 984.0
+margin_bottom = 145.0
+rect_min_size = Vector2( 984, 0 )
+
+[node name="Icon" type="TextureRect" parent="Scene/GameSelect/Background/MarginContainer/VBoxContainer/Header"]
+margin_right = 150.0
+margin_bottom = 145.0
+rect_min_size = Vector2( 150, 0 )
+texture = ExtResource( 5 )
+expand = true
+stretch_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Scene/GameSelect/Background/MarginContainer/VBoxContainer/Header"]
+margin_left = 154.0
+margin_right = 854.0
+margin_bottom = 145.0
+rect_min_size = Vector2( 700, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SAGE" type="Label" parent="Scene/GameSelect/Background/MarginContainer/VBoxContainer/Header/VBoxContainer"]
+margin_right = 700.0
+margin_bottom = 93.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.635294, 0, 0, 1 )
+text = "SAGE"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AdvGameEng" type="Label" parent="Scene/GameSelect/Background/MarginContainer/VBoxContainer/Header/VBoxContainer"]
+margin_top = 97.0
+margin_right = 700.0
+margin_bottom = 137.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.890196, 0.752941, 0, 1 )
+text = "Spreadsheet Adventure Game Engine"
+
+[node name="HSeparator" type="HSeparator" parent="Scene/GameSelect/Background/MarginContainer/VBoxContainer/Header/VBoxContainer"]
+margin_top = 141.0
+margin_right = 700.0
+margin_bottom = 145.0
+custom_styles/separator = SubResource( 3 )
+
+[node name="GamesList" type="GridContainer" parent="Scene/GameSelect/Background/MarginContainer/VBoxContainer"]
+margin_top = 149.0
+margin_right = 984.0
+margin_bottom = 149.0
+columns = 3
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GameData" type="HBoxContainer" parent="Scene/GameSelect/Background/MarginContainer/VBoxContainer/GamesList"]
+visible = false
+margin_right = 193.0
+margin_bottom = 64.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GameIcon" type="TextureRect" parent="Scene/GameSelect/Background/MarginContainer/VBoxContainer/GamesList/GameData"]
+margin_right = 64.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 64, 64 )
+
+[node name="InfoList" type="VBoxContainer" parent="Scene/GameSelect/Background/MarginContainer/VBoxContainer/GamesList/GameData"]
+margin_left = 68.0
+margin_right = 268.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 125, 0 )
+
+[node name="GameName" type="Label" parent="Scene/GameSelect/Background/MarginContainer/VBoxContainer/GamesList/GameData/InfoList"]
+margin_right = 200.0
+margin_bottom = 14.0
