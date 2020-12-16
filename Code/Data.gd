@@ -65,10 +65,10 @@ static func getFont(folder, file, ext):
 
 
 # http://godotengine.org/qa/5175/how-to-get-all-the-files-inside-a-folder
-func getGamesList():
+func getFileList(path):
 	var list = []
 	var dir = Directory.new()
-	dir.open("Games/")
+	dir.open(path)
 	dir.list_dir_begin()
 	while true:
 		var file = dir.get_next()

@@ -1,6 +1,3 @@
 "ID","Character","Image_Path","Image_Filename","Image_Extension"
-"DEFAULT","DEFAULT","images/characters/","none",".png"
-"none","lindsay",,"lindsay_neutral",
-"none","johnny",,"johnny_neutral",
-"none","sarah",,"sarah_neutral",
-"none","fire",,"none",
+"DEFAULT","DEFAULT","characters/","none",".png"
+"none","jaq",,,

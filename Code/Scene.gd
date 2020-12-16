@@ -15,7 +15,7 @@ var currScene # ditto
 
 func _ready():
 	Game.sceneLoaded(self)
-	
+
 func prepScene():
 	if Game.allGood():
 		scriptManager = preload("ScriptManager.gd").new()
@@ -192,4 +192,3 @@ func triggerHover(colour):
 	# Debugging
 	#print("New area! ", colour)
 	pass
-

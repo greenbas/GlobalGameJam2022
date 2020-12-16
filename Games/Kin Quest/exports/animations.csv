@@ -1,6 +1,6 @@
 "ID","Character","Name","Path","Filename","Extension","Frames","Frame_Duration"
-"DEFAULT",,"idle","images/characters/","empty",".png",1,0.2
-"lindsay","lindsay",,,"lindsay_idle",,,
+"DEFAULT",,"idle","characters/","empty",".png",1,0.2
+"jaq","jaq",,,"jaq",".gif",,
 "lindsay-idle_n","lindsay","idle_n",,"lindsay_idle_n",,,
 "lindsay-sit","lindsay","sit",,"lindsay_sit",,,
 "lindsay-n","lindsay","n",,"lindsay_n",,8,

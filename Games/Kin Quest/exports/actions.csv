@@ -6,7 +6,3 @@
 "talk","Talk to","DEFAULT",,1,1,1,1,0,0,,,,"vc_talk",,,60
 "handle","Interact with","DEFAULT",,1,1,1,1,1,1,,,,"vc_handle",,,120
 "take","Take","DEFAULT",,,1,0,0,0,1,,,,"vc_take",,,0
-"pull","Pull","DEFAULT",0,,,,,,,,,,,,,
-"pull","Pull","sarah",0,,1,0,0,0,1,,,,,,,240
-"auger","Auger","DEFAULT",0,,,,,,,,,,,,,
-"auger","Auger","lindsay",0,,1,1,,1,1,,,,,,,

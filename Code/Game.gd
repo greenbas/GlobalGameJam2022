@@ -52,7 +52,6 @@ static func gamePicked(gameName):
 	if Game.gotScene and Game.gotGame: loadGame()
 	
 static func loadGame():
-	Game.sceneNode.get_node("GameSelect").visible = false
 	var folder = Game.gamepath + Game.currgame + "/exports/"
 	for type in range(0, len(ENTITY)):
 		var dict = Game.loadDict(folder, ENTITY_NAME[type])
