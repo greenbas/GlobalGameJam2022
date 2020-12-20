@@ -131,12 +131,13 @@ func run(commands, actingObj=null): # We need the acting object in the somewhat 
 				var s = characters[speaker]
 				Game.beginSpeaking(s, cmd.Dialogue_Emotion)
 				label.text = cmd.Dialogue_Line
-				var font = Game.getFont(s.Font_Path, s.Font_Filename, s.Font_Extension)
-				font.size = int(s.Font_Size)
-				label.set("custom_fonts/font", font)
-				label.set("custom_colors/font_color", s.Font_Colour)
-				if s.Font_Shadow != "":
-					label.set("custom_colors/font_color_shadow", s.Font_Shadow)
+#				var font = Game.getFont(s.Font_Path, s.Font_Filename, s.Font_Extension)
+#				font.size = int(s.Font_Size)
+#				label.set("custom_fonts/font", font)
+#				label.set("custom_colors/font_color", s.Font_Colour)
+#				if s.Font_Shadow != "":
+#					label.set("custom_colors/font_color_shadow", s.Font_Shadow)
+				Game.sceneNode.setLabelFont(label, s)
 				var seconds = 2.5 * float(cmd.Dialogue_Duration) / 100.0 / Game.getFF()
 				yield(Game.wait(seconds), "timeout")
 				label.text = ""

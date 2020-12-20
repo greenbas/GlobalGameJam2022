@@ -54,19 +54,11 @@ func loadScene(scene, justBG=false):
 	if !justBG:
 		# Load the background and foreground
 		Game.setCursor(currChar.Cursor_Path, currChar.Cursor_Filename, currChar.Cursor_Extension)
-		#walkmap.recalcNodes()
 		$Foreground.texture = Game.getTexture(scene.Foreground_Path, scene.Foreground_Filename, scene.Foreground_Extension)
 		
+		# Load or update all characters and objects in the scene
 		clearItems(scene.ID, $Characters, all_chars)
 		clearItems(scene.ID, $Objects, all_objs)
-#		for i in range(0, $Characters.get_child_count()):
-#			var node = $Characters.get_child(i)
-#			node.visible = (all_chars[node.name].data.Scene_ID == scene.ID)
-#		for i in range(0, $Objects.get_child_count()):
-#			var node = $Objects.get_child(i)
-#			node.visible = (all_objs[node.name].data.Scene_ID == scene.ID)
-		
-		# Load or update all characters and objects in the scene
 		drawItems(scene.ID, Game.listOf(Game.ENTITY.CHAR).values(), all_chars, Game.ENTITY.CHAR)
 		drawItems(scene.ID, Game.listOf(Game.ENTITY.OBJ).values(), all_objs, Game.ENTITY.OBJ)
 		#emit_signal("draw")
@@ -178,12 +170,18 @@ func getCurrentSprite():
 	return character
 
 func triggerClick(posn):
-	# Find the clicked item - character, object, menu
-	# Menu is the highest order.  Fall through to the scene
-	var foundObj = findClicked(posn, all_menus)
+	var foundObj = objAtPosn(posn)
+	Game.menu.triggerClick(currChar, posn, foundObj)
+
+func objAtPosn(posn):
+	# Find the or hovered item:
+	# Menu is the highest order.
+	# Character and object depend on z_index
+	# Fall through to the scene
+	var foundObj = objAtPosnArr(posn, all_menus)
 	if !foundObj:
-		var c = findClicked(posn, all_chars)
-		var o = findClicked(posn, all_objs)
+		var c = objAtPosnArr(posn, all_chars)
+		var o = objAtPosnArr(posn, all_objs)
 		if !c: foundObj = o
 		elif !o: foundObj = c
 		elif o.z_index > c.z_index: foundObj = o
@@ -191,9 +189,9 @@ func triggerClick(posn):
 	if !foundObj: foundObj = currScene
 	else: foundObj = foundObj.data # We need the .data in order to be equivalent
 	# with scene.  But if try to grab it earlier we get null exceptions
-	Game.menu.triggerClick(currChar, posn, foundObj)
+	return foundObj
 
-func findClicked(posn, arr):
+func objAtPosnArr(posn, arr):
 	# Loop through everything to check if it has the point and has actions
 	# Return the clicked object with the highest Z-index
 	var foundObj
@@ -210,8 +208,39 @@ func triggerWalk(posn):
 	var sprite = all_chars[currChar.ID]
 	walkmap.tryWalking(sprite, posn)
 
-func triggerHover(colour):
-	# Update hover text
-	# Debugging
-	#print("New area! ", colour)
-	pass
+var currArea
+var currScript
+var hoverText
+var hoverOffset = Vector2(-30, -30)
+func triggerHover(posn):
+	var lbl : Label = $Dialogue/HoverText
+	var area = walkmap.getColour(posn)
+	if area != currArea:
+		currArea = area
+	var foundObj = objAtPosn(posn)
+	var hvScript
+	if !Util.isnull(Game.menu.actingAction):
+		hvScript = currChar.ID + "-" + Game.menu.actingAction.ID + "-" + foundObj.ID
+	else:
+		hvScript = currChar.ID + "-" + foundObj.ID + "-" + currArea
+	if hvScript != currScript:
+		currScript = hvScript
+		var scr = []
+		if scriptManager.script_commands.has(currScript):
+			scr = scriptManager.script_commands[currScript]
+		if scr.size() > 0:
+			hoverText = scr[0].Hover_Text
+		else:
+			hoverText = foundObj.Label
+		lbl.text = hoverText
+		setLabelFont(lbl, currChar)
+		#print(hoverText)
+	lbl.set_position(posn + hoverOffset)
+
+func setLabelFont(label, c):
+	var font = Game.getFont(c.Font_Path, c.Font_Filename, c.Font_Extension)
+	font.size = int(c.Font_Size)
+	label.set("custom_fonts/font", font)
+	label.set("custom_colors/font_color", c.Font_Colour)
+	if c.Font_Shadow != "":
+		label.set("custom_colors/font_color_shadow", c.Font_Shadow)

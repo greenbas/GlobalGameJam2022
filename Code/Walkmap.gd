@@ -16,7 +16,6 @@ func isWalkable(posn):
 	if posn.x >= sceneW or posn.y >= sceneH: return false
 	return getColour(posn) != "#000000"
 
-var currArea
 func _input(event):
 	if Game.allGood() and Game.actionsAllowed():
 		var posn = get_viewport().get_mouse_position()
@@ -26,10 +25,7 @@ func _input(event):
 			else:
 				scene.triggerWalk(posn)
 		elif event is InputEventMouse:
-			var area = getColour(posn)
-			if area != currArea:
-				scene.triggerHover(area)
-				currArea = area
+			scene.triggerHover(posn)
 		else:
 			Game.menu.checkInput(event)
 

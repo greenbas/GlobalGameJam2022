@@ -19,6 +19,9 @@ static func parseCSV(file):
 	var list = {}
 	while !file.eof_reached(): 
 		var line = file.get_csv_line()
+#		for p in range(0, line.size()):
+#			if line[p] == "\"":
+#				line[p] = ""
 		if len(props) == 0:
 			props = line
 		elif len(defaults) == 0 and line[0] == "DEFAULT":
@@ -47,7 +50,10 @@ static func saveCSV(fhead, fdata, filename, dict):
 		for row in dict.keys():
 			var dataRow : PoolStringArray = []
 			for col in dict[row].keys():
-				dataRow.push_back("\"" + str(dict[row][col]) + "\"")
+				var cell = dict[row][col]
+				if cell:
+					 cell = "\"" + str(cell) + "\""
+				dataRow.push_back(cell)
 			file.store_line(dataRow.join(","))
 			count += 1
 		file.close()

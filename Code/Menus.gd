@@ -130,12 +130,14 @@ func triggerDestination():
 		Game.debugMessage("Script", "Resuming " + scriptID)
 		if scene.scriptManager.hasScript(scriptID):
 			scene.scriptManager.run(scene.scriptManager.script_commands[scriptID], actingObj)
+		actingObj = null
+		actingAction = null
+		actingChar = null
 		Game.enableActions()
 		#foundObj.triggerAction(posn)
 		#else: self.triggerAction(posn)
 
 func clearMenu(scene):
-	#actingObj = null
 	state = STATES.BASE
 	for a in scene.all_menus.values():
 		a.visible = false
@@ -158,7 +160,9 @@ class ActionMenu:
 	func _init().("action_menu", {}):
 		z_index += 100
 	func updateMe(posn, c):
-		data.Actionable = "0"
+		data.Actionable = "1" # Click to cancel
+		data.Walk_First = "0"
+		data.Label = ""
 		position = posn
 		texture = Game.getTexture(c.Action_Wheel_Path, c.Action_Wheel_Filename, c.Action_Wheel_Extension)
 class ActionItem:

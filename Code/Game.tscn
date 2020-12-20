@@ -81,6 +81,15 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="HoverText" type="Label" parent="Scene/Dialogue"]
+margin_left = 50.0
+margin_top = -50.0
+margin_right = 412.0
+margin_bottom = -15.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Debugger" type="Control" parent="Scene"]
 margin_right = 40.0
 margin_bottom = 40.0
@@ -90,6 +99,7 @@ __meta__ = {
 }
 
 [node name="GameSelect" type="Control" parent="Scene"]
+visible = false
 margin_right = 524.0
 margin_bottom = 332.0
 __meta__ = {
