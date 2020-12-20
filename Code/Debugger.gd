@@ -1,8 +1,10 @@
 extends Control
-class_name Debugger
+# Something isn't working here, I thought maybe "Debugger" was a reserved word?
+class_name DBugger
 
 enum MODES { PLAY = 0, DEBUG }
 var mode = MODES.PLAY
+var fast_forward = 1.0
 
 func _init():
 	verbosity = LEVELS.MESSAGE
@@ -17,16 +19,19 @@ func toggleDebug():
 	
 	match mode:
 		MODES.PLAY:
-			debugSettings(false, LEVELS.WARNING)
+			debugSettings(false, LEVELS.MESSAGE, 1.0)
 		MODES.DEBUG:
-			debugSettings(true, LEVELS.VERBOSE)
+			debugSettings(true, LEVELS.VERBOSE, 10.0)
 
-func debugSettings(debugMovement : bool, v):
+func debugSettings(debugMovement : bool, v, ff):
 	verbosity = v
+	fast_forward = ff
 	var alpha =  int(debugMovement) * 0.5
 	Game.sceneNode.walkmap.modulate = Color(1,1,1, alpha)
-	pass
+	debugMessage("Debug", "Set verbosity to %s and ff to %s" % [verbosity, fast_forward])
 
+func getFF():
+	return fast_forward
 
 # ===== Errors / Log ====================================================
 

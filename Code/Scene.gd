@@ -57,23 +57,30 @@ func loadScene(scene, justBG=false):
 		#walkmap.recalcNodes()
 		$Foreground.texture = Game.getTexture(scene.Foreground_Path, scene.Foreground_Filename, scene.Foreground_Extension)
 		
-		# Unload characters not currently in the scene
-		#var removeNodes = []
-		for i in range(0, $Characters.get_child_count()):
-			var node = $Characters.get_child(i)
-			node.visible = (all_chars[node.name].data.Scene_ID == scene.ID)
-		for i in range(0, $Objects.get_child_count()):
-			var node = $Objects.get_child(i)
-			node.visible = (all_objs[node.name].data.Scene_ID == scene.ID)
-		#	if currChar.Scene_ID != scene.ID: # Pro: Animations don't go forever.  Cons: ?
-		#		removeNodes.append(node)
-		#for node in removeNodes: # Do after so we're not changing the list we're iterating over
-		#	$Characters.remove_child(node)
+		clearItems(scene.ID, $Characters, all_chars)
+		clearItems(scene.ID, $Objects, all_objs)
+#		for i in range(0, $Characters.get_child_count()):
+#			var node = $Characters.get_child(i)
+#			node.visible = (all_chars[node.name].data.Scene_ID == scene.ID)
+#		for i in range(0, $Objects.get_child_count()):
+#			var node = $Objects.get_child(i)
+#			node.visible = (all_objs[node.name].data.Scene_ID == scene.ID)
 		
 		# Load or update all characters and objects in the scene
 		drawItems(scene.ID, Game.listOf(Game.ENTITY.CHAR).values(), all_chars, Game.ENTITY.CHAR)
 		drawItems(scene.ID, Game.listOf(Game.ENTITY.OBJ).values(), all_objs, Game.ENTITY.OBJ)
 		#emit_signal("draw")
+
+func clearItems(sceneID, canvas, arr, ifSceneOnly = true, doDelete = false):
+	# By default just make them invisible
+	var removeNodes = []
+	for i in range(0, canvas.get_child_count()):
+		var node = canvas.get_child(i)
+		var display = ifSceneOnly and (arr[node.name].data.Scene_ID == sceneID)
+		if doDelete and !display: removeNodes.append(node) 
+		else: node.visible = display
+	for node in removeNodes: # Do after so we're not changing the list we're iterating over
+		canvas.remove_child(node)
 
 func drawItems(sceneID, list, arr, oType):
 	for i in list:
@@ -105,6 +112,24 @@ func drawItems(sceneID, list, arr, oType):
 			#if !canvas.has_node(i.ID):
 			#	canvas.add_child(sprite)
 
+func unloadScene():
+	# Tell the script manager to stop its current script
+	#if scriptManager.mode == scriptManager.MODES.RUNNING:
+	scriptManager.mode = scriptManager.MODES.STOPPING
+	# Remove character and object nodes
+	clearItems("", $Characters, all_chars, false, true)
+	clearItems("", $Objects, all_objs, false, true)
+	clearItems("", $Menu, all_menus, false, true)
+	all_chars = {}
+	all_objs = {}
+	all_menus = {}
+	# And then wait until the script manager is completed
+	while scriptManager.mode == scriptManager.MODES.RUNNING:
+		pass
+
+
+
+
 func _input(event):
 	if event.is_action_pressed("ui_playable_next"):
 		cycleChar(1)
@@ -124,8 +149,6 @@ func cycleChar(moveBy, moveTo=0):
 	refreshScene()
 
 func onCharacterMove(character : Character):
-	#character.Screen_X = posn.x # Only need to update at destination OR on new area, I think
-	#character.Screen_Y = posn.y
 	# Get the colour of the current position of the sprite's base
 	var currColour = walkmap.getColour(character.position)
 	if character.lastColour != currColour:
@@ -166,8 +189,8 @@ func triggerClick(posn):
 		elif o.z_index > c.z_index: foundObj = o
 		else: foundObj = c
 	if !foundObj: foundObj = currScene
-	else: foundObj = foundObj.data # We need the data to be equivalent with scene
-	# But if try to grab it earlier we get null exceptions
+	else: foundObj = foundObj.data # We need the .data in order to be equivalent
+	# with scene.  But if try to grab it earlier we get null exceptions
 	Game.menu.triggerClick(currChar, posn, foundObj)
 
 func findClicked(posn, arr):

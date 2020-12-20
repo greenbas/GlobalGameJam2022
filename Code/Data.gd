@@ -23,21 +23,36 @@ static func parseCSV(file):
 			props = line
 		elif len(defaults) == 0 and line[0] == "DEFAULT":
 			defaults = line
-		elif len(line) == len(props):
+		elif len(line) >= len(props):
 			var dict = {}
 			for i in range(0, props.size()):
 				dict[props[i]] = Util.nvl(line[i], defaults[i])
 			list[list.size()] = dict
 	return list
 
-#static func getCSVLine(lineOrig : String):
-#	# I've been using the built-in "file.get_csv_line()" but I
-#	# just discovered that it doesn't support quotes or even
-#	# multi-character delimiters.  So I'll write my own.
-#	print ("Line ", lineOrig.substr(1, -2))
-#	return lineOrig.substr(1, -2).split(""",""", false)
-#	# Or not.  Never mind, it was just already open elsewhere...
-#		var line = getCSVLine(file.get_line())
+static func saveCSV(fhead, fdata, filename, dict):
+	Game.debugMessage("Save", "Saving file: %s" % [fdata + filename])
+	var dir = Directory.new()
+	dir.make_dir_recursive(fdata)
+	var file = File.new()
+	var count = 0
+	if file.open(fdata + filename, file.WRITE) == OK:
+		var hdr = File.new()
+		if hdr.open(fhead + filename, file.READ) == OK:
+			var colIDs = hdr.get_csv_line()
+			file.store_line(colIDs.join(","))
+			var defaults = hdr.get_csv_line()
+			file.store_line(defaults.join(","))
+			count += 2
+		for row in dict.keys():
+			var dataRow : PoolStringArray = []
+			for col in dict[row].keys():
+				dataRow.push_back("\"" + str(dict[row][col]) + "\"")
+			file.store_line(dataRow.join(","))
+			count += 1
+		file.close()
+	Game.verboseMessage("Save", "Wrote %s lines" % [count])
+		
 
 static func getImage(folder, file, ext):
 	var img = Image.new()
@@ -68,13 +83,19 @@ static func getFont(folder, file, ext):
 func getFileList(path):
 	var list = []
 	var dir = Directory.new()
-	dir.open(path)
-	dir.list_dir_begin()
-	while true:
-		var file = dir.get_next()
-		if file == "":
-			break
-		elif not file.begins_with(".") and not file.begins_with("_") and dir.current_is_dir():
-			list.append(file)
-	dir.list_dir_end()
+	if dir.dir_exists(path):
+		dir.open(path)
+		dir.list_dir_begin()
+		while true:
+			var file = dir.get_next()
+			if file == "":
+				break
+			elif not file.begins_with(".") and not file.begins_with("_") and dir.current_is_dir():
+				list.append(file)
+		dir.list_dir_end()
 	return list
+
+func getFileAccessTime(fname):
+	var file = File.new()
+	file.open(fname, file.READ)
+	return file.get_modified_time(fname)

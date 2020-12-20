@@ -35,6 +35,10 @@ func checkInput(event): # Why can't this be _input like the others?
 				clearMenu(scene)
 			else:
 				openScreen(e)
+	if event.is_action_pressed("ui_quicksave"):
+		Game.saveGameToFile("quick")
+	elif event.is_action_pressed("ui_quickload"):
+		Game.loadGameFromSave("quick")
 
 func openScreen(e):
 	var typeBack = -1

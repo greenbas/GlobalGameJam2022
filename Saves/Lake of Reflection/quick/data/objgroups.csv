@@ -1,0 +1,3 @@
+ID,Name,Takeable,Max Carry,Inventory_Path,Inventory_Filename,Inventory_Extension
+DEFAULT,Unknown,1,1,images/objects/,unknown,_inv.png
+"stick","Firewood","1","3","images/objects/","stick","_inv.png","5"

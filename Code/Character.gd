@@ -34,7 +34,7 @@ func drawMe():
 	position = Vector2(xpos, ypos)
 	var frameSize = Vector2(texture.get_size().x / hframes, texture.get_size().y)
 	offset = -(frameSize * base_offset / 100)
-	z_index = int(data.Screen_Y)
+	z_index = round(position.y)
 	if visible and position != oldpos:
 		scene.onCharacterMove(self)
 
@@ -79,6 +79,7 @@ func _process(delta):
 	if abs(position.x - goalPosn.x) < 4 and abs(position.y - goalPosn.y) < 4:
 		var prevAngle = get_angle_to(goalPosn)
 		position = goalPosn
+		z_index = round(position.y)
 		updatePosn(goalPosn == DONT_MOVE)
 		setGoal()
 		scene.onCharacterMove(self)
@@ -91,6 +92,7 @@ func _process(delta):
 		velocity.x = cos(angle)
 		velocity.y = sin(angle)
 		position += velocity * speed * delta
+		z_index = round(position.y)
 
 # Animation
 var aTimer

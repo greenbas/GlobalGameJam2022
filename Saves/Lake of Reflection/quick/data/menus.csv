@@ -1,0 +1,5 @@
+ID,Type,Character,Signal,Screen_X,Screen_Y,Base_X,Base_Y,Menu_Path,Menu_Filename,Menu_Extension,Columns,Rows,Slot_Start_X,Slot_Start_Y,Slot_Path,Slot_Filename_Active,Slot_Filename_Inactive,Slot_Extension,Show_Labels,Font_Path,Font_Filename,Font_Extension,Font_Size
+DEFAULT,,,,50%,50%,50%,50%,images/menu/,none,.png,0,0,,,images/menu/,none,none,.png,0,fonts/,narrator,.ttf,25
+"inventory","inventory","DEFAULT","menu_inventory","50%","50%","50%","50%","images/menu/","inventory",".png","3","4","46.00%","24.00%","images/menu/","inv_active","inv_space",".png","0","fonts/","narrator",".ttf","25","10","*","0"
+"savegames","savegames","DEFAULT","menu_savegames","50%","50%","50%","50%","images/menu/","inventory",".png","3","4","46.00%","24.00%","images/menu/","inv_active","inv_space",".png","0","fonts/","narrator",".ttf","25","10","*","0"
+"portrait","dialogue","DEFAULT","ui_dialogue","50%","100%","50%","110%","images/menu/","dialogue",".png","1","1","11.00%","85.00%","images/menu/","none","none",".png","0","fonts/","narrator",".ttf","25","10","*","0"

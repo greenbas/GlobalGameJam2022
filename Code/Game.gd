@@ -3,7 +3,7 @@ var sceneNode : Node
 var menu : Menu
 var inventory : Inventory
 var allowActions = false
-var debugger : Debugger
+var dbgr : DBugger
 
 # ===== Primary =========================================================
 
@@ -45,14 +45,24 @@ var gotGame = false
 static func sceneLoaded(scene):
 	Game.sceneNode = scene
 	Game.gotScene = true
-	if Game.gotScene and Game.gotGame: loadGame()
+	if Game.gotScene and Game.gotGame: loadGameFromStart()
 static func gamePicked(gameName):
 	Game.currgame = gameName
 	Game.gotGame = true
-	if Game.gotScene and Game.gotGame: loadGame()
+	if Game.gotScene and Game.gotGame: loadGameFromStart()
 	
-static func loadGame():
+static func loadGameFromStart():
 	var folder = Game.gamepath + Game.currgame + "/exports/"
+	loadGameFromFolder(folder)
+
+static func loadGameFromSave(fname):
+	var folder = Game.savepath + Game.currgame + "/" + fname + "/data/"
+	# We expect this can be called when we already have a game loaded, and need to stop it
+	if Game.gotScene:
+		Game.sceneNode.unloadScene()
+		loadGameFromFolder(folder)
+
+static func loadGameFromFolder(folder):
 	for type in range(0, len(ENTITY)):
 		var dict = Game.loadDict(folder, ENTITY_NAME[type])
 		if allGood():
@@ -63,11 +73,23 @@ static func loadGame():
 				ids[e] = e.ID # As a rule of dicts, each ID will only be entered once
 			Game.idlist[type] = ids
 	if allGood():
+		Game.sceneNode.get_node("GameSelect").visible = false
 		Game.playables = Game.listWhere(Game.ENTITY.CHAR, ["Playable"], ["1"])
 		Game.inventory = Inventory.new(Game.playables, entityByID(Game.ENTITY.INV))
 		Game.setEvents()
 		Game.sceneNode.prepScene()
 		Game.enableActions()
+
+static func saveGameToFile(fname):
+	var fhead = Game.gamepath + Game.currgame + "/exports/"
+	var fdata = Game.savepath + Game.currgame + "/" + fname + "/data/"
+	# The header and default row must be read from the gamepath
+	# This is because the dict may be empty, but the game file won't be
+	for d in Game.entities.keys():
+		Data.saveCSV(fhead, fdata, d + ".csv", Game.entities[d])
+	var gdignore = File.new()
+	if gdignore.open(fdata + ".gdignore", gdignore.WRITE) == OK:
+		gdignore.close()
 
 #static func getScripts(): # Special.  And this is very long...
 #	return Game.entities[Game.ENTITY_NAME[Game.ENTITY.SCRIPT]].values()
@@ -75,6 +97,8 @@ static func loadGame():
 #var thread
 static func wait(seconds):
 	return Game.sceneNode.get_tree().create_timer(seconds)
+#static func killTimers():
+#	Game.sceneNode.get_tree()
 #static func cont():
 #	print("continuing")
 #	#if (!Util.isnull(Game.thread)):
@@ -103,11 +127,15 @@ var playables = {} # Playable characters, since there should be actions for each
 
 # ===== Errors / Debugging ==============================================
 
-static func reportError(c, s):     Game.debugger.reportError(c, s)
-static func reportWarning(c, s):   Game.debugger.reportWarning(c, s)
-static func verboseMessage(c, s):  Game.debugger.verboseMessage(c, s)
-static func debugMessage(c, s):    Game.debugger.debugMessage(c, s)
-static func allGood():     return  Game.debugger.allGood()
+static func reportError(c, s):     Game.dbgr.reportError(c, s)
+static func reportWarning(c, s):   Game.dbgr.reportWarning(c, s)
+static func verboseMessage(c, s):  Game.dbgr.verboseMessage(c, s)
+static func debugMessage(c, s):    Game.dbgr.debugMessage(c, s)
+static func allGood():     return  Game.dbgr.allGood()
+static func getFF():       return  Game.dbgr.getFF()
+
+static func varPrep():
+	Game.dbgr = DBugger.new()
 
 # ===== Objects =========================================================
 

@@ -8,6 +8,7 @@ var eval
 
 func attachScripts():
 	# General init since it's apparently not happening in _ready
+	mode = MODES.READY
 	rgxInventory = RegEx.new()
 	rgxInventory.compile("Inventory.\\w+")
 	rgxStrings = RegEx.new()
@@ -19,14 +20,14 @@ func attachScripts():
 	for script in Game.dictByID(Game.entityByID(Game.ENTITY.SCRIPT)).values():
 		# I know that this will already be unique in the end, but I'm not sure that without the
 		# check it will only call commandsForID once per ID, & that could really kill load time.
-		if !script_commands.has(script.ID):
-			if objgroups.has(script.Target_ObjGroup):
-				for o in Game.listWhere(Game.ENTITY.OBJ, ["Group"], [script.Target_ObjGroup]):
-					var repl = "-" + script.Target_ObjGroup
-					var with = "-" + o.ID
-					addCommandsForID(script.ID.replace(repl, with), script.ID)
-			else:
-				addCommandsForID(script.ID, script.ID)
+		#if !script_commands.has(script.ID):
+		if objgroups.has(script.Target_ObjGroup):
+			for o in Game.listWhere(Game.ENTITY.OBJ, ["Group"], [script.Target_ObjGroup]):
+				var repl = "-" + script.Target_ObjGroup
+				var with = "-" + o.ID
+				addCommandsForID(script.ID.replace(repl, with), script.ID)
+		else:
+			addCommandsForID(script.ID, script.ID)
 
 func hasScript(cmd):
 	return script_commands.has(cmd)
@@ -34,7 +35,7 @@ func hasScript(cmd):
 # Takes an ID and returns an array containing all script records matching the ID
 # In order not to be doing this constantly, the result will be saved.
 func addCommandsForID(forID : String, whereID : String):
-	var list = Game.listWhere(Game.ENTITY.SCRIPT, ["ID", "Deactivate"], [whereID, "0"], false)
+	var list = Game.listWhere(Game.ENTITY.SCRIPT, ["ID", "Deactivate"], [whereID, "0"], false, false)
 	for cmd in list:
 		if cmd.Character_ID == "DEFAULT":
 			for p in Game.playables:
@@ -88,17 +89,28 @@ const MULTI = "~&~"    # Updating multiple records at once
 # Now if you wanted to do that for lindsay AND johnny:
 # Filter_Column = "ID~,~Scene_ID" Filter_Value = "lindsay~,~campfire~&~johnny~,~campfire"
 
+enum MODES { READY = 0, RUNNING, STOPPING }
+var mode
+
 signal ui_dialogue()
 # Takes an array of commands and moves through them, executing
 func run(commands, actingObj=null): # We need the acting object in the somewhat rare
 	# situation where this is triggered by a group, but the specific item is being taken
+	mode = MODES.RUNNING
 	Game.disableActions()
+	# I've discovered that I have to do this in two steps: evaluate conditions
+	# for all commands, THEN run the ones that were true.  Otherwise changing
+	# values can cause unexpected behaviours.
+	var runcommands = []
 	for cmd in commands:
-		var todo = true;
+		var todo = true
 		if (!Util.isnull(cmd.If_Expression)):
 			var expr = cmd.If_Expression
-			todo = parseExpr(expr, adjustExpr(expr)) # May throw errors
-		if Game.allGood() and todo:
+			todo = parseExpr(adjustExpr(expr)) # May throw errors
+		if todo: runcommands.push_back(cmd)
+	for cmd in runcommands:
+		# We want to be able to stop this function mid-cutscene
+		if Game.allGood() and mode != MODES.STOPPING:
 			var refresh = false
 			if (!Util.isnull(cmd.Call_Script)):
 				Game.debugMessage("Script", "Running " + cmd.Call_Script)
@@ -107,9 +119,12 @@ func run(commands, actingObj=null): # We need the acting object in the somewhat 
 				#	script_functions[funcName] = commandsForID(funcName)
 				#run(script_functions[funcName])
 				run(script_commands[funcName])
-			elif (!Util.isnull(cmd.Dialogue_Line)):
+				if mode != MODES.STOPPING:
+					mode = MODES.RUNNING # because it gets set to READY after completing
+			if (!Util.isnull(cmd.Dialogue_Line)):
 				Game.verboseMessage("Script", "Dialogue: " + cmd.Dialogue_Line)
 				var speaker = cmd.Dialogue_Speaker
+				if speaker == "DEFAULT": speaker = cmd.Character_ID
 				if (!characters.has(speaker)):
 					characters[speaker] = Game.entityWhere(Game.ENTITY.CHAR, ["ID"], [speaker], false)
 				var label = Game.sceneNode.get_node("Dialogue/Text")
@@ -119,26 +134,25 @@ func run(commands, actingObj=null): # We need the acting object in the somewhat 
 				var font = Game.getFont(s.Font_Path, s.Font_Filename, s.Font_Extension)
 				font.size = int(s.Font_Size)
 				label.set("custom_fonts/font", font)
-				label.set("custom_colors/font_color", s.Colour)
-				if s.Shadow != "":
-					label.set("custom_colors/font_color_shadow", s.Shadow)
-				var seconds = 2.5 * float(cmd.Dialogue_Duration) / 100.0
-				#FIXME Just for testing
-				#if cmd.ID == "intro": seconds *= 0.1
-				#Game.thread = 
+				label.set("custom_colors/font_color", s.Font_Colour)
+				if s.Font_Shadow != "":
+					label.set("custom_colors/font_color_shadow", s.Font_Shadow)
+				var seconds = 2.5 * float(cmd.Dialogue_Duration) / 100.0 / Game.getFF()
 				yield(Game.wait(seconds), "timeout")
 				label.text = ""
 				Game.endSpeaking()
 				#yield(Game.wait(seconds), "diag_timer")
-			elif (!Util.isnull(cmd.Set_Column)):
+			if (!Util.isnull(cmd.Set_Column)):
 				var tab = cmd.Set_Tab.to_lower()
 				var col = cmd.Set_Column.split(SPLITTER)
 				var val = cmd.Set_Value.split(SPLITTER)
 				for v in range(0, val.size()):
 					if val[v] == "DEFAULT":
-						val[v] = cmd.Character_ID#Game.sceneNode.currChar.data.ID
+						val[v] = cmd.Character_ID
+					else:
+						val[v] = adjustExpr(val[v])
 					if tab == Game.ENTITY_NAME[Game.ENTITY.VAR]: # Could depend on existing value(s)
-						val[v] = str(parseExpr(v, adjustExpr(v)))
+						val[v] = str(parseExpr(val[v]))
 				# Filter value is special in that it can contain the MULTI splitter too (see above)
 				var fcol_all = cmd.Filter_Column.split(MULTI)
 				var fval_all = cmd.Filter_Value.split(MULTI)
@@ -181,6 +195,7 @@ func run(commands, actingObj=null): # We need the acting object in the somewhat 
 					Game.debugMessage("Script", "Adding to inventory")
 					Game.inventory.addItem(cmd.Character_ID, target)
 			if refresh: Game.sceneNode.refreshScene()
+	mode = MODES.READY
 	Game.enableActions()
 
 func adjustExpr(e):
@@ -193,27 +208,30 @@ func adjustExpr(e):
 	# Handle variables
 	for v in Game.entityByID(Game.ENTITY.VAR).values():
 		expr = expr.replace(v.ID, v.Value)
-	# Everything left over must be a number or a string.
+		Game.verboseMessage("Script", "Adjusted expression %s to %s" % [e, expr])
+	return expr
+
+# Take the original expression so we can produce better error strings
+func parseExpr(e):
+	var expr = e
+	# If it didn't already get adjusted, then it must be a number or a string.
 	# We need to be careful to compare numbers as numbers and strings as strings...
 	# But once only, we don't want sticks==sticks to become ""sticks""==""sticks""
 	var strings = {}
-	for m in rgxStrings.search_all(expr):
+	for m in rgxStrings.search_all(str(expr)):
 		var item = m.get_string()
 		strings[item] = item
 	for s in strings:
 		expr = expr.replace(s, "\"" + s + "\"")
-	return expr
-
-# Take the original expression so we can produce better error strings
-func parseExpr(expr, adjusted):
+		
 	var result
-	var error = eval.parse(adjusted, [])
+	var error = eval.parse(expr, [])
 	if error != OK:
-		Game.reportError("Script", "Error parsing expression %s (%s): %s" % [expr, adjusted, eval.get_error_text()])
+		Game.reportError("Script", "Error parsing expression %s: %s" % [expr, eval.get_error_text()])
 	else:
 		result = eval.execute([], self, true)
 		if eval.has_execute_failed():
-			Game.reportError("Script", "Execution failed on expression %s (%s)" % [expr, adjusted])
+			Game.reportError("Script", "Execution failed on expression %s" % [expr])
 	return result
 
 

@@ -5,7 +5,7 @@ enum DATA { NAME = 0, NUM_SAVES, LAST_PLAYED }
 var list = []
 
 func _ready():
-	Game.debugger = Debugger.new()
+	Game.varPrep()
 	list = Data.getFileList("Games/")
 	template = get_node("Button")
 	if list.size() == 1:
@@ -30,9 +30,18 @@ func reload():
 			icon.texture.size = Vector2(96, 96)
 			# Various info about the game data
 			var infolist = t.get_node("GameData/InfoList")
+			var saves = Data.getFileList("Saves/" + game)
 			dataLabel(infolist, DATA.NAME, game)
-			dataLabel(infolist, DATA.NUM_SAVES, "Saves: " + str(Data.getFileList("Saves/").size()))
-			dataLabel(infolist, DATA.LAST_PLAYED, "Last played: ")
+			dataLabel(infolist, DATA.NUM_SAVES, "Saves: " + str(saves.size()))
+			# Last played date takes a bit of doing
+			var lastPlayed = 0
+			var strLP = "-"
+			for s in range(0, saves.size()):
+				var folderPlayed = Data.getFileAccessTime("Saves/" + game + "/" + saves[s] + "/data/characters.csv")
+				if folderPlayed > lastPlayed: lastPlayed = folderPlayed
+			if lastPlayed > 0:
+				strLP = Util.getStringDate(lastPlayed)
+			dataLabel(infolist, DATA.LAST_PLAYED, "Last played: " + strLP)
 			t.visible = true
 			add_child(t)
 	#get_parent().
@@ -49,4 +58,3 @@ func dataLabel(infolist, posn, data):
 
 func selectGame(g):
 	Game.gamePicked(list[g-1])
-	Game.sceneNode.get_node("GameSelect").visible = false

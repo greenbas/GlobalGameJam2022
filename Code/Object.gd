@@ -27,12 +27,12 @@ func drawMe():
 	var oldpos = position
 	centered = false # We offset so that "position" is the position of the base
 	var base_offset = Vector2(int(data.Base_X), int(data.Base_Y))
-	var xpos = scene.WIDTH * int(data.Screen_X) / 100
-	var ypos = scene.HEIGHT * int(data.Screen_Y) / 100
+	var xpos = scene.WIDTH * float(data.Screen_X) / 100
+	var ypos = scene.HEIGHT * float(data.Screen_Y) / 100
 	position = Vector2(xpos, ypos)
 	var frameSize = Vector2(texture.get_size().x / hframes, texture.get_size().y)
 	offset = -(frameSize * base_offset / 100)
-	z_index = int(data.Screen_Y)
+	z_index = round(position.y)
 
 # Movement
 #var goalPath = []
