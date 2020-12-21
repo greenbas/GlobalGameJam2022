@@ -76,7 +76,8 @@ func setGoal():
 
 func _process(delta):
 	# To prevent jitter, we have a "close enough" check
-	if abs(position.x - goalPosn.x) < 4 and abs(position.y - goalPosn.y) < 4:
+	var closeEnough = 4 * ceil(Game.dbgr.getFF())
+	if abs(position.x - goalPosn.x) < closeEnough and abs(position.y - goalPosn.y) < closeEnough:
 		var prevAngle = get_angle_to(goalPosn)
 		position = goalPosn
 		z_index = round(position.y)
@@ -91,7 +92,7 @@ func _process(delta):
 		beginAnim(data[getDir(angle)])
 		velocity.x = cos(angle)
 		velocity.y = sin(angle)
-		position += velocity * speed * delta
+		position += velocity * speed * delta * Game.dbgr.getFF()
 		z_index = round(position.y)
 
 # Animation
@@ -115,6 +116,7 @@ func beginAnim(animID):
 	hframes = int(animation.Frames)
 	if aTimer.is_stopped():
 		aTimer.start(float(animation.Frame_Duration))
+		#aTimer.wait_time = Game.dbgr.getFF() # not working
 
 func animateSprite():
 	frame = (frame + 1) % hframes

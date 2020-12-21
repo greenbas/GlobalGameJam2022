@@ -34,15 +34,16 @@ func toggleDebug():
 	
 	match mode:
 		MODES.PLAY:
-			debugSettings(false, false, LEVELS.MESSAGE, 1.0)
+			debugSettings(false, false, LEVELS.MESSAGE)
+			speed_menu_open = false
+			drawSpeedMenu()
 		MODES.DEBUG:
-			debugSettings(true, true, LEVELS.VERBOSE, 10.0)
+			debugSettings(true, true, LEVELS.VERBOSE)
 			requestReload()
 
-func debugSettings(viewLog : bool, debugMovement : bool, v, ff):
+func debugSettings(viewLog : bool, debugMovement : bool, v):
 	visible = viewLog
 	verbosity = v
-	fast_forward = ff
 	var alpha =  int(debugMovement) * 0.5
 	Game.sceneNode.walkmap.modulate = Color(1,1,1, alpha)
 	debugMessage(Game.CAT.DEBUG, "Set verbosity to %s and ff to %s" % [verbosity, fast_forward])
@@ -56,7 +57,7 @@ var error = null
 var debugLog = []
 var verbosity
 enum LEVELS { UNRECOVERABLE, ERROR, WARNING, MESSAGE, VERBOSE }
-const PREFIX = { LEVELS.UNRECOVERABLE: "!!! ERROR !!! ", LEVELS.ERROR: "!!! ERROR !!! ",
+const PREFIX = { LEVELS.UNRECOVERABLE: "!!! ERROR !!! ", LEVELS.ERROR: " !! ERROR !!  ",
 	LEVELS.WARNING: " ! warning !  ", LEVELS.MESSAGE: "              ",
 	LEVELS.VERBOSE: "              "}
 func reportError(cat, s):
@@ -107,7 +108,6 @@ func reload():
 			var l = debugLog[i]
 			if showingCat(l.category):
 				var t = template.duplicate()
-				# TODO: If task = current hab or, if no hab selected, is unassigned
 				labelCell(t, TEMPLATE.TEXT, l.message)
 				labelCell(t, TEMPLATE.DATE, Util.getStringTime(l.date))
 				labelCell(t, TEMPLATE.LEVEL, PREFIX[l.level])
@@ -142,6 +142,38 @@ class LogData:
 		category = cat
 		message = s
 
+# ===== Button Events ===================================================
 
 func _on_FilterButton_toggled(button_pressed):
 	requestReload()
+
+var speed_menu_open = false
+enum SPEEDS { SLOW = 0, NORMAL, FAST, SUPER }
+var speed = SPEEDS.NORMAL
+func _on_SpeedButton_pressed():
+	speed_menu_open = !speed_menu_open
+	drawSpeedMenu()
+
+func drawSpeedMenu():
+	for s in SPEEDS.values():
+		var btn = $Buttons/Speed.get_child(s+2)
+		btn.visible = speed_menu_open
+
+func _on_SpeedSlow_pressed():
+	changeSpeed(SPEEDS.SLOW, 0.2)
+
+func _on_Speedx1_pressed():
+	changeSpeed(SPEEDS.NORMAL, 1.0)
+
+func _on_Speedx5_pressed():
+	changeSpeed(SPEEDS.FAST, 5.0)
+
+func _on_Speedx20_pressed():
+	changeSpeed(SPEEDS.SUPER, 20.0)
+
+func changeSpeed(sp, ff):
+	speed = sp
+	fast_forward = ff
+	$Buttons/Speed/SpeedLabel.text = "Speed: x" + str(ff)
+	speed_menu_open = false
+	drawSpeedMenu()

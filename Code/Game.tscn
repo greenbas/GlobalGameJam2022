@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Code/Scene.gd" type="Script" id=1]
 [ext_resource path="res://dot.png" type="Texture" id=2]
@@ -11,6 +11,11 @@
 [ext_resource path="res://Code/GameSelectButton.gd" type="Script" id=9]
 [ext_resource path="res://Assets/GameSelect_Inactive.png" type="Texture" id=10]
 [ext_resource path="res://Assets/GameSelect_Active.png" type="Texture" id=11]
+[ext_resource path="res://Assets/btnSpeed.png" type="Texture" id=12]
+[ext_resource path="res://Assets/speedx20.png" type="Texture" id=13]
+[ext_resource path="res://Assets/speedx1.png" type="Texture" id=14]
+[ext_resource path="res://Assets/speed-slow.png" type="Texture" id=15]
+[ext_resource path="res://Assets/speedx5.png" type="Texture" id=16]
 
 [sub_resource type="DynamicFont" id=1]
 size = 80
@@ -94,6 +99,7 @@ __meta__ = {
 layer = 5
 
 [node name="Debugger" type="ColorRect" parent="Scene/DebugLayer"]
+visible = false
 margin_left = 4.0
 margin_right = 725.0
 margin_bottom = 766.0
@@ -102,6 +108,61 @@ script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Buttons" type="HBoxContainer" parent="Scene/DebugLayer/Debugger"]
+margin_left = 940.0
+margin_right = 1020.0
+margin_bottom = 82.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Speed" type="VBoxContainer" parent="Scene/DebugLayer/Debugger/Buttons"]
+margin_right = 64.0
+margin_bottom = 82.0
+size_flags_horizontal = 2
+
+[node name="SpeedLabel" type="Label" parent="Scene/DebugLayer/Debugger/Buttons/Speed"]
+margin_right = 80.0
+margin_bottom = 14.0
+size_flags_horizontal = 2
+text = "Speed: x1"
+align = 1
+
+[node name="SpeedButton" type="TextureButton" parent="Scene/DebugLayer/Debugger/Buttons/Speed"]
+margin_left = 8.0
+margin_top = 18.0
+margin_right = 64.0
+margin_bottom = 82.0
+texture_normal = ExtResource( 12 )
+
+[node name="Speed-Slow" type="TextureButton" parent="Scene/DebugLayer/Debugger/Buttons/Speed"]
+visible = false
+margin_top = 68.0
+margin_right = 64.0
+margin_bottom = 132.0
+texture_normal = ExtResource( 15 )
+
+[node name="Speedx1" type="TextureButton" parent="Scene/DebugLayer/Debugger/Buttons/Speed"]
+visible = false
+margin_top = 68.0
+margin_right = 64.0
+margin_bottom = 132.0
+texture_normal = ExtResource( 14 )
+
+[node name="Speedx5" type="TextureButton" parent="Scene/DebugLayer/Debugger/Buttons/Speed"]
+visible = false
+margin_top = 68.0
+margin_right = 64.0
+margin_bottom = 132.0
+texture_normal = ExtResource( 16 )
+
+[node name="Speedx20" type="TextureButton" parent="Scene/DebugLayer/Debugger/Buttons/Speed"]
+visible = false
+margin_top = 68.0
+margin_right = 64.0
+margin_bottom = 132.0
+texture_normal = ExtResource( 13 )
 
 [node name="LogList" type="VBoxContainer" parent="Scene/DebugLayer/Debugger"]
 margin_right = 320.0
@@ -161,7 +222,6 @@ test"
 autowrap = true
 
 [node name="GameSelect" type="Control" parent="Scene"]
-visible = false
 margin_right = 524.0
 margin_bottom = 332.0
 __meta__ = {
@@ -298,4 +358,9 @@ rect_clip_content = true
 mouse_filter = 1
 size_flags_horizontal = 4
 clip_text = true
+[connection signal="pressed" from="Scene/DebugLayer/Debugger/Buttons/Speed/SpeedButton" to="Scene/DebugLayer/Debugger" method="_on_SpeedButton_pressed"]
+[connection signal="pressed" from="Scene/DebugLayer/Debugger/Buttons/Speed/Speed-Slow" to="Scene/DebugLayer/Debugger" method="_on_SpeedSlow_pressed"]
+[connection signal="pressed" from="Scene/DebugLayer/Debugger/Buttons/Speed/Speedx1" to="Scene/DebugLayer/Debugger" method="_on_Speedx1_pressed"]
+[connection signal="pressed" from="Scene/DebugLayer/Debugger/Buttons/Speed/Speedx5" to="Scene/DebugLayer/Debugger" method="_on_Speedx5_pressed"]
+[connection signal="pressed" from="Scene/DebugLayer/Debugger/Buttons/Speed/Speedx20" to="Scene/DebugLayer/Debugger" method="_on_Speedx20_pressed"]
 [connection signal="toggled" from="Scene/DebugLayer/Debugger/LogList/Filter/FilterButton" to="Scene/DebugLayer/Debugger" method="_on_FilterButton_toggled"]
