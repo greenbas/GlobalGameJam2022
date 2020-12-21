@@ -44,6 +44,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="BaseTest" type="Sprite" parent="Scene/Walkmap"]
+position = Vector2( -21.3629, 753.214 )
+texture = ExtResource( 2 )
+centered = false
+offset = Vector2( -10, -10 )
+
 [node name="Characters" type="Node" parent="Scene"]
 
 [node name="Objects" type="Node" parent="Scene"]
@@ -54,12 +60,6 @@ margin_bottom = 768.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="BaseTest" type="Sprite" parent="Scene"]
-position = Vector2( -21.3629, 753.214 )
-texture = ExtResource( 2 )
-centered = false
-offset = Vector2( -10, -10 )
 
 [node name="Menu" type="Control" parent="Scene"]
 margin_right = 1024.0
@@ -90,13 +90,75 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Debugger" type="Control" parent="Scene"]
-margin_right = 40.0
-margin_bottom = 40.0
+[node name="DebugLayer" type="CanvasLayer" parent="Scene"]
+layer = 5
+
+[node name="Debugger" type="ColorRect" parent="Scene/DebugLayer"]
+margin_left = 4.0
+margin_right = 725.0
+margin_bottom = 766.0
+color = Color( 0, 0, 0, 0.4 )
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="LogList" type="VBoxContainer" parent="Scene/DebugLayer/Debugger"]
+margin_right = 320.0
+margin_bottom = 40.0
+mouse_filter = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Filter" type="HBoxContainer" parent="Scene/DebugLayer/Debugger/LogList"]
+margin_right = 320.0
+mouse_filter = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FilterButton" type="Button" parent="Scene/DebugLayer/Debugger/LogList/Filter"]
+visible = false
+margin_right = 60.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 60, 0 )
+mouse_default_cursor_shape = 2
+toggle_mode = true
+pressed = true
+text = "All"
+clip_text = true
+
+[node name="LogTemplate" type="HBoxContainer" parent="Scene/DebugLayer/Debugger/LogList"]
+visible = false
+modulate = Color( 1, 1, 1, 0.6 )
+margin_right = 362.0
+margin_bottom = 31.0
+
+[node name="Date" type="Label" parent="Scene/DebugLayer/Debugger/LogList/LogTemplate"]
+margin_top = 8.0
+margin_bottom = 22.0
+
+[node name="Level" type="Label" parent="Scene/DebugLayer/Debugger/LogList/LogTemplate"]
+margin_left = 4.0
+margin_top = 8.0
+margin_right = 4.0
+margin_bottom = 22.0
+
+[node name="Category" type="Label" parent="Scene/DebugLayer/Debugger/LogList/LogTemplate"]
+margin_right = 50.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 50, 0 )
+text = "test"
+
+[node name="LogText" type="Label" parent="Scene/DebugLayer/Debugger/LogList/LogTemplate"]
+margin_left = 62.0
+margin_right = 662.0
+margin_bottom = 31.0
+rect_min_size = Vector2( 600, 0 )
+text = "test
+test"
+autowrap = true
 
 [node name="GameSelect" type="Control" parent="Scene"]
 visible = false
@@ -236,3 +298,4 @@ rect_clip_content = true
 mouse_filter = 1
 size_flags_horizontal = 4
 clip_text = true
+[connection signal="toggled" from="Scene/DebugLayer/Debugger/LogList/Filter/FilterButton" to="Scene/DebugLayer/Debugger" method="_on_FilterButton_toggled"]

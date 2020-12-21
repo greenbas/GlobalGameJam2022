@@ -66,7 +66,7 @@ func updatePosn(dictToo=false):
 func setGoal():
 	if goalPath.size() > 0:
 		goalPosn = goalPath.pop_front()
-		scene.get_node("BaseTest").position = goalPosn
+		scene.get_node("Walkmap/BaseTest").position = goalPosn
 	else:
 		goalPosn = DONT_MOVE
 		Game.menu.triggerDestination()

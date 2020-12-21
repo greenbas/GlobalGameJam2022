@@ -3,7 +3,7 @@ var sceneNode : Node
 var menu : Menu
 var inventory : Inventory
 var allowActions = false
-var dbgr : DBugger
+var dbgr : Debugger
 
 # ===== Primary =========================================================
 
@@ -39,17 +39,14 @@ const ENTITY_NAME = { ENTITY.SCRIPT: "script", ENTITY.VAR: "variables", ENTITY.A
 var entities = {}
 var idlist = {}
 
-# I'm sure there's a better way to do this... but this just waits for a check-in from both sides
-var gotScene = false
-var gotGame = false
 static func sceneLoaded(scene):
 	Game.sceneNode = scene
-	Game.gotScene = true
-	if Game.gotScene and Game.gotGame: loadGameFromStart()
+	Game.dbgr = scene.get_node("DebugLayer/Debugger")
+	scene.get_node("GameSelect/Background/MarginContainer/VBoxContainer/GamesList").loadGameList()
+
 static func gamePicked(gameName):
 	Game.currgame = gameName
-	Game.gotGame = true
-	if Game.gotScene and Game.gotGame: loadGameFromStart()
+	loadGameFromStart()
 	
 static func loadGameFromStart():
 	var folder = Game.gamepath + Game.currgame + "/exports/"
@@ -58,9 +55,8 @@ static func loadGameFromStart():
 static func loadGameFromSave(fname):
 	var folder = Game.savepath + Game.currgame + "/" + fname + "/data/"
 	# We expect this can be called when we already have a game loaded, and need to stop it
-	if Game.gotScene:
-		Game.sceneNode.unloadScene()
-		loadGameFromFolder(folder)
+	Game.sceneNode.unloadScene()
+	loadGameFromFolder(folder)
 
 static func loadGameFromFolder(folder):
 	for type in range(0, len(ENTITY)):
@@ -127,15 +123,16 @@ var playables = {} # Playable characters, since there should be actions for each
 
 # ===== Errors / Debugging ==============================================
 
+enum CAT { PATH = 0, SCRIPT, LOAD, ACTION, SAVE, FILE, DEBUG }
+const category = { CAT.PATH: "Pathing", CAT.SCRIPT: "Script", CAT.LOAD: "Load",
+	CAT.ACTION: "Action", CAT.SAVE: "Save", CAT.FILE: "File", CAT.DEBUG: "Debug" }
+
 static func reportError(c, s):     Game.dbgr.reportError(c, s)
 static func reportWarning(c, s):   Game.dbgr.reportWarning(c, s)
 static func verboseMessage(c, s):  Game.dbgr.verboseMessage(c, s)
 static func debugMessage(c, s):    Game.dbgr.debugMessage(c, s)
 static func allGood():     return  Game.dbgr.allGood()
 static func getFF():       return  Game.dbgr.getFF()
-
-static func varPrep():
-	Game.dbgr = DBugger.new()
 
 # ===== Objects =========================================================
 
@@ -196,9 +193,9 @@ static func updateByID(e, fprop, fvalue, uprop, uvalue, err=true):
 static func update(e, fprop, fvalue, uprop, uvalue, err=true):
 	# We can pass multiple variables with separators.  Let's do some validation:
 	if len(fprop) != len(fvalue):
-		reportError("Script", "If more than one Set_Column, you must have a matching number of Set_Values (split by ~).")
+		reportError(Game.CAT.SCRIPT, "If more than one Set_Column, you must have a matching number of Set_Values (split by ~).")
 	if len(uprop) != len(uvalue):
-		reportError("Script", "If more than one Filter_Column, you must have a matching number of Filter_values (split by ~).")
+		reportError(Game.CAT.SCRIPT, "If more than one Filter_Column, you must have a matching number of Filter_values (split by ~).")
 	if Game.allGood():
 		var updatedRows = 0
 		# Now check for matching rows
@@ -223,7 +220,7 @@ static func update(e, fprop, fvalue, uprop, uvalue, err=true):
 		if err and updatedRows == 0:
 			var s = ""
 			if e.right(len(e)-1) != "s": s = "s" # Just grammatical perfectionism... sorry
-			Game.reportError("Script", "No %s%s exist with property %s = %s" % [e, s, fprop, fvalue])
+			Game.reportError(Game.CAT.SCRIPT, "No %s%s exist with property %s = %s" % [e, s, fprop, fvalue])
 
 # ===== Signals =========================================================
 

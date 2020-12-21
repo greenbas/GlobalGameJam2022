@@ -5,10 +5,10 @@ static func fillProps(folder, tab):
 	var dict
 	var path = folder + tab + ".csv"
 	if file.open(path, file.READ) == OK:
-		Game.verboseMessage("File", "Found tab " + tab)
+		Game.verboseMessage(Game.CAT.FILE, "Found tab " + tab)
 		dict = Data.parseCSV(file)
 	else:
-		Game.reportError("File", "Error reading file %s" % path)
+		Game.reportError(Game.CAT.FILE, "Error reading file %s" % path)
 	file.close()
 	return dict
 

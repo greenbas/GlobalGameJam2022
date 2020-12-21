@@ -154,7 +154,7 @@ func onCharacterMove(character : Character):
 # A character performs any action on the screen itself
 
 func triggerCharacterMove(colour, character):
-	Game.verboseMessage("Pathing", "Character has entered area " + colour)
+	Game.verboseMessage(Game.CAT.PATH, "Character has entered area " + colour)
 	# If there is a script associated with this movement, trigger it
 	var scriptID = character.data.ID + "-" + currScene.ID + "-" + colour
 	#scriptManager.run(scriptID)
@@ -204,7 +204,7 @@ func objAtPosnArr(posn, arr):
 	
 
 func triggerWalk(posn):
-	Game.debugMessage("Action", "Clicked screen (colour: %s, position: %s" % [posn, walkmap.getColour(posn)])
+	Game.debugMessage(Game.CAT.ACTION, "Clicked screen (colour: %s, position: %s" % [posn, walkmap.getColour(posn)])
 	var sprite = all_chars[currChar.ID]
 	walkmap.tryWalking(sprite, posn)
 

@@ -27,9 +27,14 @@ static func pad(inString : String, c : String, n : int, before = false):
 # ===== Dates ===========================================================
 
 const MONTHS = [ "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" ]
-static func getStringDate(date : int):
-	var dateUnix = OS.get_datetime_from_unix_time(date)
-	return str(dateUnix.year) + "-" + Util.MONTHS[dateUnix.month-1] + "-" + padNum(dateUnix.day, '0', 2)
+static func getStringDateUnix(dateUnix : int):
+	var date = OS.get_datetime_from_unix_time(dateUnix)
+	return getStringDate(date)
+static func getStringDate(date : Dictionary):
+	return str(date.year) + "-" + Util.MONTHS[date.month-1] + "-" + padNum(date.day, '0', 2)
+
+static func getStringTime(date : Dictionary):
+	return str(date.hour) + ":" + str(date.minute) + ":" + padNum(date.second, '0', 2)
 	#year, month, day, weekday, dst (Daylight Savings Time), hour, minute, second.
 
 # ===== Display =========================================================

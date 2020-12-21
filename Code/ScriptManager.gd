@@ -45,7 +45,7 @@ func addCommandsForID(forID : String, whereID : String):
 				newCmd.ID = forID.replace(repl + "-", with + "-")
 				newCmd.Character_ID = newCmd.Character_ID.replace(repl, with)
 				newCmd.Dialogue_Speaker = newCmd.Dialogue_Speaker.replace(repl, with)
-				Game.verboseMessage("Script", "Adding " + newCmd.ID)
+				Game.verboseMessage(Game.CAT.SCRIPT, "Adding " + newCmd.ID)
 				cmdAppend(newCmd.ID, newCmd)
 		else:
 			cmdAppend(forID, cmd)
@@ -113,7 +113,7 @@ func run(commands, actingObj=null): # We need the acting object in the somewhat 
 		if Game.allGood() and mode != MODES.STOPPING:
 			var refresh = false
 			if (!Util.isnull(cmd.Call_Script)):
-				Game.debugMessage("Script", "Running " + cmd.Call_Script)
+				Game.debugMessage(Game.CAT.SCRIPT, "Running " + cmd.Call_Script)
 				var funcName = cmd.Call_Script
 				#if (!script_functions.has(funcName)):
 				#	script_functions[funcName] = commandsForID(funcName)
@@ -122,7 +122,7 @@ func run(commands, actingObj=null): # We need the acting object in the somewhat 
 				if mode != MODES.STOPPING:
 					mode = MODES.RUNNING # because it gets set to READY after completing
 			if (!Util.isnull(cmd.Dialogue_Line)):
-				Game.verboseMessage("Script", "Dialogue: " + cmd.Dialogue_Line)
+				Game.verboseMessage(Game.CAT.SCRIPT, "Dialogue: " + cmd.Dialogue_Line)
 				var speaker = cmd.Dialogue_Speaker
 				if speaker == "DEFAULT": speaker = cmd.Character_ID
 				if (!characters.has(speaker)):
@@ -131,12 +131,6 @@ func run(commands, actingObj=null): # We need the acting object in the somewhat 
 				var s = characters[speaker]
 				Game.beginSpeaking(s, cmd.Dialogue_Emotion)
 				label.text = cmd.Dialogue_Line
-#				var font = Game.getFont(s.Font_Path, s.Font_Filename, s.Font_Extension)
-#				font.size = int(s.Font_Size)
-#				label.set("custom_fonts/font", font)
-#				label.set("custom_colors/font_color", s.Font_Colour)
-#				if s.Font_Shadow != "":
-#					label.set("custom_colors/font_color_shadow", s.Font_Shadow)
 				Game.sceneNode.setLabelFont(label, s)
 				var seconds = 2.5 * float(cmd.Dialogue_Duration) / 100.0 / Game.getFF()
 				yield(Game.wait(seconds), "timeout")
@@ -166,7 +160,7 @@ func run(commands, actingObj=null): # We need the acting object in the somewhat 
 					for v in range(0, fval.size()):
 						if fval[v] == "DEFAULT":
 							fval[v] = cmd.Character_ID
-					Game.debugMessage("Script", "%s: Setting %s to %s where %s=%s" % [tab, col, val, fcol, fval])
+					Game.debugMessage(Game.CAT.SCRIPT, "%s: Setting %s to %s where %s=%s" % [tab, col, val, fcol, fval])
 					Game.update(tab, fcol, fval, col, val)
 				# Refresh if necessary
 				if cmd.Refresh == "1":
@@ -189,11 +183,11 @@ func run(commands, actingObj=null): # We need the acting object in the somewhat 
 					target = cmd.Target_Object
 				# Now act on it
 				if cmd.Remove_Target == "1" and !Util.isnull(actingObj):
-					Game.debugMessage("Script", "Taking " + Game.ENTITY_NAME[type].rstrip("s") + " " + actingObj.ID)
+					Game.debugMessage(Game.CAT.SCRIPT, "Taking " + Game.ENTITY_NAME[type].rstrip("s") + " " + actingObj.ID)
 					Game.updateByID(type, ["ID"], [actingObj.ID], ["Visible"], ["0"])
 					refresh = true
 				if cmd.Add_To_Inventory == "1": # TODO Test on character
-					Game.debugMessage("Script", "Adding to inventory")
+					Game.debugMessage(Game.CAT.SCRIPT, "Adding to inventory")
 					Game.inventory.addItem(cmd.Character_ID, target)
 			if refresh: Game.sceneNode.refreshScene()
 	mode = MODES.READY
@@ -209,7 +203,7 @@ func adjustExpr(e):
 	# Handle variables
 	for v in Game.entityByID(Game.ENTITY.VAR).values():
 		expr = expr.replace(v.ID, v.Value)
-		Game.verboseMessage("Script", "Adjusted expression %s to %s" % [e, expr])
+		Game.verboseMessage(Game.CAT.SCRIPT, "Adjusted expression %s to %s" % [e, expr])
 	return expr
 
 # Take the original expression so we can produce better error strings
@@ -228,11 +222,11 @@ func parseExpr(e):
 	var result
 	var error = eval.parse(expr, [])
 	if error != OK:
-		Game.reportError("Script", "Error parsing expression %s: %s" % [expr, eval.get_error_text()])
+		Game.reportError(Game.CAT.SCRIPT, "Error parsing expression %s: %s" % [expr, eval.get_error_text()])
 	else:
 		result = eval.execute([], self, true)
 		if eval.has_execute_failed():
-			Game.reportError("Script", "Execution failed on expression %s" % [expr])
+			Game.reportError(Game.CAT.SCRIPT, "Execution failed on expression %s" % [expr])
 	return result
 
 

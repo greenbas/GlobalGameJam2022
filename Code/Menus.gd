@@ -127,7 +127,7 @@ func triggerDestination():
 	if state == STATES.CHAR_MOVING:
 		var scriptID = actingChar.ID + "-" + actingAction.ID + "-" + actingObj.ID
 		state = STATES.BASE
-		Game.debugMessage("Script", "Resuming " + scriptID)
+		Game.debugMessage(Game.CAT.SCRIPT, "Resuming " + scriptID)
 		if scene.scriptManager.hasScript(scriptID):
 			scene.scriptManager.run(scene.scriptManager.script_commands[scriptID], actingObj)
 		actingObj = null

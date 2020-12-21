@@ -1,3 +1,6 @@
+13.25
+13.41
+
 Spreadsheet "game-data.ods" is the starting values for everything.
 
 Enter all of your information here.  Prior to running the game, do "File > Save As" to save the various tabs with file name equal to the tab name (but lowercase) and with extension "CSV", like this:

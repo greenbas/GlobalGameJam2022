@@ -55,7 +55,7 @@ func findPath(orig : Vector2, dest : Vector2):
 		path.push_front(orig)
 		path.pop_back()
 		path.push_back(dest)
-	Game.verboseMessage("Pathing", "Path from %s to %s = %s" % [ptOrig, ptDest, path])
+	Game.verboseMessage(Game.CAT.PATH, "Path from %s to %s = %s" % [ptOrig, ptDest, path])
 	return path
 
 func _draw():
@@ -65,7 +65,7 @@ func _draw():
 
 func recalcNodes():
 	# Loops through the scene and marks nodes.
-	Game.debugMessage("Pathing", "Calculating pathfinding nodes")
+	Game.debugMessage(Game.CAT.PATH, "Calculating pathfinding nodes")
 	# We have to recalc all nodes after this point on the map anyway, so let's just start fresh
 	astar = AStar2D.new()
 	for j in range (0, sceneH / GRID_SIZE):
@@ -82,7 +82,7 @@ func recalcNodes():
 				testAndConnect(ptID, realPosn, pseudoPosn + Vector2( 0, -1)) # Above
 				testAndConnect(ptID, realPosn, pseudoPosn + Vector2(-1, -1)) # Left Diagonal
 				testAndConnect(ptID, realPosn, pseudoPosn + Vector2( 1, -1)) # Right Diagonal
-	Game.verboseMessage("Pathing", "Calculation complete")
+	Game.verboseMessage(Game.CAT.PATH, "Calculation complete")
 
 # Apparently we can't connect points based on posn (x, y) but only on ID, so instead
 # of using the provided function get_available_point_id() I'm going to create one

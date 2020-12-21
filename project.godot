@@ -15,7 +15,7 @@ _global_script_classes=[ {
 "path": "res://Code/Character.gd"
 }, {
 "base": "Control",
-"class": "DBugger",
+"class": "Debugger",
 "language": "GDScript",
 "path": "res://Code/Debugger.gd"
 }, {
@@ -46,7 +46,7 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "Character": "",
-"DBugger": "",
+"Debugger": "",
 "Inventory": "",
 "Menu": "",
 "Scene": "",

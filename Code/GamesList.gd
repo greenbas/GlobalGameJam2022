@@ -4,19 +4,18 @@ var template
 enum DATA { NAME = 0, NUM_SAVES, LAST_PLAYED }
 var list = []
 
-func _ready():
-	Game.varPrep()
+func loadGameList():
 	list = Data.getFileList("Games/")
 	template = get_node("Button")
 	if list.size() == 1:
-		Game.debugMessage("Load", "Found one game (%s), loading" % list[0])
+		Game.debugMessage(Game.CAT.LOAD, "Found one game (%s), loading" % list[0])
 		Game.gamePicked(list[0])
 	else:
-		Game.debugMessage("Load", "Found games: " + str(list))
+		Game.debugMessage(Game.CAT.LOAD, "Found games: " + str(list))
 	reload()
 
 func reload():
-	Game.debugMessage("Load", "Loading game list, size=" + str(list.size()))
+	Game.debugMessage(Game.CAT.LOAD, "Loading game list, size=" + str(list.size()))
 	# First child is the invisible template; clear everything else and then start copying it
 	while get_child_count() > 1:
 		remove_child(get_child(1))
@@ -40,7 +39,7 @@ func reload():
 				var folderPlayed = Data.getFileAccessTime("Saves/" + game + "/" + saves[s] + "/data/characters.csv")
 				if folderPlayed > lastPlayed: lastPlayed = folderPlayed
 			if lastPlayed > 0:
-				strLP = Util.getStringDate(lastPlayed)
+				strLP = Util.getStringDateUnix(lastPlayed)
 			dataLabel(infolist, DATA.LAST_PLAYED, "Last played: " + strLP)
 			t.visible = true
 			add_child(t)
