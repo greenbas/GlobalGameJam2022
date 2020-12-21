@@ -149,9 +149,10 @@ static func getTexture(folder, file="", ext=""):
 static func getFont(folder, file, ext):
 	return Data.getFont(Game.gamepath + Game.currgame + "/" + folder, file, ext)
 
-static func setCursor(folder, file, ext):
-	var cursor = getTexture(folder, file, ext)
-	Input.set_custom_mouse_cursor(cursor)
+static func setCursor(c):
+	var cursor = getTexture(c.Cursor_Path, c.Cursor_Filename, c.Cursor_Extension)
+	var hotspot = Vector2(c.Cursor_Point_X, c.Cursor_Point_Y) * cursor.size / 100.0
+	Input.set_custom_mouse_cursor(cursor, 0, hotspot)
 
 static func getImageFile(id):
 	# Checks whether the object is in a group, and returns the appropriate image
@@ -182,7 +183,7 @@ static func filter(e, prop, value, multi, dict, err):
 		var s = ""
 		var n = ENTITY_NAME[e]
 		if n.right(len(n)-1) != "s": s = "s" # Just grammatical perfectionism... sorry
-		Game.reportError("Data", "No %s%s exist with property %s = %s" % [ENTITY_NAME[e], s, prop, value])
+		Game.reportError(Game.CAT.LOAD, "No %s%s exist with property %s = %s" % [ENTITY_NAME[e], s, prop, value])
 	if (dict): return res.values()
 	else: return arr
 
@@ -240,7 +241,7 @@ func beginSpeaking(c, e):
 	#Input.parse_input_event(ui_dialogue)
 func endSpeaking():
 	#Input.parse_input_event(ui_dialogue)
-	menu.clearMenu(sceneNode)
+	menu.clearMenu()
 	
 
 func sendSignal(s):

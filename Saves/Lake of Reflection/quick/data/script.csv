@@ -134,13 +134,13 @@ DEFAULT,0,,,,,,,,,,,,narrator,none,100%,,,,,ID,,0,0,0,0
 "lindsay-handle-forest-05","0","lindsay","handle",,,,"forest-05",,,,,,"DEFAULT","none","100%","The trees are soft but rough.  Hm... neat line for a poem, maybe.",,,,"ID",,"0","0","0","0",0
 "lindsay-handle-forest-06","0","lindsay","handle",,,,"forest-06",,,,,,"DEFAULT","none","100%","The trees are soft but rough.  Hm... neat line for a poem, maybe.",,,,"ID",,"0","0","0","0",0
 "lindsay-handle-forest-07","0","lindsay","handle",,,,"forest-07",,,,,,"DEFAULT","none","100%","The trees are soft but rough.  Hm... neat line for a poem, maybe.",,,,"ID",,"0","0","0","0",0
-"johnny-handle-forest-01","0","johnny","handle",,,,"forest-01",,,,,,"DEFAULT","none","100%","It's tempting to carve J + S in one... but better not.",,,,"ID",,"0","0","0","0",0
-"johnny-handle-forest-02","0","johnny","handle",,,,"forest-02",,,,,,"DEFAULT","none","100%","It's tempting to carve J + S in one... but better not.",,,,"ID",,"0","0","0","0",0
-"johnny-handle-forest-03","0","johnny","handle",,,,"forest-03",,,,,,"DEFAULT","none","100%","It's tempting to carve J + S in one... but better not.",,,,"ID",,"0","0","0","0",0
-"johnny-handle-forest-04","0","johnny","handle",,,,"forest-04",,,,,,"DEFAULT","none","100%","It's tempting to carve J + S in one... but better not.",,,,"ID",,"0","0","0","0",0
-"johnny-handle-forest-05","0","johnny","handle",,,,"forest-05",,,,,,"DEFAULT","none","100%","It's tempting to carve J + S in one... but better not.",,,,"ID",,"0","0","0","0",0
-"johnny-handle-forest-06","0","johnny","handle",,,,"forest-06",,,,,,"DEFAULT","none","100%","It's tempting to carve J + S in one... but better not.",,,,"ID",,"0","0","0","0",0
-"johnny-handle-forest-07","0","johnny","handle",,,,"forest-07",,,,,,"DEFAULT","none","100%","It's tempting to carve J + S in one... but better not.",,,,"ID",,"0","0","0","0",0
+"johnny-handle-forest-01","0","johnny","handle",,,,"forest-01",,,,,,"DEFAULT","none","100%","It's tempting to carve "J + S" in one... but better not.",,,,"ID",,"0","0","0","0",0
+"johnny-handle-forest-02","0","johnny","handle",,,,"forest-02",,,,,,"DEFAULT","none","100%","It's tempting to carve "J + S" in one... but better not.",,,,"ID",,"0","0","0","0",0
+"johnny-handle-forest-03","0","johnny","handle",,,,"forest-03",,,,,,"DEFAULT","none","100%","It's tempting to carve "J + S" in one... but better not.",,,,"ID",,"0","0","0","0",0
+"johnny-handle-forest-04","0","johnny","handle",,,,"forest-04",,,,,,"DEFAULT","none","100%","It's tempting to carve "J + S" in one... but better not.",,,,"ID",,"0","0","0","0",0
+"johnny-handle-forest-05","0","johnny","handle",,,,"forest-05",,,,,,"DEFAULT","none","100%","It's tempting to carve "J + S" in one... but better not.",,,,"ID",,"0","0","0","0",0
+"johnny-handle-forest-06","0","johnny","handle",,,,"forest-06",,,,,,"DEFAULT","none","100%","It's tempting to carve "J + S" in one... but better not.",,,,"ID",,"0","0","0","0",0
+"johnny-handle-forest-07","0","johnny","handle",,,,"forest-07",,,,,,"DEFAULT","none","100%","It's tempting to carve "J + S" in one... but better not.",,,,"ID",,"0","0","0","0",0
 "sarah-handle-forest-01","0","sarah","handle",,,,"forest-01",,,,,,"DEFAULT","none","100%","It's been ages since I've climbed a tree!",,,,"ID",,"0","0","0","0",0
 "sarah-handle-forest-02","0","sarah","handle",,,,"forest-02",,,,,,"DEFAULT","none","100%","It's been ages since I've climbed a tree!",,,,"ID",,"0","0","0","0",0
 "sarah-handle-forest-03","0","sarah","handle",,,,"forest-03",,,,,,"DEFAULT","none","100%","It's been ages since I've climbed a tree!",,,,"ID",,"0","0","0","0",0
@@ -188,7 +188,7 @@ DEFAULT,0,,,,,,,,,,,,narrator,none,100%,,,,,ID,,0,0,0,0
 "johnny-handle-queen","0","johnny","handle",,,"queen",,,,,,,"DEFAULT","none","100%","It moves quickly.  Even if I could reach it, I'm not sure I could catch it.",,,,"ID",,"0","0","0","0",0
 "sarah-handle-queen","0","sarah","handle",,"teamState == lost","queen",,,,,,,"DEFAULT","none","100%","It's just too far awa-","Screen_X~,~Screen_Y","Characters","72~,~57","ID","queen","0","0","1","0",0
 "sarah-handle-queen","0","sarah","handle",,"teamState == lost","queen",,,,,,,"DEFAULT","none","100%","Well, that's ... very odd.  My fingers just tingled, and","Value","Variables","queenTemp","ID","teamState","0","0","0","0",0
-"sarah-handle-queen","0","sarah","handle",,"teamState == lost","queen",,,,,,,"DEFAULT","none","100%","it almost felt as though... no, I must have imagined it.",,,,"ID",,"0","0","0","0",0
+"sarah-handle-queen","0","sarah","handle",,"teamState == lost","queen",,,,,,,"DEFAULT","none","100%","it almost felt as though... no, I must have imagined it.","Faerie Queen","Characters","Label","ID","queen","0","0","0","0",0
 "sarah-handle-queen","0","sarah","handle","qSpeech","teamState == queenTemp","queen",,,,,,,"DEFAULT","none","100%",,,,,"ID",,"0","0","0","0",0
 "DEFAULT-look-queen","0","DEFAULT","look",,"teamState == queen","queen",,,,,,,"DEFAULT","none","100%","It claims to be a faerie.  I'm hardly in a position to disagree.",,,,"ID",,"0","0","0","0",0
 "qSpeech","0",,,,,,,,,,,,"sarah","none","100%","There it goes again.  My fingers are tingling.  And...",,,,"ID",,"0","0","0","0",0
@@ -196,11 +196,11 @@ DEFAULT,0,,,,,,,,,,,,narrator,none,100%,,,,,ID,,0,0,0,0
 "qSpeech","0",,,,,,,,,,,,"sarah","none","100%","...oh my.",,,,"ID",,"0","0","0","0",0
 "qSpeech","0",,,,,,,,,,,,"queen","none","100%","Human.  You must stop this at once.",,,,"ID",,"0","0","0","0",0
 "qSpeech","0",,,,,,,,,,,,"sarah","none","100%","Wha - what are you?!",,,,"ID",,"0","0","0","0",0
-"qSpeech","0",,,,,,,,,,,,"queen","none","100%","Ahem.  I think you mean who.",,,,"ID",,"0","0","0","0",0
+"qSpeech","0",,,,,,,,,,,,"queen","none","100%","Ahem.  I think you mean "who".",,,,"ID",,"0","0","0","0",0
 "qSpeech","0",,,,,,,,,,,,"sarah","none","50%","Yes, sorry!",,,,"ID",,"0","0","0","0",0
 "qSpeech","0",,,,,,,,,,,,"queen","none","100%","I am Queen Amai.",,,,"ID",,"0","0","0","2",0
-"qSpeech","0",,,,,,,,,,,,"johnny","none","100%","That's... interesting and all.  But actually, I think what was a perfectly valid question.",,,,"ID",,"0","0","0","0",0
-"qSpeech","0",,,,,,,,,,,,"sarah","none","100%","Johnny!  Don't be offensive.  Your Majesty... what he means to say is that we've never seen a person like yourself before.  You called me human and don't appear to be human yourself.  So please... what are you?",,,,"ID",,"0","0","0","0",0
+"qSpeech","0",,,,,,,,,,,,"johnny","none","100%","That's... interesting and all.  But actually, I think "what" was a perfectly valid question.",,,,"ID",,"0","0","0","0",0
+"qSpeech","0",,,,,,,,,,,,"sarah","none","100%","Johnny!  Don't be offensive.  Your Majesty... what he means to say is that we've never seen a person like yourself before.  You called me "human" and don't appear to be human yourself.  So please... what are you?",,,,"ID",,"0","0","0","0",0
 "qSpeech","0",,,,,,,,,,,,"johnny","none","60%","That's what I just asked!",,,,"ID",,"0","0","0","0",0
 "qSpeech","0",,,,,,,,,,,,"sarah","none","80%","Yes, but you weren't very polite about it.",,,,"ID",,"0","0","0","1",0
 "qSpeech","0",,,,,,,,,,,,"queen","none","200%","You are right, I am not a human.  I am Fae.  And it is to be expected that you have never seen a Fae before, as we don't exist in your realm.",,,,"ID",,"0","0","0","1.5",0

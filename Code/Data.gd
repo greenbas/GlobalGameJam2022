@@ -34,7 +34,7 @@ static func parseCSV(file):
 	return list
 
 static func saveCSV(fhead, fdata, filename, dict):
-	Game.debugMessage("Save", "Saving file: %s" % [fdata + filename])
+	Game.debugMessage(Game.CAT.SAVE, "Saving file: %s" % [fdata + filename])
 	var dir = Directory.new()
 	dir.make_dir_recursive(fdata)
 	var file = File.new()
@@ -57,7 +57,7 @@ static func saveCSV(fhead, fdata, filename, dict):
 			file.store_line(dataRow.join(","))
 			count += 1
 		file.close()
-	Game.verboseMessage("Save", "Wrote %s lines" % [count])
+	Game.verboseMessage(Game.CAT.SAVE, "Wrote %s lines" % [count])
 		
 
 static func getImage(folder, file, ext):
@@ -67,7 +67,7 @@ static func getImage(folder, file, ext):
 	if f.open(fname, f.READ) == OK:
 		img.load(fname)
 	else:
-		Game.debugMessage("File", "Error reading image file " + fname)
+		Game.debugMessage(Game.CAT.FILE, "Error reading image file " + fname)
 	f.close()
 	return img
 

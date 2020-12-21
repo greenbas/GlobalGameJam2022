@@ -13,6 +13,7 @@ func _init(d):
 	scene = Game.sceneNode
 	canvas = scene.get_node("Characters")
 	name = data.ID
+	speed = DEFAULT_SPEED * float(data.Walk_Speed) / 100.0
 	#ia = Interactable.new()
 	#ia.setData(Game.ENTITY.CHAR)
 	initAnim()
@@ -41,7 +42,8 @@ func drawMe():
 # Movement
 var goalPath = []
 var goalPosn = DONT_MOVE
-var speed = 175
+var DEFAULT_SPEED : float = 175.0
+var speed = DEFAULT_SPEED
 var velocity = Vector2(0, 0)
 var lastColour = ""
 

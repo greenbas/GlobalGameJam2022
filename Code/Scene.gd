@@ -26,7 +26,7 @@ func prepScene():
 		refreshScene()
 	else: # FIXME: This won't work if the various _draw and _inputs don't check Game.allGood
 		  # So before release, test again by opening any of the csvs and making sure it quits.
-		Game.reportError("Setup", "Unrecoverable error.  Quitting.")
+		Game.reportError(Game.CAT.LOAD, "Unrecoverable error.  Quitting.")
 		get_tree().quit()
 
 # RefreshScene can cause scripts to run, which may need the Dialogue Menu.
@@ -53,7 +53,7 @@ func loadScene(scene, justBG=false):
 	
 	if !justBG:
 		# Load the background and foreground
-		Game.setCursor(currChar.Cursor_Path, currChar.Cursor_Filename, currChar.Cursor_Extension)
+		Game.setCursor(currChar)
 		$Foreground.texture = Game.getTexture(scene.Foreground_Path, scene.Foreground_Filename, scene.Foreground_Extension)
 		
 		# Load or update all characters and objects in the scene

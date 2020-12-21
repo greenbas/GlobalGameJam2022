@@ -144,7 +144,7 @@ class LogData:
 
 # ===== Button Events ===================================================
 
-func _on_FilterButton_toggled(button_pressed):
+func _on_FilterButton_toggled(_button_pressed):
 	requestReload()
 
 var speed_menu_open = false

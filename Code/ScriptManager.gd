@@ -168,6 +168,8 @@ func run(commands, actingObj=null): # We need the acting object in the somewhat 
 						refresh = true
 				
 			# And some other housekeeping
+			if !Util.isnull(cmd.Wait_Seconds):
+				yield(Game.wait(float(cmd.Wait_Seconds) / Game.dbgr.getFF()), "timeout")
 			if cmd.Remove_Target == "1" or cmd.Add_To_Inventory == "1":
 				# We need to identify the object being acted on
 				var type

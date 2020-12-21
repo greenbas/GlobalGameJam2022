@@ -32,7 +32,7 @@ func checkInput(event): # Why can't this be _input like the others?
 		if event.is_action_pressed(e.Signal):
 			if state == STATES.MENU_SCREEN:
 				state = STATES.BASE
-				clearMenu(scene)
+				clearMenu()
 			else:
 				openScreen(e)
 	if event.is_action_pressed("ui_quicksave"):
@@ -95,7 +95,7 @@ func triggerClick(character, posn, obj):
 			state = STATES.ON_ACTIONS
 			actingObj = obj
 			if obj.Tab == Game.ENTITY.ACTION:
-				clearMenu(scene)
+				clearMenu()
 			else:
 				# Draw the action wheel
 				scene.drawItems("*", [actionMenu.data], scene.all_menus, MENUS.WHEEL)
@@ -108,7 +108,7 @@ func triggerClick(character, posn, obj):
 					var aItem = scene.all_menus[a.ID]
 					aItem.updateMe(actionMenu)
 		STATES.ON_ACTIONS:
-			clearMenu(scene)
+			clearMenu()
 			if scene.all_menus.has(obj.ID):
 				state = STATES.CHAR_MOVING
 				actingChar = character
@@ -137,7 +137,7 @@ func triggerDestination():
 		#foundObj.triggerAction(posn)
 		#else: self.triggerAction(posn)
 
-func clearMenu(scene):
+func clearMenu():
 	state = STATES.BASE
 	for a in scene.all_menus.values():
 		a.visible = false
