@@ -24,6 +24,9 @@ static func dictByID(d):
 		dict[o.ID] = o
 	return dict
 
+static func getTabName(t):
+	return Game.ENTITY_NAME[t].capitalize()
+
 # ===== Game State ======================================================
 
 # I could just define dicts directly, e.g. "var scenes = {}".

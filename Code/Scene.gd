@@ -203,7 +203,9 @@ func objAtPosnArr(posn, arr):
 	for i in arr.values():
 		if i.visible and i.data.Actionable == "1":
 			if Util.clickSolid(i, posn):
-				if i.z_index > foundZ: foundObj = i
+				if i.z_index > foundZ:
+					foundObj = i
+					foundZ = i.z_index
 	return foundObj
 	
 

@@ -97,16 +97,10 @@ func triggerClick(character, posn, obj):
 			if obj.Tab == Game.ENTITY.ACTION:
 				clearMenu()
 			else:
-				# Draw the action wheel
-				scene.drawItems("*", [actionMenu.data], scene.all_menus, MENUS.WHEEL)
-				actionMenu = scene.all_menus[actionMenu.data.ID]
-				actionMenu.updateMe(posn, character)
-				var onType = "On_" + Game.ENTITY_NAME[obj.Tab].capitalize()
-				actionList = Game.listWhere(Game.ENTITY.ACTION, ["Allowed", onType], ["1", "1"])
-				scene.drawItems("*", actionList, scene.all_menus, MENUS.WHEEL_ITEM)
-				for a in actionList:
-					var aItem = scene.all_menus[a.ID]
-					aItem.updateMe(actionMenu)
+				drawActionWheel(character, posn, obj)
+		STATES.MENU_SCREEN:
+			if obj.Tab == Game.ENTITY.INV:
+				drawActionWheel(character, posn, obj)#.Item)
 		STATES.ON_ACTIONS:
 			clearMenu()
 			if scene.all_menus.has(obj.ID):
@@ -142,6 +136,18 @@ func clearMenu():
 	for a in scene.all_menus.values():
 		a.visible = false
 
+func drawActionWheel(character, posn, obj):
+	# Draw the action wheel
+	scene.drawItems("*", [actionMenu.data], scene.all_menus, MENUS.WHEEL)
+	actionMenu = scene.all_menus[actionMenu.data.ID]
+	actionMenu.updateMe(posn, character)
+	var onType = "On_" + Game.getTabName(obj.Tab)
+	actionList = Game.listWhere(Game.ENTITY.ACTION, ["Allowed", onType], ["1", "1"])
+	scene.drawItems("*", actionList, scene.all_menus, MENUS.WHEEL_ITEM)
+	for a in actionList:
+		var aItem = scene.all_menus[a.ID]
+		aItem.updateMe(actionMenu)
+
 class MenuData:
 	extends Sprite
 	var data
@@ -158,7 +164,7 @@ class MenuData:
 class ActionMenu:
 	extends MenuData
 	func _init().("action_menu", {}):
-		z_index += 100
+		z_index += 150
 	func updateMe(posn, c):
 		data.Actionable = "1" # Click to cancel
 		data.Walk_First = "0"
@@ -168,7 +174,7 @@ class ActionMenu:
 class ActionItem:
 	extends MenuData
 	func _init(d).(d.ID, d):
-		z_index += 101
+		z_index += 151
 	func updateMe(wheel):
 		data.Actionable = "1"
 		texture = Game.getTexture(data.Action_Path, data.Action_Filename, data.Action_Extension)
@@ -182,7 +188,7 @@ class ScreenMenu:
 	extends MenuData
 	func _init(d).(d.ID, d):
 		data.Actionable = "0"
-		z_index += 150
+		z_index += 100
 	func updateMe(scene):
 		centered = false # We offset so that "position" is the position of the base
 		texture = Game.getTexture(data.Menu_Path, data.Menu_Filename, data.Menu_Extension)
@@ -196,14 +202,21 @@ class ScreenItem:
 	var type
 	func _init(t, id, d).(id, d):
 		type = t
-		data.Actionable = "0"
-		z_index += 151
+		z_index += 101
+		data.Actionable = "0" # Will be overwritten later for many types
 	func updateMe(scene, slot_i, slot_j):
 		var found = false
 		match type:
 			TYPES.INV_BACK:
 				found = true
 				texture = Game.getTexture(data.Slot_Path, data.Slot_Filename_Inactive, data.Slot_Extension)
+				var inv = Game.inventory.getInvByLoc(scene.currChar.ID)
+				var loc = slot_j * int(data.Columns) + slot_i
+				if inv.size() > loc:
+					data.Actionable = "1"
+					data.Item = Game.inventory.getInvData(scene.currChar.ID, inv[loc])
+					data.Label = data.Item.Label
+					data.Tab = Game.ENTITY.INV
 			TYPES.INV_MAIN:
 				var inv = Game.inventory.getInvByLoc(scene.currChar.ID)
 				var loc = slot_j * int(data.Columns) + slot_i
