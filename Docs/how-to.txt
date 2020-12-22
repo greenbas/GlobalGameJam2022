@@ -12,8 +12,10 @@ Enter all of your information here.  Prior to running the game, do "File > Save 
 * etc
 
 All IDs must be unique not just within a tab, but between all sheets.  e.g. you cannot have a character with ID "penny" and also an object "penny".
+Don't use dashes in IDs
 
-YOU MAY NOT USE DOUBLE QUOTES ANYWHERE
+
+xx (Actually this seems to work just fine) YOU MAY NOT USE DOUBLE QUOTES ANYWHERE
 
 === Characters ======================================================================
 

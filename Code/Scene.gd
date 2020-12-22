@@ -50,11 +50,15 @@ func loadScene(scene, justBG=false):
 	walkmap = $Walkmap
 	walkmap.texture = Game.getTexture(scene.Walkmap_Path, scene.Walkmap_Filename, scene.Walkmap_Extension)
 	walkmap.lock() # So we can read the colours of the pixels
-	
+		
 	if !justBG:
 		# Load the background and foreground
 		Game.setCursor(currChar)
 		$Foreground.texture = Game.getTexture(scene.Foreground_Path, scene.Foreground_Filename, scene.Foreground_Extension)
+		
+		# Audio
+		if !Util.isnull(scene.Audio_Filename):
+			$BGMusic.playSceneMusic(currScene)
 		
 		# Load or update all characters and objects in the scene
 		clearItems(scene.ID, $Characters, all_chars)

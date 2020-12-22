@@ -18,10 +18,8 @@ func attachScripts():
 	var objgroups = Game.dictByID(Game.listOf(Game.ENTITY.OBJGROUP))
 	# Actually attaching scripts
 	for script in Game.dictByID(Game.entityByID(Game.ENTITY.SCRIPT)).values():
-		# I know that this will already be unique in the end, but I'm not sure that without the
-		# check it will only call commandsForID once per ID, & that could really kill load time.
-		#if !script_commands.has(script.ID):
 		if objgroups.has(script.Target_ObjGroup):
+			# If the script is set to an object ID, create a script for each Unique ID
 			for o in Game.listWhere(Game.ENTITY.OBJ, ["Group"], [script.Target_ObjGroup]):
 				var repl = "-" + script.Target_ObjGroup
 				var with = "-" + o.ID
@@ -188,9 +186,10 @@ func run(commands, actingObj=null): # We need the acting object in the somewhat 
 					Game.debugMessage(Game.CAT.SCRIPT, "Taking " + Game.ENTITY_NAME[type].rstrip("s") + " " + actingObj.ID)
 					Game.updateByID(type, ["ID"], [actingObj.ID], ["Visible"], ["0"])
 					refresh = true
-				if cmd.Add_To_Inventory == "1": # TODO Test on character
+				if !Util.isnull(cmd.Add_To_Inventory): # TODO Test on character
 					Game.debugMessage(Game.CAT.SCRIPT, "Adding to inventory")
-					Game.inventory.addItem(cmd.Character_ID, target)
+					for addItem in cmd.Add_To_Inventory.split("-"):
+						Game.inventory.addItem(cmd.Character_ID, addItem)
 			if refresh: Game.sceneNode.refreshScene()
 	mode = MODES.READY
 	Game.enableActions()

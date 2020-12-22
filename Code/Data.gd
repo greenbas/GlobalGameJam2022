@@ -84,6 +84,15 @@ static func getFont(folder, file, ext):
 	font.font_data = load(fname)
 	return font
 
+# https://github.com/godotengine/godot/issues/17748
+static func getAudio(folder, file, ext):
+	var afile = File.new()
+	afile.open(folder + file + ext, File.READ)
+	var bytes = afile.get_buffer(afile.get_len())
+	var stream = AudioStreamOGGVorbis.new()
+	stream.data = bytes
+	#afile.close()
+	return stream
 
 # http://godotengine.org/qa/5175/how-to-get-all-the-files-inside-a-folder
 func getFileList(path):

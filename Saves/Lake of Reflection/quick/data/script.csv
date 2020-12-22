@@ -1,12 +1,12 @@
 ID,Deactivate,Character_ID,Action_ID,Call_Script,If_Expression,Target_Character,Target_Scene,Target_ObjGroup,Target_Object,Walk_Scene,Walk_Colour,Hover_Text,Dialogue_Speaker,Dialogue_Emotion,Dialogue_Duration,Dialogue_Line,Set_Column,Set_Tab,Set_Value,Filter_Column,Filter_Value,Remove_Target,Add_To_Inventory,Refresh,Wait_Seconds
 DEFAULT,0,,,,,,,,,,,,narrator,none,100%,,,,,ID,,0,0,0,0
 "fire-campfire-#ff00ff","1","fire","walk","intro",,,,,,"campfire","#ff00ff",,"narrator","none","100%",,,,,"ID",,"0","0","0","0",0
-"intro","0",,,,,,,,,,,,"fire","none","50%","Ten years ago,",,,,"ID",,"0","0","0","0",0
-"intro","0",,,,,,,,,,,,"fire","none","66%","on a night just like this one,",,,,"ID",,"0","0","0","0",0
-"intro","0",,,,,,,,,,,,"fire","none","100%","there were three youths who went camping together...",,,,"ID",,"0","0","0","0",0
-"intro","0",,,,,,,,,,,,"fire","none","50%","Little did they know",,,,"ID",,"0","0","0","0",0
-"intro","0",,,,,,,,,,,,"fire","none","66%","that they were embarking on a journey",,,,"ID",,"0","0","0","0",0
-"intro","0",,,,,,,,,,,,"fire","none","66%","that would change their world!",,,,"ID",,"0","0","0","0",0
+"intro","0",,,,,,,,,,,,"fire","none","75%","Ten years ago,",,,,"ID",,"0","0","0","0",0
+"intro","0",,,,,,,,,,,,"fire","none","100%","on a night just like this one,",,,,"ID",,"0","0","0","0",0
+"intro","0",,,,,,,,,,,,"fire","none","110%","there were three youths who went camping together...",,,,"ID",,"0","0","0","0",0
+"intro","0",,,,,,,,,,,,"fire","none","90%","Little did they know",,,,"ID",,"0","0","0","0",0
+"intro","0",,,,,,,,,,,,"fire","none","110%","that they were embarking on a journey",,,,"ID",,"0","0","0","0",0
+"intro","0",,,,,,,,,,,,"fire","none","150%","that would change their world!","Audio_Volume_Db","Scenes","-24","ID","campfire","0","0","0","0",0
 "intro","0",,,,,,,,,,,,"narrator","none","100%",,"Visible","Characters","1","ID","lindsay~&~johnny~&~sarah","0","0","1","0",0
 "intro","0",,,,,,,,,,,,"johnny","none","33%","<laughs>",,,,"ID",,"0","0","0","0",0
 "intro","0",,,,,,,,,,,,"sarah","none","100%","Can you make it any more obvious that this is about us?",,,,"ID",,"0","0","0","0",0
@@ -83,7 +83,7 @@ DEFAULT,0,,,,,,,,,,,,narrator,none,100%,,,,,ID,,0,0,0,0
 "DEFAULT-forest-03-#0000ff","0","DEFAULT","walk",,"0 < numSticks && numSticks < 6",,,,,"forest-03","#0000ff","Go back","DEFAULT","none","100%","We haven't collected very much firewood.  Let's grab a few more.",,,,"ID",,"0","0","0","0",0
 "DEFAULT-forest-03-#0000ff","0","DEFAULT","walk",,"numSticks >= 6",,,,,"forest-03","#0000ff","Go back","DEFAULT","none","100%",,"Scene_ID~,~Screen_X","Characters","forest-02~,~10","ID","DEFAULT","0","0","1","0",0
 "DEFAULT-forest-02-#0000ff","0","DEFAULT","walk",,,,,,,"forest-02","#0000ff","Go back","DEFAULT","none","100%",,"Scene_ID~,~Screen_X","Characters","forest-01~,~10","ID","DEFAULT","0","0","1","0",0
-"DEFAULT-forest-01-#0000ff","0","DEFAULT","walk",,"teamState == sticks",,,,,"forest-01","#0000ff","Go back","DEFAULT","none","100%","That's really odd.  We should be back by now.",,,,"ID","DEFAULT","0","0","0","2",0
+"DEFAULT-forest-01-#0000ff","0","DEFAULT","walk",,"teamState == sticks",,,,,"forest-01","#0000ff","Go back","DEFAULT","none","100%","That's really odd.  We should be back by now.","Audio_Filename","Scenes","Aitua-Gray-Forest-Trap","Label","Forest","0","0","0","2",0
 "DEFAULT-forest-01-#0000ff","0","DEFAULT","walk",,"teamState == sticks",,,,,"forest-01","#0000ff","Go back","DEFAULT","none","100%",,"Value","Variables","lost","ID","teamState","0","0","0","0",0
 "DEFAULT-forest-01-#0000ff","0","DEFAULT","walk",,"teamState == sticks",,,,,"forest-01","#0000ff","Go back","narrator","none","100%",,"Visible","Characters","1","ID","queen","0","0","0","0",0
 "DEFAULT-forest-01-#0000ff","0","DEFAULT","walk",,,,,,,"forest-01","#0000ff","Go back","DEFAULT","none","100%",,"Scene_ID~,~Screen_X","Characters","forest-05~,~10","ID","DEFAULT","0","0","1","0",0

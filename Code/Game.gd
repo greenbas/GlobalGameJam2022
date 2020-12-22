@@ -149,6 +149,9 @@ static func getTexture(folder, file="", ext=""):
 static func getFont(folder, file, ext):
 	return Data.getFont(Game.gamepath + Game.currgame + "/" + folder, file, ext)
 
+static func getAudio(folder, file, ext):
+	return Data.getAudio(Game.gamepath + Game.currgame + "/" + folder, file, ext)
+
 static func setCursor(c):
 	var cursor = getTexture(c.Cursor_Path, c.Cursor_Filename, c.Cursor_Extension)
 	var hotspot = Vector2(c.Cursor_Point_X, c.Cursor_Point_Y) * cursor.size / 100.0
@@ -164,7 +167,7 @@ static func getImageFile(id):
 		return objg.Inventory_Path + objg.Inventory_Filename + objg.Inventory_Extension
 
 # This internal-only function does the filter and then returns ONE item, or
-# a LIST of items.  Use the access functions below for better readability.
+# a LIST of items.  Use the access functions above for better readability.
 static func filter(e, prop, value, multi, dict, err):
 	var res = {} # Only one of these two will be returned
 	var arr = [] # Unless multi is false, in which case neither will be

@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Code/Scene.gd" type="Script" id=1]
 [ext_resource path="res://dot.png" type="Texture" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://Assets/speedx1.png" type="Texture" id=14]
 [ext_resource path="res://Assets/speed-slow.png" type="Texture" id=15]
 [ext_resource path="res://Assets/speedx5.png" type="Texture" id=16]
+[ext_resource path="res://Code/BGMusic.gd" type="Script" id=17]
 
 [sub_resource type="DynamicFont" id=1]
 size = 80
@@ -32,6 +33,9 @@ color = Color( 0.92549, 0.65098, 0, 1 )
 
 [node name="Scene" type="Node" parent="."]
 script = ExtResource( 1 )
+
+[node name="BGMusic" type="AudioStreamPlayer" parent="Scene"]
+script = ExtResource( 17 )
 
 [node name="Background" type="TextureRect" parent="Scene"]
 margin_right = 1024.0
