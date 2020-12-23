@@ -27,6 +27,16 @@ func _ready():
 func _input(event):
 	if event.is_action_pressed("ui_debug_mode"):
 		toggleDebug()
+	if mode == MODES.DEBUG:
+		if event.is_action_pressed("ui_speed_up"):
+			var sp = speed + 1
+			if sp >= len(SPEEDS): sp = len(SPEEDS) - 1
+			changeSpeed(sp)
+			pass
+		elif event.is_action_pressed("ui_speed_down"):
+			var sp = speed - 1
+			if sp < 0: sp = 0
+			changeSpeed(sp)
 
 func toggleDebug():
 	mode += 1
@@ -149,6 +159,7 @@ func _on_FilterButton_toggled(_button_pressed):
 
 var speed_menu_open = false
 enum SPEEDS { SLOW = 0, NORMAL, FAST, SUPER }
+const ffspeed = [ 0.2, 1.0, 5.0, 20.0 ]
 var speed = SPEEDS.NORMAL
 func _on_SpeedButton_pressed():
 	speed_menu_open = !speed_menu_open
@@ -160,20 +171,20 @@ func drawSpeedMenu():
 		btn.visible = speed_menu_open
 
 func _on_SpeedSlow_pressed():
-	changeSpeed(SPEEDS.SLOW, 0.2)
+	changeSpeed(SPEEDS.SLOW)
 
 func _on_Speedx1_pressed():
-	changeSpeed(SPEEDS.NORMAL, 1.0)
+	changeSpeed(SPEEDS.NORMAL)
 
 func _on_Speedx5_pressed():
-	changeSpeed(SPEEDS.FAST, 5.0)
+	changeSpeed(SPEEDS.FAST)
 
 func _on_Speedx20_pressed():
-	changeSpeed(SPEEDS.SUPER, 20.0)
+	changeSpeed(SPEEDS.SUPER)
 
-func changeSpeed(sp, ff):
+func changeSpeed(sp):
 	speed = sp
-	fast_forward = ff
-	$Buttons/Speed/SpeedLabel.text = "Speed: x" + str(ff)
+	fast_forward = ffspeed[sp]
+	$Buttons/Speed/SpeedLabel.text = "Speed: x" + str(fast_forward)
 	speed_menu_open = false
 	drawSpeedMenu()

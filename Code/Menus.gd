@@ -30,11 +30,15 @@ func _input(event):
 func checkInput(event): # Why can't this be _input like the others?
 	for e in Game.entityByID(Game.ENTITY.MENU).values():
 		if event.is_action_pressed(e.Signal):
-			if state == STATES.MENU_SCREEN:
-				state = STATES.BASE
-				clearMenu()
-			else:
-				openScreen(e)
+			match e.Type:
+				"inventory":
+					if invOpen:
+						invOpen = false
+						clearMenu()
+					else:
+						openScreen(e)
+				_:
+					openScreen(e)
 	if event.is_action_pressed("ui_quicksave"):
 		Game.saveGameToFile("quick")
 	elif event.is_action_pressed("ui_quickload"):
@@ -50,8 +54,8 @@ func openScreen(e):
 		"inventory":
 			typeBack = ScreenItem.TYPES.INV_BACK
 			typeMain = ScreenItem.TYPES.INV_MAIN
+			invOpen = true
 	if typeMain > -1:
-		state = STATES.MENU_SCREEN
 		scene.drawItems("*", [screensList[e.ID].data], scene.all_menus, MENUS.SCREEN)
 		var sItem = scene.all_menus[e.ID]
 		sItem.updateMe(scene)
@@ -79,36 +83,47 @@ func openScreen(e):
 	
 
 # Handle clicks
-enum STATES { BASE = 0, ON_ACTIONS, CHAR_MOVING, MENU_SCREEN }
-enum MENUS { WHEEL = 80, WHEEL_ITEM, SCREEN, SCREEN_ITEM, SCREEN_INV }
+enum STATES { BASE = 0, ON_ACTIONS, CHAR_MOVING, CHOOSE_SECOND }
+enum MENUS { WHEEL = 80, WHEEL_ITEM, SCREEN, SCREEN_ITEM } #, SCREEN_INV }
 var state = STATES.BASE
+var invOpen = false
 
 var actingObj
 var actingChar
 var actingAction
+var secondObj
 
 func triggerClick(character, posn, obj):
 	# TODO: I will want to check configuation for how the menus / interaction should
 	# be set up, via action wheel or other menu.  But for now, it's this way.
-	match state:
-		STATES.BASE:
-			state = STATES.ON_ACTIONS
-			actingObj = obj
-			if obj.Tab == Game.ENTITY.ACTION:
-				clearMenu()
+	if Game.dbgr.mode == Game.dbgr.MODES.PLAY:
+		if state == STATES.CHOOSE_SECOND:
+			secondObj = obj
+			state = STATES.CHAR_MOVING
+			if actingAction.Walk_First == "1" and !invOpen:
+				Game.disableActions()
+				scene.walkmap.tryWalking(scene.getCurrentSprite(), posn)
 			else:
-				drawActionWheel(character, posn, obj)
-		STATES.MENU_SCREEN:
-			if obj.Tab == Game.ENTITY.INV:
-				drawActionWheel(character, posn, obj)#.Item)
-		STATES.ON_ACTIONS:
-			clearMenu()
+				triggerDestination()
+		elif state == STATES.BASE:
+			actingObj = obj
+			state = STATES.ON_ACTIONS
+			#if actingObj.Tab == Game.ENTITY.ACTION:
+			#	state = STATES.BASE
+			#	clearMenu()
+			##elif obj.Tab == Game.ENTITY.INV:
+			##	continue#drawActionWheel(character, posn, obj)#.Item)
+			#else:
+			drawActionWheel(character, posn, obj)
+		elif state == STATES.ON_ACTIONS:
+			clearMenu([MENUS.WHEEL, MENUS.WHEEL_ITEM])
 			if scene.all_menus.has(obj.ID):
-				state = STATES.CHAR_MOVING
 				actingChar = character
 				actingAction = obj
-				if obj.Walk_First == "1":
-					state = STATES.CHAR_MOVING
+				state = STATES.CHAR_MOVING
+				if obj.Needs_Second == "1":
+					state = STATES.CHOOSE_SECOND
+				elif obj.Walk_First == "1":
 					Game.disableActions()
 					scene.walkmap.tryWalking(scene.getCurrentSprite(), posn)
 				else:
@@ -119,7 +134,14 @@ func triggerClick(character, posn, obj):
 
 func triggerDestination():
 	if state == STATES.CHAR_MOVING:
+		if scene.all_menus.has(actingObj.ID):
+			actingObj = actingObj.Item
 		var scriptID = actingChar.ID + "-" + actingAction.ID + "-" + actingObj.ID
+		if !Util.isnull(secondObj):
+			if scene.all_menus.has(secondObj.ID):
+				secondObj = secondObj.Item
+			scriptID += "-" + secondObj.ID
+			secondObj = null
 		state = STATES.BASE
 		Game.debugMessage(Game.CAT.SCRIPT, "Resuming " + scriptID)
 		if scene.scriptManager.hasScript(scriptID):
@@ -131,10 +153,13 @@ func triggerDestination():
 		#foundObj.triggerAction(posn)
 		#else: self.triggerAction(posn)
 
-func clearMenu():
-	state = STATES.BASE
+func clearMenu(clearTypes = []):
+	# TODO: Where not Always_On
+	# TODO: Where matching type
+	#state = STATES.BASE
 	for a in scene.all_menus.values():
-		a.visible = false
+		if clearTypes.has(a.menu) or len(clearTypes) == 0:
+			a.visible = false
 
 func drawActionWheel(character, posn, obj):
 	# Draw the action wheel
@@ -152,6 +177,7 @@ class MenuData:
 	extends Sprite
 	var data
 	var canvas
+	var menu
 	func _init(id, d):
 		data = d
 		data.ID = id
@@ -164,10 +190,12 @@ class MenuData:
 class ActionMenu:
 	extends MenuData
 	func _init().("action_menu", {}):
+		menu = MENUS.WHEEL
 		z_index += 150
 	func updateMe(posn, c):
 		data.Actionable = "1" # Click to cancel
 		data.Walk_First = "0"
+		data.Needs_Second = "0"
 		data.Label = ""
 		position = posn
 		texture = Game.getTexture(c.Action_Wheel_Path, c.Action_Wheel_Filename, c.Action_Wheel_Extension)
@@ -175,6 +203,7 @@ class ActionItem:
 	extends MenuData
 	func _init(d).(d.ID, d):
 		z_index += 151
+		menu = MENUS.WHEEL_ITEM
 	func updateMe(wheel):
 		data.Actionable = "1"
 		texture = Game.getTexture(data.Action_Path, data.Action_Filename, data.Action_Extension)
@@ -187,8 +216,11 @@ class ActionItem:
 class ScreenMenu:
 	extends MenuData
 	func _init(d).(d.ID, d):
+		menu = MENUS.SCREEN
 		data.Actionable = "0"
 		z_index += 100
+		# Dialogue goes over inventory
+		if data.Type == "dialogue": z_index += 20
 	func updateMe(scene):
 		centered = false # We offset so that "position" is the position of the base
 		texture = Game.getTexture(data.Menu_Path, data.Menu_Filename, data.Menu_Extension)
@@ -201,8 +233,11 @@ class ScreenItem:
 	enum TYPES { INV_BACK = 0, INV_MAIN, SAVE_BACK, SAVE_MAIN, PORTRAIT_BACK, PORTRAIT_MAIN }
 	var type
 	func _init(t, id, d).(id, d):
+		menu = MENUS.SCREEN_ITEM
 		type = t
 		z_index += 101
+		# Dialogue goes over inventory
+		if data.Type == "dialogue": z_index += 20
 		data.Actionable = "0" # Will be overwritten later for many types
 	func updateMe(scene, slot_i, slot_j):
 		var found = false

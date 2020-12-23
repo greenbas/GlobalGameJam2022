@@ -6,8 +6,8 @@ var inv = {}
 func _init(playables, list):
 	for p in playables:
 		inv[p.ID] = {}
-	for i in list:
-		addItem(i.Character, i.Object_Group, i.Quantity)
+	for i in list.values():
+		addItem(i.Character, i.Object_Group, int(i.Quantity))
 
 func addItem(c, i, q=1):
 	if !inv[c].has(i): inv[c][i] = 0

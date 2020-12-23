@@ -69,7 +69,8 @@ static func loadGameFromFolder(folder):
 			var ids = {}
 			for e in dict.values():
 				e.Tab = type # We're going to want this later
-				ids[e] = e.ID # As a rule of dicts, each ID will only be entered once
+				if type != Game.ENTITY.INV:
+					ids[e] = e.ID # As a rule of dicts, each ID will only be entered once
 			Game.idlist[type] = ids
 	if allGood():
 		Game.sceneNode.get_node("GameSelect").visible = false

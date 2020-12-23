@@ -99,8 +99,8 @@ func drawItems(sceneID, list, arr, oType):
 						sprite = Game.menu.screensList[i.ID]
 					Menu.MENUS.SCREEN_ITEM:
 						sprite = Game.menu.screenItems[i.ID]
-					Menu.MENUS.SCREEN_INV:
-						sprite = Game.menu.screenInv[i.ID]
+					#Menu.MENUS.SCREEN_INV:
+					#	sprite = Game.menu.screenInv[i.ID]
 				arr[i.ID] = sprite
 				sprite.canvas.add_child(sprite) # or this
 			sprite.drawMe()

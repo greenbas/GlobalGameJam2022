@@ -9,6 +9,8 @@ func lock():
 	data.lock()
 
 func getColour(posn):
+	if posn.x < 0 or posn.y < 0: return "#000000"
+	if posn.x >= scene.WIDTH or posn.y >= scene.HEIGHT: return "#000000"
 	var colour = data.get_pixelv(posn).to_html(false)
 	return "#" + colour
 func isWalkable(posn):

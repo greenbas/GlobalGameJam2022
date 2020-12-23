@@ -5,7 +5,7 @@ DEFAULT,,DEFAULT,1,0,1,1,1,,1,0,*,images/menu/,,.png,65.00%,300
 "look","Look at","DEFAULT","1","1","1","1","1","1","0","0","*","images/menu/","vc_look",".png","65.00%","180","2","1"
 "talk","Talk to","DEFAULT","1","1","1","1","1","0","0","0","*","images/menu/","vc_talk",".png","65.00%","60","2","1"
 "handle","Interact with","DEFAULT","1","1","1","1","1","1","1","0","*","images/menu/","vc_handle",".png","65.00%","120","2","1"
-"take","Take","DEFAULT","1","0","1","0","0","0","1","0","*","images/menu/","vc_take",".png","65.00%","0","2"
+"take","Take","DEFAULT","1","0","1","0","0","0","1","0","*","images/menu/","vc_take",".png","65.00%","0","2","1"
 "pull","Pull","DEFAULT","0","0","1","1","1",,"1","0","*","images/menu/",,".png","65.00%","300","2"
 "pull","Pull","sarah","0","0","1","0","0","0","1","0","*","images/menu/","pull",".png","65.00%","240","2"
 "auger","Auger","DEFAULT","0","0","1","1","1",,"1","0","*","images/menu/",,".png","65.00%","300","2"

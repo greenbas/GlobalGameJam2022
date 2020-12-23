@@ -24,8 +24,8 @@ func attachScripts():
 				var repl = "-" + script.Target_ObjGroup
 				var with = "-" + o.ID
 				addCommandsForID(script.ID.replace(repl, with), script.ID)
-		else:
-			addCommandsForID(script.ID, script.ID)
+		#else: # Including objgroups in this, as you can also use from inventory
+		addCommandsForID(script.ID, script.ID)
 
 func hasScript(cmd):
 	return script_commands.has(cmd)
@@ -162,7 +162,7 @@ func run(commands, actingObj=null): # We need the acting object in the somewhat 
 					Game.update(tab, fcol, fval, col, val)
 				# Refresh if necessary
 				if cmd.Refresh == "1":
-					if tab == Game.ENTITY_NAME[Game.ENTITY.SCENE] or tab == Game.ENTITY_NAME[Game.ENTITY.CHAR] or tab == Game.ENTITY_NAME[Game.ENTITY.OBJECTS]:
+					if tab == Game.ENTITY_NAME[Game.ENTITY.SCENE] or tab == Game.ENTITY_NAME[Game.ENTITY.CHAR] or tab == Game.ENTITY_NAME[Game.ENTITY.OBJ]:
 						refresh = true
 				
 			# And some other housekeeping
