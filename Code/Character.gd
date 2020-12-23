@@ -22,8 +22,6 @@ func _init(d):
 func drawMe():
 	# Image (texture is part of animation)
 	visible = (visible and data.Visible == "1")
-	var zoom = float(data.Zoom) / 100
-	scale = Vector2(zoom, zoom)
 	# Animation
 	beginAnim(data.Animation_Current)
 	# Positioning
@@ -36,8 +34,21 @@ func drawMe():
 	var frameSize = Vector2(texture.get_size().x / hframes, texture.get_size().y)
 	offset = -(frameSize * base_offset / 100)
 	z_index = round(position.y)
+	zoomChar = float(data.Zoom) / 100
+	# Zoom may depend on how far up the screen you are (ie how far away)
+	var scData = scene.currScene
+	zT = float(scData.Zoom_At_Top) / 100.0
+	zB = float(scData.Zoom_At_Bottom) / 100.0
+	var zoomY = scaleByPosn()
 	if visible and position != oldpos:
 		scene.onCharacterMove(self)
+
+var zoomChar # Let's calculate these once per scene (in drawMe)
+var zT
+var zB
+func scaleByPosn(): # This will be called
+	var scaleY = zT + (zB - zT) * position.y / float(scene.HEIGHT) #float(data.Screen_Y) / 100.0
+	scale = Vector2(zoomChar * scaleY, zoomChar * scaleY)
 
 # Movement
 var goalPath = []
@@ -95,6 +106,7 @@ func _process(delta):
 		velocity.x = cos(angle)
 		velocity.y = sin(angle)
 		position += velocity * speed * delta * Game.dbgr.getFF()
+		scaleByPosn()
 		z_index = round(position.y)
 
 # Animation
