@@ -248,6 +248,8 @@ class ScreenItem:
 		var diagText : Label = scene.get_node("Dialogue/Text")
 		var start_x = scene.WIDTH * float(data.Slot_Start_X) / 100.0
 		var start_y = scene.HEIGHT * float(data.Slot_Start_Y) / 100.0
+		var size_x = float(data.Slot_Size_X) * scene.WIDTH / 100.0
+		var size_y = float(data.Slot_Size_Y) * scene.HEIGHT / 100.0
 		match type:
 			TYPES.INV_BACK:
 				found = true
@@ -270,8 +272,6 @@ class ScreenItem:
 				var emo = Game.speakerEmotion
 				var left = float(emo.Shift_Dialogue_X) * scene.WIDTH / 100.0
 				var top = float(emo.Shift_Dialogue_Y) / 100.0
-				var size_x = float(data.Slot_Size_X) * scene.WIDTH / 100.0
-				var size_y = float(data.Slot_Size_Y) * scene.HEIGHT / 100.0
 				diagText.set_size(Vector2(size_x - left, size_y - top))
 				diagText.set_position(Vector2(start_x + left, start_y + top))
 				texture = Game.getTexture(data.Slot_Path, data.Slot_Filename_Inactive, data.Slot_Extension)
@@ -280,4 +280,4 @@ class ScreenItem:
 				var emo = Game.speakerEmotion
 				texture = Game.getTexture(emo.Image_Path, emo.Image_Filename, emo.Image_Extension)
 		if found:
-			position = Vector2(start_x + texture.size.x * slot_i, start_y + texture.size.y * slot_j)
+			position = Vector2(start_x + size_x * slot_i, start_y + size_y * slot_j)

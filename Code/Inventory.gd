@@ -28,7 +28,7 @@ func updateEntity():
 	var count = 0
 	for p in Game.playables:
 		for i in inv[p.ID]:
-			e[count] = { "Object_Group": i, "Character": p.ID, "Quantity": numItem(p.ID, i) }
+			e[count] = { "Character": p.ID, "Object_Group": i, "Quantity": numItem(p.ID, i) }
 			count += 1
 	Game.entities[Game.ENTITY_NAME[Game.ENTITY.INV]] = e
 
