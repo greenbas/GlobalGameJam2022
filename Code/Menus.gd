@@ -49,6 +49,9 @@ func openScreen(e):
 	var typeMain = -1
 	match e.Type:
 		"dialogue":
+			typeBack = ScreenItem.TYPES.DIALOGUE_BACK
+			typeMain = ScreenItem.TYPES.DIALOGUE_MAIN
+		"portrait":
 			typeBack = ScreenItem.TYPES.PORTRAIT_BACK
 			typeMain = ScreenItem.TYPES.PORTRAIT_MAIN
 		"inventory":
@@ -155,8 +158,6 @@ func triggerDestination():
 
 func clearMenu(clearTypes = []):
 	# TODO: Where not Always_On
-	# TODO: Where matching type
-	#state = STATES.BASE
 	for a in scene.all_menus.values():
 		if clearTypes.has(a.menu) or len(clearTypes) == 0:
 			a.visible = false
@@ -221,6 +222,7 @@ class ScreenMenu:
 		z_index += 100
 		# Dialogue goes over inventory
 		if data.Type == "dialogue": z_index += 20
+		if data.Type == "portrait": z_index += 25
 	func updateMe(scene):
 		centered = false # We offset so that "position" is the position of the base
 		texture = Game.getTexture(data.Menu_Path, data.Menu_Filename, data.Menu_Extension)
@@ -230,7 +232,8 @@ class ScreenMenu:
 		position = Vector2(xpos, ypos)
 class ScreenItem:
 	extends MenuData
-	enum TYPES { INV_BACK = 0, INV_MAIN, SAVE_BACK, SAVE_MAIN, PORTRAIT_BACK, PORTRAIT_MAIN }
+	enum TYPES { INV_BACK = 0, INV_MAIN, SAVE_BACK, SAVE_MAIN, PORTRAIT_BACK, PORTRAIT_MAIN,
+		DIALOGUE_BACK, DIALOGUE_MAIN }
 	var type
 	func _init(t, id, d).(id, d):
 		menu = MENUS.SCREEN_ITEM
@@ -238,9 +241,13 @@ class ScreenItem:
 		z_index += 101
 		# Dialogue goes over inventory
 		if data.Type == "dialogue": z_index += 20
+		if data.Type == "portrait": z_index += 25
 		data.Actionable = "0" # Will be overwritten later for many types
 	func updateMe(scene, slot_i, slot_j):
 		var found = false
+		var diagText : Label = scene.get_node("Dialogue/Text")
+		var start_x = scene.WIDTH * float(data.Slot_Start_X) / 100.0
+		var start_y = scene.HEIGHT * float(data.Slot_Start_Y) / 100.0
 		match type:
 			TYPES.INV_BACK:
 				found = true
@@ -258,12 +265,19 @@ class ScreenItem:
 				if inv.size() > loc:
 					found = true
 					texture = Game.getTexture(Game.getImageFile(inv[loc]))
+			TYPES.DIALOGUE_MAIN:
+				found = true
+				var emo = Game.speakerEmotion
+				var left = float(emo.Shift_Dialogue_X) * scene.WIDTH / 100.0
+				var top = float(emo.Shift_Dialogue_Y) / 100.0
+				var size_x = float(data.Slot_Size_X) * scene.WIDTH / 100.0
+				var size_y = float(data.Slot_Size_Y) * scene.HEIGHT / 100.0
+				diagText.set_size(Vector2(size_x - left, size_y - top))
+				diagText.set_position(Vector2(start_x + left, start_y + top))
+				texture = Game.getTexture(data.Slot_Path, data.Slot_Filename_Inactive, data.Slot_Extension)
 			TYPES.PORTRAIT_MAIN:
 				found = true
 				var emo = Game.speakerEmotion
 				texture = Game.getTexture(emo.Image_Path, emo.Image_Filename, emo.Image_Extension)
-				scene.get_node("Dialogue/Text").margin_left = texture.size.x - position.x/2
 		if found:
-			var start_x = scene.WIDTH * float(data.Slot_Start_X) / 100.0
-			var start_y = scene.HEIGHT * float(data.Slot_Start_Y) / 100.0
 			position = Vector2(start_x + texture.size.x * slot_i, start_y + texture.size.y * slot_j)

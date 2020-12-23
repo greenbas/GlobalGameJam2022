@@ -1,8 +1,8 @@
-"ID","Character","Image_Path","Image_Filename","Image_Extension"
-"DEFAULT","DEFAULT","images/characters/","none",".png"
-"none","lindsay",,"lindsay_neutral",
-"none","johnny",,"johnny_neutral",
-"none","sarah",,"sarah_neutral",
-"none","fire",,,
-"none","narrator",,,
-"none","queen",,,
+"ID","Character","Image_Path","Image_Filename","Image_Extension","Shift_Dialogue_X","Shift_Dialogue_Y"
+"DEFAULT","DEFAULT","images/characters/","none",".png",15%,0%
+"none","lindsay",,"lindsay_neutral",,,
+"none","johnny",,"johnny_neutral",,,
+"none","sarah",,"sarah_neutral",,,
+"none","fire",,,,0%,
+"none","narrator",,,,0%,
+"none","queen",,,,0%,

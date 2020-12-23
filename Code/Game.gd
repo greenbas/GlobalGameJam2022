@@ -235,12 +235,13 @@ static func update(e, fprop, fvalue, uprop, uvalue, err=true):
 
 # ===== Signals =========================================================
 
-#var ui_dialogue : InputEventAction
 var dialogueMenu
+var dialoguePortrait
 var speaker
 var speakerEmotion
 func setEvents():
 	dialogueMenu = Game.entityWhere(Game.ENTITY.MENU, ["Type"], ["dialogue"])
+	dialoguePortrait = Game.entityWhere(Game.ENTITY.MENU, ["Type"], ["portrait"])
 #	ui_dialogue = InputEventAction.new()
 #	ui_dialogue.action = "ui_dialogue"
 #	ui_dialogue.pressed = true
@@ -248,6 +249,7 @@ func beginSpeaking(c, e):
 	speaker = c
 	speakerEmotion = Game.entityWhere(Game.ENTITY.EMOTIONS, ["Character", "ID"], [c.ID, e])
 	menu.openScreen(dialogueMenu)
+	menu.openScreen(dialoguePortrait)
 	#Input.parse_input_event(ui_dialogue)
 func endSpeaking():
 	#Input.parse_input_event(ui_dialogue)
