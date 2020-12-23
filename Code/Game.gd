@@ -52,7 +52,7 @@ static func gamePicked(gameName):
 	loadGameFromStart()
 	
 static func loadGameFromStart():
-	var folder = Game.gamepath + Game.currgame + "/exports/"
+	var folder = Game.gamepath + Game.currgame + "/data/"
 	loadGameFromFolder(folder)
 
 static func loadGameFromSave(fname):
@@ -71,6 +71,8 @@ static func loadGameFromFolder(folder):
 				e.Tab = type # We're going to want this later
 				if type != Game.ENTITY.INV:
 					ids[e] = e.ID # As a rule of dicts, each ID will only be entered once
+				else:
+					pass
 			Game.idlist[type] = ids
 	if allGood():
 		Game.sceneNode.get_node("GameSelect").visible = false
@@ -81,7 +83,8 @@ static func loadGameFromFolder(folder):
 		Game.enableActions()
 
 static func saveGameToFile(fname):
-	var fhead = Game.gamepath + Game.currgame + "/exports/"
+	Game.inventory.updateEntity()
+	var fhead = Game.gamepath + Game.currgame + "/data/"
 	var fdata = Game.savepath + Game.currgame + "/" + fname + "/data/"
 	# The header and default row must be read from the gamepath
 	# This is because the dict may be empty, but the game file won't be

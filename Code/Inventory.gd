@@ -21,6 +21,17 @@ func numItem(c, i):
 	if !inv[c].has(i): return 0
 	return inv[c][i]
 
+# Update the entity
+func updateEntity():
+	var e = Game.entityByID(Game.ENTITY.INV)
+	e = {}
+	var count = 0
+	for p in Game.playables:
+		for i in inv[p.ID]:
+			e[count] = { "Object_Group": i, "Character": p.ID, "Quantity": numItem(p.ID, i) }
+			count += 1
+	Game.entities[Game.ENTITY_NAME[Game.ENTITY.INV]] = e
+
 # Returns a numbered array of inventory for a character.
 # Used in displaying the inventory menu.
 func getInvByLoc(c):

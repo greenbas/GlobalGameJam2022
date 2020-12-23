@@ -81,17 +81,25 @@ static func getTexture(folder, file, ext):
 static func getFont(folder, file, ext):
 	var fname = folder + file + ext
 	var font = DynamicFont.new()
-	font.font_data = load(fname)
+	# Report error
+	var f = File.new()
+	if f.open(fname, f.READ) == OK:
+		font.font_data = load(fname)
+	else:
+		Game.debugMessage(Game.CAT.FILE, "Error reading font file " + fname)
 	return font
 
 # https://github.com/godotengine/godot/issues/17748
 static func getAudio(folder, file, ext):
-	var afile = File.new()
-	afile.open(folder + file + ext, File.READ)
-	var bytes = afile.get_buffer(afile.get_len())
+	var fname = folder + file + ext
 	var stream = AudioStreamOGGVorbis.new()
-	stream.data = bytes
-	#afile.close()
+	var afile = File.new()
+	if afile.open(fname, File.READ) == OK:
+		var bytes = afile.get_buffer(afile.get_len())
+		stream.data = bytes
+	else:
+		Game.debugMessage(Game.CAT.FILE, "Error reading sound file " + fname)
+	afile.close()
 	return stream
 
 # http://godotengine.org/qa/5175/how-to-get-all-the-files-inside-a-folder
