@@ -36,6 +36,8 @@ func updateEntity():
 # Used in displaying the inventory menu.
 func getInvByLoc(c):
 	var arr = []
+	if !inv.has(c): # This character is not playable, but maybe the inventory is always on
+		return arr
 	for i in inv[c]:
 		arr.push_back(i)
 	return arr

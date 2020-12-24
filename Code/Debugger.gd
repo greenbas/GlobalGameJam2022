@@ -70,8 +70,10 @@ enum LEVELS { UNRECOVERABLE, ERROR, WARNING, MESSAGE, VERBOSE }
 const PREFIX = { LEVELS.UNRECOVERABLE: "!!! ERROR !!! ", LEVELS.ERROR: " !! ERROR !!  ",
 	LEVELS.WARNING: " ! warning !  ", LEVELS.MESSAGE: "              ",
 	LEVELS.VERBOSE: "              "}
-func reportError(cat, s):
+func unrecoverableError(cat, s):
 	error = s
+	logMessage(cat, s, LEVELS.ERROR)
+func reportError(cat, s):
 	logMessage(cat, s, LEVELS.ERROR)
 func reportWarning(cat, s):
 	logMessage(cat, s, LEVELS.WARNING)
@@ -84,7 +86,7 @@ func logMessage(cat, s, level = LEVELS.MESSAGE):
 	debugLog.push_back(LogData.new(cat, s, level))
 	requestReload()
 	if level <= LEVELS.WARNING:
-		print(Util.pad(cat, ' ', 8, false) + PREFIX[level] + s)
+		print(Util.pad(Game.category[cat], ' ', 8, false) + PREFIX[level] + s)
 
 func allGood():
 	return Util.isnull(error)
@@ -137,6 +139,12 @@ func showingCat(c):
 func labelCell(t, posn, data):
 	var lbl = t.get_child(posn)
 	lbl.text = str(data)
+	if data == PREFIX[LEVELS.UNRECOVERABLE]:
+		lbl.set("custom_colors/font_color", "#ff0000")
+	if data == PREFIX[LEVELS.ERROR]:
+		lbl.set("custom_colors/font_color", "#dd5500")
+	if data == PREFIX[LEVELS.WARNING]:
+		lbl.set("custom_colors/font_color", "#ffbe00")
 	#lbl.rect_position.y = 0
 	#lbl.margin_top = 0
 

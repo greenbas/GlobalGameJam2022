@@ -67,7 +67,7 @@ static func getImage(folder, file, ext):
 	if f.open(fname, f.READ) == OK:
 		img.load(fname)
 	else:
-		Game.debugMessage(Game.CAT.FILE, "Error reading image file " + fname)
+		Game.reportError(Game.CAT.FILE, "Error reading image file " + fname)
 	f.close()
 	return img
 
@@ -86,7 +86,7 @@ static func getFont(folder, file, ext):
 	if f.open(fname, f.READ) == OK:
 		font.font_data = load(fname)
 	else:
-		Game.debugMessage(Game.CAT.FILE, "Error reading font file " + fname)
+		Game.reportWarning(Game.CAT.FILE, "Error reading font file " + fname)
 	return font
 
 # https://github.com/godotengine/godot/issues/17748
@@ -98,7 +98,7 @@ static func getAudio(folder, file, ext):
 		var bytes = afile.get_buffer(afile.get_len())
 		stream.data = bytes
 	else:
-		Game.debugMessage(Game.CAT.FILE, "Error reading sound file " + fname)
+		Game.reportWarning(Game.CAT.FILE, "Error reading sound file " + fname)
 	afile.close()
 	return stream
 

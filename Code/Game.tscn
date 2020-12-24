@@ -206,8 +206,9 @@ margin_bottom = 22.0
 [node name="Level" type="Label" parent="Scene/DebugLayer/Debugger/LogList/LogTemplate"]
 margin_left = 4.0
 margin_top = 8.0
-margin_right = 4.0
+margin_right = 84.0
 margin_bottom = 22.0
+rect_min_size = Vector2( 80, 0 )
 
 [node name="Category" type="Label" parent="Scene/DebugLayer/Debugger/LogList/LogTemplate"]
 margin_right = 50.0

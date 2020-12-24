@@ -19,6 +19,8 @@ func loadData(s):
 			var menu = ScreenMenu.new(e)
 			screensList[e.ID] = menu
 			menu.updateMe(scene)
+		if e.Always_On == "1":
+			openScreen(e)
 	#self.connect("ui_dialogue", self, "accept_event")
 
 #func _on_ui_dialogue():
@@ -157,10 +159,15 @@ func triggerDestination():
 		#else: self.triggerAction(posn)
 
 func clearMenu(clearTypes = []):
-	# TODO: Where not Always_On
 	for a in scene.all_menus.values():
 		if clearTypes.has(a.menu) or len(clearTypes) == 0:
-			a.visible = false
+			if a.data.Always_On != "1":
+				a.visible = false
+				
+func refreshMenu(refreshTypes = []):
+	for e in Game.entityByID(Game.ENTITY.MENU).values():
+		if refreshTypes.has(e.Type) or len(refreshTypes) == 0:
+			openScreen(e)
 
 func drawActionWheel(character, posn, obj):
 	# Draw the action wheel
@@ -195,6 +202,8 @@ class ActionMenu:
 		z_index += 150
 	func updateMe(posn, c):
 		data.Actionable = "1" # Click to cancel
+		data.Always_On = "0" # TODO: From spreadsheet
+		data.Type = "actionwheel"
 		data.Walk_First = "0"
 		data.Needs_Second = "0"
 		data.Label = ""
@@ -207,6 +216,8 @@ class ActionItem:
 		menu = MENUS.WHEEL_ITEM
 	func updateMe(wheel):
 		data.Actionable = "1"
+		data.Always_On = "0" # TODO: From spreadsheet
+		data.Type = "actionwheel"
 		texture = Game.getTexture(data.Action_Path, data.Action_Filename, data.Action_Extension)
 		# Display radially from the center of the ActionMenu
 		var dist = (wheel.texture.get_width() / 2) * int(data.Distance_From_Center) / 100

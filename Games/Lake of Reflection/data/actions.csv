@@ -10,5 +10,5 @@
 "pull","Pull","sarah",0,,1,0,0,0,1,,,,"pull",,,240
 "auger","Auger","DEFAULT",0,,,,,,,,,,,,,
 "auger","Auger","lindsay",0,,1,1,,1,1,,,,"magnifying-glass",,,
-"auger","Strength","DEFAULT",0,,,,,,,,,,,,,
-"auger","Strength","johnny",0,,1,1,,1,1,,,,"strong-man",,,
+"strength","Strength","DEFAULT",0,,,,,,,,,,,,,
+"strength","Strength","johnny",0,,1,1,,1,1,,,,"strong-man",,,
