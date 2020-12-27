@@ -200,7 +200,7 @@ DEFAULT,0,,,,,,,,,,,,narrator,none,100%,,,,,ID,,0,0,,0,0,,,,
 "qSpeech","0",,,,,,,,,,,,"sarah","none","100%","Wha - what are you?!",,,,"ID",,"0","0",,"0","0",,,,,0
 "qSpeech","0",,,,,,,,,,,,"queen","none","100%","Ahem.  I think you mean "who".",,,,"ID",,"0","0",,"0","0",,,,,0
 "qSpeech","0",,,,,,,,,,,,"sarah","none","50%","Yes, sorry!",,,,"ID",,"0","0",,"0","0",,,,,0
-"qSpeech","0",,,,,,,,,,,,"queen","none","100%","I am Queen Amai.",,,,"ID",,"0","0",,"0","2",,,,,0
+"qSpeech","0",,,,,,,,,,,,"queen","none","100%","I am Queen Amai.",,,,"ID",,"0","0",,"0","1",,,,,0
 "qSpeech","0",,,,,,,,,,,,"johnny","none","100%","That's... interesting and all.  But actually, I think "what" was a perfectly valid question.",,,,"ID",,"0","0",,"0","0",,,,,0
 "qSpeech","0",,,,,,,,,,,,"sarah","none","100%","Johnny!  Don't be offensive.  Your Majesty... what he means to say is that we've never seen a person like yourself before.  You called me "human" and don't appear to be human yourself.  So please... what are you?",,,,"ID",,"0","0",,"0","0",,,,,0
 "qSpeech","0",,,,,,,,,,,,"johnny","none","60%","That's what I just asked!",,,,"ID",,"0","0",,"0","0",,,,,0
@@ -233,7 +233,7 @@ DEFAULT,0,,,,,,,,,,,,narrator,none,100%,,,,,ID,,0,0,,0,0,,,,
 "qSpeech","0",,,,,,,,,,,,"johnny","none","100%","You're a coward, not to go yourself.",,,,"ID",,"0","0",,"0","0",,,,,0
 "qSpeech","0",,,,,,,,,,,,"sarah","none","50%","Johnny!",,,,"ID",,"0","0",,"0","0",,,,,0
 "qSpeech","0",,,,,,,,,,,,"queen","none","125%","That may be true.  And yet my life would certainly be lost, while yours only might be.  I will not change my mind.","Value","Variables","queen","ID","teamState","0","0",,"1","0",,,,,0
-"--","0",,,,,,,,,,,,"narrator","none","100%",,,,,"ID",,"0","0",,"0","0",,,,,0
+"qSpeech","0",,,,,,,,,,,,"narrator","none","100%",,"Allowed","Actions","1","Character~,~ID","sarah~,~pull","0","0",,"1","0",,,,,0
 "--","0",,,,,,,,,,,,"narrator","none","100%",,,,,"ID",,"0","0",,"0","0",,,,,0
 "--","0",,,,,,,,,,,,"narrator","none","100%",,,,,"ID",,"0","0",,"0","0",,,,,0
 "--","0",,,,,,,,,,,,"narrator","none","100%",,,,,"ID",,"0","0",,"0","0",,,,,0

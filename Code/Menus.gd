@@ -177,7 +177,7 @@ func drawActionWheel(character, posn, obj):
 	var onType = "On_" + Game.getTabName(obj.Tab)
 	var myList = Game.listWhere(Game.ENTITY.ACTION, ["Character", onType], [character.ID, "1"], true, false)
 	var defaultList = Game.listWhere(Game.ENTITY.ACTION, ["Character", onType], ["DEFAULT", "1"], true, false)
-	actionList = Data.filter(Game.mergeDicts(myList, defaultList), ["Allowed"], ["1"], true, true)
+	actionList = Data.filter(Game.mergeDicts(myList, defaultList, true), ["Allowed"], ["1"], true, true)
 	if len(actionList) == 0:
 		Game.reportError(Game.CAT.LOAD, "No allowed %s actions exist for %s" % [onType, character.ID])
 	scene.drawItems("*", actionList, scene.all_menus, MENUS.WHEEL_ITEM)
@@ -211,8 +211,15 @@ class ActionMenu:
 		data.Walk_First = "0"
 		data.Needs_Second = "0"
 		data.Label = ""
-		position = posn
 		texture = Game.getTexture(c.Action_Wheel_Path, c.Action_Wheel_Filename, c.Action_Wheel_Extension)
+		# Position is mouse click, unless mouse click is too close to an edge
+		position = posn
+		var closeTL = texture.get_size() / 2
+		var closeBR = Vector2(Game.sceneNode.WIDTH, Game.sceneNode.HEIGHT) - closeTL
+		if position.x < closeTL.x: position.x = closeTL.x
+		elif position.x > closeBR.x: position.x = closeBR.x
+		if position.y < closeTL.y: position.y = closeTL.y
+		elif position.y > closeBR.y: position.y = closeBR.y
 class ActionItem:
 	extends MenuData
 	func _init(d).(d.ID, d):

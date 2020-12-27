@@ -157,7 +157,10 @@ static func loadDict(folder, tab):
 	return dict
 
 # Adds records or columns from d2 into d1
-static func mergeDicts(d1, d2):
+# Shallow version assumes (as would be the case for savegames) that d2 contains all of d1
+# with some possible extras.  Deep version is O(n^2) (ie, slow for nontrivial dicts) but
+# will completely merge two totally different dicts
+static func mergeDicts(d1, d2, deep=false):
 	var merged = {}
 	var count = 0
 	var checkID = ""
@@ -172,7 +175,9 @@ static func mergeDicts(d1, d2):
 			checkID = row2.ID
 			countID_1 = 0
 			countID_2 = 1 # this row
-			for r1 in range(r2, len(d1)):
+			var stPos = r2
+			if deep: stPos = 0
+			for r1 in range(stPos, len(d1)):
 				var row1 = d1[r1]
 				# Add any row from d1 with a matching ID
 				if row1.ID == checkID:
@@ -183,7 +188,7 @@ static func mergeDicts(d1, d2):
 							row1[c2] = row2[c2]
 					merged[count] = row1
 					count += 1
-				elif countID_1 > 0: break # We found them all, quit
+				elif !deep and countID_1 > 0: break # We found them all, quit
 		else:
 			countID_2 += 1
 		# We ONLY add from d2 if that ID did not exist previously
