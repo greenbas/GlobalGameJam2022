@@ -163,7 +163,7 @@ func clearMenu(clearTypes = []):
 		if clearTypes.has(a.menu) or len(clearTypes) == 0:
 			if a.data.Always_On != "1":
 				a.visible = false
-				
+
 func refreshMenu(refreshTypes = []):
 	for e in Game.entityByID(Game.ENTITY.MENU).values():
 		if refreshTypes.has(e.Type) or len(refreshTypes) == 0:
@@ -175,7 +175,11 @@ func drawActionWheel(character, posn, obj):
 	actionMenu = scene.all_menus[actionMenu.data.ID]
 	actionMenu.updateMe(posn, character)
 	var onType = "On_" + Game.getTabName(obj.Tab)
-	actionList = Game.listWhere(Game.ENTITY.ACTION, ["Allowed", onType], ["1", "1"])
+	var myList = Game.listWhere(Game.ENTITY.ACTION, ["Character", onType], [character.ID, "1"], true, false)
+	var defaultList = Game.listWhere(Game.ENTITY.ACTION, ["Character", onType], ["DEFAULT", "1"], true, false)
+	actionList = Data.filter(Game.mergeDicts(myList, defaultList), ["Allowed"], ["1"], true, true)
+	if len(actionList) == 0:
+		Game.reportError(Game.CAT.LOAD, "No allowed %s actions exist for %s" % [onType, character.ID])
 	scene.drawItems("*", actionList, scene.all_menus, MENUS.WHEEL_ITEM)
 	for a in actionList:
 		var aItem = scene.all_menus[a.ID]

@@ -164,6 +164,8 @@ func run(commands, actingObj=null): # We need the acting object in the somewhat 
 				if cmd.Refresh == "1":
 					if tab == Game.ENTITY_NAME[Game.ENTITY.SCENE] or tab == Game.ENTITY_NAME[Game.ENTITY.CHAR] or tab == Game.ENTITY_NAME[Game.ENTITY.OBJ]:
 						refresh = true
+					if tab == Game.ENTITY_NAME[Game.ENTITY.ACTION]:
+						Game.sceneNode.all_menus = {}
 				
 			# And some other housekeeping
 			if !Util.isnull(cmd.Wait_Seconds):
@@ -190,7 +192,7 @@ func run(commands, actingObj=null): # We need the acting object in the somewhat 
 					Game.debugMessage(Game.CAT.SCRIPT, "Adding to inventory")
 					for addItem in cmd.Add_To_Inventory.split("-"):
 						Game.inventory.addItem(cmd.Character_ID, addItem)
-					Game.menu.refreshMenu(["inventory"])
+					#Game.menu.refreshMenu(["inventory"])
 			if refresh: Game.sceneNode.refreshScene()
 	mode = MODES.READY
 	Game.enableActions()
@@ -205,7 +207,7 @@ func adjustExpr(e):
 	# Handle variables
 	for v in Game.entityByID(Game.ENTITY.VAR).values():
 		expr = expr.replace(v.ID, v.Value)
-		Game.verboseMessage(Game.CAT.SCRIPT, "Adjusted expression %s to %s" % [e, expr])
+	Game.verboseMessage(Game.CAT.SCRIPT, "Adjusted expression %s to %s" % [e, expr])
 	return expr
 
 # Take the original expression so we can produce better error strings
@@ -214,12 +216,16 @@ func parseExpr(e):
 	# If it didn't already get adjusted, then it must be a number or a string.
 	# We need to be careful to compare numbers as numbers and strings as strings...
 	# But once only, we don't want sticks==sticks to become ""sticks""==""sticks""
-	var strings = {}
+	var strings = []
 	for m in rgxStrings.search_all(str(expr)):
 		var item = m.get_string()
-		strings[item] = item
+		strings.push_back(item)
+	#	expr = rgxStrings.sub(str(expr), "\"" + item + "\"", false)
+	var offset = 0
 	for s in strings:
-		expr = expr.replace(s, "\"" + s + "\"")
+	#	expr = expr.replace(s, "\"" + s + "\"")
+		expr = rgxStrings.sub(str(expr), "\"" + s + "\"", false, offset)
+		offset += len(s) + 2
 		
 	var result
 	var error = eval.parse(expr, [])

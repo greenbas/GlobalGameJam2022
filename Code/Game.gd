@@ -52,18 +52,27 @@ static func gamePicked(gameName):
 	loadGameFromStart()
 	
 static func loadGameFromStart():
-	var folder = Game.gamepath + Game.currgame + "/data/"
-	loadGameFromFolder(folder)
+	var start = Game.gamepath + Game.currgame + "/data/"
+	loadGameFromFolder(start)
 
 static func loadGameFromSave(fname):
+	var start = Game.gamepath + Game.currgame + "/data/"
 	var folder = Game.savepath + Game.currgame + "/" + fname + "/data/"
 	# We expect this can be called when we already have a game loaded, and need to stop it
 	Game.sceneNode.unloadScene()
-	loadGameFromFolder(folder)
+	loadGameFromFolder(folder, start)
 
-static func loadGameFromFolder(folder):
+static func loadGameFromFolder(folder, startfolder = ""):
 	for type in range(0, len(ENTITY)):
+		# Okay, so to make it easier to develop your scripts, I want to make it so that
+		# your savegames don't become completely useless the moment you add something
+		# to any of the tabs.  And the engine doesn't ever *delete* properties except
+		# for inventory.  So get the loaded game, compare to the base, and add any
+		# records or properties that seem to be missing.
 		var dict = Game.loadDict(folder, ENTITY_NAME[type])
+		if type != Game.ENTITY.INV and !Util.isnull(startfolder):
+			var basedict = Game.loadDict(startfolder, ENTITY_NAME[type])
+			dict = Game.mergeDicts(dict, basedict)
 		if allGood():
 			Game.entities[ENTITY_NAME[type]] = dict
 			var ids = {}
@@ -147,6 +156,42 @@ static func loadDict(folder, tab):
 	var dict = Data.fillProps(folder, tab)
 	return dict
 
+# Adds records or columns from d2 into d1
+static func mergeDicts(d1, d2):
+	var merged = {}
+	var count = 0
+	var checkID = ""
+	var countID_1 = 0
+	var countID_2 = 0
+	for r2 in range(0, len(d2)):
+		var line = {}
+		var row2 = d2[r2]
+		# Does d1 have any records with this ID?
+		# Only check the first time we encounter the ID!
+		if checkID != row2.ID:
+			checkID = row2.ID
+			countID_1 = 0
+			countID_2 = 1 # this row
+			for r1 in range(r2, len(d1)):
+				var row1 = d1[r1]
+				# Add any row from d1 with a matching ID
+				if row1.ID == checkID:
+					countID_1 += 1
+					# But also handle new columns
+					for c2 in row2:
+						if !row1.has(c2):
+							row1[c2] = row2[c2]
+					merged[count] = row1
+					count += 1
+				elif countID_1 > 0: break # We found them all, quit
+		else:
+			countID_2 += 1
+		# We ONLY add from d2 if that ID did not exist previously
+		if countID_2 > countID_1:
+			merged[count] = row2
+			count += 1
+	return merged
+
 static func getImage(folder, file, ext):
 	return Data.getImage(Game.gamepath + Game.currgame + "/" + folder, file, ext)
 
@@ -175,27 +220,35 @@ static func getImageFile(id):
 
 # This internal-only function does the filter and then returns ONE item, or
 # a LIST of items.  Use the access functions above for better readability.
-static func filter(e, prop, value, multi, dict, err):
-	var res = {} # Only one of these two will be returned
-	var arr = [] # Unless multi is false, in which case neither will be
-	for row in Game.entities[ENTITY_NAME[e]].values():
-		var matches = true
-		for i in range(0, len(prop)):
-			if Util.isnull(row[prop[i]]) and Util.isnull(value[i]):
-				pass # Two nulls are equal
-			elif row[prop[i]] != value[i]:
-				matches = false
-		if (matches):
-			if (!multi): return row
-			res[row.ID] = row
-			arr.append(row)
-	if err and Util.isnull(res):
+static func filter(e, prop, value, multi, asDict, err):
+	var d = Data.filter(Game.entities[ENTITY_NAME[e]], prop, value, multi, asDict)
+	if err and len(d) == 0:
 		var s = ""
 		var n = ENTITY_NAME[e]
 		if n.right(len(n)-1) != "s": s = "s" # Just grammatical perfectionism... sorry
 		Game.reportError(Game.CAT.LOAD, "No %s%s exist with property %s = %s" % [ENTITY_NAME[e], s, prop, value])
-	if (dict): return res.values()
-	else: return arr
+	return d
+
+#	var res = {} # Only one of these two will be returned
+#	var arr = [] # Unless multi is false, in which case neither will be
+#	for row in Game.entities[ENTITY_NAME[e]].values():
+#		var matches = true
+#		for i in range(0, len(prop)):
+#			if Util.isnull(row[prop[i]]) and Util.isnull(value[i]):
+#				pass # Two nulls are equal
+#			elif row[prop[i]] != value[i]:
+#				matches = false
+#		if (matches):
+#			if (!multi): return row
+#			res[row.ID] = row
+#			arr.append(row)
+#	if err and Util.isnull(res):
+#		var s = ""
+#		var n = ENTITY_NAME[e]
+#		if n.right(len(n)-1) != "s": s = "s" # Just grammatical perfectionism... sorry
+#		Game.reportError(Game.CAT.LOAD, "No %s%s exist with property %s = %s" % [ENTITY_NAME[e], s, prop, value])
+#	if (dict): return res.values()
+#	else: return arr
 
 # Updates all matching rows; similar to filter, but allows it would be very
 # confusing to try to combine these functions.  Nothing good could come of that
@@ -213,10 +266,11 @@ static func update(e, fprop, fvalue, uprop, uvalue, err=true):
 		for row in Game.entities[e].values():
 			var matches = true
 			var checkCurrent = false
-			for i in range(0, len(fprop)):
+			for i in range(0, len(uprop)):
 				# We always update all records for Current, just only one of them will be 1
-				if uprop[i] == "Current" and uvalue[i] == "1":
+				if uprop[i] == "Current" and str(uvalue[i]) == "1":
 					checkCurrent = true
+			for i in range(0, len(fprop)):
 				if row[fprop[i]] != fvalue[i]:
 					matches = false
 			# And update all update-columns

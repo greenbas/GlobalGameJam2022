@@ -83,7 +83,7 @@ DEFAULT,0,,,,,,,,,,,,narrator,none,100%,,,,,ID,,0,0,,0,0,,,,
 "DEFAULT-forest-03-#0000ff","0","DEFAULT",,,"0 < numSticks && numSticks < 6",,,,,"forest-03","#0000ff","Go back","DEFAULT","none","100%","We haven't collected very much firewood.  Let's grab a few more.",,,,"ID",,"0","0",,"0","0",,,,,0
 "DEFAULT-forest-03-#0000ff","0","DEFAULT",,,"numSticks >= 6",,,,,"forest-03","#0000ff","Go back","DEFAULT","none","100%",,"Scene_ID~,~Screen_X","Characters","forest-02~,~10","ID","DEFAULT","0","0",,"1","0",,,,,0
 "DEFAULT-forest-02-#0000ff","0","DEFAULT",,,,,,,,"forest-02","#0000ff","Go back","DEFAULT","none","100%",,"Scene_ID~,~Screen_X","Characters","forest-01~,~10","ID","DEFAULT","0","0",,"1","0",,,,,0
-"DEFAULT-forest-01-#0000ff","0","DEFAULT",,,"teamState == sticks",,,,,"forest-01","#0000ff","Go back","DEFAULT","none","100%","That's really odd.  We should be back by now.","Audio_Filename","Scenes","Aitua-Gray-Forest-Trap","Label","Forest","0","0",,"0","2",,,,,0
+"DEFAULT-forest-01-#0000ff","0","DEFAULT",,,"teamState == sticks",,,,,"forest-01","#0000ff","Go back","DEFAULT","none","100%","That's really odd.  We should be back by now.","Audio_Filename","Scenes","Aitua-Gray-Forest-Trap","Label","Forest","0","0",,"0","1.25",,,,,0
 "DEFAULT-forest-01-#0000ff","0","DEFAULT",,,"teamState == sticks",,,,,"forest-01","#0000ff","Go back","DEFAULT","none","100%",,"Value","Variables","lost","ID","teamState","0","0",,"0","0",,,,,0
 "DEFAULT-forest-01-#0000ff","0","DEFAULT",,,"teamState == sticks",,,,,"forest-01","#0000ff","Go back","narrator","none","100%",,"Visible","Characters","1","ID","queen","0","0",,"0","0",,,,,0
 "DEFAULT-forest-01-#0000ff","0","DEFAULT",,,,,,,,"forest-01","#0000ff","Go back","DEFAULT","none","100%",,"Scene_ID~,~Screen_X","Characters","forest-05~,~10","ID","DEFAULT","0","0",,"1","0",,,,,0
@@ -191,7 +191,8 @@ DEFAULT,0,,,,,,,,,,,,narrator,none,100%,,,,,ID,,0,0,,0,0,,,,
 "sarah-handle-queen","0","sarah","handle",,"teamState == lost","queen",,,,,,,"DEFAULT","none","100%","Well, that's ... very odd.  My fingers just tingled, and","Value","Variables","queenTemp","ID","teamState","0","0",,"0","0",,,,,0
 "sarah-handle-queen","0","sarah","handle",,"teamState == lost","queen",,,,,,,"DEFAULT","none","100%","it almost felt as though... no, I must have imagined it.","Faerie Queen","Characters","Label","ID","queen","0","0",,"0","0",,,,,0
 "sarah-handle-queen","0","sarah","handle","qSpeech","teamState == queenTemp","queen",,,,,,,"DEFAULT","none","100%",,,,,"ID",,"0","0",,"0","0",,,,,0
-"DEFAULT-look-queen","0","DEFAULT","look",,"teamState == queen","queen",,,,,,,"DEFAULT","none","100%","It claims to be a faerie.  I'm hardly in a position to disagree.",,,,"ID",,"0","0",,"0","0",,,,,0
+"sarah-handle-queen","0","sarah","handle",,"teamState == queen","queen",,,,,,,"DEFAULT","none","100%","I don't think she would like that very much.",,,,"ID",,"0","0",,"0","0",,,,,0
+"DEFAULT-look-queen","0","DEFAULT","look",,"teamState == queen","queen",,,,,,,"DEFAULT","none","100%","A shimmering ball of light with gossamer wings.",,,,"ID",,"0","0",,"0","0",,,,,0
 "qSpeech","0",,,,,,,,,,,,"sarah","none","100%","There it goes again.  My fingers are tingling.  And...",,,,"ID",,"0","0",,"0","0",,,,,0
 "qSpeech","0",,,,,,,,,,,,"narrator","none","100%",,"Screen_X~,~Screen_Y","Characters","65~,~65","ID","queen","0","0",,"1","0",,,,,0
 "qSpeech","0",,,,,,,,,,,,"sarah","none","100%","...oh my.",,,,"ID",,"0","0",,"0","0",,,,,0
@@ -231,7 +232,7 @@ DEFAULT,0,,,,,,,,,,,,narrator,none,100%,,,,,ID,,0,0,,0,0,,,,
 "qSpeech","0",,,,,,,,,,,,"queen","none","175%","That is true, human.  However, I cannot allow you to leave otherwise.  Your lives - or perhaps the life of just one of you - cannot be weighed against the life of my son.",,,,"ID",,"0","0",,"0","0",,,,,0
 "qSpeech","0",,,,,,,,,,,,"johnny","none","100%","You're a coward, not to go yourself.",,,,"ID",,"0","0",,"0","0",,,,,0
 "qSpeech","0",,,,,,,,,,,,"sarah","none","50%","Johnny!",,,,"ID",,"0","0",,"0","0",,,,,0
-"qSpeech","0",,,,,,,,,,,,"queen","none","125%","That may be true.  And yet my life would be lost, while yours only might be.  I will not change my mind.","Value","Variables","queen","ID","teamState","0","0",,"1","0",,,,,0
+"qSpeech","0",,,,,,,,,,,,"queen","none","125%","That may be true.  And yet my life would certainly be lost, while yours only might be.  I will not change my mind.","Value","Variables","queen","ID","teamState","0","0",,"1","0",,,,,0
 "--","0",,,,,,,,,,,,"narrator","none","100%",,,,,"ID",,"0","0",,"0","0",,,,,0
 "--","0",,,,,,,,,,,,"narrator","none","100%",,,,,"ID",,"0","0",,"0","0",,,,,0
 "--","0",,,,,,,,,,,,"narrator","none","100%",,,,,"ID",,"0","0",,"0","0",,,,,0

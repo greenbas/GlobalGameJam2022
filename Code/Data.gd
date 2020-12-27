@@ -12,17 +12,31 @@ static func fillProps(folder, tab):
 	file.close()
 	return dict
 
+static func filter(d, prop, value, multi, asDict):
+	var res = {} # Only one of these two will be returned
+	var arr = [] # Unless multi is false, in which case neither will be
+	for row in d.values():
+		var matches = true
+		for i in range(0, len(prop)):
+			if Util.isnull(row[prop[i]]) and Util.isnull(value[i]):
+				pass # Two nulls are equal
+			elif row[prop[i]] != value[i]:
+				matches = false
+		if (matches):
+			if (!multi): return row
+			res[row.ID] = row
+			arr.append(row)
+	if (asDict): return res.values()
+	else: return arr
+
 static func parseCSV(file):
 	var props = []
 	var defaults = []
 	file.seek(0)
 	var list = {}
-	while !file.eof_reached(): 
+	while !file.eof_reached():
 		var line = file.get_csv_line()
-#		for p in range(0, line.size()):
-#			if line[p] == "\"":
-#				line[p] = ""
-		if len(props) == 0:
+		if len(props) == 0: # First (header) row
 			props = line
 		elif len(defaults) == 0 and line[0] == "DEFAULT":
 			defaults = line

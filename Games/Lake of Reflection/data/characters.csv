@@ -1,8 +1,8 @@
-"ID","Label","Current","Visible","Actionable","Playable","Scene_ID","Screen_X","Screen_Y","Zoom","Base_X","Base_Y","Walks","Walk_Speed","Font_Colour","Font_Shadow","Font_Path","Font_Filename","Font_Extension","Font_Size","Animation_Current","Idle_N","Idle_E","Idle_W","Idle_S","Idle_NE","Idle_NW","Idle_SE","Idle_SW","N","E","W","S","NE","NW","SE","SW","Cursor_Path","Cursor_Filename","Cursor_Extension","Cursor_Point_X","Cursor_Point_Y","Action_Wheel_Path","Action_Wheel_Filename","Action_Wheel_Extension"
-"DEFAULT",,0,1,1,0,,50%,50%,100%,50%,95%,1,100%,"#000000",,"fonts/","narrator",".ttf",25,"idle","idle_n","idle","idle","idle","idle_n","idle_n","idle_n","idle","n","e","w","s","e","w","s","w","images/menu/","cursor",".png",2.0%,3.0%,"images/menu/","vc",".png"
-"lindsay","Lindsay",,0,,1,"campfire",32%,65%,,,,,,"#bbaa00","#000000",,"ShadowsIntoLight-Regular",,,"sit",,,,,,,,,,,,,,,,,,"cursor_lindsay",,,,,"vc_lindsay",
-"johnny","Johnny",,0,,1,"campfire",65%,55%,,,,,115%,"#ee4444","#000000",,"CaveatBrush-Regular",,,"sit",,,,,,,,,,,,,,,,,,"cursor_johnny",,,,,"vc_johnny",
-"sarah","Sarah",,0,,1,"campfire",73%,65%,,,,,90%,"#773399","#000000",,"Handlee-Regular",,,"sit",,,,,,,,,,,,,,,,,,"cursor_sarah",,,,,"vc_sarah",
-"narrator","Narrator",,,,,,,,,,,,,"#000000",,,"WendyOne-Regular",,,,,,,,,,,,,,,,,,,,,,,,,,,
-"queen","Strange Object",,0,,,"forest-03",73%,57%,,,50%,,,"#ffffff","#000000",,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-"fire","Fire",1,,0,,"campfire",50%,60%,75%,,55%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+"ID","Label","Current","Visible","Actionable","Playable","Scene_ID","Screen_X","Screen_Y","Zoom","Base_X","Base_Y","Walks","Walk_Speed","Label_Portrait","Font_Colour","Font_Shadow","Font_Path","Font_Filename","Font_Extension","Font_Size","Animation_Current","Idle_N","Idle_E","Idle_W","Idle_S","Idle_NE","Idle_NW","Idle_SE","Idle_SW","N","E","W","S","NE","NW","SE","SW","Cursor_Path","Cursor_Filename","Cursor_Extension","Cursor_Point_X","Cursor_Point_Y","Action_Wheel_Path","Action_Wheel_Filename","Action_Wheel_Extension"
+"DEFAULT",,0,1,1,0,,50%,50%,100%,50%,95%,1,100%,1,"#000000",,"fonts/","narrator",".ttf",25,"idle","idle_n","idle","idle","idle","idle_n","idle_n","idle_n","idle","n","e","w","s","e","w","s","w","images/menu/","cursor",".png",2.0%,3.0%,"images/menu/","vc",".png"
+"lindsay","Lindsay",,0,,1,"campfire",32%,65%,,,,,,,"#bbaa00","#000000",,"ShadowsIntoLight-Regular",,,"sit",,,,,,,,,,,,,,,,,,"cursor_lindsay",,,,,"vc_lindsay",
+"johnny","Johnny",,0,,1,"campfire",65%,55%,,,,,115%,,"#ee4444","#000000",,"CaveatBrush-Regular",,,"sit",,,,,,,,,,,,,,,,,,"cursor_johnny",,,,,"vc_johnny",
+"sarah","Sarah",,0,,1,"campfire",73%,65%,,,,,90%,,"#773399","#000000",,"Handlee-Regular",,,"sit",,,,,,,,,,,,,,,,,,"cursor_sarah",,,,,"vc_sarah",
+"narrator","Narrator",,,,,,,,,,,,,,"#000000",,,"WendyOne-Regular",,,,,,,,,,,,,,,,,,,,,,,,,,,
+"queen","Strange Object",,0,,,"forest-03",73%,57%,,,50%,,,,"#ffffff","#000000",,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+"fire","Fire",1,,0,,"campfire",50%,60%,75%,,55%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
