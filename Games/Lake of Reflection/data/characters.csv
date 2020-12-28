@@ -4,5 +4,5 @@
 "johnny","Johnny",,0,,1,"campfire",65%,55%,,,,,115%,,"#ee4444","#000000",,"CaveatBrush-Regular",,,"sit",,,,,,,,,,,,,,,,,,"cursor_johnny",,,,,"vc_johnny",
 "sarah","Sarah",,0,,1,"campfire",73%,65%,,,,,90%,,"#773399","#000000",,"Handlee-Regular",,,"sit",,,,,,,,,,,,,,,,,,"cursor_sarah",,,,,"vc_sarah",
 "narrator","Narrator",,,,,,,,,,,,,,"#000000",,,"WendyOne-Regular",,,,,,,,,,,,,,,,,,,,,,,,,,,
-"queen","Strange Object",,0,,,"forest-03",73%,57%,,,50%,,,,"#ffffff","#000000",,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+"queen","Strange Object",,0,,,"forest-03",73%,57%,,,50%,,,,"#ffffff","#000000",,,,,,"idle","idle","idle","idle","idle","idle","idle","idle","idle","idle","idle","idle","idle","idle","idle","idle",,,,,,,,
 "fire","Fire",1,,0,,"campfire",50%,60%,75%,,55%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,

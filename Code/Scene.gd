@@ -132,6 +132,10 @@ func _input(event):
 	if event.is_action_pressed("ui_playable_prev"):
 		cycleChar(-1)
 
+func charAtDestination():
+	print("reached")
+	emit_signal("char_destination")
+
 func moveToChar(moveTo):
 	cycleChar(0, moveTo)
 func cycleChar(moveBy, moveTo=0):

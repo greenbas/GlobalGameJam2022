@@ -294,6 +294,8 @@ static func update(e, fprop, fvalue, uprop, uvalue, err=true):
 
 # ===== Signals =========================================================
 
+signal char_destination()
+
 var dialogueMenu
 var dialoguePortrait
 var speaker

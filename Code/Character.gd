@@ -17,6 +17,8 @@ func _init(d):
 	#ia = Interactable.new()
 	#ia.setData(Game.ENTITY.CHAR)
 	initAnim()
+	Game.menu.connect("char_destination", self, "Menu.triggerDestination")
+	#Game.sceneNode.scriptManager.connect("char_destination", self, "char_destination")
 	return self
 
 func drawMe():
@@ -83,6 +85,7 @@ func setGoal():
 	else:
 		goalPosn = DONT_MOVE
 		Game.menu.triggerDestination()
+		
 		#Game.update(Game.ENTITY.CHAR, ["ID"], [sprite.name], "Scene_X", posn.x)
 		#Game.update(Game.ENTITY.CHAR, ["ID"], [sprite.name], "Scene_Y", posn.y)
 		#Game.update(Game.ENTITY.CHAR, ["ID"], [sprite.name], ["Scene_X", "Scene_Y"], [posn.x, posn.y])
@@ -99,7 +102,9 @@ func _process(delta):
 		scene.onCharacterMove(self)
 		if goalPosn == DONT_MOVE:
 			beginAnim(data["Idle_" + getDir(prevAngle)])
-			Game.menu.triggerDestination()
+			#Game.menu.triggerDestination()
+			emit_signal("char_destination")
+			
 	elif goalPosn != DONT_MOVE:
 		var angle = get_angle_to(goalPosn)
 		beginAnim(data[getDir(angle)])

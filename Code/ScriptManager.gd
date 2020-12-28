@@ -158,6 +158,20 @@ func run(commands, actingObj=null): # We need the acting object in the somewhat 
 					for v in range(0, fval.size()):
 						if fval[v] == "DEFAULT":
 							fval[v] = cmd.Character_ID
+						if cmd.Animate_Move == "1":
+							# We expect a Screen_X and Screen_Y, we will not update these the normal way
+							if col[0] == "Screen_X" and col[1] == "Screen_Y":
+								var x = float(Game.sceneNode.WIDTH) * float(val[0]) / 100.0
+								var y = float(Game.sceneNode.HEIGHT) * float(val[1]) / 100.0
+								Game.debugMessage(Game.CAT.SCRIPT, "Attempting to move %s to (%s, %s)" % [fval[v], x, y])
+								col.remove(0) # first two of each
+								col.remove(0)
+								val.remove(0)
+								val.remove(0)
+								var sprite = Game.sceneNode.all_chars[fval[v]]
+								Game.sceneNode.walkmap.tryWalking(sprite, Vector2(x, y))
+							else:
+								Game.reportError(Game.CAT.SCRIPT, "Animate_Move requires Screen_X and Screen_Y as the first two values in Set_Column.")
 					Game.debugMessage(Game.CAT.SCRIPT, "%s: Setting %s to %s where %s=%s" % [tab, col, val, fcol, fval])
 					Game.update(tab, fcol, fval, col, val)
 				# Refresh if necessary
@@ -169,7 +183,12 @@ func run(commands, actingObj=null): # We need the acting object in the somewhat 
 				
 			# And some other housekeeping
 			if !Util.isnull(cmd.Wait_Seconds):
-				yield(Game.wait(float(cmd.Wait_Seconds) / Game.dbgr.getFF()), "timeout")
+				if cmd.Wait_Seconds == "A":
+					Game.debugMessage(Game.CAT.SCRIPT, "Waiting for character to arrive")
+					#yield(Game, "char_destination")
+					Game.debugMessage(Game.CAT.SCRIPT, "Character arrived at destination")
+				else:
+					yield(Game.wait(float(cmd.Wait_Seconds) / Game.dbgr.getFF()), "timeout")
 			if cmd.Remove_Target == "1" or cmd.Add_To_Inventory == "1":
 				# We need to identify the object being acted on
 				var type

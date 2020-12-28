@@ -8,7 +8,7 @@ DEFAULT,,idle,images/characters/,empty,.png,1,0.2
 "lindsay-w","lindsay","w","images/characters/","lindsay_w",".png","8","0.2","9"
 "lindsay-s","lindsay","s","images/characters/","lindsay_s",".png","8","0.2","9"
 "fire","fire","idle","images/objects/","campfire_sprite",".png","8","0.2","9"
-"queen","queen","idle","images/characters/","queen",".png","9","0.2","9"
+"queen","queen","idle","images/characters/","queen",".png","9","0.1","9"
 "sarah","sarah","idle","images/characters/","sarah_idle",".png","1","0.2","9"
 "sarah-idle_n","sarah","idle_n","images/characters/","sarah_idle_n",".png","1","0.2","9"
 "sarah-sit","sarah","sit","images/characters/","sarah_sit",".png","1","0.2","9"

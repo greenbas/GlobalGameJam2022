@@ -7,7 +7,7 @@ DEFAULT,,DEFAULT,1,0,1,1,1,,1,0,*,images/menu/,,.png,65.00%,300
 "handle","Interact with","DEFAULT","1","1","1","1","1","1","1","0","*","images/menu/","vc_handle",".png","65.00%","120","2","1","0","actionwheel"
 "take","Take","DEFAULT","1","0","1","0","0","0","1","0","*","images/menu/","vc_take",".png","65.00%","0","2","1","0","actionwheel"
 "pull","Pull","DEFAULT","0","0","1","1","1",,"1","0","*","images/menu/",,".png","65.00%","300","2"
-"pull","Pull","sarah","0","0","1","0","0","0","1","0","*","images/menu/","pull",".png","65.00%","240","2"
+"pull","Pull","sarah","1","0","1","0","0","0","1","0","*","images/menu/","pull",".png","65.00%","240","2"
 "auger","Auger","DEFAULT","0","0","1","1","1",,"1","0","*","images/menu/",,".png","65.00%","300","2"
 "auger","Auger","lindsay","0","0","1","1","1","1","1","0","*","images/menu/","magnifying-glass",".png","65.00%","300","2"
 "strength","Strength","DEFAULT","0","0","1","1","1",,"1","0","*","images/menu/",,".png","65.00%","300","2"

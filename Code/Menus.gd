@@ -21,7 +21,6 @@ func loadData(s):
 			menu.updateMe(scene)
 		if e.Always_On == "1":
 			openScreen(e)
-	#self.connect("ui_dialogue", self, "accept_event")
 
 #func _on_ui_dialogue():
 #	openScreen(Game.entityWhere(Game.ENTITY.MENU, ["ID"], ["portrait"]))
