@@ -33,12 +33,12 @@ static func getTabName(t):
 # But if I do it this way, then I can retrieve the entity name for error reporting
 # and it may be useful for other reasons down the road.
 # So, we have a dictionary of dictionaries.  Use the string as the index for easier debugging.
-enum ENTITY { SCRIPT = 0, VAR, ACTION, CHAR, SCENE, OBJGROUP, OBJ, INV, EMOTIONS, ANIM, MENU }
+enum ENTITY { SCRIPT = 0, VAR, ACTION, CHAR, SCENE, OBJGROUP, OBJ, INV, EMOTIONS, ANIM, MENU, SAVE }
 const MENU = 99
 const ENTITY_NAME = { ENTITY.SCRIPT: "script", ENTITY.VAR: "variables", ENTITY.ACTION: "actions",
 	ENTITY.CHAR: "characters", ENTITY.SCENE: "scenes", ENTITY.OBJGROUP: "objgroups",
 	ENTITY.OBJ: "objects", ENTITY.INV: "inventory", ENTITY.EMOTIONS: "emotions",
-	ENTITY.ANIM: "animations", ENTITY.MENU: "menus" }
+	ENTITY.ANIM: "animations", ENTITY.MENU: "menus", ENTITY.SAVE: "save" }
 var entities = {}
 var idlist = {}
 
@@ -56,11 +56,13 @@ static func loadGameFromStart():
 	loadGameFromFolder(start)
 
 static func loadGameFromSave(fname):
-	var start = Game.gamepath + Game.currgame + "/data/"
-	var folder = Game.savepath + Game.currgame + "/" + fname + "/data/"
-	# We expect this can be called when we already have a game loaded, and need to stop it
-	Game.sceneNode.unloadScene()
-	loadGameFromFolder(folder, start)
+	Game.sceneNode.unloadScene() # TODO: Loading from another save
+	var folder = Game.savepath + Game.currgame + "/"
+	var commands = Data.fillProps(folder, fname)
+	for cmd in commands.values():
+		update(cmd.Set_Tab, [cmd.Filter_Column], [cmd.Filter_Value],
+			[cmd.Set_Column], [cmd.Set_Value], true)
+	Game.sceneNode.refreshScene()
 
 static func loadGameFromFolder(folder, startfolder = ""):
 	for type in range(0, len(ENTITY)):
@@ -84,6 +86,9 @@ static func loadGameFromFolder(folder, startfolder = ""):
 					pass
 			Game.idlist[type] = ids
 	if allGood():
+		Game.save = entityByID(Game.ENTITY.SAVE)
+		saveCommand("Set_Tab", "Filter_Column", "Filter_Value", # These are ignored,
+			"Set_Column", "Set_Value") # but there needs to be SOME header row
 		Game.sceneNode.get_node("GameSelect").visible = false
 		Game.playables = Game.listWhere(Game.ENTITY.CHAR, ["Playable"], ["1"])
 		Game.inventory = Inventory.new(Game.playables, entityByID(Game.ENTITY.INV))
@@ -92,16 +97,10 @@ static func loadGameFromFolder(folder, startfolder = ""):
 		Game.enableActions()
 
 static func saveGameToFile(fname):
-	Game.inventory.updateEntity()
-	var fhead = Game.gamepath + Game.currgame + "/data/"
-	var fdata = Game.savepath + Game.currgame + "/" + fname + "/data/"
-	# The header and default row must be read from the gamepath
-	# This is because the dict may be empty, but the game file won't be
-	for d in Game.entities.keys():
-		Data.saveCSV(fhead, fdata, d + ".csv", Game.entities[d])
-	var gdignore = File.new()
-	if gdignore.open(fdata + ".gdignore", gdignore.WRITE) == OK:
-		gdignore.close()
+	#Game.inventory.updateEntity()
+	var fhead = Game.gamepath + Game.currgame + "/data/save.csv"
+	var fdata = Game.savepath + Game.currgame + "/"
+	Data.saveCSV(fhead, fdata, fname + ".csv", Game.save)
 
 func getScreenSize():
 	return Vector2(sceneNode.WIDTH, sceneNode.HEIGHT)
@@ -128,6 +127,7 @@ var gamepath = "Games/"
 var savepath = "Saves/"
 var currgame = ""
 var playables = {} # Playable characters, since there should be actions for each
+var save # List of commands in this play-through
 
 # ===== Errors / Debugging ==============================================
 
@@ -230,6 +230,7 @@ static func filter(e, prop, value, multi, asDict, err):
 static func updateByID(e, fprop, fvalue, uprop, uvalue, err=true):
 	update(Game.ENTITY_NAME[e], fprop, fvalue, uprop, uvalue, err)
 static func update(e, fprop, fvalue, uprop, uvalue, err=true):
+	saveCommandArr(e, fprop, fvalue, uprop, uvalue)
 	# We can pass multiple variables with separators.  Let's do some validation:
 	if len(fprop) != len(fvalue):
 		reportError(Game.CAT.SCRIPT, "If more than one Set_Column, you must have a matching number of Set_Values (split by ~).")
@@ -261,6 +262,16 @@ static func update(e, fprop, fvalue, uprop, uvalue, err=true):
 			var s = ""
 			if e.right(len(e)-1) != "s": s = "s" # Just grammatical perfectionism... sorry
 			Game.reportError(Game.CAT.SCRIPT, "No %s%s exist with property %s = %s" % [e, s, fprop, fvalue])
+
+# Every time we perform an update, we save it to the list of commands in this savegame
+static func saveCommandArr(e, fprop, fvalue, uprop, uvalue):
+	for f in range(0, len(fprop)):
+		for u in range(0, len(uprop)):
+			saveCommand(e, fprop[f], fvalue[f], uprop[u], uvalue[u])
+static func saveCommand(e, fprop, fvalue, uprop, uvalue):
+	var cmd = { "Set_Tab": e, "Set_Column": uprop, "Set_Value": uvalue,
+		"Filter_Column": fprop, "Filter_Value": fvalue }
+	Game.save[len(Game.save)] = (cmd)
 
 # ===== Signals =========================================================
 

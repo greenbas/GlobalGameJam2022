@@ -215,12 +215,13 @@ func run(commands, actingObj=null):
 				
 			# And some other housekeeping
 			if !Util.isnull(cmd.Wait_Seconds):
-				if cmd.Wait_Seconds.left(1) == "D":
-					#yield(Game, "char_destination")
-					waitForDest(int(cmd.Wait_Seconds)) # int() discards the D
-					yield(self, "reachedDest")
-				else:
-					yield(Game.wait(float(cmd.Wait_Seconds) / Game.dbgr.getFF()), "timeout")
+				if cmd.Wait_Seconds != "0":
+					if cmd.Wait_Seconds.left(1) == "D":
+						#yield(Game, "char_destination")
+						waitForDest(int(cmd.Wait_Seconds)) # int() discards the D
+						yield(self, "reachedDest")
+					else:
+						yield(Game.wait(float(cmd.Wait_Seconds) / Game.dbgr.getFF()), "timeout")
 			# We are acting on the target of this action (determined above)
 			if cmd.Remove_Target == "1" and actingObj:
 				Game.debugMessage(Game.CAT.SCRIPT, "Taking " + Game.ENTITY_NAME[targetType].rstrip("s") + " " + actingObj.data.ID)

@@ -43,7 +43,10 @@ static func parseCSV(file):
 		elif len(line) >= len(props):
 			var dict = {}
 			for i in range(0, props.size()):
-				dict[props[i]] = Util.nvl(line[i], defaults[i])
+				if len(defaults) > 0 and Util.isnull(line[i]):
+					dict[props[i]] = defaults[i]
+				else:
+					dict[props[i]] = line[i]
 			list[list.size()] = dict
 	return list
 

@@ -109,6 +109,7 @@ func _process(delta):
 			scene.onCharacterMove(self)
 			if goalPosn == DONT_MOVE:
 				beginAnim(data["Idle_" + getDir(prevAngle)])
+				updatePosn(true)
 			#	charAtDestination()
 		else:
 		#elif goalPosn != DONT_MOVE:
