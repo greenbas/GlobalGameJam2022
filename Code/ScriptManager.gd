@@ -78,7 +78,7 @@ func cmdAppend(forID : String, cmd):
 var script_functions = {}
 var characters = {} # Track these the same way
 
-signal diag_timer
+#signal diag_timer
 
 const SPLITTER = "~,~" # Do each comparison and update each value in one record
 const MULTI = "~&~"    # Updating multiple records at once
@@ -90,26 +90,32 @@ const MULTI = "~&~"    # Updating multiple records at once
 enum MODES { READY = 0, RUNNING, STOPPING }
 var mode
 
-signal ui_dialogue()
+#signal ui_dialogue()
 # Takes an array of commands and moves through them, executing
-func run(commands, actingObj=null): # We need the acting object in the somewhat rare
-	# situation where this is triggered by a group, but the specific item is being taken
+func run(commands, actingObj=null):
 	mode = MODES.RUNNING
 	Game.disableActions()
 	# I've discovered that I have to do this in two steps: evaluate conditions
 	# for all commands, THEN run the ones that were true.  Otherwise changing
 	# values can cause unexpected behaviours.
 	var runcommands = []
+	var todoElse = true
 	for cmd in commands:
 		var todo = true
 		if (!Util.isnull(cmd.If_Expression)):
 			var expr = cmd.If_Expression
-			todo = parseExpr(adjustExpr(expr)) # May throw errors
+			if expr == "ELSE":
+				todo = todoElse
+			else:
+				todo = parseExpr(adjustExpr(expr)) # May throw errors
+				todoElse = todoElse and !todo # Becomes false the moment we do something else
 		if todo: runcommands.push_back(cmd)
 	for cmd in runcommands:
 		# We want to be able to stop this function mid-cutscene
 		if Game.allGood() and mode != MODES.STOPPING:
 			var refresh = false
+			var targetType
+			#var targetID
 			if (!Util.isnull(cmd.Call_Script)):
 				Game.debugMessage(Game.CAT.SCRIPT, "Running " + cmd.Call_Script)
 				var funcName = cmd.Call_Script
@@ -119,6 +125,25 @@ func run(commands, actingObj=null): # We need the acting object in the somewhat 
 				run(script_commands[funcName])
 				if mode != MODES.STOPPING:
 					mode = MODES.RUNNING # because it gets set to READY after completing
+			if cmd.Remove_Target == "1" or cmd.Add_To_Inventory == "1":
+				# We need to identify the object being acted on
+				if !Util.isnull(cmd.Target_Object):
+					targetType = Game.ENTITY.OBJ
+				#	targetID = cmd.Target_Object
+				elif !Util.isnull(cmd.Target_ObjGroup):
+					targetType = Game.ENTITY.OBJ # It's the object that got clicked & will get removed
+				#	targetID = cmd.Target_ObjGroup # But the group that will get added to inventory
+				elif !Util.isnull(cmd.Target_Character):
+					targetType = Game.ENTITY.CHAR
+				#	targetID = cmd.Target_Object
+			if cmd.Walk_First == "1":
+				var charID = Game.sceneNode.currChar.ID
+				var sprite = Game.sceneNode.all_chars[charID]
+				var dest =  ScreenObject.getWalkPoint(actingObj)
+				Game.debugMessage(Game.CAT.SCRIPT, "Attempting to move %s to (%s, %s)" % [charID, dest.x, dest.y])
+				Game.sceneNode.walkmap.tryWalking(sprite, dest)
+				waitForDest(1)
+				yield(self, "reachedDest")
 			if (!Util.isnull(cmd.Dialogue_Line)):
 				Game.verboseMessage(Game.CAT.SCRIPT, "Dialogue: " + cmd.Dialogue_Line)
 				var speaker = cmd.Dialogue_Speaker
@@ -176,8 +201,15 @@ func run(commands, actingObj=null): # We need the acting object in the somewhat 
 					Game.update(tab, fcol, fval, col, val)
 				# Refresh if necessary
 				if cmd.Refresh == "1":
-					if tab == Game.ENTITY_NAME[Game.ENTITY.SCENE] or tab == Game.ENTITY_NAME[Game.ENTITY.CHAR] or tab == Game.ENTITY_NAME[Game.ENTITY.OBJ]:
+					if tab == Game.ENTITY_NAME[Game.ENTITY.SCENE]:
 						refresh = true
+						#Game.sceneNode.dirtyScene()
+					elif tab == Game.ENTITY_NAME[Game.ENTITY.CHAR]:
+						refresh = true
+						#Game.sceneNode.dirtyChars()
+					elif tab == Game.ENTITY_NAME[Game.ENTITY.OBJ]:
+						refresh = true
+						#Game.sceneNode.dirtyObjs()
 					#if tab == Game.ENTITY_NAME[Game.ENTITY.ACTION]:
 					#	Game.sceneNode.all_menus = {}
 				
@@ -185,42 +217,20 @@ func run(commands, actingObj=null): # We need the acting object in the somewhat 
 			if !Util.isnull(cmd.Wait_Seconds):
 				if cmd.Wait_Seconds.left(1) == "D":
 					#yield(Game, "char_destination")
-					var limitter = 100
-					waitingForDest = int(cmd.Wait_Seconds) # int() discards the W
-					Game.debugMessage(Game.CAT.SCRIPT, "Waiting for %s character(s) to arrive" % waitingForDest)
-					while waitingForDest > 0 and limitter > 0:
-						yield(Game.wait(0.1), "timeout")
-						limitter -= 1
-					if waitingForDest > 0:
-						Game.reportError(Game.CAT.SCRIPT, "Waiting timed out")
-						waitingForDest = 0
-					else:
-						Game.debugMessage(Game.CAT.SCRIPT, "All characters arrived at destination")
+					waitForDest(int(cmd.Wait_Seconds)) # int() discards the D
+					yield(self, "reachedDest")
 				else:
 					yield(Game.wait(float(cmd.Wait_Seconds) / Game.dbgr.getFF()), "timeout")
-			if cmd.Remove_Target == "1" or cmd.Add_To_Inventory == "1":
-				# We need to identify the object being acted on
-				var type
-				var target
-				if !Util.isnull(cmd.Target_Object):
-					type = Game.ENTITY.OBJ
-					target = cmd.Target_Object
-				elif !Util.isnull(cmd.Target_ObjGroup):
-					type = Game.ENTITY.OBJ # It's the object that got clicked & will get removed
-					target = cmd.Target_ObjGroup # But the group that will get added to inventory
-				elif !Util.isnull(cmd.Target_Character):
-					type = Game.ENTITY.CHAR
-					target = cmd.Target_Object
-				# Now act on it
-				if cmd.Remove_Target == "1" and !Util.isnull(actingObj):
-					Game.debugMessage(Game.CAT.SCRIPT, "Taking " + Game.ENTITY_NAME[type].rstrip("s") + " " + actingObj.ID)
-					Game.updateByID(type, ["ID"], [actingObj.ID], ["Visible"], ["0"])
-					refresh = true
-				if !Util.isnull(cmd.Add_To_Inventory): # TODO Test on character
-					Game.debugMessage(Game.CAT.SCRIPT, "Adding to inventory")
-					for addItem in cmd.Add_To_Inventory.split("-"):
-						Game.inventory.addItem(cmd.Character_ID, addItem)
-					#FIXME: Game.menu.refreshMenu(["inventory"]) # but only if open
+			# We are acting on the target of this action (determined above)
+			if cmd.Remove_Target == "1" and actingObj:
+				Game.debugMessage(Game.CAT.SCRIPT, "Taking " + Game.ENTITY_NAME[targetType].rstrip("s") + " " + actingObj.data.ID)
+				Game.updateByID(targetType, ["ID"], [actingObj.data.ID], ["Visible"], ["0"])
+				refresh = true
+			if !Util.isnull(cmd.Add_To_Inventory): # TODO Test on character
+				Game.debugMessage(Game.CAT.SCRIPT, "Adding to inventory")
+				for addItem in cmd.Add_To_Inventory.split("-"):
+					Game.inventory.addItem(cmd.Character_ID, addItem)
+				#FIXME: Game.menu.refreshMenu(["inventory"]) # but only if open
 			if refresh: Game.sceneNode.refreshScene()
 	mode = MODES.READY
 	Game.enableActions()
@@ -265,9 +275,25 @@ func parseExpr(e):
 			Game.reportError(Game.CAT.SCRIPT, "Execution failed on expression %s" % [expr])
 	return result
 
+signal reachedDest
 var waitingForDest = 0
 func charAtDestination():
 	waitingForDest -= 1
+
+func waitForDest(num):
+	waitingForDest = num
+	var limitter = 100
+	Game.debugMessage(Game.CAT.SCRIPT, "Waiting for %s character(s) to arrive" % num)
+	while waitingForDest > 0 and limitter > 0:
+		yield(Game.wait(0.1), "timeout")
+		limitter -= 1
+	if waitingForDest > 0:
+		Game.reportError(Game.CAT.SCRIPT, "Waiting timed out")
+		waitingForDest = 0
+	else:
+		Game.debugMessage(Game.CAT.SCRIPT, "%s characters arrived at destination" % num)
+	emit_signal("reachedDest")
+
 
 #func triggerAction(posn):
 #	print("Trigger action ", [posn, myType])

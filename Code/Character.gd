@@ -19,7 +19,7 @@ func _init(d):
 	initAnim()
 	#Game.menu.connect("char_destination", self, "Menu.triggerDestination")
 	#Game.sceneNode.scriptManager.connect("char_destination", self, "Game.sceneNode.scriptManager.charAtDestination")
-	Game.sceneNode.get_tree().connect("char_destination", self, "charAtDestination")
+	#Game.sceneNode.get_tree().connect("char_destination", self, "charAtDestination")
 	return self
 
 func charAtDestination():
@@ -41,13 +41,13 @@ func drawMe():
 	position = Vector2(xpos, ypos)
 	var frameSize = Vector2(texture.get_size().x / hframes, texture.get_size().y)
 	offset = -(frameSize * base_offset / 100)
-	z_index = round(position.y)
+	z_index = int(round(position.y))
 	zoomChar = float(data.Zoom) / 100
 	# Zoom may depend on how far up the screen you are (ie how far away)
-	var scData = scene.currScene
+	var scData = scene.data
 	zT = float(scData.Zoom_At_Top) / 100.0
 	zB = float(scData.Zoom_At_Bottom) / 100.0
-	var zoomY = scaleByPosn()
+	scaleByPosn()
 	if visible and position != oldpos:
 		scene.onCharacterMove(self)
 
@@ -103,7 +103,7 @@ func _process(delta):
 		if abs(position.x - goalPosn.x) < closeEnough and abs(position.y - goalPosn.y) < closeEnough:
 			var prevAngle = get_angle_to(goalPosn)
 			position = goalPosn
-			z_index = round(position.y)
+			z_index = int(round(position.y))
 			updatePosn(goalPosn == DONT_MOVE)
 			setGoal()
 			scene.onCharacterMove(self)
@@ -118,7 +118,7 @@ func _process(delta):
 			velocity.y = sin(angle)
 			position += velocity * speed * delta * Game.dbgr.getFF()
 			scaleByPosn()
-			z_index = round(position.y)
+			z_index = int(round(position.y))
 
 # Animation
 var aTimer

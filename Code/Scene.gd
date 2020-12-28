@@ -11,7 +11,7 @@ var all_chars = {} # List of Characters (extends sprite) that we've encountered 
 var all_objs = {}
 var all_menus = {}
 var currChar # Just the data, we can get_node & .new(data) from there
-var currScene # ditto
+var data # Current scene data.  We need to be able to access via actingobj.data
 
 func _ready():
 	Game.sceneLoaded(self)
@@ -36,9 +36,9 @@ func refreshScene(justBG=false):
 	# Determine the current scene based on where the current character is
 	currChar = getCurrentCharacter()
 	if Game.allGood():
-		currScene = getCurrentScene(currChar)
+		data = getCurrentScene(currChar)
 		if Game.allGood():
-			loadScene(currScene, justBG)
+			loadScene(data, justBG)
 
 func getCurrentScene(character):
 	return Game.entityWhere(Game.ENTITY.SCENE, ["ID"], [character.Scene_ID])
@@ -58,7 +58,7 @@ func loadScene(scene, justBG=false):
 		
 		# Audio
 		if !Util.isnull(scene.Audio_Filename):
-			$BGMusic.playSceneMusic(currScene)
+			$BGMusic.playSceneMusic(data)
 		
 		# Load or update all characters and objects in the scene
 		clearItems(scene.ID, $Characters, all_chars)
@@ -66,7 +66,7 @@ func loadScene(scene, justBG=false):
 		drawItems(scene.ID, Game.listOf(Game.ENTITY.CHAR).values(), all_chars, Game.ENTITY.CHAR)
 		drawItems(scene.ID, Game.listOf(Game.ENTITY.OBJ).values(), all_objs, Game.ENTITY.OBJ)
 		#emit_signal("draw")
-
+	
 func clearItems(sceneID, canvas, arr, ifSceneOnly = true, doDelete = false):
 	# By default just make them invisible
 	var removeNodes = []
@@ -108,6 +108,15 @@ func drawItems(sceneID, list, arr, oType):
 			#if !canvas.has_node(i.ID):
 			#	canvas.add_child(sprite)
 
+# Functions for when the script has updated something and we need to reload from the CSV
+# Easiest way to do that is just clear out all the nodes, they will reload when needed
+func dirtyChars():
+	clearItems(0, $Characters, all_chars, false, true)
+func dirtyObjs():
+	clearItems(0, $Objects, all_chars, false, true)
+func dirtyScene():
+	loadScene(Game.sceneNode, true)
+	
 func unloadScene():
 	# Tell the script manager to stop its current script
 	#if scriptManager.mode == scriptManager.MODES.RUNNING:
@@ -164,7 +173,7 @@ func onCharacterMove(character : Character):
 func triggerCharacterMove(colour, character):
 	Game.verboseMessage(Game.CAT.PATH, "Character has entered area " + colour)
 	# If there is a script associated with this movement, trigger it
-	var scriptID = character.data.ID + "-" + currScene.ID + "-" + colour
+	var scriptID = character.data.ID + "-" + data.ID + "-" + colour
 	#scriptManager.run(scriptID)
 	if scriptManager.hasScript(scriptID):
 		scriptManager.run(scriptManager.script_commands[scriptID])
@@ -194,8 +203,8 @@ func objAtPosn(posn):
 		elif !o: foundObj = c
 		elif o.z_index > c.z_index: foundObj = o
 		else: foundObj = c
-	if !foundObj: foundObj = currScene
-	else: foundObj = foundObj.data # We need the .data in order to be equivalent
+	if !foundObj: foundObj = self
+	else: foundObj = foundObj
 	# with scene.  But if try to grab it earlier we get null exceptions
 	return foundObj
 
@@ -230,9 +239,9 @@ func triggerHover(posn):
 	var foundObj = objAtPosn(posn)
 	var hvScript
 	if !Util.isnull(Game.menu.actingAction):
-		hvScript = currChar.ID + "-" + Game.menu.actingAction.ID + "-" + foundObj.ID
+		hvScript = currChar.ID + "-" + Game.menu.actingAction.ID + "-" + foundObj.data.ID
 	else:
-		hvScript = currChar.ID + "-" + foundObj.ID + "-" + currArea
+		hvScript = currChar.ID + "-" + foundObj.data.ID + "-" + currArea
 	if hvScript != currScript:
 		currScript = hvScript
 		var scr = []
@@ -241,7 +250,7 @@ func triggerHover(posn):
 		if scr.size() > 0:
 			hoverText = scr[0].Hover_Text
 		else:
-			hoverText = foundObj.Label
+			hoverText = foundObj.data.Label
 		lbl.text = hoverText
 		setLabelFont(lbl, currChar)
 		#print(hoverText)

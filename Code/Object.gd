@@ -28,4 +28,10 @@ func drawMe():
 	position = Vector2(xpos, ypos)
 	var frameSize = Vector2(texture.get_size().x / hframes, texture.get_size().y)
 	offset = -(frameSize * base_offset / 100)
-	z_index = round(position.y)
+	z_index = int(round(position.y))
+
+static func getWalkPoint(obj): # Could be object or character
+	var posn = obj.position
+	var offsetPerc = Vector2(float(obj.data.Walk_Point_X), float(obj.data.Walk_Point_Y))
+	posn += obj.texture.size * offsetPerc / Vector2(100.0, 100.0)
+	return posn

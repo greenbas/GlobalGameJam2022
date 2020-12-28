@@ -42,7 +42,7 @@ func getInvByLoc(c):
 		arr.push_back(i)
 	return arr
 
-func getInvData(c, i):
+func getInvData(i):
 	var objgroups = Game.dictByID(Game.listOf(Game.ENTITY.OBJGROUP))
 	if objgroups.has(i):
 		return Game.entityWhere(Game.ENTITY.OBJGROUP, ["ID"], [i])

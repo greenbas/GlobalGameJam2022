@@ -103,24 +103,16 @@ static func saveGameToFile(fname):
 	if gdignore.open(fdata + ".gdignore", gdignore.WRITE) == OK:
 		gdignore.close()
 
+func getScreenSize():
+	return Vector2(sceneNode.WIDTH, sceneNode.HEIGHT)
+
 #static func getScripts(): # Special.  And this is very long...
 #	return Game.entities[Game.ENTITY_NAME[Game.ENTITY.SCRIPT]].values()
 
-#var thread
-static func wait(seconds):
-	return Game.sceneNode.get_tree().create_timer(seconds)
-#static func killTimers():
-#	Game.sceneNode.get_tree()
-#static func cont():
-#	print("continuing")
-#	#if (!Util.isnull(Game.thread)):
-#	#	print("yes, really")
-#	Game.thread.resume()
-
 func disableActions():
-	#Game.allowActions = false
-	#Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
-	pass
+	Game.allowActions = false
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+	#pass
 func enableActions():
 	Game.allowActions = true
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
@@ -167,7 +159,6 @@ static func mergeDicts(d1, d2, deep=false):
 	var countID_1 = 0
 	var countID_2 = 0
 	for r2 in range(0, len(d2)):
-		var line = {}
 		var row2 = d2[r2]
 		# Does d1 have any records with this ID?
 		# Only check the first time we encounter the ID!
@@ -234,27 +225,6 @@ static func filter(e, prop, value, multi, asDict, err):
 		Game.reportError(Game.CAT.LOAD, "No %s%s exist with property %s = %s" % [ENTITY_NAME[e], s, prop, value])
 	return d
 
-#	var res = {} # Only one of these two will be returned
-#	var arr = [] # Unless multi is false, in which case neither will be
-#	for row in Game.entities[ENTITY_NAME[e]].values():
-#		var matches = true
-#		for i in range(0, len(prop)):
-#			if Util.isnull(row[prop[i]]) and Util.isnull(value[i]):
-#				pass # Two nulls are equal
-#			elif row[prop[i]] != value[i]:
-#				matches = false
-#		if (matches):
-#			if (!multi): return row
-#			res[row.ID] = row
-#			arr.append(row)
-#	if err and Util.isnull(res):
-#		var s = ""
-#		var n = ENTITY_NAME[e]
-#		if n.right(len(n)-1) != "s": s = "s" # Just grammatical perfectionism... sorry
-#		Game.reportError(Game.CAT.LOAD, "No %s%s exist with property %s = %s" % [ENTITY_NAME[e], s, prop, value])
-#	if (dict): return res.values()
-#	else: return arr
-
 # Updates all matching rows; similar to filter, but allows it would be very
 # confusing to try to combine these functions.  Nothing good could come of that
 static func updateByID(e, fprop, fvalue, uprop, uvalue, err=true):
@@ -294,7 +264,18 @@ static func update(e, fprop, fvalue, uprop, uvalue, err=true):
 
 # ===== Signals =========================================================
 
-signal char_destination()
+#signal char_destination()
+
+#var thread
+static func wait(seconds):
+	return Game.sceneNode.get_tree().create_timer(seconds)
+#static func killTimers():
+#	Game.sceneNode.get_tree()
+#static func cont():
+#	print("continuing")
+#	#if (!Util.isnull(Game.thread)):
+#	#	print("yes, really")
+#	Game.thread.resume()
 
 var dialogueMenu
 var dialoguePortrait

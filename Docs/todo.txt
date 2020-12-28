@@ -1,14 +1,2 @@
-
-General todo:
-- "Data" object to handle each CSV, similar to what I did in JSON for Outpost
-- DEFAULT value for each
-
-- Inventory
-- Walking & Screen triggers (including DEFAULT walker)
-  If you need some characters to move differently than others, you will need to set up a script to change the value of walkmap on character switch. e.g. "johnny-activate-johnny".
-
-- Dialogue (including DEFAULT speaker)
-- Variables
-- "If"
-- Set values / filter, including only ever one "current"
-- Wait
+talk to each other while state == cabin
+handle each other - state == cabin, state otherwise (can I implement ELSE expression?)

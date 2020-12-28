@@ -59,6 +59,7 @@ When the Character_ID is DEFAULT, then any character can trigger the script.
 In this case, DEFAULT in other places (e.g. Dialogue_Speaker or Filter_Value) becomes the ID of the current character.
 
 You can also use Inventory.itemname and reference variable names in Set_Value or If_Expression
+ELSE will only evaluate prior conditions, so should be last
 
 === Miscellaneous Notes =============================================================
 

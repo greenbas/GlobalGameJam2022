@@ -104,11 +104,11 @@ func triggerClick(character, posn, obj):
 		if state == STATES.CHOOSE_SECOND:
 			secondObj = obj
 			state = STATES.CHAR_MOVING
-			if actingAction.Walk_First == "1" and !invOpen:
-				Game.disableActions()
-				scene.walkmap.tryWalking(scene.getCurrentSprite(), posn)
-			else:
-				triggerDestination()
+			#if actingAction.Walk_First == "1" and !invOpen:
+			#	Game.disableActions()
+			#	scene.walkmap.tryWalking(scene.getCurrentSprite(), posn)
+			#else:
+			triggerDestination()
 		elif state == STATES.BASE:
 			actingObj = obj
 			state = STATES.ON_ACTIONS
@@ -121,26 +121,26 @@ func triggerClick(character, posn, obj):
 			drawActionWheel(character, posn, obj)
 		elif state == STATES.ON_ACTIONS:
 			clearMenu([MENUS.WHEEL, MENUS.WHEEL_ITEM])
-			if scene.all_menus.has(obj.ID):
+			if scene.all_menus.has(obj.data.ID):
 				actingChar = character
 				actingAction = obj
 				state = STATES.CHAR_MOVING
-				if obj.Needs_Second == "1":
+				if obj.data.Needs_Second == "1":
 					state = STATES.CHOOSE_SECOND
-				elif obj.Walk_First == "1":
-					Game.disableActions()
-					scene.walkmap.tryWalking(scene.getCurrentSprite(), posn)
-				else:
-					triggerDestination()
+				#elif obj.data.Walk_First == "1":
+				#	Game.disableActions()
+				#	scene.walkmap.tryWalking(scene.getCurrentSprite(), ScreenObject.getWalkPoint(actingObj))
+				#else:
+				triggerDestination()
 			else:
 				state = STATES.BASE
 				triggerClick(character, posn, obj)
 
 func triggerDestination():
 	if state == STATES.CHAR_MOVING:
-		if scene.all_menus.has(actingObj.ID):
+		if scene.all_menus.has(actingObj.data.ID):
 			actingObj = actingObj.Item
-		var scriptID = actingChar.ID + "-" + actingAction.ID + "-" + actingObj.ID
+		var scriptID = actingChar.ID + "-" + actingAction.data.ID + "-" + actingObj.data.ID
 		if !Util.isnull(secondObj):
 			if scene.all_menus.has(secondObj.ID):
 				secondObj = secondObj.Item
@@ -173,12 +173,20 @@ func drawActionWheel(character, posn, obj):
 	scene.drawItems("*", [actionMenu.data], scene.all_menus, MENUS.WHEEL)
 	actionMenu = scene.all_menus[actionMenu.data.ID]
 	actionMenu.updateMe(posn, character)
-	var onType = "On_" + Game.getTabName(obj.Tab)
+	var onType = "On_" + Game.getTabName(obj.data.Tab)
 	var myList = Game.listWhere(Game.ENTITY.ACTION, ["Character", onType], [character.ID, "1"], true, false)
 	var defaultList = Game.listWhere(Game.ENTITY.ACTION, ["Character", onType], ["DEFAULT", "1"], true, false)
 	actionList = Data.filter(Game.mergeDicts(myList, defaultList, true), ["Allowed"], ["1"], true, true)
 	if len(actionList) == 0:
 		Game.reportError(Game.CAT.LOAD, "No allowed %s actions exist for %s" % [onType, character.ID])
+	else:
+		# Don't display actions which lack a connected script
+		# TODO: Display, but with a red border?  Sometimes we just want nothing, e.g. "take window"
+		var filteredList = []
+		for a in actionList:
+			if Game.sceneNode.scriptManager.hasScript(character.ID + "-" + a.ID + "-" + obj.data.ID):
+				filteredList.push_back(a)
+		actionList = filteredList
 	scene.drawItems("*", actionList, scene.all_menus, MENUS.WHEEL_ITEM)
 	for a in actionList:
 		var aItem = scene.all_menus[a.ID]
@@ -279,7 +287,7 @@ class ScreenItem:
 				var loc = slot_j * int(data.Columns) + slot_i
 				if inv.size() > loc:
 					data.Actionable = "1"
-					data.Item = Game.inventory.getInvData(scene.currChar.ID, inv[loc])
+					data.Item = Game.inventory.getInvData(inv[loc])
 					data.Label = data.Item.Label
 					data.Tab = Game.ENTITY.INV
 			TYPES.INV_MAIN:

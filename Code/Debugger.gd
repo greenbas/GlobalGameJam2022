@@ -37,6 +37,11 @@ func _input(event):
 			var sp = speed - 1
 			if sp < 0: sp = 0
 			changeSpeed(sp)
+		elif event is InputEventMouseButton and event.doubleclick:
+			#if event.button_index == BUTTON_LEFT:
+			var posn = get_viewport().get_mouse_position()
+			posn *= Vector2(100.0, 100.0) / Game.getScreenSize()
+			verboseMessage(Game.CAT.DEBUG, "Clicked (%.1f%%, %.1f%%)" % [posn.x, posn.y])
 
 func toggleDebug():
 	mode += 1
@@ -80,7 +85,7 @@ func reportWarning(cat, s):
 func debugMessage(cat, s):
 	logMessage(cat, s, LEVELS.MESSAGE)
 func verboseMessage(cat, s):
-	pass#logMessage(cat, s, LEVELS.VERBOSE)
+	logMessage(cat, s, LEVELS.VERBOSE)
 
 func logMessage(cat, s, level = LEVELS.MESSAGE):
 	debugLog.push_back(LogData.new(cat, s, level))
