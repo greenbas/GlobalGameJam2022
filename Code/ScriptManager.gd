@@ -183,10 +183,19 @@ func run(commands, actingObj=null): # We need the acting object in the somewhat 
 				
 			# And some other housekeeping
 			if !Util.isnull(cmd.Wait_Seconds):
-				if cmd.Wait_Seconds == "A":
-					Game.debugMessage(Game.CAT.SCRIPT, "Waiting for character to arrive")
+				if cmd.Wait_Seconds.left(1) == "D":
 					#yield(Game, "char_destination")
-					Game.debugMessage(Game.CAT.SCRIPT, "Character arrived at destination")
+					var limitter = 100
+					waitingForDest = int(cmd.Wait_Seconds) # int() discards the W
+					Game.debugMessage(Game.CAT.SCRIPT, "Waiting for %s character(s) to arrive" % waitingForDest)
+					while waitingForDest > 0 and limitter > 0:
+						yield(Game.wait(0.1), "timeout")
+						limitter -= 1
+					if waitingForDest > 0:
+						Game.reportError(Game.CAT.SCRIPT, "Waiting timed out")
+						waitingForDest = 0
+					else:
+						Game.debugMessage(Game.CAT.SCRIPT, "All characters arrived at destination")
 				else:
 					yield(Game.wait(float(cmd.Wait_Seconds) / Game.dbgr.getFF()), "timeout")
 			if cmd.Remove_Target == "1" or cmd.Add_To_Inventory == "1":
@@ -256,6 +265,9 @@ func parseExpr(e):
 			Game.reportError(Game.CAT.SCRIPT, "Execution failed on expression %s" % [expr])
 	return result
 
+var waitingForDest = 0
+func charAtDestination():
+	waitingForDest -= 1
 
 #func triggerAction(posn):
 #	print("Trigger action ", [posn, myType])

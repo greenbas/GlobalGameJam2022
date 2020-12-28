@@ -27,8 +27,8 @@ DEFAULT,0,,,,,,,,,,,,narrator,none,100%,,,,,ID,,,0,0,0,,0,0,,,,
 "intro","0",,,,,,,,,,,,"lindsay","none","100%","Fine.  I'd barely gotten started anyway.  <mock glare>",,,,"ID",,,"0","0","0",,"0","0",,,,,0
 "intro","0",,,,,,,,,,,,"narrator","none","100%",,"Animation_Current","Characters","idle","ID","lindsay~&~johnny~&~sarah",,"1","0","0",,"0","0",,,,,0
 "intro","0",,,,,,,,,,,,"narrator","none","100%",,"Screen_X~,~Screen_Y","Characters","5~,~85","ID","johnny",,"0","0","0",,"1","0.5",,,,,0
-"intro","0",,,,,,,,,,,,"narrator","none","100%",,"Screen_X~,~Screen_Y","Characters","5~,~95","ID","sarah",,"0","0","0",,"1","2",,,,,0
-"intro","0",,,,,,,,,,,,"narrator","none","100%",,"Screen_X~,~Screen_Y","Characters","5~,~91","ID","lindsay",,"0","0","0",,"1","4",,,,,0
+"intro","0",,,,,,,,,,,,"narrator","none","100%",,"Screen_X~,~Screen_Y","Characters","5~,~95","ID","sarah",,"0","0","0",,"1","1",,,,,0
+"intro","0",,,,,,,,,,,,"narrator","none","100%",,"Screen_X~,~Screen_Y","Characters","5~,~91","ID","lindsay",,"0","0","0",,"1","D3",,,,,0
 "intro","0",,,,,,,,,,,,"narrator","none","100%",,"Screen_X","Characters","70","ID","lindsay",,"0","0","0",,"0","0",,,,,0
 "intro","0",,,,,,,,,,,,"narrator","none","100%",,"Screen_X","Characters","80","ID","johnny",,"0","0","0",,"0","0",,,,,0
 "intro","0",,,,,,,,,,,,"narrator","none","100%",,"Screen_X","Characters","90","ID","sarah",,"0","0","0",,"0","0",,,,,0
@@ -264,8 +264,8 @@ DEFAULT,0,,,,,,,,,,,,narrator,none,100%,,,,,ID,,,0,0,0,,0,0,,,,
 "discussQueen","0",,,,,,,,,,,,"lindsay","none","100%","So we're doing it, huh?",,,,"ID",,,"0","0","0",,"0","0",,,,,0
 "discussQueen","0",,,,,,,,,,,,"johnny","none","100%","I really don't think we have any choice.","Value","Variables","queenDecided","ID","teamState",,"0","0","0",,"0","0",,,,,0
 "DEFAULT-talk-queen","0","DEFAULT","talk",,"teamState == queenDecided","queen",,,,,,,"DEFAULT","none","100%","All right, we've agreed.  We'll help you.",,,,"ID",,,"0","0","0",,"0","0",,,,,0
-"DEFAULT-talk-queen","0","DEFAULT","talk",,"teamState == queenDecided","queen",,,,,,,"queen","none","100%","So be it.  Follow me.","Screen_X~,~Screen_Y","Characters","3~,~85","ID","queen",,"0","0","0",,"1","4",,,,,0
-"DEFAULT-talk-queen","0","DEFAULT","talk",,"teamState == queenDecided","queen",,,,,,,"narrator","none","100%",,"Label~,~Background_Filename~,~Walkmap_Filename~,~Zoom_At_Top","Scenes","Clearing~,~forest_house~,~forest_house~,~10%","ID","forest-04",,"0","0","0",,"0","0",,,,,0
+"DEFAULT-talk-queen","0","DEFAULT","talk",,"teamState == queenDecided","queen",,,,,,,"queen","none","100%","So be it.  Follow me.","Screen_X~,~Screen_Y","Characters","3~,~85","ID","queen",,"0","0","0",,"1","D1",,,,,0
+"DEFAULT-talk-queen","0","DEFAULT","talk",,"teamState == queenDecided","queen",,,,,,,"narrator","none","100%",,"Label~,~Background_Filename~,~Walkmap_Filename~,~Zoom_At_Top","Scenes","Clearing~,~forest_house~,~forest_house~,~-40%","ID","forest-04",,"0","0","0",,"0","0",,,,,0
 "DEFAULT-talk-queen","0","DEFAULT","talk",,"teamState == queenDecided","queen",,,,,,,"narrator","none","100%",,"Visible","Characters","0","ID","queen",,"1","0","0",,"0","0",,,,,0
 "--","0",,,,,,,,,,,,"narrator","none","100%",,,,,"ID",,,"0","0","0",,"0","0",,,,,0
 "--","0",,,,,,,,,,,,"narrator","none","100%",,,,,"ID",,,"0","0","0",,"0","0",,,,,0

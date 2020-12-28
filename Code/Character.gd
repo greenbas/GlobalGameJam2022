@@ -17,9 +17,15 @@ func _init(d):
 	#ia = Interactable.new()
 	#ia.setData(Game.ENTITY.CHAR)
 	initAnim()
-	Game.menu.connect("char_destination", self, "Menu.triggerDestination")
-	#Game.sceneNode.scriptManager.connect("char_destination", self, "char_destination")
+	#Game.menu.connect("char_destination", self, "Menu.triggerDestination")
+	#Game.sceneNode.scriptManager.connect("char_destination", self, "Game.sceneNode.scriptManager.charAtDestination")
+	Game.sceneNode.get_tree().connect("char_destination", self, "charAtDestination")
 	return self
+
+func charAtDestination():
+	Game.menu.triggerDestination()
+	Game.sceneNode.scriptManager.charAtDestination()
+	#emit_signal("char_destination")
 
 func drawMe():
 	# Image (texture is part of animation)
@@ -84,7 +90,7 @@ func setGoal():
 		scene.get_node("Walkmap/BaseTest").position = goalPosn
 	else:
 		goalPosn = DONT_MOVE
-		Game.menu.triggerDestination()
+		charAtDestination()
 		
 		#Game.update(Game.ENTITY.CHAR, ["ID"], [sprite.name], "Scene_X", posn.x)
 		#Game.update(Game.ENTITY.CHAR, ["ID"], [sprite.name], "Scene_Y", posn.y)
@@ -92,27 +98,27 @@ func setGoal():
 
 func _process(delta):
 	# To prevent jitter, we have a "close enough" check
-	var closeEnough = 4 * ceil(Game.dbgr.getFF())
-	if abs(position.x - goalPosn.x) < closeEnough and abs(position.y - goalPosn.y) < closeEnough:
-		var prevAngle = get_angle_to(goalPosn)
-		position = goalPosn
-		z_index = round(position.y)
-		updatePosn(goalPosn == DONT_MOVE)
-		setGoal()
-		scene.onCharacterMove(self)
-		if goalPosn == DONT_MOVE:
-			beginAnim(data["Idle_" + getDir(prevAngle)])
-			#Game.menu.triggerDestination()
-			emit_signal("char_destination")
-			
-	elif goalPosn != DONT_MOVE:
-		var angle = get_angle_to(goalPosn)
-		beginAnim(data[getDir(angle)])
-		velocity.x = cos(angle)
-		velocity.y = sin(angle)
-		position += velocity * speed * delta * Game.dbgr.getFF()
-		scaleByPosn()
-		z_index = round(position.y)
+	if goalPosn != DONT_MOVE:
+		var closeEnough = 4 * ceil(Game.dbgr.getFF())
+		if abs(position.x - goalPosn.x) < closeEnough and abs(position.y - goalPosn.y) < closeEnough:
+			var prevAngle = get_angle_to(goalPosn)
+			position = goalPosn
+			z_index = round(position.y)
+			updatePosn(goalPosn == DONT_MOVE)
+			setGoal()
+			scene.onCharacterMove(self)
+			if goalPosn == DONT_MOVE:
+				beginAnim(data["Idle_" + getDir(prevAngle)])
+			#	charAtDestination()
+		else:
+		#elif goalPosn != DONT_MOVE:
+			var angle = get_angle_to(goalPosn)
+			beginAnim(data[getDir(angle)])
+			velocity.x = cos(angle)
+			velocity.y = sin(angle)
+			position += velocity * speed * delta * Game.dbgr.getFF()
+			scaleByPosn()
+			z_index = round(position.y)
 
 # Animation
 var aTimer

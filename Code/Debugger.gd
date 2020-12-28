@@ -80,7 +80,7 @@ func reportWarning(cat, s):
 func debugMessage(cat, s):
 	logMessage(cat, s, LEVELS.MESSAGE)
 func verboseMessage(cat, s):
-	logMessage(cat, s, LEVELS.VERBOSE)
+	pass#logMessage(cat, s, LEVELS.VERBOSE)
 
 func logMessage(cat, s, level = LEVELS.MESSAGE):
 	debugLog.push_back(LogData.new(cat, s, level))

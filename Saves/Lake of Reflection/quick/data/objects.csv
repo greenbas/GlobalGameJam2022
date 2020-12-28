@@ -2,9 +2,9 @@ ID,Group,Unique,Label,Scene_ID,Visible,Actionable,Image_Path,Image_Filename,Imag
 DEFAULT,,,,,1,1,images/objects/,unknown,.png,50%,50%,50%,95%,100%,0,0,0,images/objects/,unknown,_inv.png
 "stick-01","stick","01","Stick","forest-03","0","1","images/objects/","stick",".png","25%","83%","50%","95%","95%","0","1","0","images/objects/","unknown","_inv.png","6"
 "stick-02","stick","02","Stick","forest-03","0","1","images/objects/","stick",".png","67%","90%","50%","95%","80%","-10","0","0","images/objects/","unknown","_inv.png","6"
-"stick-03","stick","03","Stick","forest-04","1","1","images/objects/","stick",".png","35%","78%","50%","95%","100%","0","0","0","images/objects/","unknown","_inv.png","6"
+"stick-03","stick","03","Stick","forest-04","0","1","images/objects/","stick",".png","35%","78%","50%","95%","100%","0","0","0","images/objects/","unknown","_inv.png","6"
 "stick-04","stick","04","Stick","forest-04","0","1","images/objects/","stick",".png","60%","82%","50%","95%","100%","0","0","0","images/objects/","unknown","_inv.png","6"
-"stick-05","stick","05","Stick","forest-05","0","1","images/objects/","stick",".png","30%","95%","50%","95%","100%","0","0","0","images/objects/","unknown","_inv.png","6"
+"stick-05","stick","05","Stick","forest-05","1","1","images/objects/","stick",".png","30%","95%","50%","95%","100%","0","0","0","images/objects/","unknown","_inv.png","6"
 "stick-06","stick","06","Stick","forest-05","0","1","images/objects/","stick",".png","45%","80%","50%","95%","100%","0","0","0","images/objects/","unknown","_inv.png","6"
 "stick-07","stick","07","Stick","forest-05","0","1","images/objects/","stick",".png","90%","85%","50%","95%","100%","0","0","0","images/objects/","unknown","_inv.png","6"
 "stick-08","stick","08","Stick","forest-06","1","1","images/objects/","stick",".png","30%","85%","50%","95%","100%","0","0","0","images/objects/","unknown","_inv.png","6"
