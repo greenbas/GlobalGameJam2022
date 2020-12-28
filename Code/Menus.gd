@@ -103,22 +103,16 @@ func triggerClick(character, posn, obj):
 	if Game.dbgr.mode == Game.dbgr.MODES.PLAY:
 		if state == STATES.CHOOSE_SECOND:
 			secondObj = obj
-			state = STATES.CHAR_MOVING
-			#if actingAction.Walk_First == "1" and !invOpen:
-			#	Game.disableActions()
-			#	scene.walkmap.tryWalking(scene.getCurrentSprite(), posn)
-			#else:
-			triggerDestination()
+			doThing()
 		elif state == STATES.BASE:
 			actingObj = obj
 			state = STATES.ON_ACTIONS
-			#if actingObj.Tab == Game.ENTITY.ACTION:
-			#	state = STATES.BASE
-			#	clearMenu()
-			##elif obj.Tab == Game.ENTITY.INV:
-			##	continue#drawActionWheel(character, posn, obj)#.Item)
-			#else:
-			drawActionWheel(character, posn, obj)
+			if obj.data.Tab == Game.ENTITY.INV:
+				obj = obj.data.Item
+				obj.Tab = Game.ENTITY.INV
+				drawActionWheel(character, posn, obj)
+			else:
+				drawActionWheel(character, posn, obj.data)
 		elif state == STATES.ON_ACTIONS:
 			clearMenu([MENUS.WHEEL, MENUS.WHEEL_ITEM])
 			if scene.all_menus.has(obj.data.ID):
@@ -127,35 +121,34 @@ func triggerClick(character, posn, obj):
 				state = STATES.CHAR_MOVING
 				if obj.data.Needs_Second == "1":
 					state = STATES.CHOOSE_SECOND
-				#elif obj.data.Walk_First == "1":
-				#	Game.disableActions()
-				#	scene.walkmap.tryWalking(scene.getCurrentSprite(), ScreenObject.getWalkPoint(actingObj))
-				#else:
-				triggerDestination()
+				else:
+					doThing()
 			else:
 				state = STATES.BASE
 				triggerClick(character, posn, obj)
 
-func triggerDestination():
-	if state == STATES.CHAR_MOVING:
-		if scene.all_menus.has(actingObj.data.ID):
-			actingObj = actingObj.Item
-		var scriptID = actingChar.ID + "-" + actingAction.data.ID + "-" + actingObj.data.ID
-		if !Util.isnull(secondObj):
-			if scene.all_menus.has(secondObj.ID):
-				secondObj = secondObj.Item
-			scriptID += "-" + secondObj.ID
-			secondObj = null
-		state = STATES.BASE
-		Game.debugMessage(Game.CAT.SCRIPT, "Resuming " + scriptID)
-		if scene.scriptManager.hasScript(scriptID):
-			scene.scriptManager.run(scene.scriptManager.script_commands[scriptID], actingObj)
-		actingObj = null
-		actingAction = null
-		actingChar = null
-		Game.enableActions()
-		#foundObj.triggerAction(posn)
-		#else: self.triggerAction(posn)
+func doThing():
+	var actingObjID
+	if scene.all_menus.has(actingObj.data.ID):
+		actingObjID = actingObj.data.Item.ID
+	else:
+		actingObjID = actingObj.data.ID
+	var scriptID = actingChar.ID + "-" + actingAction.data.ID + "-" + actingObjID
+	if !Util.isnull(secondObj):
+		if scene.all_menus.has(secondObj.ID):
+			secondObj = secondObj.Item
+		scriptID += "-" + secondObj.ID
+		secondObj = null
+	Game.debugMessage(Game.CAT.SCRIPT, "Resuming " + scriptID)
+	if scene.scriptManager.hasScript(scriptID):
+		scene.scriptManager.run(scene.scriptManager.script_commands[scriptID], actingObj)
+	actingObj = null
+	actingAction = null
+	actingChar = null
+	Game.enableActions()
+	state = STATES.BASE
+	#foundObj.triggerAction(posn)
+	#else: self.triggerAction(posn)
 
 func clearMenu(clearTypes = []):
 	for a in scene.all_menus.values():
@@ -173,7 +166,7 @@ func drawActionWheel(character, posn, obj):
 	scene.drawItems("*", [actionMenu.data], scene.all_menus, MENUS.WHEEL)
 	actionMenu = scene.all_menus[actionMenu.data.ID]
 	actionMenu.updateMe(posn, character)
-	var onType = "On_" + Game.getTabName(obj.data.Tab)
+	var onType = "On_" + Game.getTabName(obj.Tab)
 	var myList = Game.listWhere(Game.ENTITY.ACTION, ["Character", onType], [character.ID, "1"], true, false)
 	var defaultList = Game.listWhere(Game.ENTITY.ACTION, ["Character", onType], ["DEFAULT", "1"], true, false)
 	actionList = Data.filter(Game.mergeDicts(myList, defaultList, true), ["Allowed"], ["1"], true, true)
@@ -184,7 +177,7 @@ func drawActionWheel(character, posn, obj):
 		# TODO: Display, but with a red border?  Sometimes we just want nothing, e.g. "take window"
 		var filteredList = []
 		for a in actionList:
-			if Game.sceneNode.scriptManager.hasScript(character.ID + "-" + a.ID + "-" + obj.data.ID):
+			if Game.sceneNode.scriptManager.hasScript(character.ID + "-" + a.ID + "-" + obj.ID):
 				filteredList.push_back(a)
 		actionList = filteredList
 	scene.drawItems("*", actionList, scene.all_menus, MENUS.WHEEL_ITEM)

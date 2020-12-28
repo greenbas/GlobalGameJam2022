@@ -50,10 +50,6 @@ static func sceneLoaded(scene):
 static func gamePicked(gameName):
 	Game.currgame = gameName
 	loadGameFromStart()
-	
-static func loadGameFromStart():
-	var start = Game.gamepath + Game.currgame + "/data/"
-	loadGameFromFolder(start)
 
 static func loadGameFromSave(fname):
 	Game.sceneNode.unloadScene() # TODO: Loading from another save
@@ -64,17 +60,10 @@ static func loadGameFromSave(fname):
 			[cmd.Set_Column], [cmd.Set_Value], true)
 	Game.sceneNode.refreshScene()
 
-static func loadGameFromFolder(folder, startfolder = ""):
+static func loadGameFromStart():
+	var start = Game.gamepath + Game.currgame + "/data/"
 	for type in range(0, len(ENTITY)):
-		# Okay, so to make it easier to develop your scripts, I want to make it so that
-		# your savegames don't become completely useless the moment you add something
-		# to any of the tabs.  And the engine doesn't ever *delete* properties except
-		# for inventory.  So get the loaded game, compare to the base, and add any
-		# records or properties that seem to be missing.
-		var dict = Game.loadDict(folder, ENTITY_NAME[type])
-		if type != Game.ENTITY.INV and !Util.isnull(startfolder):
-			var basedict = Game.loadDict(startfolder, ENTITY_NAME[type])
-			dict = Game.mergeDicts(dict, basedict)
+		var dict = Game.loadDict(start, ENTITY_NAME[type])
 		if allGood():
 			Game.entities[ENTITY_NAME[type]] = dict
 			var ids = {}
@@ -97,9 +86,10 @@ static func loadGameFromFolder(folder, startfolder = ""):
 		Game.enableActions()
 
 static func saveGameToFile(fname):
-	#Game.inventory.updateEntity()
+	Game.inventory.updateEntity()
 	var fhead = Game.gamepath + Game.currgame + "/data/save.csv"
 	var fdata = Game.savepath + Game.currgame + "/"
+	Data.saveCSV(fhead, fdata, fname + "-inv.csv", Game.entityByID(Game.ENTITY.INV))
 	Data.saveCSV(fhead, fdata, fname + ".csv", Game.save)
 
 func getScreenSize():

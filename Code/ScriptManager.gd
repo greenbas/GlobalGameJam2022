@@ -129,14 +129,11 @@ func run(commands, actingObj=null):
 				# We need to identify the object being acted on
 				if !Util.isnull(cmd.Target_Object):
 					targetType = Game.ENTITY.OBJ
-				#	targetID = cmd.Target_Object
 				elif !Util.isnull(cmd.Target_ObjGroup):
 					targetType = Game.ENTITY.OBJ # It's the object that got clicked & will get removed
-				#	targetID = cmd.Target_ObjGroup # But the group that will get added to inventory
 				elif !Util.isnull(cmd.Target_Character):
 					targetType = Game.ENTITY.CHAR
-				#	targetID = cmd.Target_Object
-			if cmd.Walk_First == "1":
+			if cmd.Walk_First == "1" and actingObj.data.Tab != Game.ENTITY.INV:
 				var charID = Game.sceneNode.currChar.ID
 				var sprite = Game.sceneNode.all_chars[charID]
 				var dest =  ScreenObject.getWalkPoint(actingObj)

@@ -23,7 +23,6 @@ func _init(d):
 	return self
 
 func charAtDestination():
-	Game.menu.triggerDestination()
 	Game.sceneNode.scriptManager.charAtDestination()
 	#emit_signal("char_destination")
 
