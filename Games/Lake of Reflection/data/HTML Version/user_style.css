@@ -1,0 +1,16 @@
+@font-face {
+    font-family: 'lindsay';
+    src: url('fonts/lindsay.ttf') format("truetype");
+}
+@font-face {
+    font-family: 'johnny';
+    src: url('fonts/johnny.ttf') format("truetype");
+}
+@font-face {
+    font-family: 'sarah';
+    src: url('fonts/sarah.ttf') format("truetype");
+}
+@font-face {
+    font-family: 'narrator';
+    src: url('fonts/narrator.ttf') format("truetype");
+}

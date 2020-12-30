@@ -34,8 +34,9 @@ static func parseCSV(file):
 	var defaults = []
 	file.seek(0)
 	var list = {}
+	var line = file.get_csv_line()
 	while !file.eof_reached():
-		var line = file.get_csv_line()
+		print(file.get_error())
 		if len(props) == 0: # First (header) row
 			props = line
 		elif len(defaults) == 0 and line[0] == "DEFAULT":
@@ -47,7 +48,9 @@ static func parseCSV(file):
 					dict[props[i]] = defaults[i]
 				else:
 					dict[props[i]] = line[i]
+				pass
 			list[list.size()] = dict
+		line = file.get_csv_line()
 	return list
 
 static func saveCSV(fhead, fdata, filename, dict):

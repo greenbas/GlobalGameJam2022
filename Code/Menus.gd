@@ -289,6 +289,8 @@ class ScreenItem:
 				if inv.size() > loc:
 					found = true
 					texture = Game.getTexture(Game.getImageFile(inv[loc]))
+				else:
+					texture = null
 			TYPES.DIALOGUE_MAIN:
 				found = true
 				var emo = Game.speakerEmotion

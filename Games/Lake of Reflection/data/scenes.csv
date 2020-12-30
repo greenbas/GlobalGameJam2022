@@ -9,7 +9,7 @@
 "forest-06","Forest",,,"forest_clearing",,,,,,"forest_clearing",,,,,"Aitua-Gray-Forest-Welcome",,
 "forest-07","Forest",,,"forest_clearing",,,,,,"forest_clearing",,,,,"Aitua-Gray-Forest-Welcome",,
 "house","House",,,"forest_house",,,,,,"forest_house",,-40%,,,,,
-"hallway","Hallway",,,"hallway",,,,,,,,,,,,,
+"hallway","Hallway",,,"hallway",,,,,,"hallway",,5%,120%,,,,
 "bedroom","Bedroom",,,"bedroom",,,,,,"bedroom",,70%,,,,,
 "kitchen","Kitchen",,,"kitchen",,,,,,,,,,,,,
 "basement","Basement",,,"basement",,,,,,,,,,,,,

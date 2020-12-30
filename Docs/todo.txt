@@ -1,2 +1,3 @@
 talk to each other while state == cabin
-handle each other - state == cabin, state otherwise (can I implement ELSE expression?)
+
+lindsay should need the "rope" to get inside

@@ -22,10 +22,6 @@ func _init(d):
 	#Game.sceneNode.get_tree().connect("char_destination", self, "charAtDestination")
 	return self
 
-func charAtDestination():
-	Game.sceneNode.scriptManager.charAtDestination()
-	#emit_signal("char_destination")
-
 func drawMe():
 	# Image (texture is part of animation)
 	visible = (visible and data.Visible == "1")
@@ -89,11 +85,7 @@ func setGoal():
 		scene.get_node("Walkmap/BaseTest").position = goalPosn
 	else:
 		goalPosn = DONT_MOVE
-		charAtDestination()
-		
-		#Game.update(Game.ENTITY.CHAR, ["ID"], [sprite.name], "Scene_X", posn.x)
-		#Game.update(Game.ENTITY.CHAR, ["ID"], [sprite.name], "Scene_Y", posn.y)
-		#Game.update(Game.ENTITY.CHAR, ["ID"], [sprite.name], ["Scene_X", "Scene_Y"], [posn.x, posn.y])
+		Game.sceneNode.charAtDestination()
 
 func _process(delta):
 	# To prevent jitter, we have a "close enough" check
@@ -109,7 +101,6 @@ func _process(delta):
 			if goalPosn == DONT_MOVE:
 				beginAnim(data["Idle_" + getDir(prevAngle)])
 				updatePosn(true)
-			#	charAtDestination()
 		else:
 		#elif goalPosn != DONT_MOVE:
 			var angle = get_angle_to(goalPosn)
@@ -140,7 +131,7 @@ func beginAnim(animID):
 	texture = Game.getTexture(animation.Path, animation.Filename, animation.Extension)
 	hframes = int(animation.Frames)
 	if aTimer.is_stopped():
-		aTimer.start(float(animation.Frame_Duration))
+		aTimer.start(float(animation.Frame_Duration) / Game.dbgr.getFF())
 		#aTimer.wait_time = Game.dbgr.getFF() # not working
 
 func animateSprite():

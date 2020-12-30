@@ -116,7 +116,7 @@ func dirtyObjs():
 	clearItems(0, $Objects, all_chars, false, true)
 func dirtyScene():
 	loadScene(Game.sceneNode, true)
-	
+
 func unloadScene():
 	# Tell the script manager to stop its current script
 	#if scriptManager.mode == scriptManager.MODES.RUNNING:
@@ -132,17 +132,14 @@ func unloadScene():
 	while scriptManager.mode == scriptManager.MODES.RUNNING:
 		pass
 
-
-
-
 func _input(event):
 	if event.is_action_pressed("ui_playable_next"):
 		cycleChar(1)
 	if event.is_action_pressed("ui_playable_prev"):
 		cycleChar(-1)
 
+signal char_destination
 func charAtDestination():
-	print("reached")
 	emit_signal("char_destination")
 
 func moveToChar(moveTo):
@@ -163,7 +160,6 @@ func onCharacterMove(character : Character):
 	if character.lastColour != currColour:
 		character.lastColour = currColour
 		triggerCharacterMove(currColour, character)
-
 
 # As a type of interactable, Scenes may trigger scripts when:
 # The user hovers over a coloured area on the walkmap
@@ -220,10 +216,9 @@ func objAtPosnArr(posn, arr):
 					foundObj = i
 					foundZ = i.z_index
 	return foundObj
-	
 
 func triggerWalk(posn):
-	Game.debugMessage(Game.CAT.ACTION, "Clicked screen (colour: %s, position: %s" % [posn, walkmap.getColour(posn)])
+	Game.debugMessage(Game.CAT.ACTION, "Clicked screen (colour: %s, position: %s" % [walkmap.getColour(posn), posn])
 	var sprite = all_chars[currChar.ID]
 	walkmap.tryWalking(sprite, posn)
 

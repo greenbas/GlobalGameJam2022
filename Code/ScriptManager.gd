@@ -6,6 +6,9 @@ var rgxInventory
 var rgxStrings
 var eval
 
+func _init():
+	Game.sceneNode.connect("char_destination", self, "charAtDestination")
+
 func attachScripts():
 	# General init since it's apparently not happening in _ready
 	mode = MODES.READY
@@ -112,16 +115,15 @@ func run(commands, actingObj=null):
 		if todo: runcommands.push_back(cmd)
 	for cmd in runcommands:
 		# We want to be able to stop this function mid-cutscene
-		if Game.allGood() and mode != MODES.STOPPING:
+		if !Game.allGood() or mode == MODES.STOPPING:
+			break
+		else:
+			# Calc stuff!
 			var refresh = false
 			var targetType
-			#var targetID
 			if (!Util.isnull(cmd.Call_Script)):
 				Game.debugMessage(Game.CAT.SCRIPT, "Running " + cmd.Call_Script)
 				var funcName = cmd.Call_Script
-				#if (!script_functions.has(funcName)):
-				#	script_functions[funcName] = commandsForID(funcName)
-				#run(script_functions[funcName])
 				run(script_commands[funcName])
 				if mode != MODES.STOPPING:
 					mode = MODES.RUNNING # because it gets set to READY after completing
@@ -133,14 +135,15 @@ func run(commands, actingObj=null):
 					targetType = Game.ENTITY.OBJ # It's the object that got clicked & will get removed
 				elif !Util.isnull(cmd.Target_Character):
 					targetType = Game.ENTITY.CHAR
+			
+			# Do stuff!
 			if cmd.Walk_First == "1" and actingObj.data.Tab != Game.ENTITY.INV:
 				var charID = Game.sceneNode.currChar.ID
 				var sprite = Game.sceneNode.all_chars[charID]
 				var dest =  ScreenObject.getWalkPoint(actingObj)
-				Game.debugMessage(Game.CAT.SCRIPT, "Attempting to move %s to (%s, %s)" % [charID, dest.x, dest.y])
-				Game.sceneNode.walkmap.tryWalking(sprite, dest)
-				waitForDest(1)
-				yield(self, "reachedDest")
+				Game.debugMessage(Game.CAT.SCRIPT, "Attempting to move %s to (%f.1, %f.1)" % [charID, dest.x, dest.y])
+				Game.sceneNode.walkmap.tryWalking(sprite, dest, true)
+				yield(self, "char_destination")
 			if (!Util.isnull(cmd.Dialogue_Line)):
 				Game.verboseMessage(Game.CAT.SCRIPT, "Dialogue: " + cmd.Dialogue_Line)
 				var speaker = cmd.Dialogue_Speaker
@@ -214,9 +217,10 @@ func run(commands, actingObj=null):
 			if !Util.isnull(cmd.Wait_Seconds):
 				if cmd.Wait_Seconds != "0":
 					if cmd.Wait_Seconds.left(1) == "D":
-						#yield(Game, "char_destination")
-						waitForDest(int(cmd.Wait_Seconds)) # int() discards the D
-						yield(self, "reachedDest")
+						var waitingForDest = int(cmd.Wait_Seconds) # int() discards the D
+						while waitingForDest > 0:
+							yield(self, "char_destination")
+							waitingForDest -= 1
 					else:
 						yield(Game.wait(float(cmd.Wait_Seconds) / Game.dbgr.getFF()), "timeout")
 			# We are acting on the target of this action (determined above)
@@ -256,10 +260,8 @@ func parseExpr(e):
 	for m in rgxStrings.search_all(str(expr)):
 		var item = m.get_string()
 		strings.push_back(item)
-	#	expr = rgxStrings.sub(str(expr), "\"" + item + "\"", false)
 	var offset = 0
 	for s in strings:
-	#	expr = expr.replace(s, "\"" + s + "\"")
 		expr = rgxStrings.sub(str(expr), "\"" + s + "\"", false, offset)
 		offset += len(s) + 2
 		
@@ -271,30 +273,12 @@ func parseExpr(e):
 		result = eval.execute([], self, true)
 		if eval.has_execute_failed():
 			Game.reportError(Game.CAT.SCRIPT, "Execution failed on expression %s" % [expr])
+		else:
+			Game.debugMessage(Game.CAT.SCRIPT, "Expression parsed as %s" % [result])
 	return result
 
-signal reachedDest
-var waitingForDest = 0
+# It seems that in order to yield on a signal, we need to refine it in scope
+signal char_destination
 func charAtDestination():
-	waitingForDest -= 1
+	emit_signal("char_destination")
 
-func waitForDest(num):
-	waitingForDest = num
-	var limitter = 100
-	Game.debugMessage(Game.CAT.SCRIPT, "Waiting for %s character(s) to arrive" % num)
-	while waitingForDest > 0 and limitter > 0:
-		yield(Game.wait(0.1), "timeout")
-		limitter -= 1
-	if waitingForDest > 0:
-		Game.reportError(Game.CAT.SCRIPT, "Waiting timed out")
-		waitingForDest = 0
-	else:
-		Game.debugMessage(Game.CAT.SCRIPT, "%s characters arrived at destination" % num)
-	emit_signal("reachedDest")
-
-
-#func triggerAction(posn):
-#	print("Trigger action ", [posn, myType])
-	#if myType == Game.ENTITY
-	#var sprite = all_chars[currChar.ID]
-	#walkmap.tryWalking(sprite, posn)

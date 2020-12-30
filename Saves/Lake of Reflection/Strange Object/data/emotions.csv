@@ -1,8 +1,0 @@
-ID,Character,Image_Path,Image_Filename,Image_Extension
-DEFAULT,DEFAULT,images/characters/,none,.png
-"none","lindsay","images/characters/","lindsay_neutral",".png","8"
-"none","johnny","images/characters/","johnny_neutral",".png","8"
-"none","sarah","images/characters/","sarah_neutral",".png","8"
-"none","fire","images/characters/","none",".png","8"
-"none","narrator","images/characters/","none",".png","8"
-"none","queen","images/characters/","none",".png","8"

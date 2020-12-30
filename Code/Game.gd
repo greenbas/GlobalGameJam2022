@@ -58,6 +58,10 @@ static func loadGameFromSave(fname):
 	for cmd in commands.values():
 		update(cmd.Set_Tab, [cmd.Filter_Column], [cmd.Filter_Value],
 			[cmd.Set_Column], [cmd.Set_Value], true)
+	# And inventory, which is just easiest to keep separate
+	var inv = ENTITY_NAME[ENTITY.INV]
+	Game.entities[inv] = Game.loadDict(folder, fname + "-inv")
+	Game.inventory = Inventory.new(Game.playables, entityByID(Game.ENTITY.INV))
 	Game.sceneNode.refreshScene()
 
 static func loadGameFromStart():
@@ -264,8 +268,6 @@ static func saveCommand(e, fprop, fvalue, uprop, uvalue):
 	Game.save[len(Game.save)] = (cmd)
 
 # ===== Signals =========================================================
-
-#signal char_destination()
 
 #var thread
 static func wait(seconds):

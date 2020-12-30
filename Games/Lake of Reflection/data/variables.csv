@@ -1,4 +1,11 @@
-"ID","Value"
-"DEFAULT",0
-"numSticks",
-"teamState","sticks"
+"ID","Value","comments"
+"DEFAULT",0,
+"numSticks",,
+"teamState","sticks",
+"augerState",0,
+"strengthState",0,
+"sticks",5,"So I can do “math” on teamState, e.g. “teamState >= cabin”"
+"lost",10,"I leave some room in case I need to add one in between later."
+"queenTemp",15,
+"queen",20,
+"cabin",25,
