@@ -134,10 +134,10 @@ func doThing():
 	else:
 		actingObjID = actingObj.data.ID
 	var scriptID = actingChar.ID + "-" + actingAction.data.ID + "-" + actingObjID
-	if !Util.isnull(secondObj):
-		if scene.all_menus.has(secondObj.ID):
-			secondObj = secondObj.Item
-		scriptID += "-" + secondObj.ID
+	if secondObj:
+		if scene.all_menus.has(secondObj.data.ID):
+			secondObj = secondObj.data.Item
+		scriptID += "-" + secondObj.data.ID
 		secondObj = null
 	Game.debugMessage(Game.CAT.SCRIPT, "Resuming " + scriptID)
 	if scene.scriptManager.hasScript(scriptID):
@@ -267,7 +267,7 @@ class ScreenItem:
 		data.Actionable = "0" # Will be overwritten later for many types
 	func updateMe(scene, slot_i, slot_j):
 		var found = false
-		var diagText : Label = scene.get_node("Dialogue/Text")
+		var diag_text : Label = scene.get_node("Dialogue/Text")
 		var start_x = scene.WIDTH * float(data.Slot_Start_X) / 100.0
 		var start_y = scene.HEIGHT * float(data.Slot_Start_Y) / 100.0
 		var size_x = float(data.Slot_Size_X) * scene.WIDTH / 100.0
@@ -296,8 +296,8 @@ class ScreenItem:
 				var emo = Game.speakerEmotion
 				var left = float(emo.Shift_Dialogue_X) * scene.WIDTH / 100.0
 				var top = float(emo.Shift_Dialogue_Y) / 100.0
-				diagText.set_size(Vector2(size_x - left, size_y - top))
-				diagText.set_position(Vector2(start_x + left, start_y + top))
+				diag_text.set_size(Vector2(size_x - left, size_y - top))
+				diag_text.set_position(Vector2(start_x + left, start_y + top))
 				texture = Game.getTexture(data.Slot_Path, data.Slot_Filename_Inactive, data.Slot_Extension)
 			TYPES.PORTRAIT_MAIN:
 				found = true
@@ -305,3 +305,21 @@ class ScreenItem:
 				texture = Game.getTexture(emo.Image_Path, emo.Image_Filename, emo.Image_Extension)
 		if found:
 			position = Vector2(start_x + size_x * slot_i, start_y + size_y * slot_j)
+		
+		# Portrait (or other) label
+		var d = scene.get_node("Dialogue")
+		while d.get_child_count() > 2:
+			d.remove_child(d.get_child(2))
+		if data.Show_Labels == "1":
+			#print("true")
+			# Clone the dialogue text, it will be the correct font etc
+			var label_text : Label = diag_text.duplicate()
+			label_text.visible = true
+			#var lbl_x = start_x + float(data.Label_Offset_X) * 100.0 / float(data.Slot_Size_X)
+			#var lbl_y = start_y + float(data.Label_Offset_Y) * 100.0 / float(data.Slot_Size_Y)
+			#var lbl_offset = -label_text.get_size() * Vector2(float(data.Label_Base_X), float(data.Label_Base_Y)) / 100.0
+			#label_text.set_position(Vector2(lbl_x, lbl_y) + lbl_offset)
+			#label_text.set_position(Vector2(100, 100))
+			label_text.text = "aaa"
+			d.add_child(label_text)
+			d.emit_signal("draw")

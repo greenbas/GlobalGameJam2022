@@ -11,6 +11,9 @@ func _init(d):
 	canvas = scene.get_node("Objects")
 	name = data.ID
 
+func reset():
+	pass # This is called sometimes
+
 func drawMe():
 	# Image
 	visible = (visible and data.Visible == "1")

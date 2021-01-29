@@ -5,8 +5,8 @@ static func fillProps(folder, tab):
 	var dict
 	var path = folder + tab + ".csv"
 	if file.open(path, file.READ) == OK:
-		Game.verboseMessage(Game.CAT.FILE, "Found tab " + tab)
-		dict = Data.parseCSV(file)
+		Game.debugMessage(Game.CAT.FILE, "Found file " + tab)
+		dict = Data.parseCSV(path, file)
 	else:
 		Game.reportError(Game.CAT.FILE, "Error reading file %s" % path)
 	file.close()
@@ -29,14 +29,15 @@ static func filter(d, prop, value, multi, asDict):
 	if (asDict): return res.values()
 	else: return arr
 
-static func parseCSV(file):
+static func parseCSV(path, file):
 	var props = []
 	var defaults = []
 	file.seek(0)
 	var list = {}
-	var line = file.get_csv_line()
+	var line_count = 0
 	while !file.eof_reached():
-		print(file.get_error())
+		var line = file.get_csv_line()
+		line_count += 1 # Human-readable, so first line is 1
 		if len(props) == 0: # First (header) row
 			props = line
 		elif len(defaults) == 0 and line[0] == "DEFAULT":
@@ -50,7 +51,8 @@ static func parseCSV(file):
 					dict[props[i]] = line[i]
 				pass
 			list[list.size()] = dict
-		line = file.get_csv_line()
+		elif len(line) == 1 and len(line[0]) == 0:
+			Game.reportError(Game.CAT.FILE, "Line %s of %s could not be read" % [line_count, path])
 	return list
 
 static func saveCSV(fhead, fdata, filename, dict):

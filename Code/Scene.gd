@@ -74,7 +74,9 @@ func clearItems(sceneID, canvas, arr, ifSceneOnly = true, doDelete = false):
 		var node = canvas.get_child(i)
 		var display = ifSceneOnly and (arr[node.name].data.Scene_ID == sceneID)
 		if doDelete and !display: removeNodes.append(node) 
-		else: node.visible = display
+		else:
+			arr[node.data.ID].reset()
+			node.visible = display
 	for node in removeNodes: # Do after so we're not changing the list we're iterating over
 		canvas.remove_child(node)
 
@@ -119,8 +121,13 @@ func dirtyScene():
 
 func unloadScene():
 	# Tell the script manager to stop its current script
-	#if scriptManager.mode == scriptManager.MODES.RUNNING:
 	scriptManager.mode = scriptManager.MODES.STOPPING
+	# Now get a brand new ScriptManager because that one may be mid-Wait,
+	# and if it is then refreshScene at the end of all this will just restart it
+	var attached = scriptManager.script_commands
+	scriptManager = preload("ScriptManager.gd").new()
+	scriptManager.script_commands = attached
+	
 	# Remove character and object nodes
 	clearItems("", $Characters, all_chars, false, true)
 	clearItems("", $Objects, all_objs, false, true)
@@ -233,8 +240,8 @@ func triggerHover(posn):
 		currArea = area
 	var foundObj = objAtPosn(posn)
 	var hvScript
-	if !Util.isnull(Game.menu.actingAction):
-		hvScript = currChar.ID + "-" + Game.menu.actingAction.ID + "-" + foundObj.data.ID
+	if Game.menu.actingAction:
+		hvScript = currChar.ID + "-" + Game.menu.actingAction.data.ID + "-" + foundObj.data.ID
 	else:
 		hvScript = currChar.ID + "-" + foundObj.data.ID + "-" + currArea
 	if hvScript != currScript:

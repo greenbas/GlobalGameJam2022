@@ -56,8 +56,9 @@ static func loadGameFromSave(fname):
 	var folder = Game.savepath + Game.currgame + "/"
 	var commands = Data.fillProps(folder, fname)
 	for cmd in commands.values():
-		update(cmd.Set_Tab, [cmd.Filter_Column], [cmd.Filter_Value],
-			[cmd.Set_Column], [cmd.Set_Value], true)
+		var fcol = cmd.Filter_Column.split(ScriptManager.SPLITTER)
+		var fval = cmd.Filter_Value.split(ScriptManager.SPLITTER)
+		update(cmd.Set_Tab, fcol, fval, [cmd.Set_Column], [cmd.Set_Value], true)
 	# And inventory, which is just easiest to keep separate
 	var inv = ENTITY_NAME[ENTITY.INV]
 	Game.entities[inv] = Game.loadDict(folder, fname + "-inv")
@@ -92,8 +93,9 @@ static func loadGameFromStart():
 static func saveGameToFile(fname):
 	Game.inventory.updateEntity()
 	var fhead = Game.gamepath + Game.currgame + "/data/save.csv"
+	var ihead = Game.gamepath + Game.currgame + "/data/save-inv.csv"
 	var fdata = Game.savepath + Game.currgame + "/"
-	Data.saveCSV(fhead, fdata, fname + "-inv.csv", Game.entityByID(Game.ENTITY.INV))
+	Data.saveCSV(ihead, fdata, fname + "-inv.csv", Game.entityByID(Game.ENTITY.INV))
 	Data.saveCSV(fhead, fdata, fname + ".csv", Game.save)
 
 func getScreenSize():
@@ -259,9 +261,12 @@ static func update(e, fprop, fvalue, uprop, uvalue, err=true):
 
 # Every time we perform an update, we save it to the list of commands in this savegame
 static func saveCommandArr(e, fprop, fvalue, uprop, uvalue):
-	for f in range(0, len(fprop)):
+	#for f in range(0, len(fprop)):
 		for u in range(0, len(uprop)):
-			saveCommand(e, fprop[f], fvalue[f], uprop[u], uvalue[u])
+			saveCommand(e, PoolStringArray(fprop).join(ScriptManager.SPLITTER),
+				PoolStringArray(fvalue).join(ScriptManager.SPLITTER), uprop[u], uvalue[u])
+			#saveCommand(e, fprop[f], fvalue[f], uprop[u], uvalue[u])
+	#saveCommand(e, fprop, fvalue, uprop, uvalue)
 static func saveCommand(e, fprop, fvalue, uprop, uvalue):
 	var cmd = { "Set_Tab": e, "Set_Column": uprop, "Set_Value": uvalue,
 		"Filter_Column": fprop, "Filter_Value": fvalue }

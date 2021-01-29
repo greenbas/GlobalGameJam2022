@@ -117,13 +117,12 @@ func reload():
 		# First child is the invisible template; clear everything else and then start copying it
 		while loglist.get_child_count() > 1:
 			loglist.remove_child(loglist.get_child(1))
-		var i = debugLog.size() - LOG_SIZE - 1
-		if i < 0: i = 0
+		var i = debugLog.size() - 1
 		var count = 0
-		#while count < LOG_SIZE and i > 0:
-		while count < LOG_SIZE and i < debugLog.size():
+		while count < LOG_SIZE and i > 0:
+		#while count < LOG_SIZE and i < debugLog.size():
 			var l = debugLog[i]
-			if showingCat(l.category):
+			if showingCat(l.category) and l.level <= verbosity:
 				var t = template.duplicate()
 				labelCell(t, TEMPLATE.TEXT, l.message)
 				labelCell(t, TEMPLATE.DATE, Util.getStringTime(l.date))
@@ -132,8 +131,8 @@ func reload():
 				t.visible = true
 				loglist.add_child(t)
 				count += 1
-			#i -= 1
-			i += 1
+			i -= 1
+			#i += 1
 		get_parent().emit_signal("draw")
 	isDirty = false
 

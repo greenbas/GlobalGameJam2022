@@ -1,7 +1,7 @@
 extends Sprite
 class_name Character
 
-var DONT_MOVE = Vector2(-1, -1)
+const DONT_MOVE = Vector2(-1, -1)
 
 var scene
 var canvas
@@ -21,6 +21,9 @@ func _init(d):
 	#Game.sceneNode.scriptManager.connect("char_destination", self, "Game.sceneNode.scriptManager.charAtDestination")
 	#Game.sceneNode.get_tree().connect("char_destination", self, "charAtDestination")
 	return self
+
+func reset():
+	goalPosn = DONT_MOVE
 
 func drawMe():
 	# Image (texture is part of animation)

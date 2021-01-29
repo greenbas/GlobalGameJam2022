@@ -8,9 +8,6 @@ var eval
 
 func _init():
 	Game.sceneNode.connect("char_destination", self, "charAtDestination")
-
-func attachScripts():
-	# General init since it's apparently not happening in _ready
 	mode = MODES.READY
 	rgxInventory = RegEx.new()
 	rgxInventory.compile("Inventory.\\w+")
@@ -18,6 +15,8 @@ func attachScripts():
 	# https://stackoverflow.com/questions/38512896/java-regex-match-words-that-arent-numbers
 	rgxStrings.compile("((?![-+]?[0-9]*\\.?[0-9])\\w+\\b)")
 	eval = Expression.new()
+
+func attachScripts():
 	var objgroups = Game.dictByID(Game.listOf(Game.ENTITY.OBJGROUP))
 	# Actually attaching scripts
 	for script in Game.dictByID(Game.entityByID(Game.ENTITY.SCRIPT)).values():
@@ -30,8 +29,25 @@ func attachScripts():
 		#else: # Including objgroups in this, as you can also use from inventory
 		addCommandsForID(script.ID, script.ID)
 
+func transferScripts():
+	# When we unload a scene on loading a game, we need to create a new
+	# script manager object.  But we don't need to redo all the work
+	# involved in attaching the scripts.
+	return script_commands
+
 func hasScript(cmd):
-	return script_commands.has(cmd)
+	if script_commands.has(cmd): return true
+	# For actions requiring a second target, "hasScript" should return true when
+	# asked if, e.g. "johnny-use-sheet" exists because no second target will have
+	# been selected yet when we are asked this.
+	var dash = cmd.find("-") + 1
+	var mid = cmd.substr(dash, cmd.find_last("-") - dash)
+	var action = Game.entityWhere(Game.ENTITY.ACTION, ["ID"], [mid], true, false)
+	if action:
+		if action.Needs_Second == "1":
+			for c in script_commands:
+				if c.match(cmd + "-*"): return true
+	return false
 
 # Takes an ID and returns an array containing all script records matching the ID
 # In order not to be doing this constantly, the result will be saved.
