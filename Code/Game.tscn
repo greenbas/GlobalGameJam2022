@@ -79,7 +79,7 @@ __meta__ = {
 
 [node name="Dialogue" type="CanvasLayer" parent="Scene"]
 
-[node name="Text" type="Label" parent="Scene/Dialogue"]
+[node name="SpeakerText" type="Label" parent="Scene/Dialogue"]
 margin_left = 1.0
 margin_right = 1026.0
 margin_bottom = 744.0
@@ -94,6 +94,18 @@ margin_left = 50.0
 margin_top = -50.0
 margin_right = 412.0
 margin_bottom = -15.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SpeakerLabel" type="Label" parent="Scene/Dialogue"]
+anchor_bottom = 100.0
+margin_left = 2.0
+margin_top = 300.0
+margin_right = 1027.0
+margin_bottom = 1044.0
+align = 1
+autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }

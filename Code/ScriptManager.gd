@@ -166,14 +166,22 @@ func run(commands, actingObj=null):
 				if speaker == "DEFAULT": speaker = cmd.Character_ID
 				if (!characters.has(speaker)):
 					characters[speaker] = Game.entityWhere(Game.ENTITY.CHAR, ["ID"], [speaker], false)
-				var label = Game.sceneNode.get_node("Dialogue/Text")
+				var sp_label = Game.sceneNode.get_node("Dialogue/SpeakerLabel")
+				var sp_text = Game.sceneNode.get_node("Dialogue/SpeakerText")
 				var s = characters[speaker]
 				Game.beginSpeaking(s, cmd.Dialogue_Emotion)
-				label.text = cmd.Dialogue_Line
-				Game.sceneNode.setLabelFont(label, s)
+				sp_text.text = cmd.Dialogue_Line
+				Game.sceneNode.setLabelFont(sp_text, s)
+				if s.Label_Portrait == "1":
+					var emo = Game.speakerEmotion
+					if emo.Label == "DEFAULT":
+						sp_label.text = s.Label
+					else:
+						sp_label.text = emo.Label
+					Game.sceneNode.setLabelFont(sp_label, emo)
 				var seconds = 2.5 * float(cmd.Dialogue_Duration) / 100.0 / Game.getFF()
 				yield(Game.wait(seconds), "timeout")
-				label.text = ""
+				sp_text.text = ""
 				Game.endSpeaking()
 				#yield(Game.wait(seconds), "diag_timer")
 			if (!Util.isnull(cmd.Set_Column)):

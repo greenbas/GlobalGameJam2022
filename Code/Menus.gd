@@ -267,7 +267,8 @@ class ScreenItem:
 		data.Actionable = "0" # Will be overwritten later for many types
 	func updateMe(scene, slot_i, slot_j):
 		var found = false
-		var diag_text : Label = scene.get_node("Dialogue/Text")
+		var diag_text : Label = scene.get_node("Dialogue/SpeakerText")
+		var diag_label : Label = scene.get_node("Dialogue/SpeakerLabel")
 		var start_x = scene.WIDTH * float(data.Slot_Start_X) / 100.0
 		var start_y = scene.HEIGHT * float(data.Slot_Start_Y) / 100.0
 		var size_x = float(data.Slot_Size_X) * scene.WIDTH / 100.0
@@ -295,9 +296,12 @@ class ScreenItem:
 				found = true
 				var emo = Game.speakerEmotion
 				var left = float(emo.Shift_Dialogue_X) * scene.WIDTH / 100.0
-				var top = float(emo.Shift_Dialogue_Y) / 100.0
+				var top = float(emo.Shift_Dialogue_Y) * scene.HEIGHT / 100.0
 				diag_text.set_size(Vector2(size_x - left, size_y - top))
 				diag_text.set_position(Vector2(start_x + left, start_y + top))
+				left = float(emo.Shift_Label_X) * scene.WIDTH / 100.0
+				top = float(emo.Shift_Label_Y) * scene.HEIGHT / 100.0
+				diag_label.set_position(Vector2(start_x + left, start_y + top))
 				texture = Game.getTexture(data.Slot_Path, data.Slot_Filename_Inactive, data.Slot_Extension)
 			TYPES.PORTRAIT_MAIN:
 				found = true
@@ -307,19 +311,8 @@ class ScreenItem:
 			position = Vector2(start_x + size_x * slot_i, start_y + size_y * slot_j)
 		
 		# Portrait (or other) label
-		var d = scene.get_node("Dialogue")
-		while d.get_child_count() > 2:
-			d.remove_child(d.get_child(2))
-		if data.Show_Labels == "1":
-			#print("true")
-			# Clone the dialogue text, it will be the correct font etc
-			var label_text : Label = diag_text.duplicate()
-			label_text.visible = true
-			#var lbl_x = start_x + float(data.Label_Offset_X) * 100.0 / float(data.Slot_Size_X)
-			#var lbl_y = start_y + float(data.Label_Offset_Y) * 100.0 / float(data.Slot_Size_Y)
-			#var lbl_offset = -label_text.get_size() * Vector2(float(data.Label_Base_X), float(data.Label_Base_Y)) / 100.0
-			#label_text.set_position(Vector2(lbl_x, lbl_y) + lbl_offset)
-			#label_text.set_position(Vector2(100, 100))
-			label_text.text = "aaa"
-			d.add_child(label_text)
-			d.emit_signal("draw")
+		#var d = scene.get_node("Dialogue")
+		#diag_label.visible = (data.Show_Labels == "1")
+		#if diag_label.visible:
+		#	diag_label.text = "aaa"
+		#d.emit_signal("draw")
