@@ -182,6 +182,7 @@ func run(commands, actingObj=null):
 				var seconds = 2.5 * float(cmd.Dialogue_Duration) / 100.0 / Game.getFF()
 				yield(Game.wait(seconds), "timeout")
 				sp_text.text = ""
+				sp_label.text = ""
 				Game.endSpeaking()
 				#yield(Game.wait(seconds), "diag_timer")
 			if (!Util.isnull(cmd.Set_Column)):

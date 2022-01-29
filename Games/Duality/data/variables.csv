@@ -1,12 +1,10 @@
-"ID","Value","comments"
-"DEFAULT",0,
-"numSticks",,
-"teamState","sticks",
-"augerState",0,
-"strengthState",0,
-"windowRope",0,
-"sticks",5,"Definging constants so I can do 'math' on teamState, e.g. 'teamState >= cabin'"
-"lost",10,"I leave some room in case I need to add one in between later."
-"queenTemp",15,
-"queen",20,
-"cabin",25,
+ID,Value,comments
+DEFAULT,0,
+windowState,1,
+floorState,0,
+mirrorState,0,
+x,1,"Defining constants so I can do 'math' on other variables, e.g. 'teamState >= cabin'"
+x,0,
+x,15,
+x,20,
+x,25,
