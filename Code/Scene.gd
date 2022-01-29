@@ -149,9 +149,9 @@ signal char_destination
 func charAtDestination():
 	emit_signal("char_destination")
 
-func moveToChar(moveTo):
-	cycleChar(0, moveTo)
-func cycleChar(moveBy, moveTo=0):
+func moveToChar(moveTo,refresh=true):
+	cycleChar(0, moveTo,refresh)
+func cycleChar(moveBy, moveTo=0,refresh=true):
 	var curr = Game.playables.find(currChar)
 	if moveBy == 0:
 		curr = moveTo
@@ -159,7 +159,8 @@ func cycleChar(moveBy, moveTo=0):
 		curr = (curr + moveBy) % Game.playables.size()
 	currChar = Game.playables[curr]
 	Game.updateByID(Game.ENTITY.CHAR, ["ID"], [currChar.ID], ["Current"], ["1"])
-	refreshScene()
+	if refresh:
+		refreshScene()
 
 func onCharacterMove(character : Character):
 	# Get the colour of the current position of the sprite's base
@@ -241,9 +242,9 @@ func triggerHover(posn):
 	var foundObj = objAtPosn(posn)
 	var hvScript
 	if posn.y <= 360:
-		Game.sceneNode.moveToChar(0)
+		moveToChar(0,false)
 	else: 
-		Game.sceneNode.moveToChar(1)
+		moveToChar(1,false)
 	if Game.menu.actingAction:
 		hvScript = currChar.ID + "-" + Game.menu.actingAction.data.ID + "-" + foundObj.data.ID
 	else:
