@@ -119,7 +119,7 @@ func triggerClick(character, posn, obj):
 				actingChar = character
 				actingAction = obj
 				state = STATES.CHAR_MOVING
-				if obj.data.Needs_Second == "1":
+				if obj.data.has("Needs_Second") and obj.data.Needs_Second == "1":
 					state = STATES.CHOOSE_SECOND
 				else:
 					doThing()
