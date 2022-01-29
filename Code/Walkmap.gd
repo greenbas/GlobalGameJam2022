@@ -33,9 +33,9 @@ func _input(event):
 
 # Movement
 var astar : AStar2D
-var sceneW = 1024
-var sceneH = 768
-var GRID_SIZE = 32.0#64.0
+var sceneW = 10280
+var sceneH = 720
+var GRID_SIZE = 20.0#64.0
 var OFFSET = GRID_SIZE / 2
 
 func tryWalking(sprite, posn, retry=false):
@@ -47,7 +47,7 @@ func tryWalking(sprite, posn, retry=false):
 		if !retry or sprite.goalPath.size() > 0:
 			found = true
 		else:
-			posn.y += 50
+			posn.y += 10
 	sprite.setGoal()
 
 func findPath(orig : Vector2, dest : Vector2):
