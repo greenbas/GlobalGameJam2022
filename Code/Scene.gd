@@ -240,6 +240,10 @@ func triggerHover(posn):
 		currArea = area
 	var foundObj = objAtPosn(posn)
 	var hvScript
+	if posn.y <= 360:
+		Game.sceneNode.moveToChar(0)
+	else: 
+		Game.sceneNode.moveToChar(1)
 	if Game.menu.actingAction:
 		hvScript = currChar.ID + "-" + Game.menu.actingAction.data.ID + "-" + foundObj.data.ID
 	else:
