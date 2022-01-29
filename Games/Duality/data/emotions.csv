@@ -1,8 +1,4 @@
-"ID","Character","Image_Path","Image_Filename","Image_Extension","Shift_Dialogue_X","Shift_Dialogue_Y"
-"DEFAULT","DEFAULT","images/characters/","none",".png",17%,0%
-"none","lindsay",,"lindsay_neutral",,,
-"none","johnny",,"johnny_neutral",,,
-"none","sarah",,"sarah_neutral",,,
-"none","fire",,,,0%,
-"none","narrator",,,,0%,
-"none","queen",,,,0%,
+ID,Character,Image_Path,Image_Filename,Image_Extension,Shift_Dialogue_X,Shift_Dialogue_Y,Label,Font_Colour,Font_Shadow,Font_Path,Font_Filename,Font_Extension,Font_Size
+DEFAULT,DEFAULT,images/characters/,none,.png,17%,0%,DEFAULT,#000000,,fonts/,HussarBold-7mRE,oft,25
+none,lindsay,,lindsay_neutral,,,,,#bbaa00,#000000,,,,
+none,johnny,,johnny_neutral,,,,,#ee4444,#000000,,,,
