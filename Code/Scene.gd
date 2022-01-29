@@ -149,17 +149,17 @@ signal char_destination
 func charAtDestination():
 	emit_signal("char_destination")
 
-func moveToChar(moveTo):
-	cycleChar(0, moveTo)
-func cycleChar(moveBy, moveTo=0):
+func moveToChar(moveTo,refresh=true):
+	cycleChar(0, moveTo,refresh)
+func cycleChar(moveBy, moveTo=0,refresh=true):
 	var curr = Game.playables.find(currChar)
-	if curr != moveTo:
-		if moveBy == 0:
-			curr = moveTo
-		else:
-			curr = (curr + moveBy) % Game.playables.size()
-		currChar = Game.playables[curr]
-		Game.updateByID(Game.ENTITY.CHAR, ["ID"], [currChar.ID], ["Current"], ["1"])
+	if moveBy == 0:
+		curr = moveTo
+	else:
+		curr = (curr + moveBy) % Game.playables.size()
+	currChar = Game.playables[curr]
+	Game.updateByID(Game.ENTITY.CHAR, ["ID"], [currChar.ID], ["Current"], ["1"])
+	if refresh:
 		refreshScene()
 
 func onCharacterMove(character : Character):
@@ -242,9 +242,9 @@ func triggerHover(posn):
 	var foundObj = objAtPosn(posn)
 	var hvScript
 	if posn.y <= 360:
-		moveToChar(0)
+		moveToChar(0,false)
 	else: 
-		moveToChar(1)
+		moveToChar(1,false)
 	if Game.menu.actingAction:
 		hvScript = currChar.ID + "-" + Game.menu.actingAction.data.ID + "-" + foundObj.data.ID
 	else:
