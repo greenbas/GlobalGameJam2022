@@ -68,7 +68,8 @@ Game="*res://Code/Game.gd"
 
 [display]
 
-window/size/height=768
+window/size/width=1280
+window/size/height=720
 window/size/resizable=false
 
 [input]

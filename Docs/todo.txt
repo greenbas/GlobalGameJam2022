@@ -1,3 +1,0 @@
-talk to each other while state == cabin
-
-lindsay should need the "rope" to get inside
