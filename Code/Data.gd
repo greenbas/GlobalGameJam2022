@@ -52,7 +52,10 @@ static func parseCSV(path, file):
 				pass
 			list[list.size()] = dict
 		elif len(line) == 1 and len(line[0]) == 0:
-			Game.reportError(Game.CAT.FILE, "Line %s of %s could not be read" % [line_count, path])
+			if file.get_position() >= file.get_len():
+				pass # It's just a blank last line
+			else:
+				Game.reportError(Game.CAT.FILE, "Line %s of %s could not be read" % [line_count, path])
 	return list
 
 static func saveCSV(fhead, fdata, filename, dict):
