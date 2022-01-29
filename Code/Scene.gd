@@ -153,13 +153,14 @@ func moveToChar(moveTo):
 	cycleChar(0, moveTo)
 func cycleChar(moveBy, moveTo=0):
 	var curr = Game.playables.find(currChar)
-	if moveBy == 0:
-		curr = moveTo
-	else:
-		curr = (curr + moveBy) % Game.playables.size()
-	currChar = Game.playables[curr]
-	Game.updateByID(Game.ENTITY.CHAR, ["ID"], [currChar.ID], ["Current"], ["1"])
-	refreshScene()
+	if curr != moveTo:
+		if moveBy == 0:
+			curr = moveTo
+		else:
+			curr = (curr + moveBy) % Game.playables.size()
+		currChar = Game.playables[curr]
+		Game.updateByID(Game.ENTITY.CHAR, ["ID"], [currChar.ID], ["Current"], ["1"])
+		refreshScene()
 
 func onCharacterMove(character : Character):
 	# Get the colour of the current position of the sprite's base
@@ -241,9 +242,9 @@ func triggerHover(posn):
 	var foundObj = objAtPosn(posn)
 	var hvScript
 	if posn.y <= 360:
-		Game.sceneNode.moveToChar(0)
+		moveToChar(0)
 	else: 
-		Game.sceneNode.moveToChar(1)
+		moveToChar(1)
 	if Game.menu.actingAction:
 		hvScript = currChar.ID + "-" + Game.menu.actingAction.data.ID + "-" + foundObj.data.ID
 	else:
