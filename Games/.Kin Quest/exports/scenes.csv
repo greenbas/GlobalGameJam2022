@@ -1,3 +1,0 @@
-"ID","Name","Require_Actions","Background_Path","Background_Filename","Background_Extension","Foreground_Path","Foreground_Filename","Foreground_Extension","Walkmap_Path","Walkmap_Filename","Walkmap_Extension","Zoom","Centre_X","Centre_Y"
-"DEFAULT","Unknown",1,"scenes/","black",".png","scenes/","none","_fg.png","scenes/","all","_wm.png",1,50%,50%
-"treehouse","Jaq's House",0,,"treehouse",,,,,,,,,,

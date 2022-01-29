@@ -1,3 +1,0 @@
-"ID","Name","Colour","Shadow","Font_Path","Font_Filename","Font_Extension","Font_Size","Scene_ID","Screen_X","Screen_Y","Zoom","Base_X","Base_Y","Visible","Actionable","xZ_Index","Playable","Walks","Current","Animation_Current","Idle_N","Idle_E","Idle_W","Idle_S","Idle_NE","Idle_NW","Idle_SE","Idle_SW","N","E","W","S","NE","NW","SE","SW","Cursor_Path","Cursor_Filename","Cursor_Extension","Action_Wheel_Path","Action_Wheel_Filename","Action_Wheel_Extension"
-"DEFAULT",,"#000000",,"fonts/","narrator",".ttf",25,,50%,50%,100%,50%,98%,1,1,40,0,1,0,"idle","idle_n","idle","idle","idle","idle_n","idle_n","idle_n","idle","n","e","w","s","e","w","s","w","gui/","cursor",".png","gui/","vc",".png"
-"jaq","Jaq",,,,,,,"treehouse",32%,65%,,,,,,,1,,1,,,,,,,,,,,,,,,,,,,,,,,
