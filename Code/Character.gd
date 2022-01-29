@@ -139,7 +139,7 @@ func beginAnim(animID):
 
 func animateSprite():
 	frame = (frame + 1) % hframes
-	
+
 func getDir(angle):
 	# This function returns a compass direction given a heading.  It is
 	# intended to be used with the animations which follow format "N",

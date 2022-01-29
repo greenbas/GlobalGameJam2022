@@ -1,12 +1,12 @@
 ID,Group,Unique,Label,Scene_ID,Visible,Actionable,Image_Path,Image_Filename,Image_Extension,Screen_X,Screen_Y,Base_X,Base_Y,Walk_Point_X,Walk_Point_Y,Zoom,Rotation,Flip_H,Flip_V,Inventory_Path,Inventory_Filename,Inventory_Extension
 DEFAULT,,,,,1,1,images/objects/,unknown,.png,0.0%,0.0%,0%,0%,0.0%,0.0%,100%,0,0,0,images/objects/,unknown,-inv.png
-boards,,,Loose Boards,dual,,,,loose-boards,,,,,,15.0%,48.0%,,,,,,,
-hole,,,Broken Boards,dual,0,,,broken-boards,,,,,,15.0%,48.0%,,,,,,,
-mirror,,,Mirror,dual,,,,mirror,,,,,,90.0%,98.0%,,,,,,,
-mirror_moved,,,Mirror,dual,0,,,mirror2,,,,,,10.0%,98.0%,,,,,,,
-window,,,Window,dual,,,,window,,,,,,90.0%,48.0%,,,,,,,
+boards,,,Loose Boards,dual,,,,loose-boards,,,,,,15.0%,,,,,,,,
+hole,,,Broken Boards,dual,0,,,broken-boards,,,,,,15.0%,,,,,,,,
+mirror,,,Mirror,dual,,,,mirror,,,,,,90.0%,80.0%,,,,,,mirror,
+mirror_moved,,,Mirror,dual,0,,,mirror-moved,,,,,,10.0%,80.0%,,,,,,,
+window,,,Window,dual,,,,window,,,,,,90.0%,,,,,,,,
 sunbeam1,,,,dual,1,0,,sunbeam1,,,,,,,,,,,,,,
-sunbeam2,,,,dual,0,0,,sunbeam2,,,,,,,,,,,,,,
+sunbeam2,,,Sunbeam,dual,0,1,,sunbeam2,,,,,,20.0%,80.0%,,,,,,,
 sunbeam3,,,,dual,0,0,,sunbeam3,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,
