@@ -1,3 +1,6 @@
 ID,Label,Require_Actions,Background_Path,Background_Filename,Background_Extension,Foreground_Path,Foreground_Filename,Foreground_Extension,Walkmap_Path,Walkmap_Filename,Walkmap_Extension,Zoom_At_Top,Zoom_At_Bottom,Audio_Path,Audio_Filename,Audio_Extension,Audio_Volume_Db
-DEFAULT,Unknown,1,images/scenes/,black,.png,images/scenes/,none,.png,images/walkmaps/,all,.png,50%,100%,audio/,,.ogg,-18
+DEFAULT,Unknown,1,images/scenes/,intro,.png,images/scenes/,none,.png,images/walkmaps/,all,.png,50%,100%,audio/,,.ogg,-18
 dual,Surroundings,,,dual-rooms,,,,,,dual-rooms,,100%,,,,,
+black,,,,intro,,,,,,,,,,,,,
+fuzzy,,,,dual-fuzzy,,,,,,,,,,,,,
+flying,,,,intro,,,,,,,,,,,,,
