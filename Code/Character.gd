@@ -134,7 +134,7 @@ func beginAnim(animID):
 	texture = Game.getTexture(animation.Path, animation.Filename, animation.Extension)
 	hframes = int(animation.Frames)
 	if aTimer.is_stopped():
-		aTimer.start(float(animation.Frame_Duration) / Game.dbgr.getFF())
+		aTimer.start(float(animation.Frame_Duration) / float(Game.dbgr.getFF()))
 		#aTimer.wait_time = Game.dbgr.getFF() # not working
 
 func animateSprite():
