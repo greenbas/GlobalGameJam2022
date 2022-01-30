@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <office:document xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0" xmlns:style="urn:oasis:names:tc:opendocument:xmlns:style:1.0" xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0" xmlns:table="urn:oasis:names:tc:opendocument:xmlns:table:1.0" xmlns:draw="urn:oasis:names:tc:opendocument:xmlns:drawing:1.0" xmlns:fo="urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:meta="urn:oasis:names:tc:opendocument:xmlns:meta:1.0" xmlns:number="urn:oasis:names:tc:opendocument:xmlns:datastyle:1.0" xmlns:presentation="urn:oasis:names:tc:opendocument:xmlns:presentation:1.0" xmlns:svg="urn:oasis:names:tc:opendocument:xmlns:svg-compatible:1.0" xmlns:chart="urn:oasis:names:tc:opendocument:xmlns:chart:1.0" xmlns:dr3d="urn:oasis:names:tc:opendocument:xmlns:dr3d:1.0" xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns:form="urn:oasis:names:tc:opendocument:xmlns:form:1.0" xmlns:script="urn:oasis:names:tc:opendocument:xmlns:script:1.0" xmlns:config="urn:oasis:names:tc:opendocument:xmlns:config:1.0" xmlns:ooo="http://openoffice.org/2004/office" xmlns:ooow="http://openoffice.org/2004/writer" xmlns:oooc="http://openoffice.org/2004/calc" xmlns:dom="http://www.w3.org/2001/xml-events" xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rpt="http://openoffice.org/2005/report" xmlns:of="urn:oasis:names:tc:opendocument:xmlns:of:1.2" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:grddl="http://www.w3.org/2003/g/data-view#" xmlns:tableooo="http://openoffice.org/2009/table" xmlns:drawooo="http://openoffice.org/2010/draw" xmlns:calcext="urn:org:documentfoundation:names:experimental:calc:xmlns:calcext:1.0" xmlns:loext="urn:org:documentfoundation:names:experimental:office:xmlns:loext:1.0" xmlns:field="urn:openoffice:names:experimental:ooo-ms-interop:xmlns:field:1.0" xmlns:formx="urn:openoffice:names:experimental:ooxml-odf-interop:xmlns:form:1.0" xmlns:css3t="http://www.w3.org/TR/css3-text/" office:version="1.2" office:mimetype="application/vnd.oasis.opendocument.spreadsheet">
- <office:meta><meta:initial-creator>L S</meta:initial-creator><meta:creation-date>2020-12-06T11:06:30.32</meta:creation-date><dc:date>2022-01-30T14:46:09.841000000</dc:date><meta:editing-duration>P5DT17H59M39S</meta:editing-duration><meta:editing-cycles>629</meta:editing-cycles><meta:generator>LibreOffice/6.1.3.2$Windows_X86_64 LibreOffice_project/86daf60bf00efa86ad547e59e09d6bb77c699acb</meta:generator><meta:document-statistic meta:table-count="12" meta:cell-count="1269" meta:object-count="0"/><meta:user-defined meta:name=""/></office:meta>
+ <office:meta><meta:initial-creator>L S</meta:initial-creator><meta:creation-date>2020-12-06T11:06:30.32</meta:creation-date><dc:date>2022-01-30T15:37:39.804000000</dc:date><meta:editing-duration>P5DT18H51M5S</meta:editing-duration><meta:editing-cycles>635</meta:editing-cycles><meta:generator>LibreOffice/6.1.3.2$Windows_X86_64 LibreOffice_project/86daf60bf00efa86ad547e59e09d6bb77c699acb</meta:generator><meta:document-statistic meta:table-count="12" meta:cell-count="1356" meta:object-count="0"/><meta:user-defined meta:name=""/></office:meta>
  <office:settings>
   <config:config-item-set config:name="ooo:view-settings">
    <config:config-item config:name="VisibleAreaTop" config:type="int">0</config:config-item>
    <config:config-item config:name="VisibleAreaLeft" config:type="int">0</config:config-item>
    <config:config-item config:name="VisibleAreaWidth" config:type="int">60074</config:config-item>
-   <config:config-item config:name="VisibleAreaHeight" config:type="int">37248</config:config-item>
+   <config:config-item config:name="VisibleAreaHeight" config:type="int">37699</config:config-item>
    <config:config-item-map-indexed config:name="Views">
     <config:config-item-map-entry>
      <config:config-item config:name="ViewId" config:type="string">view1</config:config-item>
@@ -31,8 +31,8 @@
        <config:config-item config:name="AnchoredTextOverflowLegacy" config:type="boolean">false</config:config-item>
       </config:config-item-map-entry>
       <config:config-item-map-entry config:name="Animations">
-       <config:config-item config:name="CursorPositionX" config:type="int">0</config:config-item>
-       <config:config-item config:name="CursorPositionY" config:type="int">13</config:config-item>
+       <config:config-item config:name="CursorPositionX" config:type="int">4</config:config-item>
+       <config:config-item config:name="CursorPositionY" config:type="int">3</config:config-item>
        <config:config-item config:name="HorizontalSplitMode" config:type="short">0</config:config-item>
        <config:config-item config:name="VerticalSplitMode" config:type="short">0</config:config-item>
        <config:config-item config:name="HorizontalSplitPosition" config:type="int">0</config:config-item>
@@ -121,14 +121,14 @@
        <config:config-item config:name="AnchoredTextOverflowLegacy" config:type="boolean">false</config:config-item>
       </config:config-item-map-entry>
       <config:config-item-map-entry config:name="Menus">
-       <config:config-item config:name="CursorPositionX" config:type="int">27</config:config-item>
-       <config:config-item config:name="CursorPositionY" config:type="int">1</config:config-item>
+       <config:config-item config:name="CursorPositionX" config:type="int">10</config:config-item>
+       <config:config-item config:name="CursorPositionY" config:type="int">2</config:config-item>
        <config:config-item config:name="HorizontalSplitMode" config:type="short">0</config:config-item>
        <config:config-item config:name="VerticalSplitMode" config:type="short">0</config:config-item>
        <config:config-item config:name="HorizontalSplitPosition" config:type="int">0</config:config-item>
        <config:config-item config:name="VerticalSplitPosition" config:type="int">0</config:config-item>
        <config:config-item config:name="ActiveSplitRange" config:type="short">2</config:config-item>
-       <config:config-item config:name="PositionLeft" config:type="int">16</config:config-item>
+       <config:config-item config:name="PositionLeft" config:type="int">0</config:config-item>
        <config:config-item config:name="PositionRight" config:type="int">0</config:config-item>
        <config:config-item config:name="PositionTop" config:type="int">0</config:config-item>
        <config:config-item config:name="PositionBottom" config:type="int">0</config:config-item>
@@ -175,8 +175,8 @@
        <config:config-item config:name="AnchoredTextOverflowLegacy" config:type="boolean">false</config:config-item>
       </config:config-item-map-entry>
       <config:config-item-map-entry config:name="Scenes">
-       <config:config-item config:name="CursorPositionX" config:type="int">0</config:config-item>
-       <config:config-item config:name="CursorPositionY" config:type="int">5</config:config-item>
+       <config:config-item config:name="CursorPositionX" config:type="int">10</config:config-item>
+       <config:config-item config:name="CursorPositionY" config:type="int">7</config:config-item>
        <config:config-item config:name="HorizontalSplitMode" config:type="short">0</config:config-item>
        <config:config-item config:name="VerticalSplitMode" config:type="short">0</config:config-item>
        <config:config-item config:name="HorizontalSplitPosition" config:type="int">0</config:config-item>
@@ -193,8 +193,8 @@
        <config:config-item config:name="AnchoredTextOverflowLegacy" config:type="boolean">false</config:config-item>
       </config:config-item-map-entry>
       <config:config-item-map-entry config:name="Script">
-       <config:config-item config:name="CursorPositionX" config:type="int">15</config:config-item>
-       <config:config-item config:name="CursorPositionY" config:type="int">3</config:config-item>
+       <config:config-item config:name="CursorPositionX" config:type="int">1</config:config-item>
+       <config:config-item config:name="CursorPositionY" config:type="int">72</config:config-item>
        <config:config-item config:name="HorizontalSplitMode" config:type="short">0</config:config-item>
        <config:config-item config:name="VerticalSplitMode" config:type="short">2</config:config-item>
        <config:config-item config:name="HorizontalSplitPosition" config:type="int">0</config:config-item>
@@ -203,7 +203,7 @@
        <config:config-item config:name="PositionLeft" config:type="int">0</config:config-item>
        <config:config-item config:name="PositionRight" config:type="int">0</config:config-item>
        <config:config-item config:name="PositionTop" config:type="int">0</config:config-item>
-       <config:config-item config:name="PositionBottom" config:type="int">2</config:config-item>
+       <config:config-item config:name="PositionBottom" config:type="int">60</config:config-item>
        <config:config-item config:name="ZoomType" config:type="short">0</config:config-item>
        <config:config-item config:name="ZoomValue" config:type="int">100</config:config-item>
        <config:config-item config:name="PageViewZoomValue" config:type="int">60</config:config-item>
@@ -211,8 +211,8 @@
        <config:config-item config:name="AnchoredTextOverflowLegacy" config:type="boolean">false</config:config-item>
       </config:config-item-map-entry>
       <config:config-item-map-entry config:name="Variables">
-       <config:config-item config:name="CursorPositionX" config:type="int">0</config:config-item>
-       <config:config-item config:name="CursorPositionY" config:type="int">7</config:config-item>
+       <config:config-item config:name="CursorPositionX" config:type="int">1</config:config-item>
+       <config:config-item config:name="CursorPositionY" config:type="int">8</config:config-item>
        <config:config-item config:name="HorizontalSplitMode" config:type="short">0</config:config-item>
        <config:config-item config:name="VerticalSplitMode" config:type="short">0</config:config-item>
        <config:config-item config:name="HorizontalSplitPosition" config:type="int">0</config:config-item>
@@ -4054,22 +4054,37 @@
      <table:table-cell table:number-columns-repeated="986"/>
     </table:table-row>
     <table:table-row table:style-name="ro2">
-     <table:table-cell table:formula="of:=IF(LEN([.H63]&amp;[.I63]&amp;[.J63]&amp;[.K63])&gt;0;[.D63]&amp;&quot;-&quot;&amp;[.E63]&amp;&quot;-&quot;&amp;[.H63]&amp;[.I63]&amp;[.J63]&amp;[.K63];[.D63]&amp;&quot;-&quot;&amp;[.P63]&amp;&quot;-&quot;&amp;[.Q63])&amp;IF(LEN([.AI63]&amp;[.AJ63]&amp;[.AK63]&amp;[.AL63])&gt;0;&quot;-&quot;&amp;[.AI63]&amp;[.AJ63]&amp;[.AK63]&amp;[.AL63];&quot;&quot;)" office:value-type="string" office:string-value="--" calcext:value-type="string">
-      <text:p>--</text:p>
+     <table:table-cell table:formula="of:=IF(LEN([.H63]&amp;[.I63]&amp;[.J63]&amp;[.K63])&gt;0;[.D63]&amp;&quot;-&quot;&amp;[.E63]&amp;&quot;-&quot;&amp;[.H63]&amp;[.I63]&amp;[.J63]&amp;[.K63];[.D63]&amp;&quot;-&quot;&amp;[.P63]&amp;&quot;-&quot;&amp;[.Q63])&amp;IF(LEN([.AI63]&amp;[.AJ63]&amp;[.AK63]&amp;[.AL63])&gt;0;&quot;-&quot;&amp;[.AI63]&amp;[.AJ63]&amp;[.AK63]&amp;[.AL63];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-look-door1" calcext:value-type="string">
+      <text:p>DEFAULT-look-door1</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="2"/>
-     <table:table-cell table:content-validation-name="val1"/>
-     <table:table-cell table:content-validation-name="val2"/>
+     <table:table-cell office:value-type="float" office:value="1" calcext:value-type="float">
+      <text:p>1</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell table:content-validation-name="val1" office:value-type="string" calcext:value-type="string">
+      <text:p>DEFAULT</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val2" office:value-type="string" calcext:value-type="string">
+      <text:p>look</text:p>
+     </table:table-cell>
      <table:table-cell table:number-columns-repeated="2"/>
      <table:table-cell table:content-validation-name="val3"/>
      <table:table-cell table:content-validation-name="val4"/>
      <table:table-cell table:content-validation-name="val5"/>
-     <table:table-cell table:number-columns-repeated="5"/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>door1</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="4"/>
      <table:table-cell table:content-validation-name="val8"/>
      <table:table-cell table:number-columns-repeated="2"/>
-     <table:table-cell table:content-validation-name="val9"/>
+     <table:table-cell table:content-validation-name="val9" office:value-type="string" calcext:value-type="string">
+      <text:p>bird</text:p>
+     </table:table-cell>
      <table:table-cell table:content-validation-name="val10"/>
-     <table:table-cell table:number-columns-repeated="2"/>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>You can feel the magic radiating off this. We&apos;ll need to break these spells somehow. Maybe he left something in here...</text:p>
+     </table:table-cell>
      <table:table-cell table:content-validation-name="val9" table:number-columns-repeated="4"/>
      <table:table-cell table:style-name="ce66" table:number-columns-repeated="3"/>
      <table:table-cell table:style-name="ce68" table:number-columns-repeated="2"/>
@@ -4080,22 +4095,37 @@
      <table:table-cell table:number-columns-repeated="987"/>
     </table:table-row>
     <table:table-row table:style-name="ro2">
-     <table:table-cell table:formula="of:=IF(LEN([.H64]&amp;[.I64]&amp;[.J64]&amp;[.K64])&gt;0;[.D64]&amp;&quot;-&quot;&amp;[.E64]&amp;&quot;-&quot;&amp;[.H64]&amp;[.I64]&amp;[.J64]&amp;[.K64];[.D64]&amp;&quot;-&quot;&amp;[.P64]&amp;&quot;-&quot;&amp;[.Q64])&amp;IF(LEN([.AI64]&amp;[.AJ64]&amp;[.AK64]&amp;[.AL64])&gt;0;&quot;-&quot;&amp;[.AI64]&amp;[.AJ64]&amp;[.AK64]&amp;[.AL64];&quot;&quot;)" office:value-type="string" office:string-value="--" calcext:value-type="string">
-      <text:p>--</text:p>
+     <table:table-cell table:formula="of:=IF(LEN([.H64]&amp;[.I64]&amp;[.J64]&amp;[.K64])&gt;0;[.D64]&amp;&quot;-&quot;&amp;[.E64]&amp;&quot;-&quot;&amp;[.H64]&amp;[.I64]&amp;[.J64]&amp;[.K64];[.D64]&amp;&quot;-&quot;&amp;[.P64]&amp;&quot;-&quot;&amp;[.Q64])&amp;IF(LEN([.AI64]&amp;[.AJ64]&amp;[.AK64]&amp;[.AL64])&gt;0;&quot;-&quot;&amp;[.AI64]&amp;[.AJ64]&amp;[.AK64]&amp;[.AL64];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-look-door2" calcext:value-type="string">
+      <text:p>DEFAULT-look-door2</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="2"/>
-     <table:table-cell table:content-validation-name="val1"/>
-     <table:table-cell table:content-validation-name="val2"/>
+     <table:table-cell office:value-type="float" office:value="1" calcext:value-type="float">
+      <text:p>1</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell table:content-validation-name="val1" office:value-type="string" calcext:value-type="string">
+      <text:p>DEFAULT</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val2" office:value-type="string" calcext:value-type="string">
+      <text:p>look</text:p>
+     </table:table-cell>
      <table:table-cell table:number-columns-repeated="2"/>
      <table:table-cell table:content-validation-name="val3"/>
      <table:table-cell table:content-validation-name="val4"/>
      <table:table-cell table:content-validation-name="val5"/>
-     <table:table-cell table:number-columns-repeated="5"/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>door2</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="4"/>
      <table:table-cell table:content-validation-name="val8"/>
      <table:table-cell table:number-columns-repeated="2"/>
-     <table:table-cell table:content-validation-name="val9"/>
+     <table:table-cell table:content-validation-name="val9" office:value-type="string" calcext:value-type="string">
+      <text:p>fish</text:p>
+     </table:table-cell>
      <table:table-cell table:content-validation-name="val10"/>
-     <table:table-cell table:number-columns-repeated="2"/>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>I can&apos;t open this. The witch probably put all kinds of enchantments on it.</text:p>
+     </table:table-cell>
      <table:table-cell table:content-validation-name="val9" table:number-columns-repeated="4"/>
      <table:table-cell table:style-name="ce66" table:number-columns-repeated="3"/>
      <table:table-cell table:style-name="ce68" table:number-columns-repeated="2"/>
@@ -4106,20 +4136,148 @@
      <table:table-cell table:number-columns-repeated="987"/>
     </table:table-row>
     <table:table-row table:style-name="ro2">
-     <table:table-cell table:formula="of:=IF(LEN([.H65]&amp;[.I65]&amp;[.J65]&amp;[.K65])&gt;0;[.D65]&amp;&quot;-&quot;&amp;[.E65]&amp;&quot;-&quot;&amp;[.H65]&amp;[.I65]&amp;[.J65]&amp;[.K65];[.D65]&amp;&quot;-&quot;&amp;[.P65]&amp;&quot;-&quot;&amp;[.Q65])&amp;IF(LEN([.AI65]&amp;[.AJ65]&amp;[.AK65]&amp;[.AL65])&gt;0;&quot;-&quot;&amp;[.AI65]&amp;[.AJ65]&amp;[.AK65]&amp;[.AL65];&quot;&quot;)" office:value-type="string" office:string-value="--" calcext:value-type="string">
-      <text:p>--</text:p>
+     <table:table-cell table:formula="of:=IF(LEN([.H65]&amp;[.I65]&amp;[.J65]&amp;[.K65])&gt;0;[.D65]&amp;&quot;-&quot;&amp;[.E65]&amp;&quot;-&quot;&amp;[.H65]&amp;[.I65]&amp;[.J65]&amp;[.K65];[.D65]&amp;&quot;-&quot;&amp;[.P65]&amp;&quot;-&quot;&amp;[.Q65])&amp;IF(LEN([.AI65]&amp;[.AJ65]&amp;[.AK65]&amp;[.AL65])&gt;0;&quot;-&quot;&amp;[.AI65]&amp;[.AJ65]&amp;[.AK65]&amp;[.AL65];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-use-key1" calcext:value-type="string">
+      <text:p>DEFAULT-use-key1</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="2"/>
-     <table:table-cell table:content-validation-name="val1"/>
-     <table:table-cell table:content-validation-name="val2"/>
+     <table:table-cell office:value-type="float" office:value="1" calcext:value-type="float">
+      <text:p>1</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell table:content-validation-name="val1" office:value-type="string" calcext:value-type="string">
+      <text:p>DEFAULT</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val2" office:value-type="string" calcext:value-type="string">
+      <text:p>use</text:p>
+     </table:table-cell>
      <table:table-cell table:number-columns-repeated="2"/>
      <table:table-cell table:content-validation-name="val3"/>
      <table:table-cell table:content-validation-name="val4"/>
      <table:table-cell table:content-validation-name="val5"/>
-     <table:table-cell table:number-columns-repeated="5"/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>key1</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="4"/>
      <table:table-cell table:content-validation-name="val8"/>
      <table:table-cell table:number-columns-repeated="2"/>
-     <table:table-cell table:content-validation-name="val9"/>
+     <table:table-cell table:content-validation-name="val9" office:value-type="string" calcext:value-type="string">
+      <text:p>bird</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val10"/>
+     <table:table-cell table:number-columns-repeated="2"/>
+     <table:table-cell table:content-validation-name="val9" table:number-columns-repeated="4"/>
+     <table:table-cell table:style-name="ce66" office:value-type="string" calcext:value-type="string">
+      <text:p>Screen_X~,~Screen_Y</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce66" office:value-type="string" calcext:value-type="string">
+      <text:p>Characters</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce66" office:value-type="string" calcext:value-type="string">
+      <text:p>5~,~40</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce68"/>
+     <table:table-cell table:style-name="ce68" office:value-type="string" calcext:value-type="string">
+      <text:p>bird</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell office:value-type="float" office:value="1" calcext:value-type="float">
+      <text:p>1</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell table:content-validation-name="val3"/>
+     <table:table-cell table:content-validation-name="val4"/>
+     <table:table-cell table:content-validation-name="val5"/>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>door1</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="985"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=IF(LEN([.H66]&amp;[.I66]&amp;[.J66]&amp;[.K66])&gt;0;[.D66]&amp;&quot;-&quot;&amp;[.E66]&amp;&quot;-&quot;&amp;[.H66]&amp;[.I66]&amp;[.J66]&amp;[.K66];[.D66]&amp;&quot;-&quot;&amp;[.P66]&amp;&quot;-&quot;&amp;[.Q66])&amp;IF(LEN([.AI66]&amp;[.AJ66]&amp;[.AK66]&amp;[.AL66])&gt;0;&quot;-&quot;&amp;[.AI66]&amp;[.AJ66]&amp;[.AK66]&amp;[.AL66];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-use-key1" calcext:value-type="string">
+      <text:p>DEFAULT-use-key1</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="2" calcext:value-type="float">
+      <text:p>2</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell table:content-validation-name="val1" office:value-type="string" calcext:value-type="string">
+      <text:p>DEFAULT</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val2" office:value-type="string" calcext:value-type="string">
+      <text:p>use</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="2"/>
+     <table:table-cell table:content-validation-name="val3"/>
+     <table:table-cell table:content-validation-name="val4"/>
+     <table:table-cell table:content-validation-name="val5"/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>key1</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="4"/>
+     <table:table-cell table:content-validation-name="val8"/>
+     <table:table-cell table:number-columns-repeated="2"/>
+     <table:table-cell table:content-validation-name="val9" office:value-type="string" calcext:value-type="string">
+      <text:p>bird</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val10"/>
+     <table:table-cell table:number-columns-repeated="2"/>
+     <table:table-cell table:content-validation-name="val9" table:number-columns-repeated="4"/>
+     <table:table-cell table:style-name="ce66" office:value-type="string" calcext:value-type="string">
+      <text:p>Value</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce66" office:value-type="string" calcext:value-type="string">
+      <text:p>Variables</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce66" office:value-type="string" calcext:value-type="string">
+      <text:p>doorsOpen + 1</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce68"/>
+     <table:table-cell table:style-name="ce68" office:value-type="string" calcext:value-type="string">
+      <text:p>doorsOpen</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="3"/>
+     <table:table-cell table:content-validation-name="val3"/>
+     <table:table-cell table:content-validation-name="val4"/>
+     <table:table-cell table:content-validation-name="val5"/>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>door1</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="985"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=IF(LEN([.H67]&amp;[.I67]&amp;[.J67]&amp;[.K67])&gt;0;[.D67]&amp;&quot;-&quot;&amp;[.E67]&amp;&quot;-&quot;&amp;[.H67]&amp;[.I67]&amp;[.J67]&amp;[.K67];[.D67]&amp;&quot;-&quot;&amp;[.P67]&amp;&quot;-&quot;&amp;[.Q67])&amp;IF(LEN([.AI67]&amp;[.AJ67]&amp;[.AK67]&amp;[.AL67])&gt;0;&quot;-&quot;&amp;[.AI67]&amp;[.AJ67]&amp;[.AK67]&amp;[.AL67];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-use-key1" calcext:value-type="string">
+      <text:p>DEFAULT-use-key1</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="3" calcext:value-type="float">
+      <text:p>3</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell table:content-validation-name="val1" office:value-type="string" calcext:value-type="string">
+      <text:p>DEFAULT</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val2" office:value-type="string" calcext:value-type="string">
+      <text:p>use</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>check_win</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell table:content-validation-name="val3"/>
+     <table:table-cell table:content-validation-name="val4"/>
+     <table:table-cell table:content-validation-name="val5"/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>key1</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="3"/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>key1</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val8"/>
+     <table:table-cell table:number-columns-repeated="2"/>
+     <table:table-cell table:content-validation-name="val9" office:value-type="string" calcext:value-type="string">
+      <text:p>bird</text:p>
+     </table:table-cell>
      <table:table-cell table:content-validation-name="val10"/>
      <table:table-cell table:number-columns-repeated="2"/>
      <table:table-cell table:content-validation-name="val9" table:number-columns-repeated="4"/>
@@ -4129,23 +4287,151 @@
      <table:table-cell table:content-validation-name="val3"/>
      <table:table-cell table:content-validation-name="val4"/>
      <table:table-cell table:content-validation-name="val5"/>
-     <table:table-cell table:number-columns-repeated="987"/>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>door1</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="985"/>
     </table:table-row>
     <table:table-row table:style-name="ro2">
-     <table:table-cell table:formula="of:=IF(LEN([.H66]&amp;[.I66]&amp;[.J66]&amp;[.K66])&gt;0;[.D66]&amp;&quot;-&quot;&amp;[.E66]&amp;&quot;-&quot;&amp;[.H66]&amp;[.I66]&amp;[.J66]&amp;[.K66];[.D66]&amp;&quot;-&quot;&amp;[.P66]&amp;&quot;-&quot;&amp;[.Q66])&amp;IF(LEN([.AI66]&amp;[.AJ66]&amp;[.AK66]&amp;[.AL66])&gt;0;&quot;-&quot;&amp;[.AI66]&amp;[.AJ66]&amp;[.AK66]&amp;[.AL66];&quot;&quot;)" office:value-type="string" office:string-value="--" calcext:value-type="string">
-      <text:p>--</text:p>
+     <table:table-cell table:formula="of:=IF(LEN([.H68]&amp;[.I68]&amp;[.J68]&amp;[.K68])&gt;0;[.D68]&amp;&quot;-&quot;&amp;[.E68]&amp;&quot;-&quot;&amp;[.H68]&amp;[.I68]&amp;[.J68]&amp;[.K68];[.D68]&amp;&quot;-&quot;&amp;[.P68]&amp;&quot;-&quot;&amp;[.Q68])&amp;IF(LEN([.AI68]&amp;[.AJ68]&amp;[.AK68]&amp;[.AL68])&gt;0;&quot;-&quot;&amp;[.AI68]&amp;[.AJ68]&amp;[.AK68]&amp;[.AL68];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-use-key2" calcext:value-type="string">
+      <text:p>DEFAULT-use-key2</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="2"/>
-     <table:table-cell table:content-validation-name="val1"/>
-     <table:table-cell table:content-validation-name="val2"/>
+     <table:table-cell office:value-type="float" office:value="1" calcext:value-type="float">
+      <text:p>1</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell table:content-validation-name="val1" office:value-type="string" calcext:value-type="string">
+      <text:p>DEFAULT</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val2" office:value-type="string" calcext:value-type="string">
+      <text:p>use</text:p>
+     </table:table-cell>
      <table:table-cell table:number-columns-repeated="2"/>
      <table:table-cell table:content-validation-name="val3"/>
      <table:table-cell table:content-validation-name="val4"/>
      <table:table-cell table:content-validation-name="val5"/>
-     <table:table-cell table:number-columns-repeated="5"/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>key2</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="4"/>
      <table:table-cell table:content-validation-name="val8"/>
      <table:table-cell table:number-columns-repeated="2"/>
-     <table:table-cell table:content-validation-name="val9"/>
+     <table:table-cell table:content-validation-name="val9" office:value-type="string" calcext:value-type="string">
+      <text:p>fish</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val10"/>
+     <table:table-cell table:number-columns-repeated="2"/>
+     <table:table-cell table:content-validation-name="val9" table:number-columns-repeated="4"/>
+     <table:table-cell table:style-name="ce66" office:value-type="string" calcext:value-type="string">
+      <text:p>Screen_X~,~Screen_Y</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce66" office:value-type="string" calcext:value-type="string">
+      <text:p>Characters</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce66" office:value-type="string" calcext:value-type="string">
+      <text:p>5~,~80</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce68"/>
+     <table:table-cell table:style-name="ce68" office:value-type="string" calcext:value-type="string">
+      <text:p>fish</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="3"/>
+     <table:table-cell table:content-validation-name="val3"/>
+     <table:table-cell table:content-validation-name="val4"/>
+     <table:table-cell table:content-validation-name="val5"/>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>door2</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="985"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=IF(LEN([.H69]&amp;[.I69]&amp;[.J69]&amp;[.K69])&gt;0;[.D69]&amp;&quot;-&quot;&amp;[.E69]&amp;&quot;-&quot;&amp;[.H69]&amp;[.I69]&amp;[.J69]&amp;[.K69];[.D69]&amp;&quot;-&quot;&amp;[.P69]&amp;&quot;-&quot;&amp;[.Q69])&amp;IF(LEN([.AI69]&amp;[.AJ69]&amp;[.AK69]&amp;[.AL69])&gt;0;&quot;-&quot;&amp;[.AI69]&amp;[.AJ69]&amp;[.AK69]&amp;[.AL69];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-use-key2" calcext:value-type="string">
+      <text:p>DEFAULT-use-key2</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="2" calcext:value-type="float">
+      <text:p>2</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell table:content-validation-name="val1" office:value-type="string" calcext:value-type="string">
+      <text:p>DEFAULT</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val2" office:value-type="string" calcext:value-type="string">
+      <text:p>use</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="2"/>
+     <table:table-cell table:content-validation-name="val3"/>
+     <table:table-cell table:content-validation-name="val4"/>
+     <table:table-cell table:content-validation-name="val5"/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>key2</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="4"/>
+     <table:table-cell table:content-validation-name="val8"/>
+     <table:table-cell table:number-columns-repeated="2"/>
+     <table:table-cell table:content-validation-name="val9" office:value-type="string" calcext:value-type="string">
+      <text:p>fish</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val10"/>
+     <table:table-cell table:number-columns-repeated="2"/>
+     <table:table-cell table:content-validation-name="val9" table:number-columns-repeated="4"/>
+     <table:table-cell table:style-name="ce66" office:value-type="string" calcext:value-type="string">
+      <text:p>Value</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce66" office:value-type="string" calcext:value-type="string">
+      <text:p>Variables</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce66" office:value-type="string" calcext:value-type="string">
+      <text:p>doorsOpen + 1</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce68"/>
+     <table:table-cell table:style-name="ce68" office:value-type="string" calcext:value-type="string">
+      <text:p>doorsOpen</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="3"/>
+     <table:table-cell table:content-validation-name="val3"/>
+     <table:table-cell table:content-validation-name="val4"/>
+     <table:table-cell table:content-validation-name="val5"/>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>door2</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="985"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=IF(LEN([.H70]&amp;[.I70]&amp;[.J70]&amp;[.K70])&gt;0;[.D70]&amp;&quot;-&quot;&amp;[.E70]&amp;&quot;-&quot;&amp;[.H70]&amp;[.I70]&amp;[.J70]&amp;[.K70];[.D70]&amp;&quot;-&quot;&amp;[.P70]&amp;&quot;-&quot;&amp;[.Q70])&amp;IF(LEN([.AI70]&amp;[.AJ70]&amp;[.AK70]&amp;[.AL70])&gt;0;&quot;-&quot;&amp;[.AI70]&amp;[.AJ70]&amp;[.AK70]&amp;[.AL70];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-use-key2" calcext:value-type="string">
+      <text:p>DEFAULT-use-key2</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="3" calcext:value-type="float">
+      <text:p>3</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell table:content-validation-name="val1" office:value-type="string" calcext:value-type="string">
+      <text:p>DEFAULT</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val2" office:value-type="string" calcext:value-type="string">
+      <text:p>use</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>check_win</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell table:content-validation-name="val3"/>
+     <table:table-cell table:content-validation-name="val4"/>
+     <table:table-cell table:content-validation-name="val5"/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>key2</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="3"/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>key2</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val8"/>
+     <table:table-cell table:number-columns-repeated="2"/>
+     <table:table-cell table:content-validation-name="val9" office:value-type="string" calcext:value-type="string">
+      <text:p>fish</text:p>
+     </table:table-cell>
      <table:table-cell table:content-validation-name="val10"/>
      <table:table-cell table:number-columns-repeated="2"/>
      <table:table-cell table:content-validation-name="val9" table:number-columns-repeated="4"/>
@@ -4155,16 +4441,26 @@
      <table:table-cell table:content-validation-name="val3"/>
      <table:table-cell table:content-validation-name="val4"/>
      <table:table-cell table:content-validation-name="val5"/>
-     <table:table-cell table:number-columns-repeated="987"/>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>door2</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="985"/>
     </table:table-row>
     <table:table-row table:style-name="ro2">
-     <table:table-cell table:formula="of:=IF(LEN([.H67]&amp;[.I67]&amp;[.J67]&amp;[.K67])&gt;0;[.D67]&amp;&quot;-&quot;&amp;[.E67]&amp;&quot;-&quot;&amp;[.H67]&amp;[.I67]&amp;[.J67]&amp;[.K67];[.D67]&amp;&quot;-&quot;&amp;[.P67]&amp;&quot;-&quot;&amp;[.Q67])&amp;IF(LEN([.AI67]&amp;[.AJ67]&amp;[.AK67]&amp;[.AL67])&gt;0;&quot;-&quot;&amp;[.AI67]&amp;[.AJ67]&amp;[.AK67]&amp;[.AL67];&quot;&quot;)" office:value-type="string" office:string-value="--" calcext:value-type="string">
-      <text:p>--</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>check_win</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="2"/>
+     <table:table-cell office:value-type="float" office:value="1" calcext:value-type="float">
+      <text:p>1</text:p>
+     </table:table-cell>
+     <table:table-cell/>
      <table:table-cell table:content-validation-name="val1"/>
      <table:table-cell table:content-validation-name="val2"/>
-     <table:table-cell table:number-columns-repeated="2"/>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>doorsOpen == 2</text:p>
+     </table:table-cell>
      <table:table-cell table:content-validation-name="val3"/>
      <table:table-cell table:content-validation-name="val4"/>
      <table:table-cell table:content-validation-name="val5"/>
@@ -4175,8 +4471,19 @@
      <table:table-cell table:content-validation-name="val10"/>
      <table:table-cell table:number-columns-repeated="2"/>
      <table:table-cell table:content-validation-name="val9" table:number-columns-repeated="4"/>
-     <table:table-cell table:style-name="ce66" table:number-columns-repeated="3"/>
-     <table:table-cell table:style-name="ce68" table:number-columns-repeated="2"/>
+     <table:table-cell table:style-name="ce66" office:value-type="string" calcext:value-type="string">
+      <text:p>Scene_ID</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce66" office:value-type="string" calcext:value-type="string">
+      <text:p>Characters</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce66" office:value-type="string" calcext:value-type="string">
+      <text:p>win</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce68"/>
+     <table:table-cell table:style-name="ce68" office:value-type="string" calcext:value-type="string">
+      <text:p>bird</text:p>
+     </table:table-cell>
      <table:table-cell table:number-columns-repeated="3"/>
      <table:table-cell table:content-validation-name="val3"/>
      <table:table-cell table:content-validation-name="val4"/>
@@ -4184,13 +4491,19 @@
      <table:table-cell table:number-columns-repeated="987"/>
     </table:table-row>
     <table:table-row table:style-name="ro2">
-     <table:table-cell table:formula="of:=IF(LEN([.H68]&amp;[.I68]&amp;[.J68]&amp;[.K68])&gt;0;[.D68]&amp;&quot;-&quot;&amp;[.E68]&amp;&quot;-&quot;&amp;[.H68]&amp;[.I68]&amp;[.J68]&amp;[.K68];[.D68]&amp;&quot;-&quot;&amp;[.P68]&amp;&quot;-&quot;&amp;[.Q68])&amp;IF(LEN([.AI68]&amp;[.AJ68]&amp;[.AK68]&amp;[.AL68])&gt;0;&quot;-&quot;&amp;[.AI68]&amp;[.AJ68]&amp;[.AK68]&amp;[.AL68];&quot;&quot;)" office:value-type="string" office:string-value="--" calcext:value-type="string">
-      <text:p>--</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>check_win</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="2"/>
+     <table:table-cell office:value-type="float" office:value="2" calcext:value-type="float">
+      <text:p>2</text:p>
+     </table:table-cell>
+     <table:table-cell/>
      <table:table-cell table:content-validation-name="val1"/>
      <table:table-cell table:content-validation-name="val2"/>
-     <table:table-cell table:number-columns-repeated="2"/>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>doorsOpen == 2</text:p>
+     </table:table-cell>
      <table:table-cell table:content-validation-name="val3"/>
      <table:table-cell table:content-validation-name="val4"/>
      <table:table-cell table:content-validation-name="val5"/>
@@ -4201,112 +4514,19 @@
      <table:table-cell table:content-validation-name="val10"/>
      <table:table-cell table:number-columns-repeated="2"/>
      <table:table-cell table:content-validation-name="val9" table:number-columns-repeated="4"/>
-     <table:table-cell table:style-name="ce66" table:number-columns-repeated="3"/>
-     <table:table-cell table:style-name="ce68" table:number-columns-repeated="2"/>
-     <table:table-cell table:number-columns-repeated="3"/>
-     <table:table-cell table:content-validation-name="val3"/>
-     <table:table-cell table:content-validation-name="val4"/>
-     <table:table-cell table:content-validation-name="val5"/>
-     <table:table-cell table:number-columns-repeated="987"/>
-    </table:table-row>
-    <table:table-row table:style-name="ro2">
-     <table:table-cell table:formula="of:=IF(LEN([.H69]&amp;[.I69]&amp;[.J69]&amp;[.K69])&gt;0;[.D69]&amp;&quot;-&quot;&amp;[.E69]&amp;&quot;-&quot;&amp;[.H69]&amp;[.I69]&amp;[.J69]&amp;[.K69];[.D69]&amp;&quot;-&quot;&amp;[.P69]&amp;&quot;-&quot;&amp;[.Q69])&amp;IF(LEN([.AI69]&amp;[.AJ69]&amp;[.AK69]&amp;[.AL69])&gt;0;&quot;-&quot;&amp;[.AI69]&amp;[.AJ69]&amp;[.AK69]&amp;[.AL69];&quot;&quot;)" office:value-type="string" office:string-value="--" calcext:value-type="string">
-      <text:p>--</text:p>
+     <table:table-cell table:style-name="ce66" office:value-type="string" calcext:value-type="string">
+      <text:p>Visible</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="2"/>
-     <table:table-cell table:content-validation-name="val1"/>
-     <table:table-cell table:content-validation-name="val2"/>
-     <table:table-cell table:number-columns-repeated="2"/>
-     <table:table-cell table:content-validation-name="val3"/>
-     <table:table-cell table:content-validation-name="val4"/>
-     <table:table-cell table:content-validation-name="val5"/>
-     <table:table-cell table:number-columns-repeated="5"/>
-     <table:table-cell table:content-validation-name="val8"/>
-     <table:table-cell table:number-columns-repeated="2"/>
-     <table:table-cell table:content-validation-name="val9"/>
-     <table:table-cell table:content-validation-name="val10"/>
-     <table:table-cell table:number-columns-repeated="2"/>
-     <table:table-cell table:content-validation-name="val9" table:number-columns-repeated="4"/>
-     <table:table-cell table:style-name="ce66" table:number-columns-repeated="3"/>
-     <table:table-cell table:style-name="ce68" table:number-columns-repeated="2"/>
-     <table:table-cell table:number-columns-repeated="3"/>
-     <table:table-cell table:content-validation-name="val3"/>
-     <table:table-cell table:content-validation-name="val4"/>
-     <table:table-cell table:content-validation-name="val5"/>
-     <table:table-cell table:number-columns-repeated="987"/>
-    </table:table-row>
-    <table:table-row table:style-name="ro2">
-     <table:table-cell table:formula="of:=IF(LEN([.H70]&amp;[.I70]&amp;[.J70]&amp;[.K70])&gt;0;[.D70]&amp;&quot;-&quot;&amp;[.E70]&amp;&quot;-&quot;&amp;[.H70]&amp;[.I70]&amp;[.J70]&amp;[.K70];[.D70]&amp;&quot;-&quot;&amp;[.P70]&amp;&quot;-&quot;&amp;[.Q70])&amp;IF(LEN([.AI70]&amp;[.AJ70]&amp;[.AK70]&amp;[.AL70])&gt;0;&quot;-&quot;&amp;[.AI70]&amp;[.AJ70]&amp;[.AK70]&amp;[.AL70];&quot;&quot;)" office:value-type="string" office:string-value="--" calcext:value-type="string">
-      <text:p>--</text:p>
+     <table:table-cell table:style-name="ce66" office:value-type="string" calcext:value-type="string">
+      <text:p>Characters</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="2"/>
-     <table:table-cell table:content-validation-name="val1"/>
-     <table:table-cell table:content-validation-name="val2"/>
-     <table:table-cell table:number-columns-repeated="2"/>
-     <table:table-cell table:content-validation-name="val3"/>
-     <table:table-cell table:content-validation-name="val4"/>
-     <table:table-cell table:content-validation-name="val5"/>
-     <table:table-cell table:number-columns-repeated="5"/>
-     <table:table-cell table:content-validation-name="val8"/>
-     <table:table-cell table:number-columns-repeated="2"/>
-     <table:table-cell table:content-validation-name="val9"/>
-     <table:table-cell table:content-validation-name="val10"/>
-     <table:table-cell table:number-columns-repeated="2"/>
-     <table:table-cell table:content-validation-name="val9" table:number-columns-repeated="4"/>
-     <table:table-cell table:style-name="ce66" table:number-columns-repeated="3"/>
-     <table:table-cell table:style-name="ce68" table:number-columns-repeated="2"/>
-     <table:table-cell table:number-columns-repeated="3"/>
-     <table:table-cell table:content-validation-name="val3"/>
-     <table:table-cell table:content-validation-name="val4"/>
-     <table:table-cell table:content-validation-name="val5"/>
-     <table:table-cell table:number-columns-repeated="987"/>
-    </table:table-row>
-    <table:table-row table:style-name="ro2">
-     <table:table-cell table:formula="of:=IF(LEN([.H71]&amp;[.I71]&amp;[.J71]&amp;[.K71])&gt;0;[.D71]&amp;&quot;-&quot;&amp;[.E71]&amp;&quot;-&quot;&amp;[.H71]&amp;[.I71]&amp;[.J71]&amp;[.K71];[.D71]&amp;&quot;-&quot;&amp;[.P71]&amp;&quot;-&quot;&amp;[.Q71])&amp;IF(LEN([.AI71]&amp;[.AJ71]&amp;[.AK71]&amp;[.AL71])&gt;0;&quot;-&quot;&amp;[.AI71]&amp;[.AJ71]&amp;[.AK71]&amp;[.AL71];&quot;&quot;)" office:value-type="string" office:string-value="--" calcext:value-type="string">
-      <text:p>--</text:p>
+     <table:table-cell table:style-name="ce66" office:value-type="float" office:value="0" calcext:value-type="float">
+      <text:p>0</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="2"/>
-     <table:table-cell table:content-validation-name="val1"/>
-     <table:table-cell table:content-validation-name="val2"/>
-     <table:table-cell table:number-columns-repeated="2"/>
-     <table:table-cell table:content-validation-name="val3"/>
-     <table:table-cell table:content-validation-name="val4"/>
-     <table:table-cell table:content-validation-name="val5"/>
-     <table:table-cell table:number-columns-repeated="5"/>
-     <table:table-cell table:content-validation-name="val8"/>
-     <table:table-cell table:number-columns-repeated="2"/>
-     <table:table-cell table:content-validation-name="val9"/>
-     <table:table-cell table:content-validation-name="val10"/>
-     <table:table-cell table:number-columns-repeated="2"/>
-     <table:table-cell table:content-validation-name="val9" table:number-columns-repeated="4"/>
-     <table:table-cell table:style-name="ce66" table:number-columns-repeated="3"/>
-     <table:table-cell table:style-name="ce68" table:number-columns-repeated="2"/>
-     <table:table-cell table:number-columns-repeated="3"/>
-     <table:table-cell table:content-validation-name="val3"/>
-     <table:table-cell table:content-validation-name="val4"/>
-     <table:table-cell table:content-validation-name="val5"/>
-     <table:table-cell table:number-columns-repeated="987"/>
-    </table:table-row>
-    <table:table-row table:style-name="ro2">
-     <table:table-cell table:formula="of:=IF(LEN([.H72]&amp;[.I72]&amp;[.J72]&amp;[.K72])&gt;0;[.D72]&amp;&quot;-&quot;&amp;[.E72]&amp;&quot;-&quot;&amp;[.H72]&amp;[.I72]&amp;[.J72]&amp;[.K72];[.D72]&amp;&quot;-&quot;&amp;[.P72]&amp;&quot;-&quot;&amp;[.Q72])&amp;IF(LEN([.AI72]&amp;[.AJ72]&amp;[.AK72]&amp;[.AL72])&gt;0;&quot;-&quot;&amp;[.AI72]&amp;[.AJ72]&amp;[.AK72]&amp;[.AL72];&quot;&quot;)" office:value-type="string" office:string-value="--" calcext:value-type="string">
-      <text:p>--</text:p>
+     <table:table-cell table:style-name="ce68"/>
+     <table:table-cell table:style-name="ce68" office:value-type="string" calcext:value-type="string">
+      <text:p>bird</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="2"/>
-     <table:table-cell table:content-validation-name="val1"/>
-     <table:table-cell table:content-validation-name="val2"/>
-     <table:table-cell table:number-columns-repeated="2"/>
-     <table:table-cell table:content-validation-name="val3"/>
-     <table:table-cell table:content-validation-name="val4"/>
-     <table:table-cell table:content-validation-name="val5"/>
-     <table:table-cell table:number-columns-repeated="5"/>
-     <table:table-cell table:content-validation-name="val8"/>
-     <table:table-cell table:number-columns-repeated="2"/>
-     <table:table-cell table:content-validation-name="val9"/>
-     <table:table-cell table:content-validation-name="val10"/>
-     <table:table-cell table:number-columns-repeated="2"/>
-     <table:table-cell table:content-validation-name="val9" table:number-columns-repeated="4"/>
-     <table:table-cell table:style-name="ce66" table:number-columns-repeated="3"/>
-     <table:table-cell table:style-name="ce68" table:number-columns-repeated="2"/>
      <table:table-cell table:number-columns-repeated="3"/>
      <table:table-cell table:content-validation-name="val3"/>
      <table:table-cell table:content-validation-name="val4"/>
@@ -4470,6 +4690,32 @@
      <table:table-cell table:number-columns-repeated="987"/>
     </table:table-row>
     <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=IF(LEN([.H79]&amp;[.I79]&amp;[.J79]&amp;[.K79])&gt;0;[.D79]&amp;&quot;-&quot;&amp;[.E79]&amp;&quot;-&quot;&amp;[.H79]&amp;[.I79]&amp;[.J79]&amp;[.K79];[.D79]&amp;&quot;-&quot;&amp;[.P79]&amp;&quot;-&quot;&amp;[.Q79])&amp;IF(LEN([.AI79]&amp;[.AJ79]&amp;[.AK79]&amp;[.AL79])&gt;0;&quot;-&quot;&amp;[.AI79]&amp;[.AJ79]&amp;[.AK79]&amp;[.AL79];&quot;&quot;)" office:value-type="string" office:string-value="--" calcext:value-type="string">
+      <text:p>--</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="2"/>
+     <table:table-cell table:content-validation-name="val1"/>
+     <table:table-cell table:content-validation-name="val2"/>
+     <table:table-cell table:number-columns-repeated="2"/>
+     <table:table-cell table:content-validation-name="val3"/>
+     <table:table-cell table:content-validation-name="val4"/>
+     <table:table-cell table:content-validation-name="val5"/>
+     <table:table-cell table:number-columns-repeated="5"/>
+     <table:table-cell table:content-validation-name="val8"/>
+     <table:table-cell table:number-columns-repeated="2"/>
+     <table:table-cell table:content-validation-name="val9"/>
+     <table:table-cell table:content-validation-name="val10"/>
+     <table:table-cell table:number-columns-repeated="2"/>
+     <table:table-cell table:content-validation-name="val9" table:number-columns-repeated="4"/>
+     <table:table-cell table:style-name="ce66" table:number-columns-repeated="3"/>
+     <table:table-cell table:style-name="ce68" table:number-columns-repeated="2"/>
+     <table:table-cell table:number-columns-repeated="3"/>
+     <table:table-cell table:content-validation-name="val3"/>
+     <table:table-cell table:content-validation-name="val4"/>
+     <table:table-cell table:content-validation-name="val5"/>
+     <table:table-cell table:number-columns-repeated="987"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
      <table:table-cell table:style-name="ce90" table:number-columns-repeated="2"/>
      <table:table-cell table:style-name="ce37" table:number-columns-repeated="9"/>
      <table:table-cell table:style-name="ce46" table:number-columns-repeated="4"/>
@@ -4481,7 +4727,7 @@
      <table:table-cell table:style-name="ce46"/>
      <table:table-cell table:number-columns-repeated="985"/>
     </table:table-row>
-    <table:table-row table:style-name="ro2" table:number-rows-repeated="1048496">
+    <table:table-row table:style-name="ro2" table:number-rows-repeated="1048495">
      <table:table-cell table:number-columns-repeated="1024"/>
     </table:table-row>
     <table:table-row table:style-name="ro2">
@@ -4489,6 +4735,7 @@
     </table:table-row>
    </table:table>
    <table:table table:name="Variables" table:style-name="ta1" table:print="false">
+    <office:forms form:automatic-focus="false" form:apply-design-mode="false"/>
     <table:table-column table:style-name="co26" table:default-cell-style-name="Default"/>
     <table:table-column table:style-name="co23" table:default-cell-style-name="ce92"/>
     <table:table-column table:style-name="co23" table:default-cell-style-name="ce179"/>
@@ -4563,7 +4810,16 @@
      </table:table-cell>
      <table:table-cell table:number-columns-repeated="1022"/>
     </table:table-row>
-    <table:table-row table:style-name="ro3" table:number-rows-repeated="1048562">
+    <table:table-row table:style-name="ro3">
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>doorsOpen</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="0" calcext:value-type="float">
+      <text:p>0</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="1022"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro3" table:number-rows-repeated="1048561">
      <table:table-cell table:number-columns-repeated="1024"/>
     </table:table-row>
     <table:table-row table:style-name="ro2" table:number-rows-repeated="6">
@@ -5366,7 +5622,7 @@
      </table:table-cell>
      <table:table-cell table:style-name="ce89" table:number-columns-repeated="1004"/>
     </table:table-row>
-    <table:table-row table:style-name="ro3">
+    <table:table-row table:style-name="ro2">
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>dual</text:p>
      </table:table-cell>
@@ -5443,7 +5699,20 @@
      </table:table-cell>
      <table:table-cell table:number-columns-repeated="1011"/>
     </table:table-row>
-    <table:table-row table:style-name="ro3" table:number-rows-repeated="1048568">
+    <table:table-row table:style-name="ro2">
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>win</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p><text:s/></text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="2"/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>title</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="1017"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro3" table:number-rows-repeated="1048567">
      <table:table-cell table:number-columns-repeated="1022"/>
     </table:table-row>
     <table:table-row table:style-name="ro3">
@@ -6078,6 +6347,7 @@
     </table:table-row>
    </table:table>
    <table:table table:name="Inventory" table:style-name="ta1" table:print="false">
+    <office:forms form:automatic-focus="false" form:apply-design-mode="false"/>
     <table:table-column table:style-name="co57" table:default-cell-style-name="Default"/>
     <table:table-column table:style-name="co58" table:default-cell-style-name="Default"/>
     <table:table-column table:style-name="co23" table:default-cell-style-name="ce187"/>
@@ -6307,6 +6577,7 @@
     </table:table-row>
    </table:table>
    <table:table table:name="Animations" table:style-name="ta1" table:print="false">
+    <office:forms form:automatic-focus="false" form:apply-design-mode="false"/>
     <table:table-column table:style-name="co60" table:number-columns-repeated="2" table:default-cell-style-name="Default"/>
     <table:table-column table:style-name="co61" table:default-cell-style-name="Default"/>
     <table:table-column table:style-name="co62" table:default-cell-style-name="ce92"/>
@@ -6375,7 +6646,7 @@
      </table:table-cell>
      <table:table-cell table:number-columns-repeated="2"/>
      <table:table-cell table:style-name="Default" office:value-type="string" calcext:value-type="string">
-      <text:p>Bird_Facing_Left</text:p>
+      <text:p>Bird_Idle</text:p>
      </table:table-cell>
      <table:table-cell table:number-columns-repeated="1019"/>
     </table:table-row>
@@ -6391,7 +6662,7 @@
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell table:style-name="Default" office:value-type="string" calcext:value-type="string">
-      <text:p>Bird_Facing_Left</text:p>
+      <text:p>Bird_Idle</text:p>
      </table:table-cell>
      <table:table-cell table:number-columns-repeated="1019"/>
     </table:table-row>
@@ -6463,7 +6734,7 @@
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell table:style-name="Default" office:value-type="string" calcext:value-type="string">
-      <text:p>Bird_Facing_Left</text:p>
+      <text:p>Bird_Idle</text:p>
      </table:table-cell>
      <table:table-cell table:number-columns-repeated="1019"/>
     </table:table-row>
@@ -6476,7 +6747,7 @@
      </table:table-cell>
      <table:table-cell table:number-columns-repeated="2"/>
      <table:table-cell table:style-name="Default" office:value-type="string" calcext:value-type="string">
-      <text:p>Fish_Facing_Left</text:p>
+      <text:p>Fish_Idle</text:p>
      </table:table-cell>
      <table:table-cell table:number-columns-repeated="1019"/>
     </table:table-row>
@@ -6492,7 +6763,7 @@
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell table:style-name="Default" office:value-type="string" calcext:value-type="string">
-      <text:p>Fish_Facing_Left</text:p>
+      <text:p>Fish_Idle</text:p>
      </table:table-cell>
      <table:table-cell table:number-columns-repeated="1019"/>
     </table:table-row>
@@ -6564,7 +6835,7 @@
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell table:style-name="Default" office:value-type="string" calcext:value-type="string">
-      <text:p>Fish_Facing_Left</text:p>
+      <text:p>Fish_Idle</text:p>
      </table:table-cell>
      <table:table-cell table:number-columns-repeated="1019"/>
     </table:table-row>
@@ -6595,6 +6866,7 @@
     </table:table-row>
    </table:table>
    <table:table table:name="Menus" table:style-name="ta1" table:print="false">
+    <office:forms form:automatic-focus="false" form:apply-design-mode="false"/>
     <table:table-column table:style-name="co23" table:default-cell-style-name="ce181"/>
     <table:table-column table:style-name="co60" table:default-cell-style-name="Default"/>
     <table:table-column table:style-name="co3" table:default-cell-style-name="Default"/>
