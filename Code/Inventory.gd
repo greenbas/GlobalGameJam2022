@@ -40,8 +40,10 @@ func getInvByLoc(c):
 	var arr = []
 	if !inv.has(c): # This character is not playable, but maybe the inventory is always on
 		return arr
-	for i in inv[c]:
-		arr.push_back(i)
+	# FIXME hack for Aquatori
+	for p in Game.playables:
+		for i in inv[p.ID]:
+			arr.push_back(i)
 	return arr
 
 func getInvData(i):

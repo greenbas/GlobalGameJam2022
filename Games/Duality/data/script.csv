@@ -60,15 +60,16 @@ DEFAULT-handle-froot,1,,DEFAULT,handle,,,,,,froot,1,1,froot,,,,,bird,,,"I'm not 
 DEFAULT-look-apple,1,,DEFAULT,look,,,,,,apple,,,,,,,,bird,,50%,A tree with fruit!,,,,,,,,,,,,,,,,,
 DEFAULT-use-froot-mouse,1,,DEFAULT,use,,,,,,froot,1,1,key2,,,,,bird,,75%,A fruit for a key. Fair trade.,,,,,,,,,,,,,,,,mouse,
 DEFAULT-use-froot-mouse,2,,DEFAULT,use,,,,,,froot,,,,froot,,,,bird,,,,,,,,,,,,,,,,,,,mouse,
---,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
---,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
---,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
---,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
---,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
---,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
---,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
---,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
---,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+DEFAULT-look-door1,1,,DEFAULT,look,,,,,,door1,,,,,,,,bird,,,You can feel the magic radiating off this. We'll need to break these spells somehow. Maybe he left something in here...,,,,,,,,,,,,,,,,,
+DEFAULT-look-door2,1,,DEFAULT,look,,,,,,door2,,,,,,,,fish,,,I can't open this. The witch probably put all kinds of enchantments on it.,,,,,,,,,,,,,,,,,
+DEFAULT-use-key1,1,,DEFAULT,use,,,,,,key1,,,,,,,,bird,,,,,,,,"Screen_X~,~Screen_Y",Characters,"5~,~40",,bird,,1,,,,,,door1
+DEFAULT-use-key1,2,,DEFAULT,use,,,,,,key1,,,,,,,,bird,,,,,,,,Value,Variables,doorsOpen + 1,,doorsOpen,,,,,,,,door1
+DEFAULT-use-key1,3,,DEFAULT,use,check_win,,,,,key1,,,,key1,,,,bird,,,,,,,,,,,,,,,,,,,,door1
+DEFAULT-use-key2,1,,DEFAULT,use,,,,,,key2,,,,,,,,fish,,,,,,,,"Screen_X~,~Screen_Y",Characters,"5~,~80",,fish,,,,,,,,door2
+DEFAULT-use-key2,2,,DEFAULT,use,,,,,,key2,,,,,,,,fish,,,,,,,,Value,Variables,doorsOpen + 1,,doorsOpen,,,,,,,,door2
+DEFAULT-use-key2,3,,DEFAULT,use,check_win,,,,,key2,,,,key2,,,,fish,,,,,,,,,,,,,,,,,,,,door2
+check_win,1,,,,,doorsOpen == 2,,,,,,,,,,,,,,,,,,,,Scene_ID,Characters,win,,bird,,,,,,,,
+check_win,2,,,,,doorsOpen == 2,,,,,,,,,,,,,,,,,,,,Visible,Characters,0,,bird,,,,,,,,
 --,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 --,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 --,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
