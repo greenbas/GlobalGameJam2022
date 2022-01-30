@@ -1,4 +1,5 @@
 ID,Character,Image_Path,Image_Filename,Image_Extension,Shift_Dialogue_X,Shift_Dialogue_Y,Label,Font_Colour,Font_Shadow,Shift_Label_X,Shift_Label_Y,Font_Path,Font_Filename,Font_Extension,Font_Size
 DEFAULT,DEFAULT,images/characters/,none,.png,17%,0%,DEFAULT,#000000,,-22%,-12%,fonts/,HussarBold-7mRE,.otf,25
-none,bird,,lindsay_neutral,,,,,#b63e26,#000000,,,,,,
-none,fish,,johnny_neutral,,,,,#639752,#000000,,,,,,
+none,bird,,bird_neutral,,,,,#b63e26,#000000,,,,,,
+none,fish,,fish_neutral,,,,,#639752,#000000,,,,,,
+none,witch,,witch_neutral,,,,,#291e1b,,,,,,,
