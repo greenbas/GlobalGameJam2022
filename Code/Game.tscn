@@ -238,6 +238,7 @@ test"
 autowrap = true
 
 [node name="GameSelect" type="Control" parent="Scene"]
+visible = false
 margin_right = 524.0
 margin_bottom = 332.0
 __meta__ = {

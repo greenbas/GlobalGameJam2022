@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <office:document xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0" xmlns:style="urn:oasis:names:tc:opendocument:xmlns:style:1.0" xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0" xmlns:table="urn:oasis:names:tc:opendocument:xmlns:table:1.0" xmlns:draw="urn:oasis:names:tc:opendocument:xmlns:drawing:1.0" xmlns:fo="urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:meta="urn:oasis:names:tc:opendocument:xmlns:meta:1.0" xmlns:number="urn:oasis:names:tc:opendocument:xmlns:datastyle:1.0" xmlns:presentation="urn:oasis:names:tc:opendocument:xmlns:presentation:1.0" xmlns:svg="urn:oasis:names:tc:opendocument:xmlns:svg-compatible:1.0" xmlns:chart="urn:oasis:names:tc:opendocument:xmlns:chart:1.0" xmlns:dr3d="urn:oasis:names:tc:opendocument:xmlns:dr3d:1.0" xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns:form="urn:oasis:names:tc:opendocument:xmlns:form:1.0" xmlns:script="urn:oasis:names:tc:opendocument:xmlns:script:1.0" xmlns:config="urn:oasis:names:tc:opendocument:xmlns:config:1.0" xmlns:ooo="http://openoffice.org/2004/office" xmlns:ooow="http://openoffice.org/2004/writer" xmlns:oooc="http://openoffice.org/2004/calc" xmlns:dom="http://www.w3.org/2001/xml-events" xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rpt="http://openoffice.org/2005/report" xmlns:of="urn:oasis:names:tc:opendocument:xmlns:of:1.2" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:grddl="http://www.w3.org/2003/g/data-view#" xmlns:tableooo="http://openoffice.org/2009/table" xmlns:drawooo="http://openoffice.org/2010/draw" xmlns:calcext="urn:org:documentfoundation:names:experimental:calc:xmlns:calcext:1.0" xmlns:loext="urn:org:documentfoundation:names:experimental:office:xmlns:loext:1.0" xmlns:field="urn:openoffice:names:experimental:ooo-ms-interop:xmlns:field:1.0" xmlns:formx="urn:openoffice:names:experimental:ooxml-odf-interop:xmlns:form:1.0" xmlns:css3t="http://www.w3.org/TR/css3-text/" office:version="1.2" office:mimetype="application/vnd.oasis.opendocument.spreadsheet">
- <office:meta><meta:initial-creator>L S</meta:initial-creator><meta:creation-date>2020-12-06T11:06:30.32</meta:creation-date><dc:date>2022-01-30T08:26:53.861000000</dc:date><meta:editing-duration>P5DT13H53M12S</meta:editing-duration><meta:editing-cycles>553</meta:editing-cycles><meta:generator>LibreOffice/6.1.3.2$Windows_X86_64 LibreOffice_project/86daf60bf00efa86ad547e59e09d6bb77c699acb</meta:generator><meta:document-statistic meta:table-count="12" meta:cell-count="992" meta:object-count="0"/><meta:user-defined meta:name=""/></office:meta>
+ <office:meta><meta:initial-creator>L S</meta:initial-creator><meta:creation-date>2020-12-06T11:06:30.32</meta:creation-date><dc:date>2022-01-30T10:32:35.550000000</dc:date><meta:editing-duration>P5DT14H52M11S</meta:editing-duration><meta:editing-cycles>578</meta:editing-cycles><meta:generator>LibreOffice/6.1.3.2$Windows_X86_64 LibreOffice_project/86daf60bf00efa86ad547e59e09d6bb77c699acb</meta:generator><meta:document-statistic meta:table-count="12" meta:cell-count="1039" meta:object-count="0"/><meta:user-defined meta:name=""/></office:meta>
  <office:settings>
   <config:config-item-set config:name="ooo:view-settings">
    <config:config-item config:name="VisibleAreaTop" config:type="int">0</config:config-item>
    <config:config-item config:name="VisibleAreaLeft" config:type="int">0</config:config-item>
-   <config:config-item config:name="VisibleAreaWidth" config:type="int">21399</config:config-item>
-   <config:config-item config:name="VisibleAreaHeight" config:type="int">6776</config:config-item>
+   <config:config-item config:name="VisibleAreaWidth" config:type="int">59309</config:config-item>
+   <config:config-item config:name="VisibleAreaHeight" config:type="int">35824</config:config-item>
    <config:config-item-map-indexed config:name="Views">
     <config:config-item-map-entry>
      <config:config-item config:name="ViewId" config:type="string">view1</config:config-item>
@@ -49,14 +49,14 @@
        <config:config-item config:name="AnchoredTextOverflowLegacy" config:type="boolean">false</config:config-item>
       </config:config-item-map-entry>
       <config:config-item-map-entry config:name="Characters">
-       <config:config-item config:name="CursorPositionX" config:type="int">0</config:config-item>
-       <config:config-item config:name="CursorPositionY" config:type="int">4</config:config-item>
+       <config:config-item config:name="CursorPositionX" config:type="int">23</config:config-item>
+       <config:config-item config:name="CursorPositionY" config:type="int">1</config:config-item>
        <config:config-item config:name="HorizontalSplitMode" config:type="short">0</config:config-item>
        <config:config-item config:name="VerticalSplitMode" config:type="short">0</config:config-item>
        <config:config-item config:name="HorizontalSplitPosition" config:type="int">0</config:config-item>
        <config:config-item config:name="VerticalSplitPosition" config:type="int">0</config:config-item>
        <config:config-item config:name="ActiveSplitRange" config:type="short">2</config:config-item>
-       <config:config-item config:name="PositionLeft" config:type="int">0</config:config-item>
+       <config:config-item config:name="PositionLeft" config:type="int">7</config:config-item>
        <config:config-item config:name="PositionRight" config:type="int">0</config:config-item>
        <config:config-item config:name="PositionTop" config:type="int">0</config:config-item>
        <config:config-item config:name="PositionBottom" config:type="int">0</config:config-item>
@@ -121,14 +121,14 @@
        <config:config-item config:name="AnchoredTextOverflowLegacy" config:type="boolean">false</config:config-item>
       </config:config-item-map-entry>
       <config:config-item-map-entry config:name="Menus">
-       <config:config-item config:name="CursorPositionX" config:type="int">23</config:config-item>
-       <config:config-item config:name="CursorPositionY" config:type="int">2</config:config-item>
+       <config:config-item config:name="CursorPositionX" config:type="int">27</config:config-item>
+       <config:config-item config:name="CursorPositionY" config:type="int">1</config:config-item>
        <config:config-item config:name="HorizontalSplitMode" config:type="short">0</config:config-item>
        <config:config-item config:name="VerticalSplitMode" config:type="short">0</config:config-item>
        <config:config-item config:name="HorizontalSplitPosition" config:type="int">0</config:config-item>
        <config:config-item config:name="VerticalSplitPosition" config:type="int">0</config:config-item>
        <config:config-item config:name="ActiveSplitRange" config:type="short">2</config:config-item>
-       <config:config-item config:name="PositionLeft" config:type="int">0</config:config-item>
+       <config:config-item config:name="PositionLeft" config:type="int">16</config:config-item>
        <config:config-item config:name="PositionRight" config:type="int">0</config:config-item>
        <config:config-item config:name="PositionTop" config:type="int">0</config:config-item>
        <config:config-item config:name="PositionBottom" config:type="int">0</config:config-item>
@@ -175,8 +175,8 @@
        <config:config-item config:name="AnchoredTextOverflowLegacy" config:type="boolean">false</config:config-item>
       </config:config-item-map-entry>
       <config:config-item-map-entry config:name="Scenes">
-       <config:config-item config:name="CursorPositionX" config:type="int">10</config:config-item>
-       <config:config-item config:name="CursorPositionY" config:type="int">6</config:config-item>
+       <config:config-item config:name="CursorPositionX" config:type="int">0</config:config-item>
+       <config:config-item config:name="CursorPositionY" config:type="int">2</config:config-item>
        <config:config-item config:name="HorizontalSplitMode" config:type="short">0</config:config-item>
        <config:config-item config:name="VerticalSplitMode" config:type="short">0</config:config-item>
        <config:config-item config:name="HorizontalSplitPosition" config:type="int">0</config:config-item>
@@ -193,17 +193,17 @@
        <config:config-item config:name="AnchoredTextOverflowLegacy" config:type="boolean">false</config:config-item>
       </config:config-item-map-entry>
       <config:config-item-map-entry config:name="Script">
-       <config:config-item config:name="CursorPositionX" config:type="int">20</config:config-item>
-       <config:config-item config:name="CursorPositionY" config:type="int">34</config:config-item>
+       <config:config-item config:name="CursorPositionX" config:type="int">30</config:config-item>
+       <config:config-item config:name="CursorPositionY" config:type="int">37</config:config-item>
        <config:config-item config:name="HorizontalSplitMode" config:type="short">0</config:config-item>
        <config:config-item config:name="VerticalSplitMode" config:type="short">2</config:config-item>
        <config:config-item config:name="HorizontalSplitPosition" config:type="int">0</config:config-item>
        <config:config-item config:name="VerticalSplitPosition" config:type="int">2</config:config-item>
        <config:config-item config:name="ActiveSplitRange" config:type="short">2</config:config-item>
-       <config:config-item config:name="PositionLeft" config:type="int">1</config:config-item>
+       <config:config-item config:name="PositionLeft" config:type="int">18</config:config-item>
        <config:config-item config:name="PositionRight" config:type="int">0</config:config-item>
        <config:config-item config:name="PositionTop" config:type="int">0</config:config-item>
-       <config:config-item config:name="PositionBottom" config:type="int">22</config:config-item>
+       <config:config-item config:name="PositionBottom" config:type="int">25</config:config-item>
        <config:config-item config:name="ZoomType" config:type="short">0</config:config-item>
        <config:config-item config:name="ZoomValue" config:type="int">100</config:config-item>
        <config:config-item config:name="PageViewZoomValue" config:type="int">60</config:config-item>
@@ -211,8 +211,8 @@
        <config:config-item config:name="AnchoredTextOverflowLegacy" config:type="boolean">false</config:config-item>
       </config:config-item-map-entry>
       <config:config-item-map-entry config:name="Variables">
-       <config:config-item config:name="CursorPositionX" config:type="int">1</config:config-item>
-       <config:config-item config:name="CursorPositionY" config:type="int">8</config:config-item>
+       <config:config-item config:name="CursorPositionX" config:type="int">0</config:config-item>
+       <config:config-item config:name="CursorPositionY" config:type="int">4</config:config-item>
        <config:config-item config:name="HorizontalSplitMode" config:type="short">0</config:config-item>
        <config:config-item config:name="VerticalSplitMode" config:type="short">0</config:config-item>
        <config:config-item config:name="HorizontalSplitPosition" config:type="int">0</config:config-item>
@@ -229,7 +229,7 @@
        <config:config-item config:name="AnchoredTextOverflowLegacy" config:type="boolean">false</config:config-item>
       </config:config-item-map-entry>
      </config:config-item-map-named>
-     <config:config-item config:name="ActiveTable" config:type="string">Characters</config:config-item>
+     <config:config-item config:name="ActiveTable" config:type="string">Script</config:config-item>
      <config:config-item config:name="HorizontalScrollbarWidth" config:type="int">1733</config:config-item>
      <config:config-item config:name="ZoomType" config:type="short">0</config:config-item>
      <config:config-item config:name="ZoomValue" config:type="int">100</config:config-item>
@@ -306,6 +306,7 @@
 
       
 
+      
       
       
       
@@ -1052,7 +1053,7 @@
      <text:p><text:sheet-name>???</text:sheet-name><text:s/>(<text:title>???</text:title>)</text:p>
     </style:region-left>
     <style:region-right>
-     <text:p><text:date style:data-style-name="N2" text:date-value="2022-01-30">0000-00-00</text:date>, <text:time style:data-style-name="N2" text:time-value="07:38:34.774000000">00:00:00</text:time></text:p>
+     <text:p><text:date style:data-style-name="N2" text:date-value="2022-01-30">0000-00-00</text:date>, <text:time style:data-style-name="N2" text:time-value="10:10:31.682000000">00:00:00</text:time></text:p>
     </style:region-right>
    </style:header>
    <style:header-left style:display="false"/>
@@ -1260,7 +1261,7 @@
      </table:table-cell>
      <table:table-cell table:style-name="ce74"/>
      <table:table-cell table:style-name="ce74" office:value-type="string" calcext:value-type="string">
-      <text:p>.ogg</text:p>
+      <text:p>.wav</text:p>
      </table:table-cell>
      <table:table-cell table:style-name="ce86" office:value-type="float" office:value="-18" calcext:value-type="float">
       <text:p>-18</text:p>
@@ -2604,7 +2605,11 @@
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>Everyone hears stories about being stolen by a witch, and nobody thinks it&apos;s going to happen to them.</text:p>
      </table:table-cell>
-     <table:table-cell table:content-validation-name="val9" table:number-columns-repeated="4"/>
+     <table:table-cell table:content-validation-name="val9"/>
+     <table:table-cell table:content-validation-name="val9" office:value-type="string" calcext:value-type="string">
+      <text:p>tori_dialogue_intro</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val9" table:number-columns-repeated="2"/>
      <table:table-cell table:style-name="ce66" table:number-columns-repeated="3"/>
      <table:table-cell table:style-name="ce68" table:number-columns-repeated="2"/>
      <table:table-cell table:number-columns-repeated="3"/>
@@ -2617,8 +2622,8 @@
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>intro</text:p>
      </table:table-cell>
-     <table:table-cell office:value-type="float" office:value="1" calcext:value-type="float">
-      <text:p>1</text:p>
+     <table:table-cell office:value-type="float" office:value="2" calcext:value-type="float">
+      <text:p>2</text:p>
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell table:content-validation-name="val1"/>
@@ -2638,7 +2643,7 @@
       <text:p>150%</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
-      <text:p>A monster can go about their life happily, flying in the sky, swimming in the river... and then they’re never seen again.</text:p>
+      <text:p>A monster can go about their life happily, flying in the sky, swimming in the river... and then they&apos;re never seen again.</text:p>
      </table:table-cell>
      <table:table-cell table:content-validation-name="val9" table:number-columns-repeated="4"/>
      <table:table-cell table:style-name="ce66" table:number-columns-repeated="3"/>
@@ -2653,8 +2658,8 @@
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>intro</text:p>
      </table:table-cell>
-     <table:table-cell office:value-type="float" office:value="1" calcext:value-type="float">
-      <text:p>1</text:p>
+     <table:table-cell office:value-type="float" office:value="3" calcext:value-type="float">
+      <text:p>3</text:p>
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell table:content-validation-name="val1"/>
@@ -2670,11 +2675,11 @@
       <text:p>bird</text:p>
      </table:table-cell>
      <table:table-cell table:content-validation-name="val10"/>
-     <table:table-cell office:value-type="percentage" office:value="1.5" calcext:value-type="percentage">
-      <text:p>150%</text:p>
+     <table:table-cell office:value-type="percentage" office:value="2" calcext:value-type="percentage">
+      <text:p>200%</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
-      <text:p>Everyone hears stories about being stolen by a witch, and nobody thinks it&apos;s going to happen to them.</text:p>
+      <text:p>It happened to me. One moment, things were normal. The only warning I got was a shadow before I was swooped up into a bag.</text:p>
      </table:table-cell>
      <table:table-cell table:content-validation-name="val9" table:number-columns-repeated="4"/>
      <table:table-cell table:style-name="ce66" office:value-type="string" calcext:value-type="string">
@@ -2684,13 +2689,16 @@
       <text:p>Characters</text:p>
      </table:table-cell>
      <table:table-cell table:style-name="ce66" office:value-type="string" calcext:value-type="string">
-      <text:p>black</text:p>
+      <text:p>unknown</text:p>
      </table:table-cell>
      <table:table-cell table:style-name="ce68"/>
      <table:table-cell table:style-name="ce68" office:value-type="string" calcext:value-type="string">
       <text:p>bird</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="3"/>
+     <table:table-cell office:value-type="float" office:value="1" calcext:value-type="float">
+      <text:p>1</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="2"/>
      <table:table-cell table:content-validation-name="val3"/>
      <table:table-cell table:content-validation-name="val4"/>
      <table:table-cell table:content-validation-name="val5"/>
@@ -2700,8 +2708,8 @@
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>intro</text:p>
      </table:table-cell>
-     <table:table-cell office:value-type="float" office:value="1" calcext:value-type="float">
-      <text:p>1</text:p>
+     <table:table-cell office:value-type="float" office:value="4" calcext:value-type="float">
+      <text:p>4</text:p>
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell table:content-validation-name="val1"/>
@@ -2717,8 +2725,8 @@
       <text:p>witch</text:p>
      </table:table-cell>
      <table:table-cell table:content-validation-name="val10"/>
-     <table:table-cell office:value-type="percentage" office:value="1.5" calcext:value-type="percentage">
-      <text:p>150%</text:p>
+     <table:table-cell office:value-type="percentage" office:value="1.25" calcext:value-type="percentage">
+      <text:p>125%</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>And that&apos;s the last one I need!</text:p>
@@ -2733,10 +2741,13 @@
      <table:table-cell table:number-columns-repeated="988"/>
     </table:table-row>
     <table:table-row table:style-name="ro2">
-     <table:table-cell table:formula="of:=IF(LEN([.H35]&amp;[.I35]&amp;[.J35]&amp;[.K35])&gt;0;[.D35]&amp;&quot;-&quot;&amp;[.E35]&amp;&quot;-&quot;&amp;[.H35]&amp;[.I35]&amp;[.J35]&amp;[.K35];[.D35]&amp;&quot;-&quot;&amp;[.O35]&amp;&quot;-&quot;&amp;[.P35])&amp;IF(LEN([.AH35]&amp;[.AI35]&amp;[.AJ35]&amp;[.AK35])&gt;0;&quot;-&quot;&amp;[.AH35]&amp;[.AI35]&amp;[.AJ35]&amp;[.AK35];&quot;&quot;)" office:value-type="string" office:string-value="--" calcext:value-type="string">
-      <text:p>--</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>intro</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="2"/>
+     <table:table-cell office:value-type="float" office:value="5" calcext:value-type="float">
+      <text:p>5</text:p>
+     </table:table-cell>
+     <table:table-cell/>
      <table:table-cell table:content-validation-name="val1"/>
      <table:table-cell table:content-validation-name="val2"/>
      <table:table-cell table:number-columns-repeated="2"/>
@@ -2746,9 +2757,16 @@
      <table:table-cell table:number-columns-repeated="4"/>
      <table:table-cell table:content-validation-name="val8"/>
      <table:table-cell table:number-columns-repeated="2"/>
-     <table:table-cell table:content-validation-name="val9"/>
+     <table:table-cell table:content-validation-name="val9" office:value-type="string" calcext:value-type="string">
+      <text:p>witch</text:p>
+     </table:table-cell>
      <table:table-cell table:content-validation-name="val10"/>
-     <table:table-cell table:number-columns-repeated="2"/>
+     <table:table-cell office:value-type="percentage" office:value="1" calcext:value-type="percentage">
+      <text:p>100%</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Gyahahahaha!</text:p>
+     </table:table-cell>
      <table:table-cell table:content-validation-name="val9" table:number-columns-repeated="4"/>
      <table:table-cell table:style-name="ce66" table:number-columns-repeated="3"/>
      <table:table-cell table:style-name="ce68" table:number-columns-repeated="2"/>
@@ -2759,10 +2777,13 @@
      <table:table-cell table:number-columns-repeated="988"/>
     </table:table-row>
     <table:table-row table:style-name="ro2">
-     <table:table-cell table:formula="of:=IF(LEN([.H36]&amp;[.I36]&amp;[.J36]&amp;[.K36])&gt;0;[.D36]&amp;&quot;-&quot;&amp;[.E36]&amp;&quot;-&quot;&amp;[.H36]&amp;[.I36]&amp;[.J36]&amp;[.K36];[.D36]&amp;&quot;-&quot;&amp;[.O36]&amp;&quot;-&quot;&amp;[.P36])&amp;IF(LEN([.AH36]&amp;[.AI36]&amp;[.AJ36]&amp;[.AK36])&gt;0;&quot;-&quot;&amp;[.AH36]&amp;[.AI36]&amp;[.AJ36]&amp;[.AK36];&quot;&quot;)" office:value-type="string" office:string-value="--" calcext:value-type="string">
-      <text:p>--</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>intro</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="2"/>
+     <table:table-cell office:value-type="float" office:value="6" calcext:value-type="float">
+      <text:p>6</text:p>
+     </table:table-cell>
+     <table:table-cell/>
      <table:table-cell table:content-validation-name="val1"/>
      <table:table-cell table:content-validation-name="val2"/>
      <table:table-cell table:number-columns-repeated="2"/>
@@ -2772,9 +2793,151 @@
      <table:table-cell table:number-columns-repeated="4"/>
      <table:table-cell table:content-validation-name="val8"/>
      <table:table-cell table:number-columns-repeated="2"/>
-     <table:table-cell table:content-validation-name="val9"/>
+     <table:table-cell table:content-validation-name="val9" office:value-type="string" calcext:value-type="string">
+      <text:p>bird</text:p>
+     </table:table-cell>
      <table:table-cell table:content-validation-name="val10"/>
+     <table:table-cell office:value-type="percentage" office:value="1" calcext:value-type="percentage">
+      <text:p>100%</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>That was all I heard...</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val9" table:number-columns-repeated="4"/>
+     <table:table-cell table:style-name="ce66" office:value-type="string" calcext:value-type="string">
+      <text:p>Scene_ID</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce66" office:value-type="string" calcext:value-type="string">
+      <text:p>Characters</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce66" office:value-type="string" calcext:value-type="string">
+      <text:p>fuzzy</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce68"/>
+     <table:table-cell table:style-name="ce68" office:value-type="string" calcext:value-type="string">
+      <text:p>bird</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1" calcext:value-type="float">
+      <text:p>1</text:p>
+     </table:table-cell>
      <table:table-cell table:number-columns-repeated="2"/>
+     <table:table-cell table:content-validation-name="val3"/>
+     <table:table-cell table:content-validation-name="val4"/>
+     <table:table-cell table:content-validation-name="val5"/>
+     <table:table-cell table:number-columns-repeated="988"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>intro</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="7" calcext:value-type="float">
+      <text:p>7</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell table:content-validation-name="val1"/>
+     <table:table-cell table:content-validation-name="val2"/>
+     <table:table-cell table:number-columns-repeated="2"/>
+     <table:table-cell table:content-validation-name="val3"/>
+     <table:table-cell table:content-validation-name="val4"/>
+     <table:table-cell table:content-validation-name="val5"/>
+     <table:table-cell table:number-columns-repeated="4"/>
+     <table:table-cell table:content-validation-name="val8"/>
+     <table:table-cell table:number-columns-repeated="2"/>
+     <table:table-cell table:content-validation-name="val9" office:value-type="string" calcext:value-type="string">
+      <text:p>bird</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val10"/>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Where am I...?</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val9" table:number-columns-repeated="4"/>
+     <table:table-cell table:style-name="ce66" office:value-type="string" calcext:value-type="string">
+      <text:p>Animation_Current</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce66" office:value-type="string" calcext:value-type="string">
+      <text:p>Characters</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce66" office:value-type="string" calcext:value-type="string">
+      <text:p>idle</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce68"/>
+     <table:table-cell table:style-name="ce68" office:value-type="string" calcext:value-type="string">
+      <text:p>bird</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1" calcext:value-type="float">
+      <text:p>1</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="2"/>
+     <table:table-cell table:content-validation-name="val3"/>
+     <table:table-cell table:content-validation-name="val4"/>
+     <table:table-cell table:content-validation-name="val5"/>
+     <table:table-cell table:number-columns-repeated="988"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>intro</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="8" calcext:value-type="float">
+      <text:p>8</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell table:content-validation-name="val1"/>
+     <table:table-cell table:content-validation-name="val2"/>
+     <table:table-cell table:number-columns-repeated="2"/>
+     <table:table-cell table:content-validation-name="val3"/>
+     <table:table-cell table:content-validation-name="val4"/>
+     <table:table-cell table:content-validation-name="val5"/>
+     <table:table-cell table:number-columns-repeated="4"/>
+     <table:table-cell table:content-validation-name="val8"/>
+     <table:table-cell table:number-columns-repeated="2"/>
+     <table:table-cell table:content-validation-name="val9" office:value-type="string" calcext:value-type="string">
+      <text:p>bird</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val10"/>
+     <table:table-cell office:value-type="percentage" office:value="1" calcext:value-type="percentage">
+      <text:p>100%</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>This must be the witch&apos;s house.</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val9" table:number-columns-repeated="4"/>
+     <table:table-cell table:style-name="ce66" table:number-columns-repeated="3"/>
+     <table:table-cell table:style-name="ce68" table:number-columns-repeated="2"/>
+     <table:table-cell office:value-type="float" office:value="1" calcext:value-type="float">
+      <text:p>1</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="2"/>
+     <table:table-cell table:content-validation-name="val3"/>
+     <table:table-cell table:content-validation-name="val4"/>
+     <table:table-cell table:content-validation-name="val5"/>
+     <table:table-cell table:number-columns-repeated="988"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>intro</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="10" calcext:value-type="float">
+      <text:p>10</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell table:content-validation-name="val1"/>
+     <table:table-cell table:content-validation-name="val2"/>
+     <table:table-cell table:number-columns-repeated="2"/>
+     <table:table-cell table:content-validation-name="val3"/>
+     <table:table-cell table:content-validation-name="val4"/>
+     <table:table-cell table:content-validation-name="val5"/>
+     <table:table-cell table:number-columns-repeated="4"/>
+     <table:table-cell table:content-validation-name="val8"/>
+     <table:table-cell table:number-columns-repeated="2"/>
+     <table:table-cell table:content-validation-name="val9" office:value-type="string" calcext:value-type="string">
+      <text:p>fish</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val10"/>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Someone&apos;s up there?</text:p>
+     </table:table-cell>
      <table:table-cell table:content-validation-name="val9" table:number-columns-repeated="4"/>
      <table:table-cell table:style-name="ce66" table:number-columns-repeated="3"/>
      <table:table-cell table:style-name="ce68" table:number-columns-repeated="2"/>
@@ -2785,62 +2948,13 @@
      <table:table-cell table:number-columns-repeated="988"/>
     </table:table-row>
     <table:table-row table:style-name="ro2">
-     <table:table-cell table:formula="of:=IF(LEN([.H37]&amp;[.I37]&amp;[.J37]&amp;[.K37])&gt;0;[.D37]&amp;&quot;-&quot;&amp;[.E37]&amp;&quot;-&quot;&amp;[.H37]&amp;[.I37]&amp;[.J37]&amp;[.K37];[.D37]&amp;&quot;-&quot;&amp;[.O37]&amp;&quot;-&quot;&amp;[.P37])&amp;IF(LEN([.AH37]&amp;[.AI37]&amp;[.AJ37]&amp;[.AK37])&gt;0;&quot;-&quot;&amp;[.AH37]&amp;[.AI37]&amp;[.AJ37]&amp;[.AK37];&quot;&quot;)" office:value-type="string" office:string-value="--" calcext:value-type="string">
-      <text:p>--</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>intro</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="2"/>
-     <table:table-cell table:content-validation-name="val1"/>
-     <table:table-cell table:content-validation-name="val2"/>
-     <table:table-cell table:number-columns-repeated="2"/>
-     <table:table-cell table:content-validation-name="val3"/>
-     <table:table-cell table:content-validation-name="val4"/>
-     <table:table-cell table:content-validation-name="val5"/>
-     <table:table-cell table:number-columns-repeated="4"/>
-     <table:table-cell table:content-validation-name="val8"/>
-     <table:table-cell table:number-columns-repeated="2"/>
-     <table:table-cell table:content-validation-name="val9"/>
-     <table:table-cell table:content-validation-name="val10"/>
-     <table:table-cell table:number-columns-repeated="2"/>
-     <table:table-cell table:content-validation-name="val9" table:number-columns-repeated="4"/>
-     <table:table-cell table:style-name="ce66" table:number-columns-repeated="3"/>
-     <table:table-cell table:style-name="ce68" table:number-columns-repeated="2"/>
-     <table:table-cell table:number-columns-repeated="3"/>
-     <table:table-cell table:content-validation-name="val3"/>
-     <table:table-cell table:content-validation-name="val4"/>
-     <table:table-cell table:content-validation-name="val5"/>
-     <table:table-cell table:number-columns-repeated="988"/>
-    </table:table-row>
-    <table:table-row table:style-name="ro2">
-     <table:table-cell table:formula="of:=IF(LEN([.H38]&amp;[.I38]&amp;[.J38]&amp;[.K38])&gt;0;[.D38]&amp;&quot;-&quot;&amp;[.E38]&amp;&quot;-&quot;&amp;[.H38]&amp;[.I38]&amp;[.J38]&amp;[.K38];[.D38]&amp;&quot;-&quot;&amp;[.O38]&amp;&quot;-&quot;&amp;[.P38])&amp;IF(LEN([.AH38]&amp;[.AI38]&amp;[.AJ38]&amp;[.AK38])&gt;0;&quot;-&quot;&amp;[.AH38]&amp;[.AI38]&amp;[.AJ38]&amp;[.AK38];&quot;&quot;)" office:value-type="string" office:string-value="--" calcext:value-type="string">
-      <text:p>--</text:p>
+     <table:table-cell office:value-type="float" office:value="11" calcext:value-type="float">
+      <text:p>11</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="2"/>
-     <table:table-cell table:content-validation-name="val1"/>
-     <table:table-cell table:content-validation-name="val2"/>
-     <table:table-cell table:number-columns-repeated="2"/>
-     <table:table-cell table:content-validation-name="val3"/>
-     <table:table-cell table:content-validation-name="val4"/>
-     <table:table-cell table:content-validation-name="val5"/>
-     <table:table-cell table:number-columns-repeated="4"/>
-     <table:table-cell table:content-validation-name="val8"/>
-     <table:table-cell table:number-columns-repeated="2"/>
-     <table:table-cell table:content-validation-name="val9"/>
-     <table:table-cell table:content-validation-name="val10"/>
-     <table:table-cell table:number-columns-repeated="2"/>
-     <table:table-cell table:content-validation-name="val9" table:number-columns-repeated="4"/>
-     <table:table-cell table:style-name="ce66" table:number-columns-repeated="3"/>
-     <table:table-cell table:style-name="ce68" table:number-columns-repeated="2"/>
-     <table:table-cell table:number-columns-repeated="3"/>
-     <table:table-cell table:content-validation-name="val3"/>
-     <table:table-cell table:content-validation-name="val4"/>
-     <table:table-cell table:content-validation-name="val5"/>
-     <table:table-cell table:number-columns-repeated="988"/>
-    </table:table-row>
-    <table:table-row table:style-name="ro2">
-     <table:table-cell table:formula="of:=IF(LEN([.H39]&amp;[.I39]&amp;[.J39]&amp;[.K39])&gt;0;[.D39]&amp;&quot;-&quot;&amp;[.E39]&amp;&quot;-&quot;&amp;[.H39]&amp;[.I39]&amp;[.J39]&amp;[.K39];[.D39]&amp;&quot;-&quot;&amp;[.O39]&amp;&quot;-&quot;&amp;[.P39])&amp;IF(LEN([.AH39]&amp;[.AI39]&amp;[.AJ39]&amp;[.AK39])&gt;0;&quot;-&quot;&amp;[.AH39]&amp;[.AI39]&amp;[.AJ39]&amp;[.AK39];&quot;&quot;)" office:value-type="string" office:string-value="--" calcext:value-type="string">
-      <text:p>--</text:p>
-     </table:table-cell>
-     <table:table-cell table:number-columns-repeated="2"/>
+     <table:table-cell/>
      <table:table-cell table:content-validation-name="val1"/>
      <table:table-cell table:content-validation-name="val2"/>
      <table:table-cell table:number-columns-repeated="2"/>
@@ -2849,9 +2963,64 @@
      <table:table-cell table:number-columns-repeated="4"/>
      <table:table-cell table:content-validation-name="val8"/>
      <table:table-cell table:number-columns-repeated="2"/>
-     <table:table-cell table:content-validation-name="val9"/>
+     <table:table-cell table:content-validation-name="val9" office:value-type="string" calcext:value-type="string">
+      <text:p>bird</text:p>
+     </table:table-cell>
      <table:table-cell table:content-validation-name="val10"/>
+     <table:table-cell office:value-type="percentage" office:value="0.5" calcext:value-type="percentage">
+      <text:p>50%</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Hello?</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val9" table:number-columns-repeated="4"/>
+     <table:table-cell table:style-name="ce66" office:value-type="string" calcext:value-type="string">
+      <text:p>Scene_ID</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce66" office:value-type="string" calcext:value-type="string">
+      <text:p>Characters</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce66" office:value-type="string" calcext:value-type="string">
+      <text:p>dual</text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="ce68"/>
+     <table:table-cell table:style-name="ce68" office:value-type="string" calcext:value-type="string">
+      <text:p>bird</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1" calcext:value-type="float">
+      <text:p>1</text:p>
+     </table:table-cell>
      <table:table-cell table:number-columns-repeated="2"/>
+     <table:table-cell table:content-validation-name="val3"/>
+     <table:table-cell table:content-validation-name="val4"/>
+     <table:table-cell table:content-validation-name="val5"/>
+     <table:table-cell table:number-columns-repeated="988"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>intro</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="12" calcext:value-type="float">
+      <text:p>12</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell table:content-validation-name="val1"/>
+     <table:table-cell table:content-validation-name="val2"/>
+     <table:table-cell table:number-columns-repeated="2"/>
+     <table:table-cell table:content-validation-name="val3"/>
+     <table:table-cell table:content-validation-name="val4"/>
+     <table:table-cell table:content-validation-name="val5"/>
+     <table:table-cell table:number-columns-repeated="4"/>
+     <table:table-cell table:content-validation-name="val8"/>
+     <table:table-cell table:number-columns-repeated="2"/>
+     <table:table-cell table:content-validation-name="val9" office:value-type="string" calcext:value-type="string">
+      <text:p>fish</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val10"/>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>I&apos;m down here! The witch kidnapped me, too.</text:p>
+     </table:table-cell>
      <table:table-cell table:content-validation-name="val9" table:number-columns-repeated="4"/>
      <table:table-cell table:style-name="ce66" table:number-columns-repeated="3"/>
      <table:table-cell table:style-name="ce68" table:number-columns-repeated="2"/>
@@ -2862,21 +3031,30 @@
      <table:table-cell table:number-columns-repeated="988"/>
     </table:table-row>
     <table:table-row table:style-name="ro2">
-     <table:table-cell table:formula="of:=IF(LEN([.H40]&amp;[.I40]&amp;[.J40]&amp;[.K40])&gt;0;[.D40]&amp;&quot;-&quot;&amp;[.E40]&amp;&quot;-&quot;&amp;[.H40]&amp;[.I40]&amp;[.J40]&amp;[.K40];[.D40]&amp;&quot;-&quot;&amp;[.O40]&amp;&quot;-&quot;&amp;[.P40])&amp;IF(LEN([.AH40]&amp;[.AI40]&amp;[.AJ40]&amp;[.AK40])&gt;0;&quot;-&quot;&amp;[.AH40]&amp;[.AI40]&amp;[.AJ40]&amp;[.AK40];&quot;&quot;)" office:value-type="string" office:string-value="--" calcext:value-type="string">
-      <text:p>--</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>intro</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="2"/>
+     <table:table-cell office:value-type="float" office:value="13" calcext:value-type="float">
+      <text:p>13</text:p>
+     </table:table-cell>
+     <table:table-cell/>
      <table:table-cell table:content-validation-name="val1"/>
      <table:table-cell table:content-validation-name="val2"/>
      <table:table-cell table:number-columns-repeated="2"/>
      <table:table-cell table:content-validation-name="val3"/>
-     <table:table-cell table:content-validation-name="val5" table:number-columns-repeated="2"/>
+     <table:table-cell table:content-validation-name="val4"/>
+     <table:table-cell table:content-validation-name="val5"/>
      <table:table-cell table:number-columns-repeated="4"/>
      <table:table-cell table:content-validation-name="val8"/>
      <table:table-cell table:number-columns-repeated="2"/>
-     <table:table-cell table:content-validation-name="val9"/>
+     <table:table-cell table:content-validation-name="val9" office:value-type="string" calcext:value-type="string">
+      <text:p>fish</text:p>
+     </table:table-cell>
      <table:table-cell table:content-validation-name="val10"/>
-     <table:table-cell table:number-columns-repeated="2"/>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>I know they like to steal people, but I don&apos;t see anyone else...</text:p>
+     </table:table-cell>
      <table:table-cell table:content-validation-name="val9" table:number-columns-repeated="4"/>
      <table:table-cell table:style-name="ce66" table:number-columns-repeated="3"/>
      <table:table-cell table:style-name="ce68" table:number-columns-repeated="2"/>
@@ -2887,21 +3065,30 @@
      <table:table-cell table:number-columns-repeated="988"/>
     </table:table-row>
     <table:table-row table:style-name="ro2">
-     <table:table-cell table:formula="of:=IF(LEN([.H41]&amp;[.I41]&amp;[.J41]&amp;[.K41])&gt;0;[.D41]&amp;&quot;-&quot;&amp;[.E41]&amp;&quot;-&quot;&amp;[.H41]&amp;[.I41]&amp;[.J41]&amp;[.K41];[.D41]&amp;&quot;-&quot;&amp;[.O41]&amp;&quot;-&quot;&amp;[.P41])&amp;IF(LEN([.AH41]&amp;[.AI41]&amp;[.AJ41]&amp;[.AK41])&gt;0;&quot;-&quot;&amp;[.AH41]&amp;[.AI41]&amp;[.AJ41]&amp;[.AK41];&quot;&quot;)" office:value-type="string" office:string-value="--" calcext:value-type="string">
-      <text:p>--</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>intro</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="2"/>
+     <table:table-cell office:value-type="float" office:value="14" calcext:value-type="float">
+      <text:p>14</text:p>
+     </table:table-cell>
+     <table:table-cell/>
      <table:table-cell table:content-validation-name="val1"/>
      <table:table-cell table:content-validation-name="val2"/>
      <table:table-cell table:number-columns-repeated="2"/>
      <table:table-cell table:content-validation-name="val3"/>
-     <table:table-cell table:content-validation-name="val5" table:number-columns-repeated="2"/>
+     <table:table-cell table:content-validation-name="val4"/>
+     <table:table-cell table:content-validation-name="val5"/>
      <table:table-cell table:number-columns-repeated="4"/>
      <table:table-cell table:content-validation-name="val8"/>
      <table:table-cell table:number-columns-repeated="2"/>
-     <table:table-cell table:content-validation-name="val9"/>
+     <table:table-cell table:content-validation-name="val9" office:value-type="string" calcext:value-type="string">
+      <text:p>fish</text:p>
+     </table:table-cell>
      <table:table-cell table:content-validation-name="val10"/>
-     <table:table-cell table:number-columns-repeated="2"/>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Can you see a way out of here?</text:p>
+     </table:table-cell>
      <table:table-cell table:content-validation-name="val9" table:number-columns-repeated="4"/>
      <table:table-cell table:style-name="ce66" table:number-columns-repeated="3"/>
      <table:table-cell table:style-name="ce68" table:number-columns-repeated="2"/>
@@ -2912,35 +3099,13 @@
      <table:table-cell table:number-columns-repeated="988"/>
     </table:table-row>
     <table:table-row table:style-name="ro2">
-     <table:table-cell table:formula="of:=IF(LEN([.H42]&amp;[.I42]&amp;[.J42]&amp;[.K42])&gt;0;[.D42]&amp;&quot;-&quot;&amp;[.E42]&amp;&quot;-&quot;&amp;[.H42]&amp;[.I42]&amp;[.J42]&amp;[.K42];[.D42]&amp;&quot;-&quot;&amp;[.O42]&amp;&quot;-&quot;&amp;[.P42])&amp;IF(LEN([.AH42]&amp;[.AI42]&amp;[.AJ42]&amp;[.AK42])&gt;0;&quot;-&quot;&amp;[.AH42]&amp;[.AI42]&amp;[.AJ42]&amp;[.AK42];&quot;&quot;)" office:value-type="string" office:string-value="--" calcext:value-type="string">
-      <text:p>--</text:p>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>intro</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="2"/>
-     <table:table-cell table:content-validation-name="val1"/>
-     <table:table-cell table:content-validation-name="val2"/>
-     <table:table-cell table:number-columns-repeated="2"/>
-     <table:table-cell table:content-validation-name="val3"/>
-     <table:table-cell table:content-validation-name="val5" table:number-columns-repeated="2"/>
-     <table:table-cell table:number-columns-repeated="4"/>
-     <table:table-cell table:content-validation-name="val8"/>
-     <table:table-cell table:number-columns-repeated="2"/>
-     <table:table-cell table:content-validation-name="val9"/>
-     <table:table-cell table:content-validation-name="val10"/>
-     <table:table-cell table:number-columns-repeated="2"/>
-     <table:table-cell table:content-validation-name="val9" table:number-columns-repeated="4"/>
-     <table:table-cell table:style-name="ce66" table:number-columns-repeated="3"/>
-     <table:table-cell table:style-name="ce68" table:number-columns-repeated="2"/>
-     <table:table-cell table:number-columns-repeated="3"/>
-     <table:table-cell table:content-validation-name="val3"/>
-     <table:table-cell table:content-validation-name="val4"/>
-     <table:table-cell table:content-validation-name="val5"/>
-     <table:table-cell table:number-columns-repeated="988"/>
-    </table:table-row>
-    <table:table-row table:style-name="ro2">
-     <table:table-cell table:formula="of:=IF(LEN([.H43]&amp;[.I43]&amp;[.J43]&amp;[.K43])&gt;0;[.D43]&amp;&quot;-&quot;&amp;[.E43]&amp;&quot;-&quot;&amp;[.H43]&amp;[.I43]&amp;[.J43]&amp;[.K43];[.D43]&amp;&quot;-&quot;&amp;[.O43]&amp;&quot;-&quot;&amp;[.P43])&amp;IF(LEN([.AH43]&amp;[.AI43]&amp;[.AJ43]&amp;[.AK43])&gt;0;&quot;-&quot;&amp;[.AH43]&amp;[.AI43]&amp;[.AJ43]&amp;[.AK43];&quot;&quot;)" office:value-type="string" office:string-value="--" calcext:value-type="string">
-      <text:p>--</text:p>
+     <table:table-cell office:value-type="float" office:value="15" calcext:value-type="float">
+      <text:p>15</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="2"/>
+     <table:table-cell/>
      <table:table-cell table:content-validation-name="val1"/>
      <table:table-cell table:content-validation-name="val2"/>
      <table:table-cell table:number-columns-repeated="2"/>
@@ -2950,35 +3115,16 @@
      <table:table-cell table:number-columns-repeated="4"/>
      <table:table-cell table:content-validation-name="val8"/>
      <table:table-cell table:number-columns-repeated="2"/>
-     <table:table-cell table:content-validation-name="val9"/>
-     <table:table-cell table:content-validation-name="val10"/>
-     <table:table-cell table:number-columns-repeated="2"/>
-     <table:table-cell table:content-validation-name="val9" table:number-columns-repeated="4"/>
-     <table:table-cell table:style-name="ce66" table:number-columns-repeated="3"/>
-     <table:table-cell table:style-name="ce68" table:number-columns-repeated="2"/>
-     <table:table-cell table:number-columns-repeated="3"/>
-     <table:table-cell table:content-validation-name="val3"/>
-     <table:table-cell table:content-validation-name="val4"/>
-     <table:table-cell table:content-validation-name="val5"/>
-     <table:table-cell table:number-columns-repeated="988"/>
-    </table:table-row>
-    <table:table-row table:style-name="ro2">
-     <table:table-cell table:formula="of:=IF(LEN([.H44]&amp;[.I44]&amp;[.J44]&amp;[.K44])&gt;0;[.D44]&amp;&quot;-&quot;&amp;[.E44]&amp;&quot;-&quot;&amp;[.H44]&amp;[.I44]&amp;[.J44]&amp;[.K44];[.D44]&amp;&quot;-&quot;&amp;[.O44]&amp;&quot;-&quot;&amp;[.P44])&amp;IF(LEN([.AH44]&amp;[.AI44]&amp;[.AJ44]&amp;[.AK44])&gt;0;&quot;-&quot;&amp;[.AH44]&amp;[.AI44]&amp;[.AJ44]&amp;[.AK44];&quot;&quot;)" office:value-type="string" office:string-value="--" calcext:value-type="string">
-      <text:p>--</text:p>
+     <table:table-cell table:content-validation-name="val9" office:value-type="string" calcext:value-type="string">
+      <text:p>bird</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="2"/>
-     <table:table-cell table:content-validation-name="val1"/>
-     <table:table-cell table:content-validation-name="val2"/>
-     <table:table-cell table:number-columns-repeated="2"/>
-     <table:table-cell table:content-validation-name="val3"/>
-     <table:table-cell table:content-validation-name="val4"/>
-     <table:table-cell table:content-validation-name="val5"/>
-     <table:table-cell table:number-columns-repeated="4"/>
-     <table:table-cell table:content-validation-name="val8"/>
-     <table:table-cell table:number-columns-repeated="2"/>
-     <table:table-cell table:content-validation-name="val9"/>
      <table:table-cell table:content-validation-name="val10"/>
-     <table:table-cell table:number-columns-repeated="2"/>
+     <table:table-cell office:value-type="percentage" office:value="1.5" calcext:value-type="percentage">
+      <text:p>150%</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>No... Not yet. But we can try.</text:p>
+     </table:table-cell>
      <table:table-cell table:content-validation-name="val9" table:number-columns-repeated="4"/>
      <table:table-cell table:style-name="ce66" table:number-columns-repeated="3"/>
      <table:table-cell table:style-name="ce68" table:number-columns-repeated="2"/>
@@ -3814,6 +3960,7 @@
     </table:table-row>
    </table:table>
    <table:table table:name="Variables" table:style-name="ta1" table:print="false">
+    <office:forms form:automatic-focus="false" form:apply-design-mode="false"/>
     <table:table-column table:style-name="co25" table:default-cell-style-name="Default"/>
     <table:table-column table:style-name="co22" table:default-cell-style-name="ce78"/>
     <table:table-column table:style-name="co22" table:default-cell-style-name="ce108"/>
@@ -3869,7 +4016,7 @@
     </table:table-row>
     <table:table-row table:style-name="ro4">
      <table:table-cell table:style-name="ce106" office:value-type="string" calcext:value-type="string">
-      <text:p>a</text:p>
+      <text:p>aaaaaaa</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="1" calcext:value-type="float">
       <text:p>1</text:p>
@@ -3879,46 +4026,10 @@
      </table:table-cell>
      <table:table-cell table:number-columns-repeated="1021"/>
     </table:table-row>
-    <table:table-row table:style-name="ro2">
-     <table:table-cell table:style-name="ce106" office:value-type="string" calcext:value-type="string">
-      <text:p>b</text:p>
-     </table:table-cell>
-     <table:table-cell office:value-type="float" office:value="0" calcext:value-type="float">
-      <text:p>0</text:p>
-     </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1022"/>
-    </table:table-row>
-    <table:table-row table:style-name="ro2">
-     <table:table-cell table:style-name="ce106" office:value-type="string" calcext:value-type="string">
-      <text:p>c</text:p>
-     </table:table-cell>
-     <table:table-cell office:value-type="float" office:value="15" calcext:value-type="float">
-      <text:p>15</text:p>
-     </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1022"/>
-    </table:table-row>
-    <table:table-row table:style-name="ro2">
-     <table:table-cell table:style-name="ce106" office:value-type="string" calcext:value-type="string">
-      <text:p>d</text:p>
-     </table:table-cell>
-     <table:table-cell office:value-type="float" office:value="20" calcext:value-type="float">
-      <text:p>20</text:p>
-     </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1022"/>
-    </table:table-row>
-    <table:table-row table:style-name="ro3">
-     <table:table-cell table:style-name="ce106" office:value-type="string" calcext:value-type="string">
-      <text:p>e</text:p>
-     </table:table-cell>
-     <table:table-cell office:value-type="float" office:value="25" calcext:value-type="float">
-      <text:p>25</text:p>
-     </table:table-cell>
-     <table:table-cell table:number-columns-repeated="1022"/>
-    </table:table-row>
     <table:table-row table:style-name="ro3" table:number-rows-repeated="1048563">
      <table:table-cell table:number-columns-repeated="1024"/>
     </table:table-row>
-    <table:table-row table:style-name="ro2" table:number-rows-repeated="2">
+    <table:table-row table:style-name="ro2" table:number-rows-repeated="6">
      <table:table-cell table:number-columns-repeated="1024"/>
     </table:table-row>
     <table:table-row table:style-name="ro2">
@@ -4384,7 +4495,9 @@
      <table:table-cell table:style-name="ce77" office:value-type="string" calcext:value-type="string">
       <text:p>#000000</text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce86"/>
+     <table:table-cell table:style-name="ce86" office:value-type="string" calcext:value-type="string">
+      <text:p>#ffffff</text:p>
+     </table:table-cell>
      <table:table-cell table:style-name="ce77" office:value-type="string" calcext:value-type="string">
       <text:p>fonts/</text:p>
      </table:table-cell>
@@ -4493,10 +4606,7 @@
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>#b63e26</text:p>
      </table:table-cell>
-     <table:table-cell office:value-type="string" calcext:value-type="string">
-      <text:p>#000000</text:p>
-     </table:table-cell>
-     <table:table-cell table:number-columns-repeated="4"/>
+     <table:table-cell table:number-columns-repeated="5"/>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>flying</text:p>
      </table:table-cell>
@@ -4542,10 +4652,7 @@
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>#639752</text:p>
      </table:table-cell>
-     <table:table-cell office:value-type="string" calcext:value-type="string">
-      <text:p>#000000</text:p>
-     </table:table-cell>
-     <table:table-cell table:number-columns-repeated="4"/>
+     <table:table-cell table:number-columns-repeated="5"/>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>idle</text:p>
      </table:table-cell>
@@ -4746,9 +4853,12 @@
     </table:table-row>
     <table:table-row table:style-name="ro3">
      <table:table-cell office:value-type="string" calcext:value-type="string">
-      <text:p>black</text:p>
+      <text:p>unknown</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="3"/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Unknown</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="2"/>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>intro</text:p>
      </table:table-cell>
@@ -4758,7 +4868,10 @@
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>fuzzy</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="3"/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Unknown</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="2"/>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>dual-fuzzy</text:p>
      </table:table-cell>
@@ -4768,7 +4881,10 @@
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>flying</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="3"/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>Sky</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="2"/>
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>intro</text:p>
      </table:table-cell>
@@ -4855,7 +4971,6 @@
     </table:table-row>
    </table:table>
    <table:table table:name="Objects" table:style-name="ta1" table:print="false">
-    <office:forms form:automatic-focus="false" form:apply-design-mode="false"/>
     <table:table-column table:style-name="co22" table:default-cell-style-name="ce78"/>
     <table:table-column table:style-name="co50" table:default-cell-style-name="ce78"/>
     <table:table-column table:style-name="co18" table:default-cell-style-name="ce78"/>
@@ -5291,7 +5406,6 @@
     </table:table-row>
    </table:table>
    <table:table table:name="Emotions" table:style-name="ta1" table:print="false">
-    <office:forms form:automatic-focus="false" form:apply-design-mode="false"/>
     <table:table-column table:style-name="co22" table:number-columns-repeated="5" table:default-cell-style-name="Default"/>
     <table:table-column table:style-name="co58" table:number-columns-repeated="2" table:default-cell-style-name="ce125"/>
     <table:table-column table:style-name="co22" table:default-cell-style-name="ce102"/>
@@ -5465,7 +5579,6 @@
     </table:table-row>
    </table:table>
    <table:table table:name="Animations" table:style-name="ta1" table:print="false">
-    <office:forms form:automatic-focus="false" form:apply-design-mode="false"/>
     <table:table-column table:style-name="co59" table:number-columns-repeated="2" table:default-cell-style-name="Default"/>
     <table:table-column table:style-name="co60" table:default-cell-style-name="Default"/>
     <table:table-column table:style-name="co61" table:default-cell-style-name="ce78"/>
@@ -5754,7 +5867,6 @@
     </table:table-row>
    </table:table>
    <table:table table:name="Menus" table:style-name="ta1" table:print="false">
-    <office:forms form:automatic-focus="false" form:apply-design-mode="false"/>
     <table:table-column table:style-name="co22" table:default-cell-style-name="ce111"/>
     <table:table-column table:style-name="co59" table:default-cell-style-name="Default"/>
     <table:table-column table:style-name="co3" table:default-cell-style-name="Default"/>
@@ -5922,7 +6034,10 @@
      <table:table-cell table:style-name="ce86" office:value-type="float" office:value="0" calcext:value-type="float">
       <text:p>0</text:p>
      </table:table-cell>
-     <table:table-cell table:number-columns-repeated="4" table:style-name="ce124" office:value-type="percentage" office:value="0.5" calcext:value-type="percentage">
+     <table:table-cell table:style-name="ce124" office:value-type="percentage" office:value="0.25" calcext:value-type="percentage">
+      <text:p>25%</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="3" table:style-name="ce124" office:value-type="percentage" office:value="0.5" calcext:value-type="percentage">
       <text:p>50%</text:p>
      </table:table-cell>
      <table:table-cell table:style-name="ce74" table:number-columns-repeated="992"/>
@@ -6043,14 +6158,14 @@
      <table:table-cell table:number-columns-repeated="2" office:value-type="float" office:value="1" calcext:value-type="float">
       <text:p>1</text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce152" office:value-type="percentage" office:value="0.05" calcext:value-type="percentage">
-      <text:p>5.00%</text:p>
+     <table:table-cell table:style-name="ce152" office:value-type="percentage" office:value="0.07" calcext:value-type="percentage">
+      <text:p>7.00%</text:p>
      </table:table-cell>
      <table:table-cell table:style-name="ce152" office:value-type="percentage" office:value="0.85" calcext:value-type="percentage">
       <text:p>85.00%</text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="ce152" office:value-type="percentage" office:value="0.9" calcext:value-type="percentage">
-      <text:p>90.00%</text:p>
+     <table:table-cell table:style-name="ce152" office:value-type="percentage" office:value="0.8" calcext:value-type="percentage">
+      <text:p>80.00%</text:p>
      </table:table-cell>
      <table:table-cell table:style-name="ce152" office:value-type="percentage" office:value="0.2" calcext:value-type="percentage">
       <text:p>20.00%</text:p>
@@ -6070,7 +6185,7 @@
      </table:table-cell>
      <table:table-cell table:number-columns-repeated="993"/>
     </table:table-row>
-    <table:table-row table:style-name="ro3">
+    <table:table-row table:style-name="ro2">
      <table:table-cell office:value-type="string" calcext:value-type="string">
       <text:p>portrait</text:p>
      </table:table-cell>
@@ -6161,7 +6276,6 @@
     </table:table-row>
    </table:table>
    <table:table table:name="Config" table:style-name="ta1" table:print="false">
-    <office:forms form:automatic-focus="false" form:apply-design-mode="false"/>
     <table:table-column table:style-name="co25" table:default-cell-style-name="Default"/>
     <table:table-column table:style-name="co22" table:default-cell-style-name="ce78"/>
     <table:table-row table:style-name="ro3">

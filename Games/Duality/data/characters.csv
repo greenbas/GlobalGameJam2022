@@ -1,5 +1,5 @@
 ID,Label,Current,Visible,Actionable,Playable,Scene_ID,Screen_X,Screen_Y,Zoom,Base_X,Base_Y,Walk_Point_X,Walk_Point_Y,Walks,Walk_Speed,Label_Portrait,Font_Colour,Font_Shadow,Font_Path,Font_Filename,Font_Extension,Font_Size,Animation_Current,Idle_N,Idle_E,Idle_W,Idle_S,Idle_NE,Idle_NW,Idle_SE,Idle_SW,N,E,W,S,NE,NW,SE,SW,Cursor_Path,Cursor_Filename,Cursor_Extension,Cursor_Point_X,Cursor_Point_Y,Action_Wheel_Path,Action_Wheel_Filename,Action_Wheel_Extension
-DEFAULT,,0,1,1,0,,50%,50%,100%,50%,95%,0.0%,0.0%,1,75%,1,#000000,,fonts/,Wachinanga-font,.ttf,25,idle,idle_n,idle,idle,idle,idle_n,idle_n,idle_n,idle,n,e,w,s,e,w,s,w,images/menu/,cursor,.png,2.0%,3.0%,images/menu/,vc,.png
-bird,Tori,1,1,,1,flying,32%,48%,,,,,,,75%,,#b63e26,#000000,,,,,flying,,,,,,,,,,,,,,,,,,cursor_bird,,,,,vc_bird,
-fish,Aqua,,1,,1,dual,65%,98%,,,,,,,75%,,#639752,#000000,,,,,idle,,,,,,,,,,,,,,,,,,cursor_fish,,,,,vc_fish,
+DEFAULT,,0,1,1,0,,50%,50%,100%,50%,95%,0.0%,0.0%,1,75%,1,#000000,#ffffff,fonts/,Wachinanga-font,.ttf,25,idle,idle_n,idle,idle,idle,idle_n,idle_n,idle_n,idle,n,e,w,s,e,w,s,w,images/menu/,cursor,.png,2.0%,3.0%,images/menu/,vc,.png
+bird,Tori,1,1,,1,flying,32%,48%,,,,,,,75%,,#b63e26,,,,,,flying,,,,,,,,,,,,,,,,,,cursor_bird,,,,,vc_bird,
+fish,Aqua,,1,,1,dual,65%,98%,,,,,,,75%,,#639752,,,,,,idle,,,,,,,,,,,,,,,,,,cursor_fish,,,,,vc_fish,
 witch,Witch,0,0,0,0,black,,,,,,,,,,,#291e1b,,,,,,,,,,,,,,,,,,,,,,,,cursor_bird,,,,,vc_bird,

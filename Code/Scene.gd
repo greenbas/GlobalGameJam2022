@@ -235,33 +235,36 @@ var currScript
 var hoverText
 var hoverOffset = Vector2(-30, -30)
 func triggerHover(posn):
-	var lbl : Label = $Dialogue/HoverText
-	var area = walkmap.getColour(posn)
-	if area != currArea:
-		currArea = area
-	var foundObj = objAtPosn(posn)
-	var hvScript
-	if posn.y <= 360:
-		moveToChar(0,false)
-	else: 
-		moveToChar(1,false)
-	if Game.menu.actingAction:
-		hvScript = currChar.ID + "-" + Game.menu.actingAction.data.ID + "-" + foundObj.data.ID
-	else:
-		hvScript = currChar.ID + "-" + foundObj.data.ID + "-" + currArea
-	if hvScript != currScript:
-		currScript = hvScript
-		var scr = []
-		if scriptManager.script_commands.has(currScript):
-			scr = scriptManager.script_commands[currScript]
-		if scr.size() > 0:
-			hoverText = scr[0].Hover_Text
+	#print("Mode ", scriptManager.mode)# = mgr.MODES.READY
+	#if scriptManager.mode == scriptManager.MODES.READY:
+	if data.ID == "dual":
+		var lbl : Label = $Dialogue/HoverText
+		var area = walkmap.getColour(posn)
+		if area != currArea:
+			currArea = area
+		var foundObj = objAtPosn(posn)
+		var hvScript
+		if posn.y <= 360:
+			moveToChar(0,false)
+		else: 
+			moveToChar(1,false)
+		if Game.menu.actingAction:
+			hvScript = currChar.ID + "-" + Game.menu.actingAction.data.ID + "-" + foundObj.data.ID
 		else:
-			hoverText = foundObj.data.Label
-		lbl.text = hoverText
-		setLabelFont(lbl, currChar)
-		#print(hoverText)
-	lbl.set_position(posn + hoverOffset)
+			hvScript = currChar.ID + "-" + foundObj.data.ID + "-" + currArea
+		if hvScript != currScript:
+			currScript = hvScript
+			var scr = []
+			if scriptManager.script_commands.has(currScript):
+				scr = scriptManager.script_commands[currScript]
+			if scr.size() > 0:
+				hoverText = scr[0].Hover_Text
+			else:
+				hoverText = foundObj.data.Label
+			lbl.text = hoverText
+			setLabelFont(lbl, currChar)
+			#print(hoverText)
+		lbl.set_position(posn + hoverOffset)
 
 func setLabelFont(label, c):
 	var font = Game.getFont(c.Font_Path, c.Font_Filename, c.Font_Extension)
