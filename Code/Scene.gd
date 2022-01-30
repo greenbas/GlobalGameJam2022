@@ -53,7 +53,6 @@ func loadScene(scene, justBG=false):
 		
 	if !justBG:
 		# Load the background and foreground
-		Game.setCursor(currChar)
 		$Foreground.texture = Game.getTexture(scene.Foreground_Path, scene.Foreground_Filename, scene.Foreground_Extension)
 		
 		# Audio
@@ -158,6 +157,7 @@ func cycleChar(moveBy, moveTo=0,refresh=true):
 	else:
 		curr = (curr + moveBy) % Game.playables.size()
 	currChar = Game.playables[curr]
+	Game.setCursor(currChar)
 	Game.updateByID(Game.ENTITY.CHAR, ["ID"], [currChar.ID], ["Current"], ["1"])
 	if refresh:
 		refreshScene()

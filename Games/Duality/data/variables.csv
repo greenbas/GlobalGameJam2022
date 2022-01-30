@@ -3,8 +3,8 @@ DEFAULT,0,
 windowState,1,
 floorState,0,
 mirrorState,0,
-x,1,"Defining constants so I can do 'math' on other variables, e.g. 'teamState >= cabin'"
-x,0,
-x,15,
-x,20,
-x,25,
+a,1,"Defining constants so I can do 'math' on other variables, e.g. 'teamState >= cabin'"
+b,0,
+c,15,
+d,20,
+e,25,
