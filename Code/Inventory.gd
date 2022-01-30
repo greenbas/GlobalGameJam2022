@@ -16,6 +16,8 @@ func addItem(c, i, q=1):
 func removeItem(c, i, q=1):
 	inv[c][i] -= q
 	if inv[c][i] < 0: inv[c][i] = 0
+	if inv[c][i] == 0:
+		inv[c].erase(i)
 
 func numItem(c, i):
 	if !inv[c].has(i): return 0

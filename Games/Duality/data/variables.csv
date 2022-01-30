@@ -4,3 +4,4 @@ windowState,1,
 floorState,0,
 mirrorState,0,
 aaaaaaa,1,"Defining constants so I can do 'math' on other variables, e.g. 'teamState >= cabin'"
+seedState,0,

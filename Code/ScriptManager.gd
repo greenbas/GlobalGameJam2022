@@ -255,10 +255,15 @@ func run(commands, actingObj=null):
 				Game.debugMessage(Game.CAT.SCRIPT, "Taking " + Game.ENTITY_NAME[targetType].rstrip("s") + " " + actingObj.data.ID)
 				Game.updateByID(targetType, ["ID"], [actingObj.data.ID], ["Visible"], ["0"])
 				refresh = true
-			if !Util.isnull(cmd.Add_To_Inventory): # TODO Test on character
+			if !Util.isnull(cmd.Add_To_Inventory):
 				Game.debugMessage(Game.CAT.SCRIPT, "Adding to inventory")
-				for addItem in cmd.Add_To_Inventory.split("-"):
+				for addItem in cmd.Add_To_Inventory.split("~,~"):
 					Game.inventory.addItem(cmd.Character_ID, addItem)
+				#FIXME: Game.menu.refreshMenu(["inventory"]) # but only if open
+			if !Util.isnull(cmd.Del_From_Inventory):
+				Game.debugMessage(Game.CAT.SCRIPT, "Removing from inventory")
+				for delItem in cmd.Del_From_Inventory.split("~,~"):
+					Game.inventory.removeItem(cmd.Dialogue_Speaker, delItem) # FIXME shouldn't be speaker...
 				#FIXME: Game.menu.refreshMenu(["inventory"]) # but only if open
 			if refresh: Game.sceneNode.refreshScene()
 	mode = MODES.READY
