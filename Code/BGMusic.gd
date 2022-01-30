@@ -12,3 +12,4 @@ func playSceneMusic(data):
 		stop()
 		play()
 	volume_db = float(data.Audio_Volume_Db)
+

@@ -138,6 +138,10 @@ func unloadScene():
 	while scriptManager.mode == scriptManager.MODES.RUNNING:
 		pass
 
+
+func playSound(d):
+	$BGMusic.playSceneMusic(d)
+
 func _input(event):
 	if event.is_action_pressed("ui_playable_next"):
 		cycleChar(1)

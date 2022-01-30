@@ -2,4 +2,5 @@ ID,Character,Image_Path,Image_Filename,Image_Extension,Shift_Dialogue_X,Shift_Di
 DEFAULT,DEFAULT,images/characters/,none,.png,17%,0%,DEFAULT,#000000,,-22%,-12%,fonts/,HussarBold-7mRE,.otf,25
 none,bird,,bird_neutral,,,,,#b63e26,#000000,,,,,,
 none,fish,,fish_neutral,,,,,#639752,#000000,,,,,,
-none,witch,,witch_neutral,,,,,#291e1b,,,,,,,
+none,witch,,witch_neutral,,,,,#291e1b,#000000,,,,,,
+happy,bird,,bird_happy,,,,,#b63e26,#000000,,,,,,

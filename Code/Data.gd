@@ -117,7 +117,13 @@ static func getFont(folder, file, ext):
 # https://github.com/godotengine/godot/issues/17748
 static func getAudio(folder, file, ext):
 	var fname = folder + file + ext
-	var stream = AudioStreamOGGVorbis.new()
+	var stream
+	if ext == ".ogg":
+		stream = AudioStreamOGGVorbis.new()
+	else:
+		stream =  AudioStreamSample.new()
+		stream.format = stream.FORMAT_16_BITS
+		stream.mix_rate = 48000
 	var afile = File.new()
 	if afile.open(fname, File.READ) == OK:
 		var bytes = afile.get_buffer(afile.get_len())

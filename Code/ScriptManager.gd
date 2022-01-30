@@ -160,6 +160,8 @@ func run(commands, actingObj=null):
 				Game.debugMessage(Game.CAT.SCRIPT, "Attempting to move %s to (%f.1, %f.1)" % [charID, dest.x, dest.y])
 				Game.sceneNode.walkmap.tryWalking(sprite, dest, true)
 				yield(self, "char_destination")
+			if (!Util.isnull(cmd.Audio_Filename)):
+				Game.sceneNode.playSound(cmd)
 			if (!Util.isnull(cmd.Dialogue_Line)):
 				Game.verboseMessage(Game.CAT.SCRIPT, "Dialogue: " + cmd.Dialogue_Line)
 				var speaker = cmd.Dialogue_Speaker

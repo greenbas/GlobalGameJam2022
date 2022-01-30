@@ -3,4 +3,4 @@ DEFAULT,Unknown,1,images/scenes/,intro,.png,images/scenes/,none,.png,images/walk
 dual,Surroundings,,,dual-rooms,,,,,,dual-rooms,,100%,,,,,
 unknown,Unknown,,,intro,,,,,,,,,,,,,
 fuzzy,Unknown,,,dual-fuzzy,,,,,,,,,,,,,
-flying,Sky,,,intro,,,,,,trigger,,,,,,,
+flying,Sky,,,flying,,,,,,trigger,,,,,,,
