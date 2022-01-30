@@ -2,6 +2,6 @@ ID,Type,Character,Always_On,Signal,Screen_X,Screen_Y,Base_X,Base_Y,Menu_Path,Men
 DEFAULT,,,0,,50%,50%,50%,50%,images/menu/,none,.png,0,0,,,,,images/menu/,none,none,.png,fonts/,HussarBold-7mRE,.ttf,25,0,25%,50%,50%,50%
 inventory,inventory,DEFAULT,,menu_inventory,,,,,,inventory,,4,3,27.50%,26.00%,15.00%,25.00%,,inv_space,inv_space,,,,,,,,,,
 savegames,savegames,DEFAULT,,menu_savegames,,,,,,inventory,,3,4,46.00%,24.00%,17.00%,19.00%,,inv_space,inv_space,,,,,,,,,,
-dialogue,dialogue,DEFAULT,,ui_dialogue,,100%,,110%,,dialogue,,1,1,7.00%,85.00%,80.00%,20.00%,,,,,,,,,1,100%,30%,0%,
+dialogue,dialogue,DEFAULT,,ui_dialogue,,100%,,110%,,dialogue,,1,1,5.00%,83.00%,80.00%,20.00%,,,,,,,,,1,100%,30%,0%,
 portrait,portrait,DEFAULT,,ui_dialogue,,,,,,none,,1,1,11.00%,85.00%,30.00%,30.00%,,,,,,,,,,,,,
 inventory_test,xinventory,DEFAULT,0,,100%,,100%,,,inventory_sideways_test,,1,6,92.00%,5.00%,17.00%,18.00%,,inv_space,inv_space,,,,,,,,,,
