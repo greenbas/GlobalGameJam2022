@@ -222,6 +222,9 @@ func run(commands, actingObj=null):
 								val.remove(0)
 								var sprite = Game.sceneNode.all_chars[fval[v]]
 								Game.sceneNode.walkmap.tryWalking(sprite, Vector2(x, y))
+								#while sprite.goal_path.size() > 0:
+								#	yield(get_tree().create_timer(.25), "timeout")
+								yield(self, "char_destination")
 							else:
 								Game.reportError(Game.CAT.SCRIPT, "Animate_Move requires Screen_X and Screen_Y as the first two values in Set_Column.")
 					Game.debugMessage(Game.CAT.SCRIPT, "%s: Setting %s to %s where %s=%s" % [tab, col, val, fcol, fval])
