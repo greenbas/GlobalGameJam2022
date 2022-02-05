@@ -56,9 +56,10 @@ _global_script_class_icons={
 
 [application]
 
-config/name="SAGE"
+config/name="Aquatori"
 run/main_scene="res://Code/Game.tscn"
-config/icon="res://icon.png"
+config/icon="res://Assets/icon.png"
+config/windows_native_icon="res://Assets/icon.ico"
 
 [autoload]
 
@@ -71,7 +72,6 @@ Game="*res://Code/Game.gd"
 window/size/width=1280
 window/size/height=720
 window/size/resizable=false
-window/size/fullscreen=true
 
 [input]
 

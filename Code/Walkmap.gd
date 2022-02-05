@@ -11,6 +11,7 @@ func lock():
 func getColour(posn):
 	if posn.x < 0 or posn.y < 0: return "#000000"
 	if posn.x >= scene.WIDTH or posn.y >= scene.HEIGHT: return "#000000"
+	if posn.x > data.get_width() or posn.y > data.get_height(): return "#000000"
 	var colour = data.get_pixelv(posn).to_html(false)
 	return "#" + colour
 func isWalkable(posn):
@@ -19,17 +20,21 @@ func isWalkable(posn):
 	return getColour(posn) != "#000000"
 
 func _input(event):
-	if Game.allGood() and Game.actionsAllowed():
-		var posn = get_viewport().get_mouse_position()
-		if event is InputEventMouseButton and event.pressed and not event.is_echo():
-			if event.button_index == BUTTON_LEFT:
-				scene.triggerClick(posn)
+	if Game.allGood():
+		if Game.actionsAllowed():
+			var posn = get_viewport().get_mouse_position()
+			if event is InputEventMouseButton and event.pressed and not event.is_echo():
+				if scene.scriptManager.inDialogue():
+					scene.scriptManager.endDialogue()
+				else:
+					if event.button_index == BUTTON_LEFT:
+						scene.triggerClick(posn)
+					else:
+						scene.triggerWalk(posn)
+			elif event is InputEventMouse:
+				scene.triggerHover(posn)
 			else:
-				scene.triggerWalk(posn)
-		elif event is InputEventMouse:
-			scene.triggerHover(posn)
-		else:
-			Game.menu.checkInput(event)
+				Game.menu.checkInput(event)
 
 # Movement
 var astar : AStar2D
@@ -48,7 +53,9 @@ func tryWalking(sprite, posn, retry=false):
 			found = true
 		else:
 			posn.y += GRID_SIZE
-	sprite.setGoal()
+	if (found):
+		Game.menu.clearMenu()
+		sprite.setGoal()
 
 func findPath(orig : Vector2, dest : Vector2):
 	var path = []

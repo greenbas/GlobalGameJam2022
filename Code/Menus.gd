@@ -91,6 +91,7 @@ enum STATES { BASE = 0, ON_ACTIONS, CHAR_MOVING, CHOOSE_SECOND }
 enum MENUS { WHEEL = 80, WHEEL_ITEM, SCREEN, SCREEN_ITEM } #, SCREEN_INV }
 var state = STATES.BASE
 var invOpen = false
+var dialOpen = false
 
 var actingObj
 var actingChar
@@ -163,9 +164,6 @@ func refreshMenu(refreshTypes = []):
 
 func drawActionWheel(character, posn, obj):
 	# Draw the action wheel
-	scene.drawItems("*", [actionMenu.data], scene.all_menus, MENUS.WHEEL)
-	actionMenu = scene.all_menus[actionMenu.data.ID]
-	actionMenu.updateMe(posn, character)
 	var onType = "On_" + Game.getTabName(obj.Tab)
 	var myList = Game.listWhere(Game.ENTITY.ACTION, ["Character", onType], [character.ID, "1"], true, false)
 	var defaultList = Game.listWhere(Game.ENTITY.ACTION, ["Character", onType], ["DEFAULT", "1"], true, false)
@@ -180,10 +178,14 @@ func drawActionWheel(character, posn, obj):
 			if Game.sceneNode.scriptManager.hasScript(character.ID + "-" + a.ID + "-" + obj.ID):
 				filteredList.push_back(a)
 		actionList = filteredList
-	scene.drawItems("*", actionList, scene.all_menus, MENUS.WHEEL_ITEM)
-	for a in actionList:
-		var aItem = scene.all_menus[a.ID]
-		aItem.updateMe(actionMenu)
+	if len(actionList) > 0:
+		scene.drawItems("*", [actionMenu.data], scene.all_menus, MENUS.WHEEL)
+		actionMenu = scene.all_menus[actionMenu.data.ID]
+		actionMenu.updateMe(posn, character)
+		scene.drawItems("*", actionList, scene.all_menus, MENUS.WHEEL_ITEM)
+		for a in actionList:
+			var aItem = scene.all_menus[a.ID]
+			aItem.updateMe(actionMenu)
 
 class MenuData:
 	extends Sprite

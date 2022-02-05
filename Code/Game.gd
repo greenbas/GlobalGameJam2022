@@ -300,10 +300,12 @@ func beginSpeaking(c, e):
 	speakerEmotion = Game.entityWhere(Game.ENTITY.EMOTIONS, ["Character", "ID"], [c.ID, e])
 	menu.openScreen(dialogueMenu)
 	menu.openScreen(dialoguePortrait)
+	menu.dialOpen = true
 	#Input.parse_input_event(ui_dialogue)
 func endSpeaking():
 	#Input.parse_input_event(ui_dialogue)
 	menu.clearMenu()
+	menu.dialOpen = true
 	
 
 func sendSignal(s):

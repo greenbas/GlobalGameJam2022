@@ -182,7 +182,15 @@ func run(commands, actingObj=null):
 						sp_label.text = emo.Label
 					Game.sceneNode.setLabelFont(sp_label, emo)
 				var seconds = 2.5 * float(cmd.Dialogue_Duration) / 100.0 / Game.getFF()
-				yield(Game.wait(seconds), "timeout")
+				# Wait on a loop; the loop may be ended early from elsewhere
+				# DO NOT PUT THIS INSIDE A FUNCTION
+				dialOpen = true
+				var waited = 0.0
+				while dialOpen and waited < seconds: # dialOpen may be set to false outside this function
+					yield(Game.wait(incr_size), "timeout")
+					waited += incr_size
+				dialOpen = false
+				# Done wait loop
 				sp_text.text = ""
 				sp_label.text = ""
 				Game.endSpeaking()
@@ -317,3 +325,9 @@ signal char_destination
 func charAtDestination():
 	emit_signal("char_destination")
 
+var dialOpen = false
+var incr_size = 0.1 # time in seconds between checking for dialOpen to be false
+func inDialogue():
+	return dialOpen
+func endDialogue():
+	dialOpen = false
