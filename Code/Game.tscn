@@ -298,8 +298,8 @@ __meta__ = {
 [node name="SAGE" type="Label" parent="Scene/GameSelect/Background/MarginContainer/VBoxContainer/Header/VBoxContainer"]
 margin_right = 700.0
 margin_bottom = 93.0
-custom_colors/font_color = Color( 0.635294, 0, 0, 1 )
 custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.635294, 0, 0, 1 )
 text = "SAGE"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -309,8 +309,8 @@ __meta__ = {
 margin_top = 97.0
 margin_right = 700.0
 margin_bottom = 126.0
-custom_colors/font_color = Color( 0.635294, 0, 0, 1 )
 custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.635294, 0, 0, 1 )
 text = "Spreadsheet Adventure-Game Engine"
 
 [node name="HSeparator" type="HSeparator" parent="Scene/GameSelect/Background/MarginContainer/VBoxContainer/Header/VBoxContainer"]
@@ -375,7 +375,6 @@ rect_clip_content = true
 mouse_filter = 1
 size_flags_horizontal = 4
 clip_text = true
-
 [connection signal="pressed" from="Scene/DebugLayer/Debugger/Buttons/Speed/SpeedButton" to="Scene/DebugLayer/Debugger" method="_on_SpeedButton_pressed"]
 [connection signal="pressed" from="Scene/DebugLayer/Debugger/Buttons/Speed/Speed-Slow" to="Scene/DebugLayer/Debugger" method="_on_SpeedSlow_pressed"]
 [connection signal="pressed" from="Scene/DebugLayer/Debugger/Buttons/Speed/Speedx1" to="Scene/DebugLayer/Debugger" method="_on_Speedx1_pressed"]

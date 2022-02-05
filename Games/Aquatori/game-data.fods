@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <office:document xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0" xmlns:style="urn:oasis:names:tc:opendocument:xmlns:style:1.0" xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0" xmlns:table="urn:oasis:names:tc:opendocument:xmlns:table:1.0" xmlns:draw="urn:oasis:names:tc:opendocument:xmlns:drawing:1.0" xmlns:fo="urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:meta="urn:oasis:names:tc:opendocument:xmlns:meta:1.0" xmlns:number="urn:oasis:names:tc:opendocument:xmlns:datastyle:1.0" xmlns:presentation="urn:oasis:names:tc:opendocument:xmlns:presentation:1.0" xmlns:svg="urn:oasis:names:tc:opendocument:xmlns:svg-compatible:1.0" xmlns:chart="urn:oasis:names:tc:opendocument:xmlns:chart:1.0" xmlns:dr3d="urn:oasis:names:tc:opendocument:xmlns:dr3d:1.0" xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns:form="urn:oasis:names:tc:opendocument:xmlns:form:1.0" xmlns:script="urn:oasis:names:tc:opendocument:xmlns:script:1.0" xmlns:config="urn:oasis:names:tc:opendocument:xmlns:config:1.0" xmlns:ooo="http://openoffice.org/2004/office" xmlns:ooow="http://openoffice.org/2004/writer" xmlns:oooc="http://openoffice.org/2004/calc" xmlns:dom="http://www.w3.org/2001/xml-events" xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rpt="http://openoffice.org/2005/report" xmlns:of="urn:oasis:names:tc:opendocument:xmlns:of:1.2" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:grddl="http://www.w3.org/2003/g/data-view#" xmlns:tableooo="http://openoffice.org/2009/table" xmlns:drawooo="http://openoffice.org/2010/draw" xmlns:calcext="urn:org:documentfoundation:names:experimental:calc:xmlns:calcext:1.0" xmlns:loext="urn:org:documentfoundation:names:experimental:office:xmlns:loext:1.0" xmlns:field="urn:openoffice:names:experimental:ooo-ms-interop:xmlns:field:1.0" xmlns:formx="urn:openoffice:names:experimental:ooxml-odf-interop:xmlns:form:1.0" xmlns:css3t="http://www.w3.org/TR/css3-text/" office:version="1.2" office:mimetype="application/vnd.oasis.opendocument.spreadsheet">
- <office:meta><meta:initial-creator>L S</meta:initial-creator><meta:creation-date>2020-12-06T11:06:30.32</meta:creation-date><dc:date>2022-01-31T11:27:57.640000000</dc:date><meta:editing-duration>P5DT23H54M38S</meta:editing-duration><meta:editing-cycles>719</meta:editing-cycles><meta:generator>LibreOffice/6.1.3.2$Windows_X86_64 LibreOffice_project/86daf60bf00efa86ad547e59e09d6bb77c699acb</meta:generator><meta:document-statistic meta:table-count="12" meta:cell-count="1555" meta:object-count="0"/><meta:user-defined meta:name=""/></office:meta>
+ <office:meta><meta:initial-creator>L S</meta:initial-creator><meta:creation-date>2020-12-06T11:06:30.32</meta:creation-date><dc:date>2022-02-05T11:54:46.486000000</dc:date><meta:editing-duration>P5DT23H59M8S</meta:editing-duration><meta:editing-cycles>721</meta:editing-cycles><meta:generator>LibreOffice/6.1.3.2$Windows_X86_64 LibreOffice_project/86daf60bf00efa86ad547e59e09d6bb77c699acb</meta:generator><meta:document-statistic meta:table-count="12" meta:cell-count="1562" meta:object-count="0"/><meta:user-defined meta:name=""/></office:meta>
  <office:settings>
   <config:config-item-set config:name="ooo:view-settings">
    <config:config-item config:name="VisibleAreaTop" config:type="int">0</config:config-item>
    <config:config-item config:name="VisibleAreaLeft" config:type="int">0</config:config-item>
-   <config:config-item config:name="VisibleAreaWidth" config:type="int">51816</config:config-item>
-   <config:config-item config:name="VisibleAreaHeight" config:type="int">3164</config:config-item>
+   <config:config-item config:name="VisibleAreaWidth" config:type="int">54396</config:config-item>
+   <config:config-item config:name="VisibleAreaHeight" config:type="int">56213</config:config-item>
    <config:config-item-map-indexed config:name="Views">
     <config:config-item-map-entry>
      <config:config-item config:name="ViewId" config:type="string">view1</config:config-item>
@@ -182,7 +182,7 @@
        <config:config-item config:name="HorizontalSplitPosition" config:type="int">0</config:config-item>
        <config:config-item config:name="VerticalSplitPosition" config:type="int">0</config:config-item>
        <config:config-item config:name="ActiveSplitRange" config:type="short">2</config:config-item>
-       <config:config-item config:name="PositionLeft" config:type="int">5</config:config-item>
+       <config:config-item config:name="PositionLeft" config:type="int">0</config:config-item>
        <config:config-item config:name="PositionRight" config:type="int">0</config:config-item>
        <config:config-item config:name="PositionTop" config:type="int">0</config:config-item>
        <config:config-item config:name="PositionBottom" config:type="int">0</config:config-item>
@@ -193,8 +193,8 @@
        <config:config-item config:name="AnchoredTextOverflowLegacy" config:type="boolean">false</config:config-item>
       </config:config-item-map-entry>
       <config:config-item-map-entry config:name="Script">
-       <config:config-item config:name="CursorPositionX" config:type="int">19</config:config-item>
-       <config:config-item config:name="CursorPositionY" config:type="int">87</config:config-item>
+       <config:config-item config:name="CursorPositionX" config:type="int">6</config:config-item>
+       <config:config-item config:name="CursorPositionY" config:type="int">6</config:config-item>
        <config:config-item config:name="HorizontalSplitMode" config:type="short">0</config:config-item>
        <config:config-item config:name="VerticalSplitMode" config:type="short">2</config:config-item>
        <config:config-item config:name="HorizontalSplitPosition" config:type="int">0</config:config-item>
@@ -203,7 +203,7 @@
        <config:config-item config:name="PositionLeft" config:type="int">0</config:config-item>
        <config:config-item config:name="PositionRight" config:type="int">0</config:config-item>
        <config:config-item config:name="PositionTop" config:type="int">0</config:config-item>
-       <config:config-item config:name="PositionBottom" config:type="int">71</config:config-item>
+       <config:config-item config:name="PositionBottom" config:type="int">2</config:config-item>
        <config:config-item config:name="ZoomType" config:type="short">0</config:config-item>
        <config:config-item config:name="ZoomValue" config:type="int">100</config:config-item>
        <config:config-item config:name="PageViewZoomValue" config:type="int">60</config:config-item>
@@ -306,6 +306,7 @@
 
       
 
+      
       
       
       
@@ -673,12 +674,12 @@
    <style:table-cell-properties fo:background-color="#000000"/>
    <style:text-properties fo:color="#ffffff" fo:font-weight="bold" style:font-weight-asian="bold" style:font-weight-complex="bold"/>
   </style:style>
+  <style:style style:name="ce4" style:family="table-cell" style:parent-style-name="Default">
+   <style:text-properties fo:color="#ce181e"/>
+  </style:style>
   <style:style style:name="ce3" style:family="table-cell" style:parent-style-name="Default">
    <style:table-cell-properties fo:background-color="#77bc65"/>
    <style:text-properties fo:font-weight="bold" style:font-weight-asian="bold" style:font-weight-complex="bold"/>
-  </style:style>
-  <style:style style:name="ce4" style:family="table-cell" style:parent-style-name="Default">
-   <style:text-properties fo:color="#ce181e"/>
   </style:style>
   <style:style style:name="ce5" style:family="table-cell" style:parent-style-name="Default">
    <style:text-properties style:use-window-font-color="true"/>
@@ -732,11 +733,11 @@
    <style:table-cell-properties style:text-align-source="fix" style:repeat-content="false"/>
    <style:paragraph-properties fo:text-align="start" fo:margin-left="0mm"/>
   </style:style>
-  <style:style style:name="ce20" style:family="table-cell" style:parent-style-name="Default">
+  <style:style style:name="ce40" style:family="table-cell" style:parent-style-name="Default">
    <style:table-cell-properties fo:background-color="#ffde59" style:text-align-source="fix" style:repeat-content="false"/>
    <style:paragraph-properties fo:text-align="start" fo:margin-left="0mm"/>
   </style:style>
-  <style:style style:name="ce21" style:family="table-cell" style:parent-style-name="Default">
+  <style:style style:name="ce42" style:family="table-cell" style:parent-style-name="Default">
    <style:table-cell-properties fo:background-color="#ff972f" style:text-align-source="fix" style:repeat-content="false"/>
    <style:paragraph-properties fo:text-align="start" fo:margin-left="0mm"/>
   </style:style>
@@ -758,7 +759,7 @@
    <style:paragraph-properties fo:text-align="start" fo:margin-left="0mm"/>
    <style:text-properties fo:font-weight="bold" style:font-weight-asian="bold" style:font-weight-complex="bold"/>
   </style:style>
-  <style:style style:name="ce26" style:family="table-cell" style:parent-style-name="Default">
+  <style:style style:name="ce57" style:family="table-cell" style:parent-style-name="Default">
    <style:table-cell-properties fo:background-color="#66cc99" style:text-align-source="fix" style:repeat-content="false"/>
    <style:paragraph-properties fo:text-align="start" fo:margin-left="0mm"/>
   </style:style>
@@ -793,7 +794,7 @@
    <style:paragraph-properties fo:text-align="start" fo:margin-left="0mm"/>
    <style:text-properties fo:font-weight="bold" style:font-weight-asian="bold" style:font-weight-complex="bold"/>
   </style:style>
-  <style:style style:name="ce34" style:family="table-cell" style:parent-style-name="Default">
+  <style:style style:name="ce72" style:family="table-cell" style:parent-style-name="Default">
    <style:table-cell-properties fo:background-color="#99ffcc" style:text-align-source="fix" style:repeat-content="false"/>
    <style:paragraph-properties fo:text-align="start" fo:margin-left="0mm"/>
   </style:style>
@@ -802,7 +803,7 @@
    <style:paragraph-properties fo:text-align="start" fo:margin-left="0mm"/>
    <style:text-properties fo:font-weight="bold" style:font-weight-asian="bold" style:font-weight-complex="bold"/>
   </style:style>
-  <style:style style:name="ce40" style:family="table-cell" style:parent-style-name="Default">
+  <style:style style:name="ce74" style:family="table-cell" style:parent-style-name="Default">
    <style:table-cell-properties fo:background-color="#66ccff" style:text-align-source="fix" style:repeat-content="false"/>
    <style:paragraph-properties fo:text-align="start" fo:margin-left="0mm"/>
   </style:style>
@@ -1148,15 +1149,15 @@
  <office:body>
   <office:spreadsheet>
    <table:content-validations>
-    <table:content-validation table:name="val1" table:condition="of:cell-content-is-in-list([$Characters.$A$2:$Characters.$A$993])" table:allow-empty-cell="true" table:display-list="unsorted" table:base-cell-address="Script.A13"/>
-    <table:content-validation table:name="val2" table:condition="of:cell-content-is-in-list([$Actions.$A$3:$Actions.$A$90])" table:allow-empty-cell="true" table:display-list="unsorted" table:base-cell-address="Script.C13"/>
+    <table:content-validation table:name="val1" table:condition="of:cell-content-is-in-list([$Characters.$A$2:$Characters.$A$993])" table:allow-empty-cell="true" table:display-list="unsorted" table:base-cell-address="Script.A14"/>
+    <table:content-validation table:name="val2" table:condition="of:cell-content-is-in-list([$Actions.$A$3:$Actions.$A$90])" table:allow-empty-cell="true" table:display-list="unsorted" table:base-cell-address="Script.C14"/>
     <table:content-validation table:name="val3" table:condition="of:cell-content-is-in-list([$Characters.$A$2:$Characters.$A$993])" table:allow-empty-cell="true" table:display-list="unsorted" table:base-cell-address="Script.D2"/>
-    <table:content-validation table:name="val4" table:condition="of:cell-content-is-in-list(Scene_List)" table:allow-empty-cell="true" table:display-list="unsorted" table:base-cell-address="Script.J4"/>
+    <table:content-validation table:name="val4" table:condition="of:cell-content-is-in-list(Scene_List)" table:allow-empty-cell="true" table:display-list="unsorted" table:base-cell-address="Script.J5"/>
     <table:content-validation table:name="val5" table:condition="of:cell-content-is-in-list([$ObjGroups.$A$3:$ObjGroups.$A$999])" table:allow-empty-cell="true" table:display-list="unsorted" table:base-cell-address="Script.E2"/>
-    <table:content-validation table:name="val6" table:condition="of:cell-content-is-in-list(ObjGroup_List)" table:allow-empty-cell="true" table:display-list="unsorted" table:base-cell-address="Script.K56"/>
+    <table:content-validation table:name="val6" table:condition="of:cell-content-is-in-list(ObjGroup_List)" table:allow-empty-cell="true" table:display-list="unsorted" table:base-cell-address="Script.K57"/>
     <table:content-validation table:name="val7" table:condition="of:cell-content-is-in-list([$Objects.$B$3:$Objects.$B$9974])" table:allow-empty-cell="true" table:display-list="unsorted" table:base-cell-address="Script.F2"/>
-    <table:content-validation table:name="val8" table:condition="of:cell-content-is-in-list(Scene_List)" table:allow-empty-cell="true" table:display-list="unsorted" table:base-cell-address="Script.M4"/>
-    <table:content-validation table:name="val9" table:condition="of:cell-content-is-in-list([$Characters.$A$2:$Characters.$A$993])" table:allow-empty-cell="true" table:display-list="unsorted" table:base-cell-address="Script.J13"/>
+    <table:content-validation table:name="val8" table:condition="of:cell-content-is-in-list(Scene_List)" table:allow-empty-cell="true" table:display-list="unsorted" table:base-cell-address="Script.M5"/>
+    <table:content-validation table:name="val9" table:condition="of:cell-content-is-in-list([$Characters.$A$2:$Characters.$A$993])" table:allow-empty-cell="true" table:display-list="unsorted" table:base-cell-address="Script.J14"/>
     <table:content-validation table:name="val10" table:condition="of:cell-content-is-in-list($emotions.$#ref!#ref!#ref!#ref!#ref!#ref!#ref!#ref!#ref!#ref!#ref!#ref!#ref!#ref!#ref!#ref!#ref!#ref!#ref!#ref!#ref!#ref!#ref!#ref!#ref!#ref!#ref!#ref!#ref!#ref!#ref!#ref!#ref!#ref!#ref!#ref!#ref!#ref!#ref!#ref!#ref!#ref!#ref!#ref!#ref!#ref!#ref!#ref!#ref!#ref!#ref!#ref!#ref!#ref!#ref!#ref!#ref!#ref!#ref!#ref!#ref!#ref!#ref!#ref!#ref!#ref!#ref!#ref!#ref!#ref!$2:#REF!)" table:allow-empty-cell="true" table:display-list="unsorted" table:base-cell-address="Script.K2"/>
    </table:content-validations>
    <table:table table:name="Script" table:style-name="ta1" table:print="false">
@@ -1168,27 +1169,27 @@
     <table:table-column table:style-name="co5" table:default-cell-style-name="ce92"/>
     <table:table-column table:style-name="co6" table:default-cell-style-name="ce92"/>
     <table:table-column table:style-name="co7" table:default-cell-style-name="ce39"/>
-    <table:table-column table:style-name="co8" table:number-columns-repeated="4" table:default-cell-style-name="ce26"/>
+    <table:table-column table:style-name="co8" table:number-columns-repeated="4" table:default-cell-style-name="ce57"/>
     <table:table-column table:style-name="co9" table:number-columns-repeated="3" table:default-cell-style-name="ce44"/>
     <table:table-column table:style-name="co10" table:default-cell-style-name="ce44"/>
-    <table:table-column table:style-name="co11" table:default-cell-style-name="ce34"/>
-    <table:table-column table:style-name="co12" table:default-cell-style-name="ce34"/>
-    <table:table-column table:style-name="co13" table:default-cell-style-name="ce34"/>
-    <table:table-column table:style-name="co14" table:default-cell-style-name="ce40"/>
-    <table:table-column table:style-name="co15" table:default-cell-style-name="ce40"/>
+    <table:table-column table:style-name="co11" table:default-cell-style-name="ce72"/>
+    <table:table-column table:style-name="co12" table:default-cell-style-name="ce72"/>
+    <table:table-column table:style-name="co13" table:default-cell-style-name="ce72"/>
+    <table:table-column table:style-name="co14" table:default-cell-style-name="ce74"/>
+    <table:table-column table:style-name="co15" table:default-cell-style-name="ce74"/>
     <table:table-column table:style-name="co16" table:default-cell-style-name="ce56"/>
     <table:table-column table:style-name="co17" table:default-cell-style-name="ce61"/>
-    <table:table-column table:style-name="co7" table:default-cell-style-name="ce40"/>
-    <table:table-column table:style-name="co18" table:default-cell-style-name="ce40"/>
-    <table:table-column table:style-name="co19" table:default-cell-style-name="ce40"/>
-    <table:table-column table:style-name="co20" table:default-cell-style-name="ce40"/>
+    <table:table-column table:style-name="co7" table:default-cell-style-name="ce74"/>
+    <table:table-column table:style-name="co18" table:default-cell-style-name="ce74"/>
+    <table:table-column table:style-name="co19" table:default-cell-style-name="ce74"/>
+    <table:table-column table:style-name="co20" table:default-cell-style-name="ce74"/>
     <table:table-column table:style-name="co21" table:default-cell-style-name="ce92"/>
     <table:table-column table:style-name="co22" table:default-cell-style-name="ce92"/>
     <table:table-column table:style-name="co23" table:default-cell-style-name="ce92"/>
     <table:table-column table:style-name="co24" table:default-cell-style-name="ce92"/>
     <table:table-column table:style-name="co25" table:default-cell-style-name="ce92"/>
     <table:table-column table:style-name="co9" table:number-columns-repeated="3" table:default-cell-style-name="ce44"/>
-    <table:table-column table:style-name="co8" table:number-columns-repeated="4" table:default-cell-style-name="ce26"/>
+    <table:table-column table:style-name="co8" table:number-columns-repeated="4" table:default-cell-style-name="ce57"/>
     <table:table-column table:style-name="co9" table:default-cell-style-name="ce44"/>
     <table:table-column table:style-name="co23" table:number-columns-repeated="985" table:default-cell-style-name="ce92"/>
     <table:table-row table:style-name="ro1">
@@ -1367,13 +1368,53 @@
      <table:table-cell table:style-name="ce91" table:number-columns-repeated="985"/>
     </table:table-row>
     <table:table-row table:style-name="ro2">
+     <table:table-cell table:style-name="ce4" table:formula="of:=IF(LEN([.H3]&amp;[.I3]&amp;[.J3]&amp;[.K3])&gt;0;[.D3]&amp;&quot;-&quot;&amp;[.E3]&amp;&quot;-&quot;&amp;[.H3]&amp;[.I3]&amp;[.J3]&amp;[.K3];[.D3]&amp;&quot;-&quot;&amp;[.P3]&amp;&quot;-&quot;&amp;[.Q3])&amp;IF(LEN([.AI3]&amp;[.AJ3]&amp;[.AK3]&amp;[.AL3])&gt;0;&quot;-&quot;&amp;[.AI3]&amp;[.AJ3]&amp;[.AK3]&amp;[.AL3];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-look-dual" calcext:value-type="string">
+      <text:p>DEFAULT-look-dual</text:p>
+     </table:table-cell>
+     <table:table-cell office:value-type="float" office:value="1" calcext:value-type="float">
+      <text:p>1</text:p>
+     </table:table-cell>
+     <table:table-cell/>
+     <table:table-cell table:content-validation-name="val1" office:value-type="string" calcext:value-type="string">
+      <text:p>DEFAULT</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val2" office:value-type="string" calcext:value-type="string">
+      <text:p>look</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="2"/>
+     <table:table-cell table:content-validation-name="val3"/>
+     <table:table-cell table:content-validation-name="val4" office:value-type="string" calcext:value-type="string">
+      <text:p>dual</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val5"/>
+     <table:table-cell table:number-columns-repeated="5"/>
+     <table:table-cell table:content-validation-name="val8"/>
+     <table:table-cell table:number-columns-repeated="2"/>
+     <table:table-cell table:content-validation-name="val9" office:value-type="string" calcext:value-type="string">
+      <text:p>bird</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val10"/>
+     <table:table-cell/>
+     <table:table-cell office:value-type="string" calcext:value-type="string">
+      <text:p>There sure is a lot of clutter in this place.</text:p>
+     </table:table-cell>
+     <table:table-cell table:content-validation-name="val9" table:number-columns-repeated="4"/>
+     <table:table-cell table:style-name="ce66" table:number-columns-repeated="3"/>
+     <table:table-cell table:style-name="ce68" table:number-columns-repeated="2"/>
+     <table:table-cell table:number-columns-repeated="3"/>
+     <table:table-cell table:content-validation-name="val3"/>
+     <table:table-cell table:content-validation-name="val4"/>
+     <table:table-cell table:content-validation-name="val5"/>
+     <table:table-cell table:number-columns-repeated="987"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
      <table:table-cell table:style-name="ce3" office:value-type="string" calcext:value-type="string">
       <text:p>Aqua Puzzles</text:p>
      </table:table-cell>
      <table:table-cell table:style-name="ce13" table:number-columns-repeated="1023"/>
     </table:table-row>
     <table:table-row table:style-name="ro2">
-     <table:table-cell table:formula="of:=IF(LEN([.H4]&amp;[.I4]&amp;[.J4]&amp;[.K4])&gt;0;[.D4]&amp;&quot;-&quot;&amp;[.E4]&amp;&quot;-&quot;&amp;[.H4]&amp;[.I4]&amp;[.J4]&amp;[.K4];[.D4]&amp;&quot;-&quot;&amp;[.P4]&amp;&quot;-&quot;&amp;[.Q4])&amp;IF(LEN([.AI4]&amp;[.AJ4]&amp;[.AK4]&amp;[.AL4])&gt;0;&quot;-&quot;&amp;[.AI4]&amp;[.AJ4]&amp;[.AK4]&amp;[.AL4];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-look-apple" calcext:value-type="string">
+     <table:table-cell table:formula="of:=IF(LEN([.H5]&amp;[.I5]&amp;[.J5]&amp;[.K5])&gt;0;[.D5]&amp;&quot;-&quot;&amp;[.E5]&amp;&quot;-&quot;&amp;[.H5]&amp;[.I5]&amp;[.J5]&amp;[.K5];[.D5]&amp;&quot;-&quot;&amp;[.P5]&amp;&quot;-&quot;&amp;[.Q5])&amp;IF(LEN([.AI5]&amp;[.AJ5]&amp;[.AK5]&amp;[.AL5])&gt;0;&quot;-&quot;&amp;[.AI5]&amp;[.AJ5]&amp;[.AK5]&amp;[.AL5];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-look-apple" calcext:value-type="string">
       <text:p>DEFAULT-look-apple</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="1" calcext:value-type="float">
@@ -1414,7 +1455,7 @@
      <table:table-cell table:number-columns-repeated="987"/>
     </table:table-row>
     <table:table-row table:style-name="ro2">
-     <table:table-cell table:formula="of:=IF(LEN([.H5]&amp;[.I5]&amp;[.J5]&amp;[.K5])&gt;0;[.D5]&amp;&quot;-&quot;&amp;[.E5]&amp;&quot;-&quot;&amp;[.H5]&amp;[.I5]&amp;[.J5]&amp;[.K5];[.D5]&amp;&quot;-&quot;&amp;[.P5]&amp;&quot;-&quot;&amp;[.Q5])&amp;IF(LEN([.AI5]&amp;[.AJ5]&amp;[.AK5]&amp;[.AL5])&gt;0;&quot;-&quot;&amp;[.AI5]&amp;[.AJ5]&amp;[.AK5]&amp;[.AL5];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-handle-apple" calcext:value-type="string">
+     <table:table-cell table:formula="of:=IF(LEN([.H6]&amp;[.I6]&amp;[.J6]&amp;[.K6])&gt;0;[.D6]&amp;&quot;-&quot;&amp;[.E6]&amp;&quot;-&quot;&amp;[.H6]&amp;[.I6]&amp;[.J6]&amp;[.K6];[.D6]&amp;&quot;-&quot;&amp;[.P6]&amp;&quot;-&quot;&amp;[.Q6])&amp;IF(LEN([.AI6]&amp;[.AJ6]&amp;[.AK6]&amp;[.AL6])&gt;0;&quot;-&quot;&amp;[.AI6]&amp;[.AJ6]&amp;[.AK6]&amp;[.AL6];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-handle-apple" calcext:value-type="string">
       <text:p>DEFAULT-handle-apple</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="1" calcext:value-type="float">
@@ -1475,7 +1516,7 @@
      <table:table-cell table:number-columns-repeated="987"/>
     </table:table-row>
     <table:table-row table:style-name="ro2">
-     <table:table-cell table:formula="of:=IF(LEN([.H6]&amp;[.I6]&amp;[.J6]&amp;[.K6])&gt;0;[.D6]&amp;&quot;-&quot;&amp;[.E6]&amp;&quot;-&quot;&amp;[.H6]&amp;[.I6]&amp;[.J6]&amp;[.K6];[.D6]&amp;&quot;-&quot;&amp;[.P6]&amp;&quot;-&quot;&amp;[.Q6])&amp;IF(LEN([.AI6]&amp;[.AJ6]&amp;[.AK6]&amp;[.AL6])&gt;0;&quot;-&quot;&amp;[.AI6]&amp;[.AJ6]&amp;[.AK6]&amp;[.AL6];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-look-mirror" calcext:value-type="string">
+     <table:table-cell table:formula="of:=IF(LEN([.H7]&amp;[.I7]&amp;[.J7]&amp;[.K7])&gt;0;[.D7]&amp;&quot;-&quot;&amp;[.E7]&amp;&quot;-&quot;&amp;[.H7]&amp;[.I7]&amp;[.J7]&amp;[.K7];[.D7]&amp;&quot;-&quot;&amp;[.P7]&amp;&quot;-&quot;&amp;[.Q7])&amp;IF(LEN([.AI7]&amp;[.AJ7]&amp;[.AK7]&amp;[.AL7])&gt;0;&quot;-&quot;&amp;[.AI7]&amp;[.AJ7]&amp;[.AK7]&amp;[.AL7];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-look-mirror" calcext:value-type="string">
       <text:p>DEFAULT-look-mirror</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="1" calcext:value-type="float">
@@ -1516,7 +1557,7 @@
      <table:table-cell table:number-columns-repeated="987"/>
     </table:table-row>
     <table:table-row table:style-name="ro2">
-     <table:table-cell table:formula="of:=IF(LEN([.H7]&amp;[.I7]&amp;[.J7]&amp;[.K7])&gt;0;[.D7]&amp;&quot;-&quot;&amp;[.E7]&amp;&quot;-&quot;&amp;[.H7]&amp;[.I7]&amp;[.J7]&amp;[.K7];[.D7]&amp;&quot;-&quot;&amp;[.P7]&amp;&quot;-&quot;&amp;[.Q7])&amp;IF(LEN([.AI7]&amp;[.AJ7]&amp;[.AK7]&amp;[.AL7])&gt;0;&quot;-&quot;&amp;[.AI7]&amp;[.AJ7]&amp;[.AK7]&amp;[.AL7];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-handle-mirror" calcext:value-type="string">
+     <table:table-cell table:formula="of:=IF(LEN([.H8]&amp;[.I8]&amp;[.J8]&amp;[.K8])&gt;0;[.D8]&amp;&quot;-&quot;&amp;[.E8]&amp;&quot;-&quot;&amp;[.H8]&amp;[.I8]&amp;[.J8]&amp;[.K8];[.D8]&amp;&quot;-&quot;&amp;[.P8]&amp;&quot;-&quot;&amp;[.Q8])&amp;IF(LEN([.AI8]&amp;[.AJ8]&amp;[.AK8]&amp;[.AL8])&gt;0;&quot;-&quot;&amp;[.AI8]&amp;[.AJ8]&amp;[.AK8]&amp;[.AL8];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-handle-mirror" calcext:value-type="string">
       <text:p>DEFAULT-handle-mirror</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="1" calcext:value-type="float">
@@ -1563,7 +1604,7 @@
      <table:table-cell table:number-columns-repeated="987"/>
     </table:table-row>
     <table:table-row table:style-name="ro2">
-     <table:table-cell table:formula="of:=IF(LEN([.H8]&amp;[.I8]&amp;[.J8]&amp;[.K8])&gt;0;[.D8]&amp;&quot;-&quot;&amp;[.E8]&amp;&quot;-&quot;&amp;[.H8]&amp;[.I8]&amp;[.J8]&amp;[.K8];[.D8]&amp;&quot;-&quot;&amp;[.P8]&amp;&quot;-&quot;&amp;[.Q8])&amp;IF(LEN([.AI8]&amp;[.AJ8]&amp;[.AK8]&amp;[.AL8])&gt;0;&quot;-&quot;&amp;[.AI8]&amp;[.AJ8]&amp;[.AK8]&amp;[.AL8];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-look-pot" calcext:value-type="string">
+     <table:table-cell table:formula="of:=IF(LEN([.H9]&amp;[.I9]&amp;[.J9]&amp;[.K9])&gt;0;[.D9]&amp;&quot;-&quot;&amp;[.E9]&amp;&quot;-&quot;&amp;[.H9]&amp;[.I9]&amp;[.J9]&amp;[.K9];[.D9]&amp;&quot;-&quot;&amp;[.P9]&amp;&quot;-&quot;&amp;[.Q9])&amp;IF(LEN([.AI9]&amp;[.AJ9]&amp;[.AK9]&amp;[.AL9])&gt;0;&quot;-&quot;&amp;[.AI9]&amp;[.AJ9]&amp;[.AK9]&amp;[.AL9];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-look-pot" calcext:value-type="string">
       <text:p>DEFAULT-look-pot</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="1" calcext:value-type="float">
@@ -1607,7 +1648,7 @@
      <table:table-cell table:number-columns-repeated="987"/>
     </table:table-row>
     <table:table-row table:style-name="ro2">
-     <table:table-cell table:formula="of:=IF(LEN([.H9]&amp;[.I9]&amp;[.J9]&amp;[.K9])&gt;0;[.D9]&amp;&quot;-&quot;&amp;[.E9]&amp;&quot;-&quot;&amp;[.H9]&amp;[.I9]&amp;[.J9]&amp;[.K9];[.D9]&amp;&quot;-&quot;&amp;[.P9]&amp;&quot;-&quot;&amp;[.Q9])&amp;IF(LEN([.AI9]&amp;[.AJ9]&amp;[.AK9]&amp;[.AL9])&gt;0;&quot;-&quot;&amp;[.AI9]&amp;[.AJ9]&amp;[.AK9]&amp;[.AL9];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-look-pot" calcext:value-type="string">
+     <table:table-cell table:formula="of:=IF(LEN([.H10]&amp;[.I10]&amp;[.J10]&amp;[.K10])&gt;0;[.D10]&amp;&quot;-&quot;&amp;[.E10]&amp;&quot;-&quot;&amp;[.H10]&amp;[.I10]&amp;[.J10]&amp;[.K10];[.D10]&amp;&quot;-&quot;&amp;[.P10]&amp;&quot;-&quot;&amp;[.Q10])&amp;IF(LEN([.AI10]&amp;[.AJ10]&amp;[.AK10]&amp;[.AL10])&gt;0;&quot;-&quot;&amp;[.AI10]&amp;[.AJ10]&amp;[.AK10]&amp;[.AL10];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-look-pot" calcext:value-type="string">
       <text:p>DEFAULT-look-pot</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="2" calcext:value-type="float">
@@ -1653,7 +1694,7 @@
      <table:table-cell table:number-columns-repeated="987"/>
     </table:table-row>
     <table:table-row table:style-name="ro2">
-     <table:table-cell table:formula="of:=IF(LEN([.H10]&amp;[.I10]&amp;[.J10]&amp;[.K10])&gt;0;[.D10]&amp;&quot;-&quot;&amp;[.E10]&amp;&quot;-&quot;&amp;[.H10]&amp;[.I10]&amp;[.J10]&amp;[.K10];[.D10]&amp;&quot;-&quot;&amp;[.P10]&amp;&quot;-&quot;&amp;[.Q10])&amp;IF(LEN([.AI10]&amp;[.AJ10]&amp;[.AK10]&amp;[.AL10])&gt;0;&quot;-&quot;&amp;[.AI10]&amp;[.AJ10]&amp;[.AK10]&amp;[.AL10];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-look-sun_artifact" calcext:value-type="string">
+     <table:table-cell table:formula="of:=IF(LEN([.H11]&amp;[.I11]&amp;[.J11]&amp;[.K11])&gt;0;[.D11]&amp;&quot;-&quot;&amp;[.E11]&amp;&quot;-&quot;&amp;[.H11]&amp;[.I11]&amp;[.J11]&amp;[.K11];[.D11]&amp;&quot;-&quot;&amp;[.P11]&amp;&quot;-&quot;&amp;[.Q11])&amp;IF(LEN([.AI11]&amp;[.AJ11]&amp;[.AK11]&amp;[.AL11])&gt;0;&quot;-&quot;&amp;[.AI11]&amp;[.AJ11]&amp;[.AK11]&amp;[.AL11];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-look-sun_artifact" calcext:value-type="string">
       <text:p>DEFAULT-look-sun_artifact</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="1" calcext:value-type="float">
@@ -1668,7 +1709,7 @@
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell office:value-type="string" calcext:value-type="string">
-      <text:p>floorState == 0</text:p>
+      <text:p>mirrorState == 0</text:p>
      </table:table-cell>
      <table:table-cell table:content-validation-name="val3"/>
      <table:table-cell table:content-validation-name="val4"/>
@@ -1697,7 +1738,7 @@
      <table:table-cell table:number-columns-repeated="987"/>
     </table:table-row>
     <table:table-row table:style-name="ro2">
-     <table:table-cell table:formula="of:=IF(LEN([.H11]&amp;[.I11]&amp;[.J11]&amp;[.K11])&gt;0;[.D11]&amp;&quot;-&quot;&amp;[.E11]&amp;&quot;-&quot;&amp;[.H11]&amp;[.I11]&amp;[.J11]&amp;[.K11];[.D11]&amp;&quot;-&quot;&amp;[.P11]&amp;&quot;-&quot;&amp;[.Q11])&amp;IF(LEN([.AI11]&amp;[.AJ11]&amp;[.AK11]&amp;[.AL11])&gt;0;&quot;-&quot;&amp;[.AI11]&amp;[.AJ11]&amp;[.AK11]&amp;[.AL11];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-look-sun_artifact" calcext:value-type="string">
+     <table:table-cell table:formula="of:=IF(LEN([.H12]&amp;[.I12]&amp;[.J12]&amp;[.K12])&gt;0;[.D12]&amp;&quot;-&quot;&amp;[.E12]&amp;&quot;-&quot;&amp;[.H12]&amp;[.I12]&amp;[.J12]&amp;[.K12];[.D12]&amp;&quot;-&quot;&amp;[.P12]&amp;&quot;-&quot;&amp;[.Q12])&amp;IF(LEN([.AI12]&amp;[.AJ12]&amp;[.AK12]&amp;[.AL12])&gt;0;&quot;-&quot;&amp;[.AI12]&amp;[.AJ12]&amp;[.AK12]&amp;[.AL12];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-look-sun_artifact" calcext:value-type="string">
       <text:p>DEFAULT-look-sun_artifact</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="1" calcext:value-type="float">
@@ -1712,7 +1753,7 @@
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell office:value-type="string" calcext:value-type="string">
-      <text:p>floorState == 1</text:p>
+      <text:p>mirrorState == 1</text:p>
      </table:table-cell>
      <table:table-cell table:content-validation-name="val3"/>
      <table:table-cell table:content-validation-name="val4"/>
@@ -1741,7 +1782,7 @@
      <table:table-cell table:number-columns-repeated="987"/>
     </table:table-row>
     <table:table-row table:style-name="ro2">
-     <table:table-cell table:style-name="ce4" table:formula="of:=IF(LEN([.H12]&amp;[.I12]&amp;[.J12]&amp;[.K12])&gt;0;[.D12]&amp;&quot;-&quot;&amp;[.E12]&amp;&quot;-&quot;&amp;[.H12]&amp;[.I12]&amp;[.J12]&amp;[.K12];[.D12]&amp;&quot;-&quot;&amp;[.P12]&amp;&quot;-&quot;&amp;[.Q12])&amp;IF(LEN([.AI12]&amp;[.AJ12]&amp;[.AK12]&amp;[.AL12])&gt;0;&quot;-&quot;&amp;[.AI12]&amp;[.AJ12]&amp;[.AK12]&amp;[.AL12];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-look-sun_artifact" calcext:value-type="string">
+     <table:table-cell table:style-name="ce4" table:formula="of:=IF(LEN([.H13]&amp;[.I13]&amp;[.J13]&amp;[.K13])&gt;0;[.D13]&amp;&quot;-&quot;&amp;[.E13]&amp;&quot;-&quot;&amp;[.H13]&amp;[.I13]&amp;[.J13]&amp;[.K13];[.D13]&amp;&quot;-&quot;&amp;[.P13]&amp;&quot;-&quot;&amp;[.Q13])&amp;IF(LEN([.AI13]&amp;[.AJ13]&amp;[.AK13]&amp;[.AL13])&gt;0;&quot;-&quot;&amp;[.AI13]&amp;[.AJ13]&amp;[.AK13]&amp;[.AL13];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-look-sun_artifact" calcext:value-type="string">
       <text:p>DEFAULT-look-sun_artifact</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="2" calcext:value-type="float">
@@ -1756,7 +1797,7 @@
      </table:table-cell>
      <table:table-cell/>
      <table:table-cell office:value-type="string" calcext:value-type="string">
-      <text:p>floorState == 1</text:p>
+      <text:p>mirrorState == 1</text:p>
      </table:table-cell>
      <table:table-cell table:content-validation-name="val3"/>
      <table:table-cell table:content-validation-name="val4"/>
@@ -1789,7 +1830,7 @@
      <table:table-cell table:number-columns-repeated="987"/>
     </table:table-row>
     <table:table-row table:style-name="ro2">
-     <table:table-cell table:formula="of:=IF(LEN([.H13]&amp;[.I13]&amp;[.J13]&amp;[.K13])&gt;0;[.D13]&amp;&quot;-&quot;&amp;[.E13]&amp;&quot;-&quot;&amp;[.H13]&amp;[.I13]&amp;[.J13]&amp;[.K13];[.D13]&amp;&quot;-&quot;&amp;[.P13]&amp;&quot;-&quot;&amp;[.Q13])&amp;IF(LEN([.AI13]&amp;[.AJ13]&amp;[.AK13]&amp;[.AL13])&gt;0;&quot;-&quot;&amp;[.AI13]&amp;[.AJ13]&amp;[.AK13]&amp;[.AL13];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-look-sunbeam2" calcext:value-type="string">
+     <table:table-cell table:formula="of:=IF(LEN([.H14]&amp;[.I14]&amp;[.J14]&amp;[.K14])&gt;0;[.D14]&amp;&quot;-&quot;&amp;[.E14]&amp;&quot;-&quot;&amp;[.H14]&amp;[.I14]&amp;[.J14]&amp;[.K14];[.D14]&amp;&quot;-&quot;&amp;[.P14]&amp;&quot;-&quot;&amp;[.Q14])&amp;IF(LEN([.AI14]&amp;[.AJ14]&amp;[.AK14]&amp;[.AL14])&gt;0;&quot;-&quot;&amp;[.AI14]&amp;[.AJ14]&amp;[.AK14]&amp;[.AL14];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-look-sunbeam2" calcext:value-type="string">
       <text:p>DEFAULT-look-sunbeam2</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="1" calcext:value-type="float">
@@ -1833,7 +1874,7 @@
      <table:table-cell table:number-columns-repeated="987"/>
     </table:table-row>
     <table:table-row table:style-name="ro2">
-     <table:table-cell table:formula="of:=IF(LEN([.H14]&amp;[.I14]&amp;[.J14]&amp;[.K14])&gt;0;[.D14]&amp;&quot;-&quot;&amp;[.E14]&amp;&quot;-&quot;&amp;[.H14]&amp;[.I14]&amp;[.J14]&amp;[.K14];[.D14]&amp;&quot;-&quot;&amp;[.P14]&amp;&quot;-&quot;&amp;[.Q14])&amp;IF(LEN([.AI14]&amp;[.AJ14]&amp;[.AK14]&amp;[.AL14])&gt;0;&quot;-&quot;&amp;[.AI14]&amp;[.AJ14]&amp;[.AK14]&amp;[.AL14];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-look-sunbeam2" calcext:value-type="string">
+     <table:table-cell table:formula="of:=IF(LEN([.H15]&amp;[.I15]&amp;[.J15]&amp;[.K15])&gt;0;[.D15]&amp;&quot;-&quot;&amp;[.E15]&amp;&quot;-&quot;&amp;[.H15]&amp;[.I15]&amp;[.J15]&amp;[.K15];[.D15]&amp;&quot;-&quot;&amp;[.P15]&amp;&quot;-&quot;&amp;[.Q15])&amp;IF(LEN([.AI15]&amp;[.AJ15]&amp;[.AK15]&amp;[.AL15])&gt;0;&quot;-&quot;&amp;[.AI15]&amp;[.AJ15]&amp;[.AK15]&amp;[.AL15];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-look-sunbeam2" calcext:value-type="string">
       <text:p>DEFAULT-look-sunbeam2</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="2" calcext:value-type="float">
@@ -1877,7 +1918,7 @@
      <table:table-cell table:number-columns-repeated="987"/>
     </table:table-row>
     <table:table-row table:style-name="ro2">
-     <table:table-cell table:formula="of:=IF(LEN([.H15]&amp;[.I15]&amp;[.J15]&amp;[.K15])&gt;0;[.D15]&amp;&quot;-&quot;&amp;[.E15]&amp;&quot;-&quot;&amp;[.H15]&amp;[.I15]&amp;[.J15]&amp;[.K15];[.D15]&amp;&quot;-&quot;&amp;[.P15]&amp;&quot;-&quot;&amp;[.Q15])&amp;IF(LEN([.AI15]&amp;[.AJ15]&amp;[.AK15]&amp;[.AL15])&gt;0;&quot;-&quot;&amp;[.AI15]&amp;[.AJ15]&amp;[.AK15]&amp;[.AL15];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-use-apple-pot" calcext:value-type="string">
+     <table:table-cell table:formula="of:=IF(LEN([.H16]&amp;[.I16]&amp;[.J16]&amp;[.K16])&gt;0;[.D16]&amp;&quot;-&quot;&amp;[.E16]&amp;&quot;-&quot;&amp;[.H16]&amp;[.I16]&amp;[.J16]&amp;[.K16];[.D16]&amp;&quot;-&quot;&amp;[.P16]&amp;&quot;-&quot;&amp;[.Q16])&amp;IF(LEN([.AI16]&amp;[.AJ16]&amp;[.AK16]&amp;[.AL16])&gt;0;&quot;-&quot;&amp;[.AI16]&amp;[.AJ16]&amp;[.AK16]&amp;[.AL16];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-use-apple-pot" calcext:value-type="string">
       <text:p>DEFAULT-use-apple-pot</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="1" calcext:value-type="float">
@@ -1932,7 +1973,7 @@
      <table:table-cell table:number-columns-repeated="986"/>
     </table:table-row>
     <table:table-row table:style-name="ro2">
-     <table:table-cell table:formula="of:=IF(LEN([.H16]&amp;[.I16]&amp;[.J16]&amp;[.K16])&gt;0;[.D16]&amp;&quot;-&quot;&amp;[.E16]&amp;&quot;-&quot;&amp;[.H16]&amp;[.I16]&amp;[.J16]&amp;[.K16];[.D16]&amp;&quot;-&quot;&amp;[.P16]&amp;&quot;-&quot;&amp;[.Q16])&amp;IF(LEN([.AI16]&amp;[.AJ16]&amp;[.AK16]&amp;[.AL16])&gt;0;&quot;-&quot;&amp;[.AI16]&amp;[.AJ16]&amp;[.AK16]&amp;[.AL16];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-use-apple-pot" calcext:value-type="string">
+     <table:table-cell table:formula="of:=IF(LEN([.H17]&amp;[.I17]&amp;[.J17]&amp;[.K17])&gt;0;[.D17]&amp;&quot;-&quot;&amp;[.E17]&amp;&quot;-&quot;&amp;[.H17]&amp;[.I17]&amp;[.J17]&amp;[.K17];[.D17]&amp;&quot;-&quot;&amp;[.P17]&amp;&quot;-&quot;&amp;[.Q17])&amp;IF(LEN([.AI17]&amp;[.AJ17]&amp;[.AK17]&amp;[.AL17])&gt;0;&quot;-&quot;&amp;[.AI17]&amp;[.AJ17]&amp;[.AK17]&amp;[.AL17];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-use-apple-pot" calcext:value-type="string">
       <text:p>DEFAULT-use-apple-pot</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="2" calcext:value-type="float">
@@ -1988,7 +2029,7 @@
      <table:table-cell table:number-columns-repeated="986"/>
     </table:table-row>
     <table:table-row table:style-name="ro2">
-     <table:table-cell table:formula="of:=IF(LEN([.H17]&amp;[.I17]&amp;[.J17]&amp;[.K17])&gt;0;[.D17]&amp;&quot;-&quot;&amp;[.E17]&amp;&quot;-&quot;&amp;[.H17]&amp;[.I17]&amp;[.J17]&amp;[.K17];[.D17]&amp;&quot;-&quot;&amp;[.P17]&amp;&quot;-&quot;&amp;[.Q17])&amp;IF(LEN([.AI17]&amp;[.AJ17]&amp;[.AK17]&amp;[.AL17])&gt;0;&quot;-&quot;&amp;[.AI17]&amp;[.AJ17]&amp;[.AK17]&amp;[.AL17];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-use-apple-pot" calcext:value-type="string">
+     <table:table-cell table:formula="of:=IF(LEN([.H18]&amp;[.I18]&amp;[.J18]&amp;[.K18])&gt;0;[.D18]&amp;&quot;-&quot;&amp;[.E18]&amp;&quot;-&quot;&amp;[.H18]&amp;[.I18]&amp;[.J18]&amp;[.K18];[.D18]&amp;&quot;-&quot;&amp;[.P18]&amp;&quot;-&quot;&amp;[.Q18])&amp;IF(LEN([.AI18]&amp;[.AJ18]&amp;[.AK18]&amp;[.AL18])&gt;0;&quot;-&quot;&amp;[.AI18]&amp;[.AJ18]&amp;[.AK18]&amp;[.AL18];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-use-apple-pot" calcext:value-type="string">
       <text:p>DEFAULT-use-apple-pot</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="3" calcext:value-type="float">
@@ -2052,7 +2093,7 @@
      <table:table-cell table:number-columns-repeated="986"/>
     </table:table-row>
     <table:table-row table:style-name="ro2">
-     <table:table-cell table:formula="of:=IF(LEN([.H18]&amp;[.I18]&amp;[.J18]&amp;[.K18])&gt;0;[.D18]&amp;&quot;-&quot;&amp;[.E18]&amp;&quot;-&quot;&amp;[.H18]&amp;[.I18]&amp;[.J18]&amp;[.K18];[.D18]&amp;&quot;-&quot;&amp;[.P18]&amp;&quot;-&quot;&amp;[.Q18])&amp;IF(LEN([.AI18]&amp;[.AJ18]&amp;[.AK18]&amp;[.AL18])&gt;0;&quot;-&quot;&amp;[.AI18]&amp;[.AJ18]&amp;[.AK18]&amp;[.AL18];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-use-mirror-sunbeam2" calcext:value-type="string">
+     <table:table-cell table:formula="of:=IF(LEN([.H19]&amp;[.I19]&amp;[.J19]&amp;[.K19])&gt;0;[.D19]&amp;&quot;-&quot;&amp;[.E19]&amp;&quot;-&quot;&amp;[.H19]&amp;[.I19]&amp;[.J19]&amp;[.K19];[.D19]&amp;&quot;-&quot;&amp;[.P19]&amp;&quot;-&quot;&amp;[.Q19])&amp;IF(LEN([.AI19]&amp;[.AJ19]&amp;[.AK19]&amp;[.AL19])&gt;0;&quot;-&quot;&amp;[.AI19]&amp;[.AJ19]&amp;[.AK19]&amp;[.AL19];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-use-mirror-sunbeam2" calcext:value-type="string">
       <text:p>DEFAULT-use-mirror-sunbeam2</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="1" calcext:value-type="float">
@@ -2102,7 +2143,7 @@
      <table:table-cell table:number-columns-repeated="986"/>
     </table:table-row>
     <table:table-row table:style-name="ro2">
-     <table:table-cell table:formula="of:=IF(LEN([.H19]&amp;[.I19]&amp;[.J19]&amp;[.K19])&gt;0;[.D19]&amp;&quot;-&quot;&amp;[.E19]&amp;&quot;-&quot;&amp;[.H19]&amp;[.I19]&amp;[.J19]&amp;[.K19];[.D19]&amp;&quot;-&quot;&amp;[.P19]&amp;&quot;-&quot;&amp;[.Q19])&amp;IF(LEN([.AI19]&amp;[.AJ19]&amp;[.AK19]&amp;[.AL19])&gt;0;&quot;-&quot;&amp;[.AI19]&amp;[.AJ19]&amp;[.AK19]&amp;[.AL19];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-use-mirror-sunbeam2" calcext:value-type="string">
+     <table:table-cell table:formula="of:=IF(LEN([.H20]&amp;[.I20]&amp;[.J20]&amp;[.K20])&gt;0;[.D20]&amp;&quot;-&quot;&amp;[.E20]&amp;&quot;-&quot;&amp;[.H20]&amp;[.I20]&amp;[.J20]&amp;[.K20];[.D20]&amp;&quot;-&quot;&amp;[.P20]&amp;&quot;-&quot;&amp;[.Q20])&amp;IF(LEN([.AI20]&amp;[.AJ20]&amp;[.AK20]&amp;[.AL20])&gt;0;&quot;-&quot;&amp;[.AI20]&amp;[.AJ20]&amp;[.AK20]&amp;[.AL20];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-use-mirror-sunbeam2" calcext:value-type="string">
       <text:p>DEFAULT-use-mirror-sunbeam2</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="2" calcext:value-type="float">
@@ -2156,7 +2197,7 @@
      <table:table-cell table:number-columns-repeated="986"/>
     </table:table-row>
     <table:table-row table:style-name="ro2">
-     <table:table-cell table:formula="of:=IF(LEN([.H20]&amp;[.I20]&amp;[.J20]&amp;[.K20])&gt;0;[.D20]&amp;&quot;-&quot;&amp;[.E20]&amp;&quot;-&quot;&amp;[.H20]&amp;[.I20]&amp;[.J20]&amp;[.K20];[.D20]&amp;&quot;-&quot;&amp;[.P20]&amp;&quot;-&quot;&amp;[.Q20])&amp;IF(LEN([.AI20]&amp;[.AJ20]&amp;[.AK20]&amp;[.AL20])&gt;0;&quot;-&quot;&amp;[.AI20]&amp;[.AJ20]&amp;[.AK20]&amp;[.AL20];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-use-mirror-sunbeam2" calcext:value-type="string">
+     <table:table-cell table:formula="of:=IF(LEN([.H21]&amp;[.I21]&amp;[.J21]&amp;[.K21])&gt;0;[.D21]&amp;&quot;-&quot;&amp;[.E21]&amp;&quot;-&quot;&amp;[.H21]&amp;[.I21]&amp;[.J21]&amp;[.K21];[.D21]&amp;&quot;-&quot;&amp;[.P21]&amp;&quot;-&quot;&amp;[.Q21])&amp;IF(LEN([.AI21]&amp;[.AJ21]&amp;[.AK21]&amp;[.AL21])&gt;0;&quot;-&quot;&amp;[.AI21]&amp;[.AJ21]&amp;[.AK21]&amp;[.AL21];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-use-mirror-sunbeam2" calcext:value-type="string">
       <text:p>DEFAULT-use-mirror-sunbeam2</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="3" calcext:value-type="float">
@@ -2211,7 +2252,7 @@
      <table:table-cell table:number-columns-repeated="986"/>
     </table:table-row>
     <table:table-row table:style-name="ro2">
-     <table:table-cell table:formula="of:=IF(LEN([.H21]&amp;[.I21]&amp;[.J21]&amp;[.K21])&gt;0;[.D21]&amp;&quot;-&quot;&amp;[.E21]&amp;&quot;-&quot;&amp;[.H21]&amp;[.I21]&amp;[.J21]&amp;[.K21];[.D21]&amp;&quot;-&quot;&amp;[.P21]&amp;&quot;-&quot;&amp;[.Q21])&amp;IF(LEN([.AI21]&amp;[.AJ21]&amp;[.AK21]&amp;[.AL21])&gt;0;&quot;-&quot;&amp;[.AI21]&amp;[.AJ21]&amp;[.AK21]&amp;[.AL21];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-use-mirror-sunbeam2" calcext:value-type="string">
+     <table:table-cell table:formula="of:=IF(LEN([.H22]&amp;[.I22]&amp;[.J22]&amp;[.K22])&gt;0;[.D22]&amp;&quot;-&quot;&amp;[.E22]&amp;&quot;-&quot;&amp;[.H22]&amp;[.I22]&amp;[.J22]&amp;[.K22];[.D22]&amp;&quot;-&quot;&amp;[.P22]&amp;&quot;-&quot;&amp;[.Q22])&amp;IF(LEN([.AI22]&amp;[.AJ22]&amp;[.AK22]&amp;[.AL22])&gt;0;&quot;-&quot;&amp;[.AI22]&amp;[.AJ22]&amp;[.AK22]&amp;[.AL22];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-use-mirror-sunbeam2" calcext:value-type="string">
       <text:p>DEFAULT-use-mirror-sunbeam2</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="4" calcext:value-type="float">
@@ -2267,7 +2308,7 @@
      <table:table-cell table:style-name="ce13" table:number-columns-repeated="1023"/>
     </table:table-row>
     <table:table-row table:style-name="ro2">
-     <table:table-cell table:style-name="ce5" table:formula="of:=IF(LEN([.H23]&amp;[.I23]&amp;[.J23]&amp;[.K23])&gt;0;[.D23]&amp;&quot;-&quot;&amp;[.E23]&amp;&quot;-&quot;&amp;[.H23]&amp;[.I23]&amp;[.J23]&amp;[.K23];[.D23]&amp;&quot;-&quot;&amp;[.P23]&amp;&quot;-&quot;&amp;[.Q23])&amp;IF(LEN([.AI23]&amp;[.AJ23]&amp;[.AK23]&amp;[.AL23])&gt;0;&quot;-&quot;&amp;[.AI23]&amp;[.AJ23]&amp;[.AK23]&amp;[.AL23];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-use-apple-mirror" calcext:value-type="string">
+     <table:table-cell table:style-name="ce5" table:formula="of:=IF(LEN([.H24]&amp;[.I24]&amp;[.J24]&amp;[.K24])&gt;0;[.D24]&amp;&quot;-&quot;&amp;[.E24]&amp;&quot;-&quot;&amp;[.H24]&amp;[.I24]&amp;[.J24]&amp;[.K24];[.D24]&amp;&quot;-&quot;&amp;[.P24]&amp;&quot;-&quot;&amp;[.Q24])&amp;IF(LEN([.AI24]&amp;[.AJ24]&amp;[.AK24]&amp;[.AL24])&gt;0;&quot;-&quot;&amp;[.AI24]&amp;[.AJ24]&amp;[.AK24]&amp;[.AL24];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-use-apple-mirror" calcext:value-type="string">
       <text:p>DEFAULT-use-apple-mirror</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="1" calcext:value-type="float">
@@ -2311,7 +2352,7 @@
      <table:table-cell table:number-columns-repeated="986"/>
     </table:table-row>
     <table:table-row table:style-name="ro2">
-     <table:table-cell table:style-name="ce5" table:formula="of:=IF(LEN([.H24]&amp;[.I24]&amp;[.J24]&amp;[.K24])&gt;0;[.D24]&amp;&quot;-&quot;&amp;[.E24]&amp;&quot;-&quot;&amp;[.H24]&amp;[.I24]&amp;[.J24]&amp;[.K24];[.D24]&amp;&quot;-&quot;&amp;[.P24]&amp;&quot;-&quot;&amp;[.Q24])&amp;IF(LEN([.AI24]&amp;[.AJ24]&amp;[.AK24]&amp;[.AL24])&gt;0;&quot;-&quot;&amp;[.AI24]&amp;[.AJ24]&amp;[.AK24]&amp;[.AL24];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-use-apple-sun_artifact" calcext:value-type="string">
+     <table:table-cell table:style-name="ce5" table:formula="of:=IF(LEN([.H25]&amp;[.I25]&amp;[.J25]&amp;[.K25])&gt;0;[.D25]&amp;&quot;-&quot;&amp;[.E25]&amp;&quot;-&quot;&amp;[.H25]&amp;[.I25]&amp;[.J25]&amp;[.K25];[.D25]&amp;&quot;-&quot;&amp;[.P25]&amp;&quot;-&quot;&amp;[.Q25])&amp;IF(LEN([.AI25]&amp;[.AJ25]&amp;[.AK25]&amp;[.AL25])&gt;0;&quot;-&quot;&amp;[.AI25]&amp;[.AJ25]&amp;[.AK25]&amp;[.AL25];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-use-apple-sun_artifact" calcext:value-type="string">
       <text:p>DEFAULT-use-apple-sun_artifact</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="1" calcext:value-type="float">
@@ -2355,7 +2396,7 @@
      <table:table-cell table:number-columns-repeated="986"/>
     </table:table-row>
     <table:table-row table:style-name="ro2">
-     <table:table-cell table:style-name="ce5" table:formula="of:=IF(LEN([.H25]&amp;[.I25]&amp;[.J25]&amp;[.K25])&gt;0;[.D25]&amp;&quot;-&quot;&amp;[.E25]&amp;&quot;-&quot;&amp;[.H25]&amp;[.I25]&amp;[.J25]&amp;[.K25];[.D25]&amp;&quot;-&quot;&amp;[.P25]&amp;&quot;-&quot;&amp;[.Q25])&amp;IF(LEN([.AI25]&amp;[.AJ25]&amp;[.AK25]&amp;[.AL25])&gt;0;&quot;-&quot;&amp;[.AI25]&amp;[.AJ25]&amp;[.AK25]&amp;[.AL25];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-use-apple-sunbeam2" calcext:value-type="string">
+     <table:table-cell table:style-name="ce5" table:formula="of:=IF(LEN([.H26]&amp;[.I26]&amp;[.J26]&amp;[.K26])&gt;0;[.D26]&amp;&quot;-&quot;&amp;[.E26]&amp;&quot;-&quot;&amp;[.H26]&amp;[.I26]&amp;[.J26]&amp;[.K26];[.D26]&amp;&quot;-&quot;&amp;[.P26]&amp;&quot;-&quot;&amp;[.Q26])&amp;IF(LEN([.AI26]&amp;[.AJ26]&amp;[.AK26]&amp;[.AL26])&gt;0;&quot;-&quot;&amp;[.AI26]&amp;[.AJ26]&amp;[.AK26]&amp;[.AL26];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-use-apple-sunbeam2" calcext:value-type="string">
       <text:p>DEFAULT-use-apple-sunbeam2</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="1" calcext:value-type="float">
@@ -2399,7 +2440,7 @@
      <table:table-cell table:number-columns-repeated="986"/>
     </table:table-row>
     <table:table-row table:style-name="ro2">
-     <table:table-cell table:style-name="ce5" table:formula="of:=IF(LEN([.H26]&amp;[.I26]&amp;[.J26]&amp;[.K26])&gt;0;[.D26]&amp;&quot;-&quot;&amp;[.E26]&amp;&quot;-&quot;&amp;[.H26]&amp;[.I26]&amp;[.J26]&amp;[.K26];[.D26]&amp;&quot;-&quot;&amp;[.P26]&amp;&quot;-&quot;&amp;[.Q26])&amp;IF(LEN([.AI26]&amp;[.AJ26]&amp;[.AK26]&amp;[.AL26])&gt;0;&quot;-&quot;&amp;[.AI26]&amp;[.AJ26]&amp;[.AK26]&amp;[.AL26];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-use-mirror-apple" calcext:value-type="string">
+     <table:table-cell table:style-name="ce5" table:formula="of:=IF(LEN([.H27]&amp;[.I27]&amp;[.J27]&amp;[.K27])&gt;0;[.D27]&amp;&quot;-&quot;&amp;[.E27]&amp;&quot;-&quot;&amp;[.H27]&amp;[.I27]&amp;[.J27]&amp;[.K27];[.D27]&amp;&quot;-&quot;&amp;[.P27]&amp;&quot;-&quot;&amp;[.Q27])&amp;IF(LEN([.AI27]&amp;[.AJ27]&amp;[.AK27]&amp;[.AL27])&gt;0;&quot;-&quot;&amp;[.AI27]&amp;[.AJ27]&amp;[.AK27]&amp;[.AL27];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-use-mirror-apple" calcext:value-type="string">
       <text:p>DEFAULT-use-mirror-apple</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="1" calcext:value-type="float">
@@ -2443,7 +2484,7 @@
      <table:table-cell table:number-columns-repeated="986"/>
     </table:table-row>
     <table:table-row table:style-name="ro2">
-     <table:table-cell table:style-name="ce5" table:formula="of:=IF(LEN([.H27]&amp;[.I27]&amp;[.J27]&amp;[.K27])&gt;0;[.D27]&amp;&quot;-&quot;&amp;[.E27]&amp;&quot;-&quot;&amp;[.H27]&amp;[.I27]&amp;[.J27]&amp;[.K27];[.D27]&amp;&quot;-&quot;&amp;[.P27]&amp;&quot;-&quot;&amp;[.Q27])&amp;IF(LEN([.AI27]&amp;[.AJ27]&amp;[.AK27]&amp;[.AL27])&gt;0;&quot;-&quot;&amp;[.AI27]&amp;[.AJ27]&amp;[.AK27]&amp;[.AL27];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-use-mirror-pot" calcext:value-type="string">
+     <table:table-cell table:style-name="ce5" table:formula="of:=IF(LEN([.H28]&amp;[.I28]&amp;[.J28]&amp;[.K28])&gt;0;[.D28]&amp;&quot;-&quot;&amp;[.E28]&amp;&quot;-&quot;&amp;[.H28]&amp;[.I28]&amp;[.J28]&amp;[.K28];[.D28]&amp;&quot;-&quot;&amp;[.P28]&amp;&quot;-&quot;&amp;[.Q28])&amp;IF(LEN([.AI28]&amp;[.AJ28]&amp;[.AK28]&amp;[.AL28])&gt;0;&quot;-&quot;&amp;[.AI28]&amp;[.AJ28]&amp;[.AK28]&amp;[.AL28];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-use-mirror-pot" calcext:value-type="string">
       <text:p>DEFAULT-use-mirror-pot</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="1" calcext:value-type="float">
@@ -2487,7 +2528,7 @@
      <table:table-cell table:number-columns-repeated="986"/>
     </table:table-row>
     <table:table-row table:style-name="ro2">
-     <table:table-cell table:style-name="ce4" table:formula="of:=IF(LEN([.H28]&amp;[.I28]&amp;[.J28]&amp;[.K28])&gt;0;[.D28]&amp;&quot;-&quot;&amp;[.E28]&amp;&quot;-&quot;&amp;[.H28]&amp;[.I28]&amp;[.J28]&amp;[.K28];[.D28]&amp;&quot;-&quot;&amp;[.P28]&amp;&quot;-&quot;&amp;[.Q28])&amp;IF(LEN([.AI28]&amp;[.AJ28]&amp;[.AK28]&amp;[.AL28])&gt;0;&quot;-&quot;&amp;[.AI28]&amp;[.AJ28]&amp;[.AK28]&amp;[.AL28];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-use-mirror-sun_artifact" calcext:value-type="string">
+     <table:table-cell table:style-name="ce4" table:formula="of:=IF(LEN([.H29]&amp;[.I29]&amp;[.J29]&amp;[.K29])&gt;0;[.D29]&amp;&quot;-&quot;&amp;[.E29]&amp;&quot;-&quot;&amp;[.H29]&amp;[.I29]&amp;[.J29]&amp;[.K29];[.D29]&amp;&quot;-&quot;&amp;[.P29]&amp;&quot;-&quot;&amp;[.Q29])&amp;IF(LEN([.AI29]&amp;[.AJ29]&amp;[.AK29]&amp;[.AL29])&gt;0;&quot;-&quot;&amp;[.AI29]&amp;[.AJ29]&amp;[.AK29]&amp;[.AL29];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-use-mirror-sun_artifact" calcext:value-type="string">
       <text:p>DEFAULT-use-mirror-sun_artifact</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="1" calcext:value-type="float">
@@ -2531,7 +2572,7 @@
      <table:table-cell table:number-columns-repeated="986"/>
     </table:table-row>
     <table:table-row table:style-name="ro2">
-     <table:table-cell table:style-name="ce4" table:formula="of:=IF(LEN([.H29]&amp;[.I29]&amp;[.J29]&amp;[.K29])&gt;0;[.D29]&amp;&quot;-&quot;&amp;[.E29]&amp;&quot;-&quot;&amp;[.H29]&amp;[.I29]&amp;[.J29]&amp;[.K29];[.D29]&amp;&quot;-&quot;&amp;[.P29]&amp;&quot;-&quot;&amp;[.Q29])&amp;IF(LEN([.AI29]&amp;[.AJ29]&amp;[.AK29]&amp;[.AL29])&gt;0;&quot;-&quot;&amp;[.AI29]&amp;[.AJ29]&amp;[.AK29]&amp;[.AL29];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-use-apple-OTHER" calcext:value-type="string">
+     <table:table-cell table:style-name="ce4" table:formula="of:=IF(LEN([.H30]&amp;[.I30]&amp;[.J30]&amp;[.K30])&gt;0;[.D30]&amp;&quot;-&quot;&amp;[.E30]&amp;&quot;-&quot;&amp;[.H30]&amp;[.I30]&amp;[.J30]&amp;[.K30];[.D30]&amp;&quot;-&quot;&amp;[.P30]&amp;&quot;-&quot;&amp;[.Q30])&amp;IF(LEN([.AI30]&amp;[.AJ30]&amp;[.AK30]&amp;[.AL30])&gt;0;&quot;-&quot;&amp;[.AI30]&amp;[.AJ30]&amp;[.AK30]&amp;[.AL30];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-use-apple-OTHER" calcext:value-type="string">
       <text:p>DEFAULT-use-apple-OTHER</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="1" calcext:value-type="float">
@@ -2575,7 +2616,7 @@
      <table:table-cell table:number-columns-repeated="986"/>
     </table:table-row>
     <table:table-row table:style-name="ro2">
-     <table:table-cell table:style-name="ce4" table:formula="of:=IF(LEN([.H30]&amp;[.I30]&amp;[.J30]&amp;[.K30])&gt;0;[.D30]&amp;&quot;-&quot;&amp;[.E30]&amp;&quot;-&quot;&amp;[.H30]&amp;[.I30]&amp;[.J30]&amp;[.K30];[.D30]&amp;&quot;-&quot;&amp;[.P30]&amp;&quot;-&quot;&amp;[.Q30])&amp;IF(LEN([.AI30]&amp;[.AJ30]&amp;[.AK30]&amp;[.AL30])&gt;0;&quot;-&quot;&amp;[.AI30]&amp;[.AJ30]&amp;[.AK30]&amp;[.AL30];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-use-mirror-OTHER" calcext:value-type="string">
+     <table:table-cell table:style-name="ce4" table:formula="of:=IF(LEN([.H31]&amp;[.I31]&amp;[.J31]&amp;[.K31])&gt;0;[.D31]&amp;&quot;-&quot;&amp;[.E31]&amp;&quot;-&quot;&amp;[.H31]&amp;[.I31]&amp;[.J31]&amp;[.K31];[.D31]&amp;&quot;-&quot;&amp;[.P31]&amp;&quot;-&quot;&amp;[.Q31])&amp;IF(LEN([.AI31]&amp;[.AJ31]&amp;[.AK31]&amp;[.AL31])&gt;0;&quot;-&quot;&amp;[.AI31]&amp;[.AJ31]&amp;[.AK31]&amp;[.AL31];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-use-mirror-OTHER" calcext:value-type="string">
       <text:p>DEFAULT-use-mirror-OTHER</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="1" calcext:value-type="float">
@@ -2625,7 +2666,7 @@
      <table:table-cell table:style-name="ce14" table:number-columns-repeated="1023"/>
     </table:table-row>
     <table:table-row table:style-name="ro2">
-     <table:table-cell table:formula="of:=IF(LEN([.H32]&amp;[.I32]&amp;[.J32]&amp;[.K32])&gt;0;[.D32]&amp;&quot;-&quot;&amp;[.E32]&amp;&quot;-&quot;&amp;[.H32]&amp;[.I32]&amp;[.J32]&amp;[.K32];[.D32]&amp;&quot;-&quot;&amp;[.P32]&amp;&quot;-&quot;&amp;[.Q32])&amp;IF(LEN([.AI32]&amp;[.AJ32]&amp;[.AK32]&amp;[.AL32])&gt;0;&quot;-&quot;&amp;[.AI32]&amp;[.AJ32]&amp;[.AK32]&amp;[.AL32];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-look-boards" calcext:value-type="string">
+     <table:table-cell table:formula="of:=IF(LEN([.H33]&amp;[.I33]&amp;[.J33]&amp;[.K33])&gt;0;[.D33]&amp;&quot;-&quot;&amp;[.E33]&amp;&quot;-&quot;&amp;[.H33]&amp;[.I33]&amp;[.J33]&amp;[.K33];[.D33]&amp;&quot;-&quot;&amp;[.P33]&amp;&quot;-&quot;&amp;[.Q33])&amp;IF(LEN([.AI33]&amp;[.AJ33]&amp;[.AK33]&amp;[.AL33])&gt;0;&quot;-&quot;&amp;[.AI33]&amp;[.AJ33]&amp;[.AK33]&amp;[.AL33];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-look-boards" calcext:value-type="string">
       <text:p>DEFAULT-look-boards</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="1" calcext:value-type="float">
@@ -2666,7 +2707,7 @@
      <table:table-cell table:number-columns-repeated="987"/>
     </table:table-row>
     <table:table-row table:style-name="ro2">
-     <table:table-cell table:formula="of:=IF(LEN([.H33]&amp;[.I33]&amp;[.J33]&amp;[.K33])&gt;0;[.D33]&amp;&quot;-&quot;&amp;[.E33]&amp;&quot;-&quot;&amp;[.H33]&amp;[.I33]&amp;[.J33]&amp;[.K33];[.D33]&amp;&quot;-&quot;&amp;[.P33]&amp;&quot;-&quot;&amp;[.Q33])&amp;IF(LEN([.AI33]&amp;[.AJ33]&amp;[.AK33]&amp;[.AL33])&gt;0;&quot;-&quot;&amp;[.AI33]&amp;[.AJ33]&amp;[.AK33]&amp;[.AL33];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-handle-boards" calcext:value-type="string">
+     <table:table-cell table:formula="of:=IF(LEN([.H34]&amp;[.I34]&amp;[.J34]&amp;[.K34])&gt;0;[.D34]&amp;&quot;-&quot;&amp;[.E34]&amp;&quot;-&quot;&amp;[.H34]&amp;[.I34]&amp;[.J34]&amp;[.K34];[.D34]&amp;&quot;-&quot;&amp;[.P34]&amp;&quot;-&quot;&amp;[.Q34])&amp;IF(LEN([.AI34]&amp;[.AJ34]&amp;[.AK34]&amp;[.AL34])&gt;0;&quot;-&quot;&amp;[.AI34]&amp;[.AJ34]&amp;[.AK34]&amp;[.AL34];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-handle-boards" calcext:value-type="string">
       <text:p>DEFAULT-handle-boards</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="1" calcext:value-type="float">
@@ -2724,7 +2765,7 @@
      <table:table-cell table:number-columns-repeated="986"/>
     </table:table-row>
     <table:table-row table:style-name="ro2">
-     <table:table-cell table:formula="of:=IF(LEN([.H34]&amp;[.I34]&amp;[.J34]&amp;[.K34])&gt;0;[.D34]&amp;&quot;-&quot;&amp;[.E34]&amp;&quot;-&quot;&amp;[.H34]&amp;[.I34]&amp;[.J34]&amp;[.K34];[.D34]&amp;&quot;-&quot;&amp;[.P34]&amp;&quot;-&quot;&amp;[.Q34])&amp;IF(LEN([.AI34]&amp;[.AJ34]&amp;[.AK34]&amp;[.AL34])&gt;0;&quot;-&quot;&amp;[.AI34]&amp;[.AJ34]&amp;[.AK34]&amp;[.AL34];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-handle-boards" calcext:value-type="string">
+     <table:table-cell table:formula="of:=IF(LEN([.H35]&amp;[.I35]&amp;[.J35]&amp;[.K35])&gt;0;[.D35]&amp;&quot;-&quot;&amp;[.E35]&amp;&quot;-&quot;&amp;[.H35]&amp;[.I35]&amp;[.J35]&amp;[.K35];[.D35]&amp;&quot;-&quot;&amp;[.P35]&amp;&quot;-&quot;&amp;[.Q35])&amp;IF(LEN([.AI35]&amp;[.AJ35]&amp;[.AK35]&amp;[.AL35])&gt;0;&quot;-&quot;&amp;[.AI35]&amp;[.AJ35]&amp;[.AK35]&amp;[.AL35];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-handle-boards" calcext:value-type="string">
       <text:p>DEFAULT-handle-boards</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="2" calcext:value-type="float">
@@ -2772,7 +2813,7 @@
      <table:table-cell table:number-columns-repeated="986"/>
     </table:table-row>
     <table:table-row table:style-name="ro2">
-     <table:table-cell table:formula="of:=IF(LEN([.H35]&amp;[.I35]&amp;[.J35]&amp;[.K35])&gt;0;[.D35]&amp;&quot;-&quot;&amp;[.E35]&amp;&quot;-&quot;&amp;[.H35]&amp;[.I35]&amp;[.J35]&amp;[.K35];[.D35]&amp;&quot;-&quot;&amp;[.P35]&amp;&quot;-&quot;&amp;[.Q35])&amp;IF(LEN([.AI35]&amp;[.AJ35]&amp;[.AK35]&amp;[.AL35])&gt;0;&quot;-&quot;&amp;[.AI35]&amp;[.AJ35]&amp;[.AK35]&amp;[.AL35];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-handle-boards" calcext:value-type="string">
+     <table:table-cell table:formula="of:=IF(LEN([.H36]&amp;[.I36]&amp;[.J36]&amp;[.K36])&gt;0;[.D36]&amp;&quot;-&quot;&amp;[.E36]&amp;&quot;-&quot;&amp;[.H36]&amp;[.I36]&amp;[.J36]&amp;[.K36];[.D36]&amp;&quot;-&quot;&amp;[.P36]&amp;&quot;-&quot;&amp;[.Q36])&amp;IF(LEN([.AI36]&amp;[.AJ36]&amp;[.AK36]&amp;[.AL36])&gt;0;&quot;-&quot;&amp;[.AI36]&amp;[.AJ36]&amp;[.AK36]&amp;[.AL36];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-handle-boards" calcext:value-type="string">
       <text:p>DEFAULT-handle-boards</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="3" calcext:value-type="float">
@@ -2812,7 +2853,7 @@
      <table:table-cell table:number-columns-repeated="986"/>
     </table:table-row>
     <table:table-row table:style-name="ro2">
-     <table:table-cell table:formula="of:=IF(LEN([.H36]&amp;[.I36]&amp;[.J36]&amp;[.K36])&gt;0;[.D36]&amp;&quot;-&quot;&amp;[.E36]&amp;&quot;-&quot;&amp;[.H36]&amp;[.I36]&amp;[.J36]&amp;[.K36];[.D36]&amp;&quot;-&quot;&amp;[.P36]&amp;&quot;-&quot;&amp;[.Q36])&amp;IF(LEN([.AI36]&amp;[.AJ36]&amp;[.AK36]&amp;[.AL36])&gt;0;&quot;-&quot;&amp;[.AI36]&amp;[.AJ36]&amp;[.AK36]&amp;[.AL36];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-look-hole" calcext:value-type="string">
+     <table:table-cell table:formula="of:=IF(LEN([.H37]&amp;[.I37]&amp;[.J37]&amp;[.K37])&gt;0;[.D37]&amp;&quot;-&quot;&amp;[.E37]&amp;&quot;-&quot;&amp;[.H37]&amp;[.I37]&amp;[.J37]&amp;[.K37];[.D37]&amp;&quot;-&quot;&amp;[.P37]&amp;&quot;-&quot;&amp;[.Q37])&amp;IF(LEN([.AI37]&amp;[.AJ37]&amp;[.AK37]&amp;[.AL37])&gt;0;&quot;-&quot;&amp;[.AI37]&amp;[.AJ37]&amp;[.AK37]&amp;[.AL37];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-look-hole" calcext:value-type="string">
       <text:p>DEFAULT-look-hole</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="1" calcext:value-type="float">
@@ -2853,7 +2894,7 @@
      <table:table-cell table:number-columns-repeated="987"/>
     </table:table-row>
     <table:table-row table:style-name="ro2">
-     <table:table-cell table:formula="of:=IF(LEN([.H37]&amp;[.I37]&amp;[.J37]&amp;[.K37])&gt;0;[.D37]&amp;&quot;-&quot;&amp;[.E37]&amp;&quot;-&quot;&amp;[.H37]&amp;[.I37]&amp;[.J37]&amp;[.K37];[.D37]&amp;&quot;-&quot;&amp;[.P37]&amp;&quot;-&quot;&amp;[.Q37])&amp;IF(LEN([.AI37]&amp;[.AJ37]&amp;[.AK37]&amp;[.AL37])&gt;0;&quot;-&quot;&amp;[.AI37]&amp;[.AJ37]&amp;[.AK37]&amp;[.AL37];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-handle-hole" calcext:value-type="string">
+     <table:table-cell table:formula="of:=IF(LEN([.H38]&amp;[.I38]&amp;[.J38]&amp;[.K38])&gt;0;[.D38]&amp;&quot;-&quot;&amp;[.E38]&amp;&quot;-&quot;&amp;[.H38]&amp;[.I38]&amp;[.J38]&amp;[.K38];[.D38]&amp;&quot;-&quot;&amp;[.P38]&amp;&quot;-&quot;&amp;[.Q38])&amp;IF(LEN([.AI38]&amp;[.AJ38]&amp;[.AK38]&amp;[.AL38])&gt;0;&quot;-&quot;&amp;[.AI38]&amp;[.AJ38]&amp;[.AK38]&amp;[.AL38];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-handle-hole" calcext:value-type="string">
       <text:p>DEFAULT-handle-hole</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="1" calcext:value-type="float">
@@ -2899,7 +2940,7 @@
      <table:table-cell table:number-columns-repeated="987"/>
     </table:table-row>
     <table:table-row table:style-name="ro2">
-     <table:table-cell table:formula="of:=IF(LEN([.H38]&amp;[.I38]&amp;[.J38]&amp;[.K38])&gt;0;[.D38]&amp;&quot;-&quot;&amp;[.E38]&amp;&quot;-&quot;&amp;[.H38]&amp;[.I38]&amp;[.J38]&amp;[.K38];[.D38]&amp;&quot;-&quot;&amp;[.P38]&amp;&quot;-&quot;&amp;[.Q38])&amp;IF(LEN([.AI38]&amp;[.AJ38]&amp;[.AK38]&amp;[.AL38])&gt;0;&quot;-&quot;&amp;[.AI38]&amp;[.AJ38]&amp;[.AK38]&amp;[.AL38];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-look-tree" calcext:value-type="string">
+     <table:table-cell table:formula="of:=IF(LEN([.H39]&amp;[.I39]&amp;[.J39]&amp;[.K39])&gt;0;[.D39]&amp;&quot;-&quot;&amp;[.E39]&amp;&quot;-&quot;&amp;[.H39]&amp;[.I39]&amp;[.J39]&amp;[.K39];[.D39]&amp;&quot;-&quot;&amp;[.P39]&amp;&quot;-&quot;&amp;[.Q39])&amp;IF(LEN([.AI39]&amp;[.AJ39]&amp;[.AK39]&amp;[.AL39])&gt;0;&quot;-&quot;&amp;[.AI39]&amp;[.AJ39]&amp;[.AK39]&amp;[.AL39];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-look-tree" calcext:value-type="string">
       <text:p>DEFAULT-look-tree</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="1" calcext:value-type="float">
@@ -2942,7 +2983,7 @@
      <table:table-cell table:number-columns-repeated="987"/>
     </table:table-row>
     <table:table-row table:style-name="ro2">
-     <table:table-cell table:formula="of:=IF(LEN([.H39]&amp;[.I39]&amp;[.J39]&amp;[.K39])&gt;0;[.D39]&amp;&quot;-&quot;&amp;[.E39]&amp;&quot;-&quot;&amp;[.H39]&amp;[.I39]&amp;[.J39]&amp;[.K39];[.D39]&amp;&quot;-&quot;&amp;[.P39]&amp;&quot;-&quot;&amp;[.Q39])&amp;IF(LEN([.AI39]&amp;[.AJ39]&amp;[.AK39]&amp;[.AL39])&gt;0;&quot;-&quot;&amp;[.AI39]&amp;[.AJ39]&amp;[.AK39]&amp;[.AL39];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-handle-tree" calcext:value-type="string">
+     <table:table-cell table:formula="of:=IF(LEN([.H40]&amp;[.I40]&amp;[.J40]&amp;[.K40])&gt;0;[.D40]&amp;&quot;-&quot;&amp;[.E40]&amp;&quot;-&quot;&amp;[.H40]&amp;[.I40]&amp;[.J40]&amp;[.K40];[.D40]&amp;&quot;-&quot;&amp;[.P40]&amp;&quot;-&quot;&amp;[.Q40])&amp;IF(LEN([.AI40]&amp;[.AJ40]&amp;[.AK40]&amp;[.AL40])&gt;0;&quot;-&quot;&amp;[.AI40]&amp;[.AJ40]&amp;[.AK40]&amp;[.AL40];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-handle-tree" calcext:value-type="string">
       <text:p>DEFAULT-handle-tree</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="1" calcext:value-type="float">
@@ -3004,7 +3045,7 @@
      <table:table-cell table:number-columns-repeated="987"/>
     </table:table-row>
     <table:table-row table:style-name="ro2">
-     <table:table-cell table:style-name="ce7" table:formula="of:=IF(LEN([.H40]&amp;[.I40]&amp;[.J40]&amp;[.K40])&gt;0;[.D40]&amp;&quot;-&quot;&amp;[.E40]&amp;&quot;-&quot;&amp;[.H40]&amp;[.I40]&amp;[.J40]&amp;[.K40];[.D40]&amp;&quot;-&quot;&amp;[.P40]&amp;&quot;-&quot;&amp;[.Q40])&amp;IF(LEN([.AI40]&amp;[.AJ40]&amp;[.AK40]&amp;[.AL40])&gt;0;&quot;-&quot;&amp;[.AI40]&amp;[.AJ40]&amp;[.AK40]&amp;[.AL40];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-look-window" calcext:value-type="string">
+     <table:table-cell table:style-name="ce7" table:formula="of:=IF(LEN([.H41]&amp;[.I41]&amp;[.J41]&amp;[.K41])&gt;0;[.D41]&amp;&quot;-&quot;&amp;[.E41]&amp;&quot;-&quot;&amp;[.H41]&amp;[.I41]&amp;[.J41]&amp;[.K41];[.D41]&amp;&quot;-&quot;&amp;[.P41]&amp;&quot;-&quot;&amp;[.Q41])&amp;IF(LEN([.AI41]&amp;[.AJ41]&amp;[.AK41]&amp;[.AL41])&gt;0;&quot;-&quot;&amp;[.AI41]&amp;[.AJ41]&amp;[.AK41]&amp;[.AL41];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-look-window" calcext:value-type="string">
       <text:p>DEFAULT-look-window</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="1" calcext:value-type="float">
@@ -3045,7 +3086,7 @@
      <table:table-cell table:number-columns-repeated="987"/>
     </table:table-row>
     <table:table-row table:style-name="ro2">
-     <table:table-cell table:formula="of:=IF(LEN([.H41]&amp;[.I41]&amp;[.J41]&amp;[.K41])&gt;0;[.D41]&amp;&quot;-&quot;&amp;[.E41]&amp;&quot;-&quot;&amp;[.H41]&amp;[.I41]&amp;[.J41]&amp;[.K41];[.D41]&amp;&quot;-&quot;&amp;[.P41]&amp;&quot;-&quot;&amp;[.Q41])&amp;IF(LEN([.AI41]&amp;[.AJ41]&amp;[.AK41]&amp;[.AL41])&gt;0;&quot;-&quot;&amp;[.AI41]&amp;[.AJ41]&amp;[.AK41]&amp;[.AL41];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-look-mouse" calcext:value-type="string">
+     <table:table-cell table:formula="of:=IF(LEN([.H42]&amp;[.I42]&amp;[.J42]&amp;[.K42])&gt;0;[.D42]&amp;&quot;-&quot;&amp;[.E42]&amp;&quot;-&quot;&amp;[.H42]&amp;[.I42]&amp;[.J42]&amp;[.K42];[.D42]&amp;&quot;-&quot;&amp;[.P42]&amp;&quot;-&quot;&amp;[.Q42])&amp;IF(LEN([.AI42]&amp;[.AJ42]&amp;[.AK42]&amp;[.AL42])&gt;0;&quot;-&quot;&amp;[.AI42]&amp;[.AJ42]&amp;[.AK42]&amp;[.AL42];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-look-mouse" calcext:value-type="string">
       <text:p>DEFAULT-look-mouse</text:p>
      </table:table-cell>
      <table:table-cell table:number-columns-repeated="2"/>
@@ -3083,7 +3124,7 @@
      <table:table-cell table:number-columns-repeated="987"/>
     </table:table-row>
     <table:table-row table:style-name="ro2">
-     <table:table-cell table:formula="of:=IF(LEN([.H42]&amp;[.I42]&amp;[.J42]&amp;[.K42])&gt;0;[.D42]&amp;&quot;-&quot;&amp;[.E42]&amp;&quot;-&quot;&amp;[.H42]&amp;[.I42]&amp;[.J42]&amp;[.K42];[.D42]&amp;&quot;-&quot;&amp;[.P42]&amp;&quot;-&quot;&amp;[.Q42])&amp;IF(LEN([.AI42]&amp;[.AJ42]&amp;[.AK42]&amp;[.AL42])&gt;0;&quot;-&quot;&amp;[.AI42]&amp;[.AJ42]&amp;[.AK42]&amp;[.AL42];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-use-froot-mouse" calcext:value-type="string">
+     <table:table-cell table:formula="of:=IF(LEN([.H43]&amp;[.I43]&amp;[.J43]&amp;[.K43])&gt;0;[.D43]&amp;&quot;-&quot;&amp;[.E43]&amp;&quot;-&quot;&amp;[.H43]&amp;[.I43]&amp;[.J43]&amp;[.K43];[.D43]&amp;&quot;-&quot;&amp;[.P43]&amp;&quot;-&quot;&amp;[.Q43])&amp;IF(LEN([.AI43]&amp;[.AJ43]&amp;[.AK43]&amp;[.AL43])&gt;0;&quot;-&quot;&amp;[.AI43]&amp;[.AJ43]&amp;[.AK43]&amp;[.AL43];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-use-froot-mouse" calcext:value-type="string">
       <text:p>DEFAULT-use-froot-mouse</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="1" calcext:value-type="float">
@@ -3146,7 +3187,7 @@
      <table:table-cell table:number-columns-repeated="986"/>
     </table:table-row>
     <table:table-row table:style-name="ro2">
-     <table:table-cell table:formula="of:=IF(LEN([.H43]&amp;[.I43]&amp;[.J43]&amp;[.K43])&gt;0;[.D43]&amp;&quot;-&quot;&amp;[.E43]&amp;&quot;-&quot;&amp;[.H43]&amp;[.I43]&amp;[.J43]&amp;[.K43];[.D43]&amp;&quot;-&quot;&amp;[.P43]&amp;&quot;-&quot;&amp;[.Q43])&amp;IF(LEN([.AI43]&amp;[.AJ43]&amp;[.AK43]&amp;[.AL43])&gt;0;&quot;-&quot;&amp;[.AI43]&amp;[.AJ43]&amp;[.AK43]&amp;[.AL43];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-use-froot-mouse" calcext:value-type="string">
+     <table:table-cell table:formula="of:=IF(LEN([.H44]&amp;[.I44]&amp;[.J44]&amp;[.K44])&gt;0;[.D44]&amp;&quot;-&quot;&amp;[.E44]&amp;&quot;-&quot;&amp;[.H44]&amp;[.I44]&amp;[.J44]&amp;[.K44];[.D44]&amp;&quot;-&quot;&amp;[.P44]&amp;&quot;-&quot;&amp;[.Q44])&amp;IF(LEN([.AI44]&amp;[.AJ44]&amp;[.AK44]&amp;[.AL44])&gt;0;&quot;-&quot;&amp;[.AI44]&amp;[.AJ44]&amp;[.AK44]&amp;[.AL44];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-use-froot-mouse" calcext:value-type="string">
       <text:p>DEFAULT-use-froot-mouse</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="2" calcext:value-type="float">
@@ -3201,7 +3242,7 @@
      <table:table-cell table:style-name="ce14" table:number-columns-repeated="1023"/>
     </table:table-row>
     <table:table-row table:style-name="ro2">
-     <table:table-cell table:style-name="ce5" table:formula="of:=IF(LEN([.H45]&amp;[.I45]&amp;[.J45]&amp;[.K45])&gt;0;[.D45]&amp;&quot;-&quot;&amp;[.E45]&amp;&quot;-&quot;&amp;[.H45]&amp;[.I45]&amp;[.J45]&amp;[.K45];[.D45]&amp;&quot;-&quot;&amp;[.P45]&amp;&quot;-&quot;&amp;[.Q45])&amp;IF(LEN([.AI45]&amp;[.AJ45]&amp;[.AK45]&amp;[.AL45])&gt;0;&quot;-&quot;&amp;[.AI45]&amp;[.AJ45]&amp;[.AK45]&amp;[.AL45];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-use-froot-boards" calcext:value-type="string">
+     <table:table-cell table:style-name="ce5" table:formula="of:=IF(LEN([.H46]&amp;[.I46]&amp;[.J46]&amp;[.K46])&gt;0;[.D46]&amp;&quot;-&quot;&amp;[.E46]&amp;&quot;-&quot;&amp;[.H46]&amp;[.I46]&amp;[.J46]&amp;[.K46];[.D46]&amp;&quot;-&quot;&amp;[.P46]&amp;&quot;-&quot;&amp;[.Q46])&amp;IF(LEN([.AI46]&amp;[.AJ46]&amp;[.AK46]&amp;[.AL46])&gt;0;&quot;-&quot;&amp;[.AI46]&amp;[.AJ46]&amp;[.AK46]&amp;[.AL46];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-use-froot-boards" calcext:value-type="string">
       <text:p>DEFAULT-use-froot-boards</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="1" calcext:value-type="float">
@@ -3245,7 +3286,7 @@
      <table:table-cell table:number-columns-repeated="986"/>
     </table:table-row>
     <table:table-row table:style-name="ro2">
-     <table:table-cell table:style-name="ce5" table:formula="of:=IF(LEN([.H46]&amp;[.I46]&amp;[.J46]&amp;[.K46])&gt;0;[.D46]&amp;&quot;-&quot;&amp;[.E46]&amp;&quot;-&quot;&amp;[.H46]&amp;[.I46]&amp;[.J46]&amp;[.K46];[.D46]&amp;&quot;-&quot;&amp;[.P46]&amp;&quot;-&quot;&amp;[.Q46])&amp;IF(LEN([.AI46]&amp;[.AJ46]&amp;[.AK46]&amp;[.AL46])&gt;0;&quot;-&quot;&amp;[.AI46]&amp;[.AJ46]&amp;[.AK46]&amp;[.AL46];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-use-froot-hole" calcext:value-type="string">
+     <table:table-cell table:style-name="ce5" table:formula="of:=IF(LEN([.H47]&amp;[.I47]&amp;[.J47]&amp;[.K47])&gt;0;[.D47]&amp;&quot;-&quot;&amp;[.E47]&amp;&quot;-&quot;&amp;[.H47]&amp;[.I47]&amp;[.J47]&amp;[.K47];[.D47]&amp;&quot;-&quot;&amp;[.P47]&amp;&quot;-&quot;&amp;[.Q47])&amp;IF(LEN([.AI47]&amp;[.AJ47]&amp;[.AK47]&amp;[.AL47])&gt;0;&quot;-&quot;&amp;[.AI47]&amp;[.AJ47]&amp;[.AK47]&amp;[.AL47];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-use-froot-hole" calcext:value-type="string">
       <text:p>DEFAULT-use-froot-hole</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="1" calcext:value-type="float">
@@ -3289,7 +3330,7 @@
      <table:table-cell table:number-columns-repeated="986"/>
     </table:table-row>
     <table:table-row table:style-name="ro2">
-     <table:table-cell table:style-name="ce5" table:formula="of:=IF(LEN([.H47]&amp;[.I47]&amp;[.J47]&amp;[.K47])&gt;0;[.D47]&amp;&quot;-&quot;&amp;[.E47]&amp;&quot;-&quot;&amp;[.H47]&amp;[.I47]&amp;[.J47]&amp;[.K47];[.D47]&amp;&quot;-&quot;&amp;[.P47]&amp;&quot;-&quot;&amp;[.Q47])&amp;IF(LEN([.AI47]&amp;[.AJ47]&amp;[.AK47]&amp;[.AL47])&gt;0;&quot;-&quot;&amp;[.AI47]&amp;[.AJ47]&amp;[.AK47]&amp;[.AL47];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-use-froot-tree" calcext:value-type="string">
+     <table:table-cell table:style-name="ce5" table:formula="of:=IF(LEN([.H48]&amp;[.I48]&amp;[.J48]&amp;[.K48])&gt;0;[.D48]&amp;&quot;-&quot;&amp;[.E48]&amp;&quot;-&quot;&amp;[.H48]&amp;[.I48]&amp;[.J48]&amp;[.K48];[.D48]&amp;&quot;-&quot;&amp;[.P48]&amp;&quot;-&quot;&amp;[.Q48])&amp;IF(LEN([.AI48]&amp;[.AJ48]&amp;[.AK48]&amp;[.AL48])&gt;0;&quot;-&quot;&amp;[.AI48]&amp;[.AJ48]&amp;[.AK48]&amp;[.AL48];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-use-froot-tree" calcext:value-type="string">
       <text:p>DEFAULT-use-froot-tree</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="1" calcext:value-type="float">
@@ -3333,7 +3374,7 @@
      <table:table-cell table:number-columns-repeated="986"/>
     </table:table-row>
     <table:table-row table:style-name="ro2">
-     <table:table-cell table:style-name="ce5" table:formula="of:=IF(LEN([.H48]&amp;[.I48]&amp;[.J48]&amp;[.K48])&gt;0;[.D48]&amp;&quot;-&quot;&amp;[.E48]&amp;&quot;-&quot;&amp;[.H48]&amp;[.I48]&amp;[.J48]&amp;[.K48];[.D48]&amp;&quot;-&quot;&amp;[.P48]&amp;&quot;-&quot;&amp;[.Q48])&amp;IF(LEN([.AI48]&amp;[.AJ48]&amp;[.AK48]&amp;[.AL48])&gt;0;&quot;-&quot;&amp;[.AI48]&amp;[.AJ48]&amp;[.AK48]&amp;[.AL48];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-use-froot-OTHER" calcext:value-type="string">
+     <table:table-cell table:style-name="ce5" table:formula="of:=IF(LEN([.H49]&amp;[.I49]&amp;[.J49]&amp;[.K49])&gt;0;[.D49]&amp;&quot;-&quot;&amp;[.E49]&amp;&quot;-&quot;&amp;[.H49]&amp;[.I49]&amp;[.J49]&amp;[.K49];[.D49]&amp;&quot;-&quot;&amp;[.P49]&amp;&quot;-&quot;&amp;[.Q49])&amp;IF(LEN([.AI49]&amp;[.AJ49]&amp;[.AK49]&amp;[.AL49])&gt;0;&quot;-&quot;&amp;[.AI49]&amp;[.AJ49]&amp;[.AK49]&amp;[.AL49];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-use-froot-OTHER" calcext:value-type="string">
       <text:p>DEFAULT-use-froot-OTHER</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="1" calcext:value-type="float">
@@ -3375,32 +3416,6 @@
       <text:p>OTHER</text:p>
      </table:table-cell>
      <table:table-cell table:number-columns-repeated="986"/>
-    </table:table-row>
-    <table:table-row table:style-name="ro2">
-     <table:table-cell table:formula="of:=IF(LEN([.H49]&amp;[.I49]&amp;[.J49]&amp;[.K49])&gt;0;[.D49]&amp;&quot;-&quot;&amp;[.E49]&amp;&quot;-&quot;&amp;[.H49]&amp;[.I49]&amp;[.J49]&amp;[.K49];[.D49]&amp;&quot;-&quot;&amp;[.P49]&amp;&quot;-&quot;&amp;[.Q49])&amp;IF(LEN([.AI49]&amp;[.AJ49]&amp;[.AK49]&amp;[.AL49])&gt;0;&quot;-&quot;&amp;[.AI49]&amp;[.AJ49]&amp;[.AK49]&amp;[.AL49];&quot;&quot;)" office:value-type="string" office:string-value="--" calcext:value-type="string">
-      <text:p>--</text:p>
-     </table:table-cell>
-     <table:table-cell table:number-columns-repeated="2"/>
-     <table:table-cell table:content-validation-name="val1"/>
-     <table:table-cell table:content-validation-name="val2"/>
-     <table:table-cell table:number-columns-repeated="2"/>
-     <table:table-cell table:content-validation-name="val3"/>
-     <table:table-cell table:content-validation-name="val4"/>
-     <table:table-cell table:content-validation-name="val5"/>
-     <table:table-cell table:number-columns-repeated="5"/>
-     <table:table-cell table:content-validation-name="val8"/>
-     <table:table-cell table:number-columns-repeated="2"/>
-     <table:table-cell table:content-validation-name="val9"/>
-     <table:table-cell table:content-validation-name="val10"/>
-     <table:table-cell table:number-columns-repeated="2"/>
-     <table:table-cell table:content-validation-name="val9" table:number-columns-repeated="4"/>
-     <table:table-cell table:style-name="ce66" table:number-columns-repeated="3"/>
-     <table:table-cell table:style-name="ce68" table:number-columns-repeated="2"/>
-     <table:table-cell table:number-columns-repeated="3"/>
-     <table:table-cell table:content-validation-name="val3"/>
-     <table:table-cell table:content-validation-name="val4"/>
-     <table:table-cell table:content-validation-name="val5"/>
-     <table:table-cell table:number-columns-repeated="987"/>
     </table:table-row>
     <table:table-row table:style-name="ro2">
      <table:table-cell table:formula="of:=IF(LEN([.H50]&amp;[.I50]&amp;[.J50]&amp;[.K50])&gt;0;[.D50]&amp;&quot;-&quot;&amp;[.E50]&amp;&quot;-&quot;&amp;[.H50]&amp;[.I50]&amp;[.J50]&amp;[.K50];[.D50]&amp;&quot;-&quot;&amp;[.P50]&amp;&quot;-&quot;&amp;[.Q50])&amp;IF(LEN([.AI50]&amp;[.AJ50]&amp;[.AK50]&amp;[.AL50])&gt;0;&quot;-&quot;&amp;[.AI50]&amp;[.AJ50]&amp;[.AK50]&amp;[.AL50];&quot;&quot;)" office:value-type="string" office:string-value="--" calcext:value-type="string">
@@ -3481,13 +3496,39 @@
      <table:table-cell table:number-columns-repeated="987"/>
     </table:table-row>
     <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=IF(LEN([.H53]&amp;[.I53]&amp;[.J53]&amp;[.K53])&gt;0;[.D53]&amp;&quot;-&quot;&amp;[.E53]&amp;&quot;-&quot;&amp;[.H53]&amp;[.I53]&amp;[.J53]&amp;[.K53];[.D53]&amp;&quot;-&quot;&amp;[.P53]&amp;&quot;-&quot;&amp;[.Q53])&amp;IF(LEN([.AI53]&amp;[.AJ53]&amp;[.AK53]&amp;[.AL53])&gt;0;&quot;-&quot;&amp;[.AI53]&amp;[.AJ53]&amp;[.AK53]&amp;[.AL53];&quot;&quot;)" office:value-type="string" office:string-value="--" calcext:value-type="string">
+      <text:p>--</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="2"/>
+     <table:table-cell table:content-validation-name="val1"/>
+     <table:table-cell table:content-validation-name="val2"/>
+     <table:table-cell table:number-columns-repeated="2"/>
+     <table:table-cell table:content-validation-name="val3"/>
+     <table:table-cell table:content-validation-name="val4"/>
+     <table:table-cell table:content-validation-name="val5"/>
+     <table:table-cell table:number-columns-repeated="5"/>
+     <table:table-cell table:content-validation-name="val8"/>
+     <table:table-cell table:number-columns-repeated="2"/>
+     <table:table-cell table:content-validation-name="val9"/>
+     <table:table-cell table:content-validation-name="val10"/>
+     <table:table-cell table:number-columns-repeated="2"/>
+     <table:table-cell table:content-validation-name="val9" table:number-columns-repeated="4"/>
+     <table:table-cell table:style-name="ce66" table:number-columns-repeated="3"/>
+     <table:table-cell table:style-name="ce68" table:number-columns-repeated="2"/>
+     <table:table-cell table:number-columns-repeated="3"/>
+     <table:table-cell table:content-validation-name="val3"/>
+     <table:table-cell table:content-validation-name="val4"/>
+     <table:table-cell table:content-validation-name="val5"/>
+     <table:table-cell table:number-columns-repeated="987"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
      <table:table-cell table:style-name="ce8" office:value-type="string" calcext:value-type="string">
       <text:p>Title Screen / Intro</text:p>
      </table:table-cell>
      <table:table-cell table:style-name="ce15" table:number-columns-repeated="1023"/>
     </table:table-row>
     <table:table-row table:style-name="ro2">
-     <table:table-cell table:formula="of:=IF(LEN([.H54]&amp;[.I54]&amp;[.J54]&amp;[.K54])&gt;0;[.D54]&amp;&quot;-&quot;&amp;[.E54]&amp;&quot;-&quot;&amp;[.H54]&amp;[.I54]&amp;[.J54]&amp;[.K54];[.D54]&amp;&quot;-&quot;&amp;[.P54]&amp;&quot;-&quot;&amp;[.Q54])&amp;IF(LEN([.AI54]&amp;[.AJ54]&amp;[.AK54]&amp;[.AL54])&gt;0;&quot;-&quot;&amp;[.AI54]&amp;[.AJ54]&amp;[.AK54]&amp;[.AL54];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-title-#ff00ff" calcext:value-type="string">
+     <table:table-cell table:formula="of:=IF(LEN([.H55]&amp;[.I55]&amp;[.J55]&amp;[.K55])&gt;0;[.D55]&amp;&quot;-&quot;&amp;[.E55]&amp;&quot;-&quot;&amp;[.H55]&amp;[.I55]&amp;[.J55]&amp;[.K55];[.D55]&amp;&quot;-&quot;&amp;[.P55]&amp;&quot;-&quot;&amp;[.Q55])&amp;IF(LEN([.AI55]&amp;[.AJ55]&amp;[.AK55]&amp;[.AL55])&gt;0;&quot;-&quot;&amp;[.AI55]&amp;[.AJ55]&amp;[.AK55]&amp;[.AL55];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-title-#ff00ff" calcext:value-type="string">
       <text:p>DEFAULT-title-#ff00ff</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="1" calcext:value-type="float">
@@ -4240,33 +4281,33 @@
       <text:p>Winning</text:p>
      </table:table-cell>
      <table:table-cell table:style-name="ce16"/>
-     <table:table-cell table:style-name="ce20"/>
-     <table:table-cell table:style-name="ce20" table:content-validation-name="val1"/>
-     <table:table-cell table:style-name="ce20" table:content-validation-name="val2"/>
-     <table:table-cell table:style-name="ce20" table:number-columns-repeated="2"/>
-     <table:table-cell table:style-name="ce20" table:content-validation-name="val3"/>
-     <table:table-cell table:style-name="ce20" table:content-validation-name="val4"/>
-     <table:table-cell table:style-name="ce20" table:content-validation-name="val5"/>
-     <table:table-cell table:style-name="ce20"/>
+     <table:table-cell table:style-name="ce40"/>
+     <table:table-cell table:style-name="ce40" table:content-validation-name="val1"/>
+     <table:table-cell table:style-name="ce40" table:content-validation-name="val2"/>
+     <table:table-cell table:style-name="ce40" table:number-columns-repeated="2"/>
+     <table:table-cell table:style-name="ce40" table:content-validation-name="val3"/>
+     <table:table-cell table:style-name="ce40" table:content-validation-name="val4"/>
+     <table:table-cell table:style-name="ce40" table:content-validation-name="val5"/>
+     <table:table-cell table:style-name="ce40"/>
      <table:table-cell table:style-name="ce30" table:number-columns-repeated="4"/>
-     <table:table-cell table:style-name="ce20" table:content-validation-name="val8"/>
-     <table:table-cell table:style-name="ce20" table:number-columns-repeated="2"/>
-     <table:table-cell table:style-name="ce20" table:content-validation-name="val9"/>
-     <table:table-cell table:style-name="ce20" table:content-validation-name="val10"/>
+     <table:table-cell table:style-name="ce40" table:content-validation-name="val8"/>
+     <table:table-cell table:style-name="ce40" table:number-columns-repeated="2"/>
+     <table:table-cell table:style-name="ce40" table:content-validation-name="val9"/>
+     <table:table-cell table:style-name="ce40" table:content-validation-name="val10"/>
      <table:table-cell table:style-name="ce51"/>
-     <table:table-cell table:style-name="ce20"/>
-     <table:table-cell table:style-name="ce20" table:content-validation-name="val9" table:number-columns-repeated="4"/>
-     <table:table-cell table:style-name="ce20" table:number-columns-repeated="5"/>
+     <table:table-cell table:style-name="ce40"/>
+     <table:table-cell table:style-name="ce40" table:content-validation-name="val9" table:number-columns-repeated="4"/>
+     <table:table-cell table:style-name="ce40" table:number-columns-repeated="5"/>
      <table:table-cell table:style-name="ce30" table:number-columns-repeated="3"/>
-     <table:table-cell table:style-name="ce20" table:content-validation-name="val3"/>
-     <table:table-cell table:style-name="ce20" table:content-validation-name="val4"/>
-     <table:table-cell table:style-name="ce20" table:content-validation-name="val5"/>
-     <table:table-cell table:style-name="ce20"/>
+     <table:table-cell table:style-name="ce40" table:content-validation-name="val3"/>
+     <table:table-cell table:style-name="ce40" table:content-validation-name="val4"/>
+     <table:table-cell table:style-name="ce40" table:content-validation-name="val5"/>
+     <table:table-cell table:style-name="ce40"/>
      <table:table-cell table:style-name="ce30"/>
-     <table:table-cell table:style-name="ce20" table:number-columns-repeated="985"/>
+     <table:table-cell table:style-name="ce40" table:number-columns-repeated="985"/>
     </table:table-row>
     <table:table-row table:style-name="ro2">
-     <table:table-cell table:formula="of:=IF(LEN([.H72]&amp;[.I72]&amp;[.J72]&amp;[.K72])&gt;0;[.D72]&amp;&quot;-&quot;&amp;[.E72]&amp;&quot;-&quot;&amp;[.H72]&amp;[.I72]&amp;[.J72]&amp;[.K72];[.D72]&amp;&quot;-&quot;&amp;[.P72]&amp;&quot;-&quot;&amp;[.Q72])&amp;IF(LEN([.AI72]&amp;[.AJ72]&amp;[.AK72]&amp;[.AL72])&gt;0;&quot;-&quot;&amp;[.AI72]&amp;[.AJ72]&amp;[.AK72]&amp;[.AL72];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-look-door1" calcext:value-type="string">
+     <table:table-cell table:formula="of:=IF(LEN([.H73]&amp;[.I73]&amp;[.J73]&amp;[.K73])&gt;0;[.D73]&amp;&quot;-&quot;&amp;[.E73]&amp;&quot;-&quot;&amp;[.H73]&amp;[.I73]&amp;[.J73]&amp;[.K73];[.D73]&amp;&quot;-&quot;&amp;[.P73]&amp;&quot;-&quot;&amp;[.Q73])&amp;IF(LEN([.AI73]&amp;[.AJ73]&amp;[.AK73]&amp;[.AL73])&gt;0;&quot;-&quot;&amp;[.AI73]&amp;[.AJ73]&amp;[.AK73]&amp;[.AL73];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-look-door1" calcext:value-type="string">
       <text:p>DEFAULT-look-door1</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="1" calcext:value-type="float">
@@ -4307,7 +4348,7 @@
      <table:table-cell table:number-columns-repeated="987"/>
     </table:table-row>
     <table:table-row table:style-name="ro2">
-     <table:table-cell table:formula="of:=IF(LEN([.H73]&amp;[.I73]&amp;[.J73]&amp;[.K73])&gt;0;[.D73]&amp;&quot;-&quot;&amp;[.E73]&amp;&quot;-&quot;&amp;[.H73]&amp;[.I73]&amp;[.J73]&amp;[.K73];[.D73]&amp;&quot;-&quot;&amp;[.P73]&amp;&quot;-&quot;&amp;[.Q73])&amp;IF(LEN([.AI73]&amp;[.AJ73]&amp;[.AK73]&amp;[.AL73])&gt;0;&quot;-&quot;&amp;[.AI73]&amp;[.AJ73]&amp;[.AK73]&amp;[.AL73];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-look-door2" calcext:value-type="string">
+     <table:table-cell table:formula="of:=IF(LEN([.H74]&amp;[.I74]&amp;[.J74]&amp;[.K74])&gt;0;[.D74]&amp;&quot;-&quot;&amp;[.E74]&amp;&quot;-&quot;&amp;[.H74]&amp;[.I74]&amp;[.J74]&amp;[.K74];[.D74]&amp;&quot;-&quot;&amp;[.P74]&amp;&quot;-&quot;&amp;[.Q74])&amp;IF(LEN([.AI74]&amp;[.AJ74]&amp;[.AK74]&amp;[.AL74])&gt;0;&quot;-&quot;&amp;[.AI74]&amp;[.AJ74]&amp;[.AK74]&amp;[.AL74];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-look-door2" calcext:value-type="string">
       <text:p>DEFAULT-look-door2</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="1" calcext:value-type="float">
@@ -4348,7 +4389,7 @@
      <table:table-cell table:number-columns-repeated="987"/>
     </table:table-row>
     <table:table-row table:style-name="ro2">
-     <table:table-cell table:formula="of:=IF(LEN([.H74]&amp;[.I74]&amp;[.J74]&amp;[.K74])&gt;0;[.D74]&amp;&quot;-&quot;&amp;[.E74]&amp;&quot;-&quot;&amp;[.H74]&amp;[.I74]&amp;[.J74]&amp;[.K74];[.D74]&amp;&quot;-&quot;&amp;[.P74]&amp;&quot;-&quot;&amp;[.Q74])&amp;IF(LEN([.AI74]&amp;[.AJ74]&amp;[.AK74]&amp;[.AL74])&gt;0;&quot;-&quot;&amp;[.AI74]&amp;[.AJ74]&amp;[.AK74]&amp;[.AL74];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-use-key1-door1" calcext:value-type="string">
+     <table:table-cell table:formula="of:=IF(LEN([.H75]&amp;[.I75]&amp;[.J75]&amp;[.K75])&gt;0;[.D75]&amp;&quot;-&quot;&amp;[.E75]&amp;&quot;-&quot;&amp;[.H75]&amp;[.I75]&amp;[.J75]&amp;[.K75];[.D75]&amp;&quot;-&quot;&amp;[.P75]&amp;&quot;-&quot;&amp;[.Q75])&amp;IF(LEN([.AI75]&amp;[.AJ75]&amp;[.AK75]&amp;[.AL75])&gt;0;&quot;-&quot;&amp;[.AI75]&amp;[.AJ75]&amp;[.AK75]&amp;[.AL75];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-use-key1-door1" calcext:value-type="string">
       <text:p>DEFAULT-use-key1-door1</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="1" calcext:value-type="float">
@@ -4404,7 +4445,7 @@
      <table:table-cell table:number-columns-repeated="986"/>
     </table:table-row>
     <table:table-row table:style-name="ro2">
-     <table:table-cell table:formula="of:=IF(LEN([.H75]&amp;[.I75]&amp;[.J75]&amp;[.K75])&gt;0;[.D75]&amp;&quot;-&quot;&amp;[.E75]&amp;&quot;-&quot;&amp;[.H75]&amp;[.I75]&amp;[.J75]&amp;[.K75];[.D75]&amp;&quot;-&quot;&amp;[.P75]&amp;&quot;-&quot;&amp;[.Q75])&amp;IF(LEN([.AI75]&amp;[.AJ75]&amp;[.AK75]&amp;[.AL75])&gt;0;&quot;-&quot;&amp;[.AI75]&amp;[.AJ75]&amp;[.AK75]&amp;[.AL75];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-use-key1-door1" calcext:value-type="string">
+     <table:table-cell table:formula="of:=IF(LEN([.H76]&amp;[.I76]&amp;[.J76]&amp;[.K76])&gt;0;[.D76]&amp;&quot;-&quot;&amp;[.E76]&amp;&quot;-&quot;&amp;[.H76]&amp;[.I76]&amp;[.J76]&amp;[.K76];[.D76]&amp;&quot;-&quot;&amp;[.P76]&amp;&quot;-&quot;&amp;[.Q76])&amp;IF(LEN([.AI76]&amp;[.AJ76]&amp;[.AK76]&amp;[.AL76])&gt;0;&quot;-&quot;&amp;[.AI76]&amp;[.AJ76]&amp;[.AK76]&amp;[.AL76];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-use-key1-door1" calcext:value-type="string">
       <text:p>DEFAULT-use-key1-door1</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="2" calcext:value-type="float">
@@ -4456,7 +4497,7 @@
      <table:table-cell table:number-columns-repeated="986"/>
     </table:table-row>
     <table:table-row table:style-name="ro2">
-     <table:table-cell table:style-name="ce4" table:formula="of:=IF(LEN([.H76]&amp;[.I76]&amp;[.J76]&amp;[.K76])&gt;0;[.D76]&amp;&quot;-&quot;&amp;[.E76]&amp;&quot;-&quot;&amp;[.H76]&amp;[.I76]&amp;[.J76]&amp;[.K76];[.D76]&amp;&quot;-&quot;&amp;[.P76]&amp;&quot;-&quot;&amp;[.Q76])&amp;IF(LEN([.AI76]&amp;[.AJ76]&amp;[.AK76]&amp;[.AL76])&gt;0;&quot;-&quot;&amp;[.AI76]&amp;[.AJ76]&amp;[.AK76]&amp;[.AL76];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-use-key1-door1" calcext:value-type="string">
+     <table:table-cell table:style-name="ce4" table:formula="of:=IF(LEN([.H77]&amp;[.I77]&amp;[.J77]&amp;[.K77])&gt;0;[.D77]&amp;&quot;-&quot;&amp;[.E77]&amp;&quot;-&quot;&amp;[.H77]&amp;[.I77]&amp;[.J77]&amp;[.K77];[.D77]&amp;&quot;-&quot;&amp;[.P77]&amp;&quot;-&quot;&amp;[.Q77])&amp;IF(LEN([.AI77]&amp;[.AJ77]&amp;[.AK77]&amp;[.AL77])&gt;0;&quot;-&quot;&amp;[.AI77]&amp;[.AJ77]&amp;[.AK77]&amp;[.AL77];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-use-key1-door1" calcext:value-type="string">
       <text:p>DEFAULT-use-key1-door1</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="3" calcext:value-type="float">
@@ -4506,7 +4547,7 @@
      <table:table-cell table:number-columns-repeated="986"/>
     </table:table-row>
     <table:table-row table:style-name="ro2">
-     <table:table-cell table:formula="of:=IF(LEN([.H77]&amp;[.I77]&amp;[.J77]&amp;[.K77])&gt;0;[.D77]&amp;&quot;-&quot;&amp;[.E77]&amp;&quot;-&quot;&amp;[.H77]&amp;[.I77]&amp;[.J77]&amp;[.K77];[.D77]&amp;&quot;-&quot;&amp;[.P77]&amp;&quot;-&quot;&amp;[.Q77])&amp;IF(LEN([.AI77]&amp;[.AJ77]&amp;[.AK77]&amp;[.AL77])&gt;0;&quot;-&quot;&amp;[.AI77]&amp;[.AJ77]&amp;[.AK77]&amp;[.AL77];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-use-key2-door2" calcext:value-type="string">
+     <table:table-cell table:formula="of:=IF(LEN([.H78]&amp;[.I78]&amp;[.J78]&amp;[.K78])&gt;0;[.D78]&amp;&quot;-&quot;&amp;[.E78]&amp;&quot;-&quot;&amp;[.H78]&amp;[.I78]&amp;[.J78]&amp;[.K78];[.D78]&amp;&quot;-&quot;&amp;[.P78]&amp;&quot;-&quot;&amp;[.Q78])&amp;IF(LEN([.AI78]&amp;[.AJ78]&amp;[.AK78]&amp;[.AL78])&gt;0;&quot;-&quot;&amp;[.AI78]&amp;[.AJ78]&amp;[.AK78]&amp;[.AL78];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-use-key2-door2" calcext:value-type="string">
       <text:p>DEFAULT-use-key2-door2</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="1" calcext:value-type="float">
@@ -4562,7 +4603,7 @@
      <table:table-cell table:number-columns-repeated="986"/>
     </table:table-row>
     <table:table-row table:style-name="ro2">
-     <table:table-cell table:formula="of:=IF(LEN([.H78]&amp;[.I78]&amp;[.J78]&amp;[.K78])&gt;0;[.D78]&amp;&quot;-&quot;&amp;[.E78]&amp;&quot;-&quot;&amp;[.H78]&amp;[.I78]&amp;[.J78]&amp;[.K78];[.D78]&amp;&quot;-&quot;&amp;[.P78]&amp;&quot;-&quot;&amp;[.Q78])&amp;IF(LEN([.AI78]&amp;[.AJ78]&amp;[.AK78]&amp;[.AL78])&gt;0;&quot;-&quot;&amp;[.AI78]&amp;[.AJ78]&amp;[.AK78]&amp;[.AL78];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-use-key2-door2" calcext:value-type="string">
+     <table:table-cell table:formula="of:=IF(LEN([.H79]&amp;[.I79]&amp;[.J79]&amp;[.K79])&gt;0;[.D79]&amp;&quot;-&quot;&amp;[.E79]&amp;&quot;-&quot;&amp;[.H79]&amp;[.I79]&amp;[.J79]&amp;[.K79];[.D79]&amp;&quot;-&quot;&amp;[.P79]&amp;&quot;-&quot;&amp;[.Q79])&amp;IF(LEN([.AI79]&amp;[.AJ79]&amp;[.AK79]&amp;[.AL79])&gt;0;&quot;-&quot;&amp;[.AI79]&amp;[.AJ79]&amp;[.AK79]&amp;[.AL79];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-use-key2-door2" calcext:value-type="string">
       <text:p>DEFAULT-use-key2-door2</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="2" calcext:value-type="float">
@@ -4614,7 +4655,7 @@
      <table:table-cell table:number-columns-repeated="986"/>
     </table:table-row>
     <table:table-row table:style-name="ro2">
-     <table:table-cell table:style-name="ce4" table:formula="of:=IF(LEN([.H79]&amp;[.I79]&amp;[.J79]&amp;[.K79])&gt;0;[.D79]&amp;&quot;-&quot;&amp;[.E79]&amp;&quot;-&quot;&amp;[.H79]&amp;[.I79]&amp;[.J79]&amp;[.K79];[.D79]&amp;&quot;-&quot;&amp;[.P79]&amp;&quot;-&quot;&amp;[.Q79])&amp;IF(LEN([.AI79]&amp;[.AJ79]&amp;[.AK79]&amp;[.AL79])&gt;0;&quot;-&quot;&amp;[.AI79]&amp;[.AJ79]&amp;[.AK79]&amp;[.AL79];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-use-key2-door2" calcext:value-type="string">
+     <table:table-cell table:style-name="ce4" table:formula="of:=IF(LEN([.H80]&amp;[.I80]&amp;[.J80]&amp;[.K80])&gt;0;[.D80]&amp;&quot;-&quot;&amp;[.E80]&amp;&quot;-&quot;&amp;[.H80]&amp;[.I80]&amp;[.J80]&amp;[.K80];[.D80]&amp;&quot;-&quot;&amp;[.P80]&amp;&quot;-&quot;&amp;[.Q80])&amp;IF(LEN([.AI80]&amp;[.AJ80]&amp;[.AK80]&amp;[.AL80])&gt;0;&quot;-&quot;&amp;[.AI80]&amp;[.AJ80]&amp;[.AK80]&amp;[.AL80];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-use-key2-door2" calcext:value-type="string">
       <text:p>DEFAULT-use-key2-door2</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="3" calcext:value-type="float">
@@ -4664,7 +4705,7 @@
      <table:table-cell table:number-columns-repeated="986"/>
     </table:table-row>
     <table:table-row table:style-name="ro2">
-     <table:table-cell table:style-name="ce4" table:formula="of:=IF(LEN([.H80]&amp;[.I80]&amp;[.J80]&amp;[.K80])&gt;0;[.D80]&amp;&quot;-&quot;&amp;[.E80]&amp;&quot;-&quot;&amp;[.H80]&amp;[.I80]&amp;[.J80]&amp;[.K80];[.D80]&amp;&quot;-&quot;&amp;[.P80]&amp;&quot;-&quot;&amp;[.Q80])&amp;IF(LEN([.AI80]&amp;[.AJ80]&amp;[.AK80]&amp;[.AL80])&gt;0;&quot;-&quot;&amp;[.AI80]&amp;[.AJ80]&amp;[.AK80]&amp;[.AL80];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-use-key1-door2" calcext:value-type="string">
+     <table:table-cell table:style-name="ce4" table:formula="of:=IF(LEN([.H81]&amp;[.I81]&amp;[.J81]&amp;[.K81])&gt;0;[.D81]&amp;&quot;-&quot;&amp;[.E81]&amp;&quot;-&quot;&amp;[.H81]&amp;[.I81]&amp;[.J81]&amp;[.K81];[.D81]&amp;&quot;-&quot;&amp;[.P81]&amp;&quot;-&quot;&amp;[.Q81])&amp;IF(LEN([.AI81]&amp;[.AJ81]&amp;[.AK81]&amp;[.AL81])&gt;0;&quot;-&quot;&amp;[.AI81]&amp;[.AJ81]&amp;[.AK81]&amp;[.AL81];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-use-key1-door2" calcext:value-type="string">
       <text:p>DEFAULT-use-key1-door2</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="1" calcext:value-type="float">
@@ -4708,7 +4749,7 @@
      <table:table-cell table:number-columns-repeated="986"/>
     </table:table-row>
     <table:table-row table:style-name="ro2">
-     <table:table-cell table:style-name="ce4" table:formula="of:=IF(LEN([.H81]&amp;[.I81]&amp;[.J81]&amp;[.K81])&gt;0;[.D81]&amp;&quot;-&quot;&amp;[.E81]&amp;&quot;-&quot;&amp;[.H81]&amp;[.I81]&amp;[.J81]&amp;[.K81];[.D81]&amp;&quot;-&quot;&amp;[.P81]&amp;&quot;-&quot;&amp;[.Q81])&amp;IF(LEN([.AI81]&amp;[.AJ81]&amp;[.AK81]&amp;[.AL81])&gt;0;&quot;-&quot;&amp;[.AI81]&amp;[.AJ81]&amp;[.AK81]&amp;[.AL81];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-use-key2-door1" calcext:value-type="string">
+     <table:table-cell table:style-name="ce4" table:formula="of:=IF(LEN([.H82]&amp;[.I82]&amp;[.J82]&amp;[.K82])&gt;0;[.D82]&amp;&quot;-&quot;&amp;[.E82]&amp;&quot;-&quot;&amp;[.H82]&amp;[.I82]&amp;[.J82]&amp;[.K82];[.D82]&amp;&quot;-&quot;&amp;[.P82]&amp;&quot;-&quot;&amp;[.Q82])&amp;IF(LEN([.AI82]&amp;[.AJ82]&amp;[.AK82]&amp;[.AL82])&gt;0;&quot;-&quot;&amp;[.AI82]&amp;[.AJ82]&amp;[.AK82]&amp;[.AL82];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-use-key2-door1" calcext:value-type="string">
       <text:p>DEFAULT-use-key2-door1</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="1" calcext:value-type="float">
@@ -4752,7 +4793,7 @@
      <table:table-cell table:number-columns-repeated="986"/>
     </table:table-row>
     <table:table-row table:style-name="ro2">
-     <table:table-cell table:style-name="ce4" table:formula="of:=IF(LEN([.H82]&amp;[.I82]&amp;[.J82]&amp;[.K82])&gt;0;[.D82]&amp;&quot;-&quot;&amp;[.E82]&amp;&quot;-&quot;&amp;[.H82]&amp;[.I82]&amp;[.J82]&amp;[.K82];[.D82]&amp;&quot;-&quot;&amp;[.P82]&amp;&quot;-&quot;&amp;[.Q82])&amp;IF(LEN([.AI82]&amp;[.AJ82]&amp;[.AK82]&amp;[.AL82])&gt;0;&quot;-&quot;&amp;[.AI82]&amp;[.AJ82]&amp;[.AK82]&amp;[.AL82];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-use-key1-OTHER" calcext:value-type="string">
+     <table:table-cell table:style-name="ce4" table:formula="of:=IF(LEN([.H83]&amp;[.I83]&amp;[.J83]&amp;[.K83])&gt;0;[.D83]&amp;&quot;-&quot;&amp;[.E83]&amp;&quot;-&quot;&amp;[.H83]&amp;[.I83]&amp;[.J83]&amp;[.K83];[.D83]&amp;&quot;-&quot;&amp;[.P83]&amp;&quot;-&quot;&amp;[.Q83])&amp;IF(LEN([.AI83]&amp;[.AJ83]&amp;[.AK83]&amp;[.AL83])&gt;0;&quot;-&quot;&amp;[.AI83]&amp;[.AJ83]&amp;[.AK83]&amp;[.AL83];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-use-key1-OTHER" calcext:value-type="string">
       <text:p>DEFAULT-use-key1-OTHER</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="1" calcext:value-type="float">
@@ -4796,7 +4837,7 @@
      <table:table-cell table:number-columns-repeated="986"/>
     </table:table-row>
     <table:table-row table:style-name="ro2">
-     <table:table-cell table:style-name="ce4" table:formula="of:=IF(LEN([.H83]&amp;[.I83]&amp;[.J83]&amp;[.K83])&gt;0;[.D83]&amp;&quot;-&quot;&amp;[.E83]&amp;&quot;-&quot;&amp;[.H83]&amp;[.I83]&amp;[.J83]&amp;[.K83];[.D83]&amp;&quot;-&quot;&amp;[.P83]&amp;&quot;-&quot;&amp;[.Q83])&amp;IF(LEN([.AI83]&amp;[.AJ83]&amp;[.AK83]&amp;[.AL83])&gt;0;&quot;-&quot;&amp;[.AI83]&amp;[.AJ83]&amp;[.AK83]&amp;[.AL83];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-use-key2-OTHER" calcext:value-type="string">
+     <table:table-cell table:style-name="ce4" table:formula="of:=IF(LEN([.H84]&amp;[.I84]&amp;[.J84]&amp;[.K84])&gt;0;[.D84]&amp;&quot;-&quot;&amp;[.E84]&amp;&quot;-&quot;&amp;[.H84]&amp;[.I84]&amp;[.J84]&amp;[.K84];[.D84]&amp;&quot;-&quot;&amp;[.P84]&amp;&quot;-&quot;&amp;[.Q84])&amp;IF(LEN([.AI84]&amp;[.AJ84]&amp;[.AK84]&amp;[.AL84])&gt;0;&quot;-&quot;&amp;[.AI84]&amp;[.AJ84]&amp;[.AK84]&amp;[.AL84];&quot;&quot;)" office:value-type="string" office:string-value="DEFAULT-use-key2-OTHER" calcext:value-type="string">
       <text:p>DEFAULT-use-key2-OTHER</text:p>
      </table:table-cell>
      <table:table-cell office:value-type="float" office:value="1" calcext:value-type="float">
@@ -5085,30 +5126,30 @@
       <text:p>Other</text:p>
      </table:table-cell>
      <table:table-cell table:style-name="ce17"/>
-     <table:table-cell table:style-name="ce21"/>
-     <table:table-cell table:style-name="ce21" table:content-validation-name="val1"/>
-     <table:table-cell table:style-name="ce21" table:content-validation-name="val2"/>
-     <table:table-cell table:style-name="ce21" table:number-columns-repeated="2"/>
-     <table:table-cell table:style-name="ce21" table:content-validation-name="val3"/>
-     <table:table-cell table:style-name="ce21" table:content-validation-name="val4"/>
-     <table:table-cell table:style-name="ce21" table:content-validation-name="val5"/>
-     <table:table-cell table:style-name="ce21"/>
+     <table:table-cell table:style-name="ce42"/>
+     <table:table-cell table:style-name="ce42" table:content-validation-name="val1"/>
+     <table:table-cell table:style-name="ce42" table:content-validation-name="val2"/>
+     <table:table-cell table:style-name="ce42" table:number-columns-repeated="2"/>
+     <table:table-cell table:style-name="ce42" table:content-validation-name="val3"/>
+     <table:table-cell table:style-name="ce42" table:content-validation-name="val4"/>
+     <table:table-cell table:style-name="ce42" table:content-validation-name="val5"/>
+     <table:table-cell table:style-name="ce42"/>
      <table:table-cell table:style-name="ce31" table:number-columns-repeated="4"/>
-     <table:table-cell table:style-name="ce21" table:content-validation-name="val8"/>
-     <table:table-cell table:style-name="ce21" table:number-columns-repeated="2"/>
-     <table:table-cell table:style-name="ce21" table:content-validation-name="val9"/>
-     <table:table-cell table:style-name="ce21" table:content-validation-name="val10"/>
+     <table:table-cell table:style-name="ce42" table:content-validation-name="val8"/>
+     <table:table-cell table:style-name="ce42" table:number-columns-repeated="2"/>
+     <table:table-cell table:style-name="ce42" table:content-validation-name="val9"/>
+     <table:table-cell table:style-name="ce42" table:content-validation-name="val10"/>
      <table:table-cell table:style-name="ce52"/>
-     <table:table-cell table:style-name="ce21"/>
-     <table:table-cell table:style-name="ce21" table:content-validation-name="val9" table:number-columns-repeated="4"/>
-     <table:table-cell table:style-name="ce21" table:number-columns-repeated="5"/>
+     <table:table-cell table:style-name="ce42"/>
+     <table:table-cell table:style-name="ce42" table:content-validation-name="val9" table:number-columns-repeated="4"/>
+     <table:table-cell table:style-name="ce42" table:number-columns-repeated="5"/>
      <table:table-cell table:style-name="ce31" table:number-columns-repeated="3"/>
-     <table:table-cell table:style-name="ce21" table:content-validation-name="val3"/>
-     <table:table-cell table:style-name="ce21" table:content-validation-name="val4"/>
-     <table:table-cell table:style-name="ce21" table:content-validation-name="val5"/>
-     <table:table-cell table:style-name="ce21"/>
+     <table:table-cell table:style-name="ce42" table:content-validation-name="val3"/>
+     <table:table-cell table:style-name="ce42" table:content-validation-name="val4"/>
+     <table:table-cell table:style-name="ce42" table:content-validation-name="val5"/>
+     <table:table-cell table:style-name="ce42"/>
      <table:table-cell table:style-name="ce31"/>
-     <table:table-cell table:style-name="ce21" table:number-columns-repeated="985"/>
+     <table:table-cell table:style-name="ce42" table:number-columns-repeated="985"/>
     </table:table-row>
     <table:table-row table:style-name="ro2">
      <table:table-cell office:value-type="string" calcext:value-type="string">
@@ -5722,32 +5763,6 @@
      <table:table-cell table:number-columns-repeated="987"/>
     </table:table-row>
     <table:table-row table:style-name="ro2">
-     <table:table-cell table:formula="of:=IF(LEN([.H105]&amp;[.I105]&amp;[.J105]&amp;[.K105])&gt;0;[.D105]&amp;&quot;-&quot;&amp;[.E105]&amp;&quot;-&quot;&amp;[.H105]&amp;[.I105]&amp;[.J105]&amp;[.K105];[.D105]&amp;&quot;-&quot;&amp;[.P105]&amp;&quot;-&quot;&amp;[.Q105])&amp;IF(LEN([.AI105]&amp;[.AJ105]&amp;[.AK105]&amp;[.AL105])&gt;0;&quot;-&quot;&amp;[.AI105]&amp;[.AJ105]&amp;[.AK105]&amp;[.AL105];&quot;&quot;)" office:value-type="string" office:string-value="--" calcext:value-type="string">
-      <text:p>--</text:p>
-     </table:table-cell>
-     <table:table-cell table:number-columns-repeated="2"/>
-     <table:table-cell table:content-validation-name="val1"/>
-     <table:table-cell table:content-validation-name="val2"/>
-     <table:table-cell table:number-columns-repeated="2"/>
-     <table:table-cell table:content-validation-name="val3"/>
-     <table:table-cell table:content-validation-name="val4"/>
-     <table:table-cell table:content-validation-name="val5"/>
-     <table:table-cell table:number-columns-repeated="5"/>
-     <table:table-cell table:content-validation-name="val8"/>
-     <table:table-cell table:number-columns-repeated="2"/>
-     <table:table-cell table:content-validation-name="val9"/>
-     <table:table-cell table:content-validation-name="val10"/>
-     <table:table-cell table:number-columns-repeated="2"/>
-     <table:table-cell table:content-validation-name="val9" table:number-columns-repeated="4"/>
-     <table:table-cell table:style-name="ce66" table:number-columns-repeated="3"/>
-     <table:table-cell table:style-name="ce68" table:number-columns-repeated="2"/>
-     <table:table-cell table:number-columns-repeated="3"/>
-     <table:table-cell table:content-validation-name="val3"/>
-     <table:table-cell table:content-validation-name="val4"/>
-     <table:table-cell table:content-validation-name="val5"/>
-     <table:table-cell table:number-columns-repeated="987"/>
-    </table:table-row>
-    <table:table-row table:style-name="ro2">
      <table:table-cell table:formula="of:=IF(LEN([.H106]&amp;[.I106]&amp;[.J106]&amp;[.K106])&gt;0;[.D106]&amp;&quot;-&quot;&amp;[.E106]&amp;&quot;-&quot;&amp;[.H106]&amp;[.I106]&amp;[.J106]&amp;[.K106];[.D106]&amp;&quot;-&quot;&amp;[.P106]&amp;&quot;-&quot;&amp;[.Q106])&amp;IF(LEN([.AI106]&amp;[.AJ106]&amp;[.AK106]&amp;[.AL106])&gt;0;&quot;-&quot;&amp;[.AI106]&amp;[.AJ106]&amp;[.AK106]&amp;[.AL106];&quot;&quot;)" office:value-type="string" office:string-value="--" calcext:value-type="string">
       <text:p>--</text:p>
      </table:table-cell>
@@ -6112,6 +6127,32 @@
      <table:table-cell table:number-columns-repeated="987"/>
     </table:table-row>
     <table:table-row table:style-name="ro2">
+     <table:table-cell table:formula="of:=IF(LEN([.H120]&amp;[.I120]&amp;[.J120]&amp;[.K120])&gt;0;[.D120]&amp;&quot;-&quot;&amp;[.E120]&amp;&quot;-&quot;&amp;[.H120]&amp;[.I120]&amp;[.J120]&amp;[.K120];[.D120]&amp;&quot;-&quot;&amp;[.P120]&amp;&quot;-&quot;&amp;[.Q120])&amp;IF(LEN([.AI120]&amp;[.AJ120]&amp;[.AK120]&amp;[.AL120])&gt;0;&quot;-&quot;&amp;[.AI120]&amp;[.AJ120]&amp;[.AK120]&amp;[.AL120];&quot;&quot;)" office:value-type="string" office:string-value="--" calcext:value-type="string">
+      <text:p>--</text:p>
+     </table:table-cell>
+     <table:table-cell table:number-columns-repeated="2"/>
+     <table:table-cell table:content-validation-name="val1"/>
+     <table:table-cell table:content-validation-name="val2"/>
+     <table:table-cell table:number-columns-repeated="2"/>
+     <table:table-cell table:content-validation-name="val3"/>
+     <table:table-cell table:content-validation-name="val4"/>
+     <table:table-cell table:content-validation-name="val5"/>
+     <table:table-cell table:number-columns-repeated="5"/>
+     <table:table-cell table:content-validation-name="val8"/>
+     <table:table-cell table:number-columns-repeated="2"/>
+     <table:table-cell table:content-validation-name="val9"/>
+     <table:table-cell table:content-validation-name="val10"/>
+     <table:table-cell table:number-columns-repeated="2"/>
+     <table:table-cell table:content-validation-name="val9" table:number-columns-repeated="4"/>
+     <table:table-cell table:style-name="ce66" table:number-columns-repeated="3"/>
+     <table:table-cell table:style-name="ce68" table:number-columns-repeated="2"/>
+     <table:table-cell table:number-columns-repeated="3"/>
+     <table:table-cell table:content-validation-name="val3"/>
+     <table:table-cell table:content-validation-name="val4"/>
+     <table:table-cell table:content-validation-name="val5"/>
+     <table:table-cell table:number-columns-repeated="987"/>
+    </table:table-row>
+    <table:table-row table:style-name="ro2">
      <table:table-cell table:style-name="ce90" table:number-columns-repeated="2"/>
      <table:table-cell table:style-name="ce37" table:number-columns-repeated="9"/>
      <table:table-cell table:style-name="ce46" table:number-columns-repeated="4"/>
@@ -6123,7 +6164,7 @@
      <table:table-cell table:style-name="ce46"/>
      <table:table-cell table:number-columns-repeated="985"/>
     </table:table-row>
-    <table:table-row table:style-name="ro2" table:number-rows-repeated="1048455">
+    <table:table-row table:style-name="ro2" table:number-rows-repeated="1048454">
      <table:table-cell table:number-columns-repeated="1024"/>
     </table:table-row>
     <table:table-row table:style-name="ro2">
@@ -6131,7 +6172,6 @@
     </table:table-row>
    </table:table>
    <table:table table:name="Variables" table:style-name="ta1" table:print="false">
-    <office:forms form:automatic-focus="false" form:apply-design-mode="false"/>
     <table:table-column table:style-name="co26" table:default-cell-style-name="Default"/>
     <table:table-column table:style-name="co23" table:default-cell-style-name="ce92"/>
     <table:table-column table:style-name="co23" table:default-cell-style-name="ce179"/>
@@ -6226,7 +6266,6 @@
     </table:table-row>
    </table:table>
    <table:table table:name="Actions" table:style-name="ta1" table:print="false">
-    <office:forms form:automatic-focus="false" form:apply-design-mode="false"/>
     <table:table-column table:style-name="co23" table:number-columns-repeated="3" table:default-cell-style-name="Default"/>
     <table:table-column table:style-name="co27" table:default-cell-style-name="ce187"/>
     <table:table-column table:style-name="co23" table:number-columns-repeated="7" table:default-cell-style-name="ce187"/>
@@ -6463,7 +6502,6 @@
     </table:table-row>
    </table:table>
    <table:table table:name="Characters" table:style-name="ta1" table:print="false">
-    <office:forms form:automatic-focus="false" form:apply-design-mode="false"/>
     <table:table-column table:style-name="co30" table:default-cell-style-name="ce92"/>
     <table:table-column table:style-name="co31" table:default-cell-style-name="ce92"/>
     <table:table-column table:style-name="co32" table:number-columns-repeated="2" table:default-cell-style-name="ce187"/>
@@ -6899,6 +6937,7 @@
     </table:table-row>
    </table:table>
    <table:table table:name="Scenes" table:style-name="ta1" table:print="false">
+    <office:forms form:automatic-focus="false" form:apply-design-mode="false"/>
     <table:table-column table:style-name="co23" table:default-cell-style-name="Default"/>
     <table:table-column table:style-name="co47" table:default-cell-style-name="Default"/>
     <table:table-column table:style-name="co48" table:default-cell-style-name="ce187"/>
@@ -7194,7 +7233,6 @@
     </table:table-row>
    </table:table>
    <table:table table:name="Objects" table:style-name="ta1" table:print="false">
-    <office:forms form:automatic-focus="false" form:apply-design-mode="false"/>
     <table:table-column table:style-name="co23" table:default-cell-style-name="ce92"/>
     <table:table-column table:style-name="co55" table:default-cell-style-name="ce92"/>
     <table:table-column table:style-name="co19" table:default-cell-style-name="ce92"/>
@@ -7788,7 +7826,6 @@
     </table:table-row>
    </table:table>
    <table:table table:name="Inventory" table:style-name="ta1" table:print="false">
-    <office:forms form:automatic-focus="false" form:apply-design-mode="false"/>
     <table:table-column table:style-name="co61" table:default-cell-style-name="Default"/>
     <table:table-column table:style-name="co62" table:default-cell-style-name="Default"/>
     <table:table-column table:style-name="co23" table:default-cell-style-name="ce187"/>
@@ -7822,7 +7859,6 @@
     </table:table-row>
    </table:table>
    <table:table table:name="Emotions" table:style-name="ta1" table:print="false">
-    <office:forms form:automatic-focus="false" form:apply-design-mode="false"/>
     <table:table-column table:style-name="co23" table:number-columns-repeated="5" table:default-cell-style-name="Default"/>
     <table:table-column table:style-name="co63" table:number-columns-repeated="2" table:default-cell-style-name="ce192"/>
     <table:table-column table:style-name="co23" table:default-cell-style-name="ce218"/>
@@ -8035,7 +8071,6 @@
     </table:table-row>
    </table:table>
    <table:table table:name="Animations" table:style-name="ta1" table:print="false">
-    <office:forms form:automatic-focus="false" form:apply-design-mode="false"/>
     <table:table-column table:style-name="co64" table:number-columns-repeated="2" table:default-cell-style-name="Default"/>
     <table:table-column table:style-name="co65" table:default-cell-style-name="Default"/>
     <table:table-column table:style-name="co66" table:default-cell-style-name="ce92"/>
@@ -8324,7 +8359,6 @@
     </table:table-row>
    </table:table>
    <table:table table:name="Menus" table:style-name="ta1" table:print="false">
-    <office:forms form:automatic-focus="false" form:apply-design-mode="false"/>
     <table:table-column table:style-name="co23" table:default-cell-style-name="ce181"/>
     <table:table-column table:style-name="co64" table:default-cell-style-name="Default"/>
     <table:table-column table:style-name="co4" table:default-cell-style-name="Default"/>
@@ -8745,7 +8779,7 @@
     <table:named-range table:name="Scene_List" table:base-cell-address="$Scenes.$A$3" table:cell-range-address="$Scenes.$A$3:.$A$985"/>
    </table:named-expressions>
    <table:database-ranges>
-    <table:database-range table:name="__Anonymous_Sheet_DB__0" table:target-range-address="Script.A3:Script.AMJ70" table:contains-header="false">
+    <table:database-range table:name="__Anonymous_Sheet_DB__0" table:target-range-address="Script.A4:Script.AMJ71" table:contains-header="false">
      <table:sort>
       <table:sort-by table:field-number="0" table:data-type="automatic"/>
       <table:sort-by table:field-number="1" table:data-type="automatic"/>

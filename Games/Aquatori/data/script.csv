@@ -1,5 +1,6 @@
 ID,Seq,Deactivate,Character_ID,Action_ID,Call_Script,If_Expression,Target_Character,Target_Scene,Target_ObjGroup,Target_Object,Walk_First,Remove_Target,Add_To_Inventory,Del_From_Inventory,Walk_Scene,Walk_Colour,Hover_Text,Dialogue_Speaker,Dialogue_Emotion,Dialogue_Duration,Dialogue_Line,Audio_Path,Audio_Filename,Audio_Extension,Audio_Volume_Db,Set_Column,Set_Tab,Set_Value,Filter_Column,Filter_Value,Refresh,Animate_Move,Wait_Seconds,Target2_Character,Target2_Scene,Target2_ObjGroup,Target2_Object,Remove_Target2
 DEFAULT,,0,,,,,,,,,0,0,,,,,,DEFAULT,none,80%,,audio/,,.wav,-18,,,,ID,,0,0,0,,,,,0
+DEFAULT-look-dual,1,,DEFAULT,look,,,,dual,,,,,,,,,,bird,,,There sure is a lot of clutter in this place.,,,,,,,,,,,,,,,,,
 Aqua Puzzles,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 DEFAULT-look-apple,1,,DEFAULT,look,,,,,,apple,,,,,,,,fish,,,Apples floating in the water. It makes me want some.,,,,,,,,,,,,,,,,,
 DEFAULT-handle-apple,1,,DEFAULT,handle,,,,,,apple,1,1,apple,,,,,fish,,,"I was hungry! I'll keep the seed, that might be useful.",,,,,"Label~,~Visible",Objects,"Seed~,~0",,apple,1,,,,,,,
@@ -7,9 +8,9 @@ DEFAULT-look-mirror,1,,DEFAULT,look,,,,,,mirror,,,,,,,,fish,,,"It's so dark down
 DEFAULT-handle-mirror,1,,DEFAULT,handle,,,,,,mirror,1,1,mirror,,,,,fish,,,I think I can use this... Maybe there's a light source?,,,,,,,,,,,,,,,,,
 DEFAULT-look-pot,1,,DEFAULT,look,,seedState == 0,,,,pot,,,,,,,,fish,,,Maybe I can plant something?,,,,,,,,,,,,,,,,,
 DEFAULT-look-pot,2,,DEFAULT,look,,seedState == 1,,,,pot,,,,,,,,fish,,20%,Perfect!,,,,,,,,,,,,,,,,,
-DEFAULT-look-sun_artifact,1,,DEFAULT,look,,floorState == 0,,,,sun_artifact,,,,,,,,fish,,,A sun symbol... Isn't this the kind that changes with sunlight?,,,,,,,,,,,,,,,,,
-DEFAULT-look-sun_artifact,1,,DEFAULT,look,,floorState == 1,,,,sun_artifact,1,,,,,,,fish,,,,,,,,,,,,,,,,,,,,
-DEFAULT-look-sun_artifact,2,,DEFAULT,look,,floorState == 1,,,,sun_artifact,,,key2,,,,,fish,,,"Perfect!  Oh look, and a key has appeared!",,,,,,,,,,,,,,,,,
+DEFAULT-look-sun_artifact,1,,DEFAULT,look,,mirrorState == 0,,,,sun_artifact,,,,,,,,fish,,,A sun symbol... Isn't this the kind that changes with sunlight?,,,,,,,,,,,,,,,,,
+DEFAULT-look-sun_artifact,1,,DEFAULT,look,,mirrorState == 1,,,,sun_artifact,1,,,,,,,fish,,,,,,,,,,,,,,,,,,,,
+DEFAULT-look-sun_artifact,2,,DEFAULT,look,,mirrorState == 1,,,,sun_artifact,,,key2,,,,,fish,,,"Perfect!  Oh look, and a key has appeared!",,,,,,,,,,,,,,,,,
 DEFAULT-look-sunbeam2,1,,DEFAULT,look,,mirrorState == 0,,,,sunbeam2,,,,,,,,fish,,,Now there's a light down here! Maybe I can use that for something.,,,,,,,,,,,,,,,,,
 DEFAULT-look-sunbeam2,2,,DEFAULT,look,,mirrorState == 1,,,,sunbeam2,,,,,,,,fish,,,I wonder if I can use something I have with this light?,,,,,,,,,,,,,,,,,
 DEFAULT-use-apple-pot,1,,DEFAULT,use,,,,,,apple,1,,,,,,,fish,,,,,,,,Value,Variables,1,,seedState,,,,,,,pot,
