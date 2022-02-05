@@ -137,8 +137,13 @@ func doThing():
 	var scriptID = actingChar.ID + "-" + actingAction.data.ID + "-" + actingObjID
 	if secondObj:
 		if scene.all_menus.has(secondObj.data.ID):
-			secondObj = secondObj.data.Item
-		scriptID += "-" + secondObj.data.ID
+			#secondObj = secondObj.data.Item
+			scriptID += "-" + secondObj.data.Item.ID
+		else:
+			#if secondObj["ID"]:
+			#	scriptID += "-" + secondObj.ID
+			#else:
+			scriptID += "-" + secondObj.data.ID
 		secondObj = null
 	Game.debugMessage(Game.CAT.SCRIPT, "Resuming " + scriptID)
 	if scene.scriptManager.hasScript(scriptID):

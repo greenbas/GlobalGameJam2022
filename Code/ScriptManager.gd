@@ -15,6 +15,9 @@ func _init():
 	# https://stackoverflow.com/questions/38512896/java-regex-match-words-that-arent-numbers
 	rgxStrings.compile("((?![-+]?[0-9]*\\.?[0-9])\\w+\\b)")
 	eval = Expression.new()
+	var actionable = Game.listWhere(Game.ENTITY.OBJ, ["Actionable"], ["1"])
+	for a in actionable:
+		obj_list[a.ID] = a.ID
 
 func attachScripts():
 	var objgroups = Game.dictByID(Game.listOf(Game.ENTITY.OBJGROUP))
@@ -41,7 +44,8 @@ func hasScript(cmd):
 	# asked if, e.g. "johnny-use-sheet" exists because no second target will have
 	# been selected yet when we are asked this.
 	var dash = cmd.find("-") + 1
-	var mid = cmd.substr(dash, cmd.find_last("-") - dash)
+	#var mid = cmd.substr(dash, cmd.find_last("-") - dash)
+	var mid = cmd.substr(dash, cmd.find("-", dash) - dash)
 	var action = Game.entityWhere(Game.ENTITY.ACTION, ["ID"], [mid], true, false)
 	if action:
 		if action.Needs_Second == "1":
@@ -67,7 +71,33 @@ func addCommandsForID(forID : String, whereID : String):
 		else:
 			cmdAppend(forID, cmd)
 
+# For handling the OTHER keyword, we need to track handled objects for each prefix
+# "OTHER" can only show up as the last word in any given command, e.g. johnny-look-OTHER
+# We track everything we've handled for the rest of the phrase, "johnny-look"
+var obj_list = {} # All actionable objects in the game
+var unhandled_obj_for_prefix = {} # Key is everything before the last dash
+
 func cmdAppend(forID : String, cmd):
+	# Check for unhandled objects in case OTHER suffix is used (see variable comments for more info)
+	var last_dash = cmd.ID.find_last("-")
+	var suffix = cmd.ID.substr(last_dash + 1)
+	var prefix = cmd.ID.trim_suffix("-" + suffix)
+	var unhandled
+	if unhandled_obj_for_prefix.has(prefix):
+		unhandled = unhandled_obj_for_prefix[prefix]
+	else:
+		unhandled = obj_list.duplicate()
+	unhandled.erase(suffix)
+	unhandled_obj_for_prefix[prefix] = unhandled
+	if suffix == "OTHER":
+		# We assume this will only occur last of scripts for using this item
+		for o in unhandled:
+			var newCmd = cmd.duplicate()
+			var repl = "OTHER"
+			var with = o
+			newCmd.ID = forID.replace("-" + repl, "-" + with)
+			print(newCmd.ID)
+			cmdAppend(newCmd.ID, newCmd)
 	if !script_commands.has(forID):
 		script_commands[forID] = []
 	script_commands[forID].append(cmd)
