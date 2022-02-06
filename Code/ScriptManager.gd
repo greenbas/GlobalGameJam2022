@@ -96,7 +96,6 @@ func cmdAppend(forID : String, cmd):
 			var repl = "OTHER"
 			var with = o
 			newCmd.ID = forID.replace("-" + repl, "-" + with)
-			print(newCmd.ID)
 			cmdAppend(newCmd.ID, newCmd)
 	if !script_commands.has(forID):
 		script_commands[forID] = []

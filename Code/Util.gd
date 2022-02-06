@@ -47,10 +47,11 @@ static func getRect(sprite):
 	return rect
 static func clickSolid(sprite, posn):
 	var d = sprite.texture.get_data()
-	d.lock()
-	var rect = getRect(sprite)
-	if rect.has_point(posn):
-		return (d.get_pixelv(posn - rect.position).a > 0.2)
+	if d:
+		d.lock()
+		var rect = getRect(sprite)
+		if rect.has_point(posn):
+			return (d.get_pixelv(posn - rect.position).a > 0.2)
 	return false
 
 # ===== File R/W ========================================================
