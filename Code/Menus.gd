@@ -30,7 +30,7 @@ func _input(event):
 	checkInput(event)
 func checkInput(event): # Why can't this be _input like the others?
 	for e in Game.entityByID(Game.ENTITY.MENU).values():
-		if event.is_action_pressed(e.Signal):
+		if !Util.isnull(e.Signal) and event.is_action_pressed(e.Signal):
 			match e.Type:
 				"inventory":
 					if invOpen:
@@ -147,7 +147,6 @@ func doThing():
 	actingObj = null
 	actingAction = null
 	actingChar = null
-	Game.enableActions()
 	state = STATES.BASE
 	#foundObj.triggerAction(posn)
 	#else: self.triggerAction(posn)

@@ -122,7 +122,7 @@ func cmdAppend(forID : String, cmd):
 # "long_winded_speech" which is a sequence of commands not triggered directly by any actions,
 # but can be called by any triggered action.  These will not be stored in any interactables,
 # so the ScriptManager will handle them directly.  Track them as they come up: if we've
-# encountered them before, run them; if not, save before running.
+# encountered them before, run them; if not, store before running.
 var script_functions = {}
 var characters = {} # Track these the same way
 
@@ -360,3 +360,7 @@ func inDialogue():
 	return dialOpen
 func endDialogue():
 	dialOpen = false
+
+#var scene_running = false
+#func inCutscene():
+#	return scene_running

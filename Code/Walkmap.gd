@@ -26,6 +26,8 @@ func _input(event):
 			if event is InputEventMouseButton and event.pressed and not event.is_echo():
 				if scene.scriptManager.inDialogue():
 					scene.scriptManager.endDialogue()
+				elif not Game.actionsAllowed():
+					pass
 				else:
 					if event.button_index == BUTTON_LEFT:
 						scene.triggerClick(posn)
@@ -48,7 +50,7 @@ func tryWalking(sprite, posn, retry=false):
 	while !found && posn.y < sceneH:
 		sprite.goalPath = findPath(sprite.position, posn)
 		# If retry = true, it's probably because we're trying to walk to something,
-		# and it's really easy to accidentally put that point above the walkmap
+		# and that point may be above the walkmap.  Just walk as close as you can.
 		if !retry or sprite.goalPath.size() > 0:
 			found = true
 		else:

@@ -218,15 +218,18 @@ func objAtPosn(posn):
 
 func objAtPosnArr(posn, arr):
 	# Loop through everything to check if it has the point and has actions
-	# Return the clicked object with the highest Z-index
+#	# Return the clicked object with the highest Z-index
 	var foundObj
-	var foundZ = -1
+#	var foundZ = -1
 	for i in arr.values():
 		if i.visible and i.data.Actionable == "1":
 			if Util.clickSolid(i, posn):
-				if i.z_index > foundZ:
+#				if i.z_index > foundZ:
 					foundObj = i
-					foundZ = i.z_index
+#					foundZ = i.z_index
+	# I don't think the assumed z-index thing was a good idea, so now we just draw in order
+	# Items later in the list are drawn last, as that's fairly intuitive
+	# So we're going to overwrite foundObj each time we find a new one, and return the last
 	return foundObj
 
 func triggerWalk(posn):

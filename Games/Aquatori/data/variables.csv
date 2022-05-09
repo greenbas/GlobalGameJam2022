@@ -6,3 +6,4 @@ mirrorState,0,
 aaaaaaa,1,"Defining constants so I can do 'math' on other variables, e.g. 'teamState >= cabin'"
 seedState,0,
 doorsOpen,0,
+frootTaken,0,
