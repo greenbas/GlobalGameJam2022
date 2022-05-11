@@ -1,0 +1,8 @@
+ID,Character,Name,Path,Filename,Extension,Frames,Frame_Duration
+DEFAULT,,idle,images/characters/,empty,.png,1,0.1
+ben,ben,,,Ben_Idle,,,
+ben-idle_n,ben,idle_n,,Ben_Idle,,,
+ben-n,ben,n,,Ben_Idle,,,
+ben-e,ben,e,,Ben_Idle,,,
+ben-w,ben,w,,Ben_Idle,,,
+ben-s,ben,s,,Ben_Idle,,,

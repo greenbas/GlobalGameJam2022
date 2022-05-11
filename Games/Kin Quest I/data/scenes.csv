@@ -1,0 +1,16 @@
+ID,Label,Require_Actions,Background_Path,Background_Filename,Background_Extension,Foreground_Path,Foreground_Filename,Foreground_Extension,Walkmap_Path,Walkmap_Filename,Walkmap_Extension,Zoom_At_Top,Zoom_At_Bottom,Audio_Path,Audio_Filename,Audio_Extension,Audio_Volume_Db
+DEFAULT,Unknown,1,images/scenes/,none,.png,images/scenes/,none,.png,images/walkmaps/,all,.png,50%,100%,audio/,,.ogg,-18
+Menus,,,,,,,,,,,,,,,,,
+unknown,Unknown,,,intro,,,,,,,,,,,,,
+title, ,,,title,,,,,,trigger,,,,,,,
+win, ,,,win,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+Ben,,,,,,,,,,,,,,,,,
+treehouse,,,,treehouse,,,,,,,,100%,,,,,
+forest,,,,forest,,,,,,,,100%,,,,,
+,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,
+Dani (Varigale),,,,,,,,,,,,,,,,,
+dani-room,,,,,,,,,,,,100%,,,,,
+dani-house,,,,,,,,,,,,,,,,,

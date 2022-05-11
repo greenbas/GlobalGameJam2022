@@ -1,0 +1,7 @@
+ID,Label,Character,Allowed,Script_Required,On_Objects,On_Characters,On_Scenes,On_Inventory,Needs_Second,Scene_ID,Action_Path,Action_Filename,Action_Extension,Distance_From_Center,Radial_Position
+DEFAULT,,DEFAULT,1,0,1,1,1,,0,*,images/menu/,,.png,65.00%,300
+use,Use on,DEFAULT,,1,0,0,0,1,1,,,TEMP,,,0
+walk,Walk to,DEFAULT,,0,0,0,0,0,,,,,,,
+look,Look at,DEFAULT,,1,1,1,1,1,,,,vc_look,,,180
+talk,Talk to,DEFAULT,,1,1,1,1,0,,,,vc_talk,,,60
+handle,Interact with,DEFAULT,,1,1,1,1,1,,,,vc_handle,,,120

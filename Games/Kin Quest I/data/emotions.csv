@@ -1,0 +1,4 @@
+ID,Character,Image_Path,Image_Filename,Image_Extension,Shift_Dialogue_X,Shift_Dialogue_Y,Label,Font_Colour,Font_Shadow,Shift_Label_X,Shift_Label_Y,Font_Path,Font_Filename,Font_Extension,Font_Size
+DEFAULT,DEFAULT,images/characters/,none,_Portrait.png,17%,0%,DEFAULT,#000000,,-23%,-10%,fonts/,HussarBold-7mRE,.otf,25
+none,ben,,Ben,,,,,#b63e26,#000000,,,,,,
+none,narrator,,,,,,,#550099,#000000,,,,,,
